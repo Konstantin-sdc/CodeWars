@@ -209,11 +209,16 @@ namespace CodeWars {
     public static int[] MinMax(int[] lst) => new int[] { lst.Min(), lst.Max() };
 
     public static string Rgb(int r, int g, int b) {
-      string result = "";
-      foreach(int i in new int[3] { r, g, b }) {
-        result += Math.Max(0, Math.Min(i, 255)).ToString("X2");
+      return HexColor(r, g, b);
+    }
+    private static string HexColor(params int[] p) {
+      string[] arr = new string[3];
+      for(int i = 0; i < p.Length; i++) {
+        if(p[i] < 0) p[i] = 0;
+        if(p[i] > 255) p[i] = 255;
+        arr[i] = p[i].ToString("X2");
       }
-      return result;
+      return String.Join("", arr);
     }
   }
 
