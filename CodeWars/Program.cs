@@ -60,9 +60,9 @@ namespace CodeWars {
         //if(sqrt % 1 == 0) ;
       }
 
-      for(long i = m; i <= i; i++) {
-        break;
-      }
+      // for(long i = m; i <= i; i++) {
+      //   break;
+      // }
       return "";
     }
 
@@ -212,23 +212,6 @@ namespace CodeWars {
       string result = "";
       foreach(int i in new int[3] { r, g, b }) {
         result += Math.Max(0, Math.Min(i, 255)).ToString("X2");
-      }
-      return result;
-      //return HexColor(r, g, b);
-    }
-    private static string HexColor(params int[] p) {
-      string[] arr = new string[3];
-      for(int i = 0; i < p.Length; i++) {
-        if(p[i] < 0) p[i] = 0;
-        if(p[i] > 255) p[i] = 255;
-        arr[i] = p[i].ToString("X2");
-      }
-      return String.Join("", arr);
-    }
-    private static string HexColor02(params int[] p) {
-      string result = "";
-      for(int i = 0; i < p.Length; i++) {
-        result += Math.Max(0, Math.Min(p[i], 255)).ToString("X2");
       }
       return result;
     }
