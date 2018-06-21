@@ -1,7 +1,8 @@
-﻿using System.Text;
-
+﻿using System.Collections.Generic;
 namespace CodeWars {
+
   class Program {
+
     static void Main() {
       //Kata.SquareDigits(1234);
       //Kata.Maskify("Qwertyuiopasdf");
@@ -23,27 +24,10 @@ namespace CodeWars {
       // 1,1,1,3,5,9,17,31,57,105
       //double[] d0 = xbonacci.Tribonacci(new double[] { 1, 1, 1 }, 10);
       // 
-      string rgbHex00 = Kata.HEXfromRGB(-300, 128, 300);
+      //string rgbHex00 = Kata.HEXfromRGB(-300, 128, 300);
+      List<long[]> ls = Kata.RemovNb(1000000000);
     }
+
   }
 
-  public class Xbonacci {
-    // signature всегда должна содержать 3 числа
-    public double[] Tribonacci(double[] signature, int n) {
-      // hackonacci me
-      // if n==0, then return an array of length 1, containing only a 0
-      if(n < 1 || signature.Length != 3) return new double[] { 0 };
-      double[] result = new double[n];
-      int sc = (n <= signature.Length) ? n : signature.Length;
-      // Запись сигнатуры
-      for(int i = 0; i < sc; i++) {
-        result[i] = signature[i];
-      }
-      if(n <= signature.Length) return result;
-      for(int i = sc; i < n; i++) {
-        result[i] = result[i - 1] + result[i - 2] + result[i - 3];
-      }
-      return result;
-    }
-  }
 }
