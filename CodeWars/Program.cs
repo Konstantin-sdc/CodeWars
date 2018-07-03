@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Numerics;
 namespace CodeWars {
 
   class Program {
@@ -25,7 +25,8 @@ namespace CodeWars {
       //double[] d0 = xbonacci.Tribonacci(new double[] { 1, 1, 1 }, 10);
       // 
       //string rgbHex00 = Kata.HEXfromRGB(-300, 128, 300);
-      List<long[]> ls = Kata.RemovNb(1000000000);
+      // List<long[]> ls = Kata.RemovNb(1000000000);
+      BigInteger bg = Kata.Perimeter(new BigInteger(5));
     }
 
   }

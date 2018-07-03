@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace CodeWars {
 
@@ -193,30 +194,52 @@ namespace CodeWars {
     public static List<long[]> RemovNb(long n) {
       List<long[]> result = new List<long[]>();
       // Вычислить сумму натурального ряда от 1 до n
-      ulong uN = (ulong)n;
-      ulong semiN = uN / 2;
-      ulong prSum;
+      long sum;
       checked {
-        prSum = (uN + 1) * semiN;
+        sum = (n + 1) * n / 2;
       }
-      ulong semiSum = prSum / 2;
-      // long dMin, dMax;
-      // Произведение двух положительных чисел всегда > чем их сумма =>
-      // => dMin*dMax > semiSum && dMin * dMax < nSum;
-      // dMax > n / 2;
-      // т.к. максимальный dMax == uN =>
-      ulong dMin = semiSum / uN;
-      if(dMin >= uN || dMin < 1) return null;
-      for(; dMin < uN; dMin++) {
-        for(ulong dMax = semiN; dMax < uN; dMax++) {
-          ulong dmm = dMin * dMax;
-          if(dmm <= semiSum) continue;
-          if(dmm >= prSum) break;
-          if(dmm == prSum - dMin - dMax) result.Add(new long[2] { (long)dMin, (long)dMax });
-        }
+      // Минимальный первый элемент
+      long firstMin = (sum - 2 * n + 1) / n;
+      // Максимальный первый элемент
+      long firstMax = (sum - 2 * firstMin - 1) / firstMin;
+      // Второй элемент
+      long searchRange = firstMax - firstMin;
+      for(long i = firstMin; i <= firstMax; i++) {
+        long a = sum - i;
+        long b = i + 1;
+        if(a % b > 0) continue;
+        result.Add(new long[2] { i, a / b });
       }
-      return (result.Count > 0) ? result : null;
+      return result;
     }
 
+    /// <summary>Возвращает сумму периметров квадратов в ряду Фибоначи</summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    public static BigInteger Perimeter(BigInteger n) {
+      BigInteger first = 0, second = 1, fibSum = first + second;
+      for(var i = 2; i < n; i++) {
+        BigInteger current = first + second;
+        fibSum += current;
+        first = second;
+        second = current;
+      }
+      return fibSum * 4;
+    }
+
+    /// <summary>
+    /// Возвращает возможность объединения и перемешиваения двух строку в третию, 
+    /// без изменения порядка символов в исходных строках.
+    /// </summary>
+    /// <param name="s">Первая строка</param>
+    /// <param name="part1">Вторая строка</param>
+    /// <param name="part2">Итоговая строка</param>
+    /// <returns>true, если объединение возможно</returns>
+    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    public static bool IsMerge(string s, string part1, string part2) {
+
+      return false;
+    }
   }
 }
