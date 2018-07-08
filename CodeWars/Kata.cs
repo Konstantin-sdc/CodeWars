@@ -302,43 +302,30 @@ namespace CodeWars {
       string rmvChrs0 = "hw";
       string rmvChrs1 = "aeiouhw";
       for(int i = 0; i < namesArr.Length; i++) {
-        string word = namesArr[i].ToLower();
+        var word = namesArr[i].ToLower().ToList();
         // Сохранить первую букву.
-        char firstChar = word[0];
-        string noFirst = word.Substring(1);
+        char firstChar = namesArr[i][0];
+        var noFirst = word.Skip(1);
         // Удалить все h и w, кроме первой буквы слова
-        foreach(char item in rmvChrs0) {
-          noFirst = noFirst.Replace(item.ToString(), null);
-        }
-        word = firstChar + noFirst;
+        noFirst = noFirst.Where(c => !rmvChrs0.Contains(c));
         // Заменить согласные буквы, включая первую, на цифры
-        foreach(var item in worDig) {
-          foreach(char key in item.Key) {
-            word = word.Replace(key, item.Value);
+        foreach(var item in worDig) {          
+          for(int k = 0; k < word.Count; k++) {
+            if(item.Key.Contains(word[k])) word[k] = item.Value;
           }
         }
         // Сократить любую последовательность одинаковых цифр до одной
         List<int> rmvDs = new List<int>();
-        for(int k = 0; k+1 < word.Length; k++) {
-          char wk = word[k];
-          if(word[k] == word[k + 1] && char.IsDigit(word[k])) rmvDs.Add(k+1);
+        for(int k = 0; k + 1 < word.Count; k++) {
+          if(word[k] == word[k + 1] && char.IsDigit(word[k])) rmvDs.Add(k + 1);
         }
-        StringBuilder sb = new StringBuilder(word);
-        foreach(int index in rmvDs) {
-          sb[index] = 'a';
-        }
-        word = sb.ToString();
+        rmvDs.ForEach(c => { word[c] = 'a'; });
         // Удалить все a, e, i, o, u, y, кроме первой буквы слова
-        noFirst = word.Substring(1);
-        foreach(char item in rmvChrs1) {
-          noFirst = noFirst.Replace(item.ToString(), null);
-        }
-        // Заменить первый символ буквой, запомненной на шаге 1
+        noFirst = noFirst.Where(c => !rmvChrs1.Contains(c));
+        // Заменить первый символ буквой, запомненной на шаге 1        
         // Добавить нули, если нужно
-        word = firstChar + noFirst + "000";
         // Обрезать до первых четырёх букв
-        word = word.Substring(0, 4);
-        outArr[i] = word;
+        outArr[i] = (firstChar + string.Join("", noFirst) + "000").Substring(0, 4);
       }
       // Вернуть в верхнем регистре
       return string.Join(" ", outArr).ToUpper();
