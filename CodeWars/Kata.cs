@@ -2,19 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Text;
 
 namespace CodeWars {
 
   /// <summary>Класс для тренировок</summary>
   public static partial class Kata {
 
+    /// <summary>
+    /// <para>Возвращает количество кубов, нужное для достижения объёма = m.</para>
+    /// <para>Кубы начинаются с размеров 1х1х1.</para>
+    /// <para>Сторона каждого последующего куба больше стороны предыдущего на 1.</para>
+    /// </summary>
+    /// <param name="m">Нужный объём</param>
+    /// <returns>Количество кубов или -1, если объём не может уместить количество.</returns>
+    [KataLevel(LevelTypeEnum.Kyu, 6)]
     public static long FindNb(long m) {
-      double volume = 0;
-      long result = 0;
-      for(int i = 1; volume < m; i++, result++) {
-        volume += Math.Pow(i, 3);
+      long s = 1, v = 0, count = 0;
+      for(; v < m; s++, count++) {
+        v += s * s * s;
       }
-      return (volume == m) ? result : -1;
+      return (m == v) ? count : -1;
     }
 
     /// <summary>Задания на 7 кю</summary>
@@ -232,14 +240,109 @@ namespace CodeWars {
     /// Возвращает возможность объединения и перемешиваения двух строку в третию, 
     /// без изменения порядка символов в исходных строках.
     /// </summary>
-    /// <param name="s">Первая строка</param>
-    /// <param name="part1">Вторая строка</param>
-    /// <param name="part2">Итоговая строка</param>
+    /// <param name="s">Итоговая строка</param>
+    /// <param name="part1">Первая строка</param>
+    /// <param name="part2">Вторая строка</param>
     /// <returns>true, если объединение возможно</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
     public static bool IsMerge(string s, string part1, string part2) {
-
-      return false;
+      return MayExtract(s, part1, part2);
+      //NOTE Символы в составляющих строках могут повторятся, совпадать с исмволами другой строки, быть разного регистра.
     }
+
+    private static bool MayExtract(string s, params string[] parts) {
+      string ordS = string.Join("", s.OrderBy(k => k));
+      string p = string.Join("", parts);
+      string ordP = string.Join("", p.OrderBy(k => k));
+      if(!ordS.Equals(ordP)) return false;
+      foreach(string part in parts) {
+        int start = 0;
+        foreach(char item in part) {
+          start = s.IndexOf(item, start);
+          if(start == -1) return false;
+        }
+      }
+      return true;
+    }
+
+    /// <summary>Интерпретатор</summary>
+    /// <param name="code">Код Paintfuck, который должен быть выполнен, передается как строка. </param>
+    /// <param name="iterations"></param>
+    /// <param name="width"></param>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    public static string Interpret(string code, int iterations, int width, int height) {
+      // Правила
+      // n - Переместить указатель данных на север(вверх)
+      // e - Переместить указатель данных на восток(справа)
+      // s - Переместить указатель данных на юг(вниз)
+      // w - Переместить указатель данных на запад(слева)
+      // * - Переверните бит в текущей ячейке(то же, что и в Smallfuck)
+      // [- Переход мимо соответствия,] если бит под текущим указателем 0(тот же, что и в Smallfuck)
+      // ]- Вернитесь к совпадению[(если бит под текущим указателем отличен от нуля) (то же, что и в Smallfuck)
+
+      // Любой символ, не из вышеперечисленных должен игнорироваться
+
+      return "";
+    }
+
+    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    public static string Soundex(string names) {
+      string[] namesArr = names.Split(' ');
+      string[] outArr = new string[namesArr.Length];
+      Dictionary<string, char> worDig = new Dictionary<string, char>() {
+        { "r", '6' },
+        { "bfpv", '1' },
+        { "cgjkqsxz", '2' },
+        { "dt", '3' },
+        { "l", '4' },
+        { "mn", '5' }
+      };
+      string rmvChrs0 = "hw";
+      string rmvChrs1 = "aeiouhw";
+      for(int i = 0; i < namesArr.Length; i++) {
+        string word = namesArr[i].ToLower();
+        // Сохранить первую букву.
+        char firstChar = word[0];
+        string noFirst = word.Substring(1);
+        // Удалить все h и w, кроме первой буквы слова
+        foreach(char item in rmvChrs0) {
+          noFirst = noFirst.Replace(item.ToString(), null);
+        }
+        word = firstChar + noFirst;
+        // Заменить согласные буквы, включая первую, на цифры
+        foreach(var item in worDig) {
+          foreach(char key in item.Key) {
+            word = word.Replace(key, item.Value);
+          }
+        }
+        // Сократить любую последовательность одинаковых цифр до одной
+        List<int> rmvDs = new List<int>();
+        for(int k = 0; k+1 < word.Length; k++) {
+          char wk = word[k];
+          if(word[k] == word[k + 1] && char.IsDigit(word[k])) rmvDs.Add(k+1);
+        }
+        StringBuilder sb = new StringBuilder(word);
+        foreach(int index in rmvDs) {
+          sb[index] = 'a';
+        }
+        word = sb.ToString();
+        // Удалить все a, e, i, o, u, y, кроме первой буквы слова
+        noFirst = word.Substring(1);
+        foreach(char item in rmvChrs1) {
+          noFirst = noFirst.Replace(item.ToString(), null);
+        }
+        // Заменить первый символ буквой, запомненной на шаге 1
+        // Добавить нули, если нужно
+        word = firstChar + noFirst + "000";
+        // Обрезать до первых четырёх букв
+        word = word.Substring(0, 4);
+        outArr[i] = word;
+      }
+      // Вернуть в верхнем регистре
+      return string.Join(" ", outArr).ToUpper();
+    }
+
   }
 }

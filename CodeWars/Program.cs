@@ -1,4 +1,4 @@
-﻿using System.Numerics;
+﻿using System.Linq;
 namespace CodeWars {
 
   class Program {
@@ -26,7 +26,11 @@ namespace CodeWars {
       // 
       //string rgbHex00 = Kata.HEXfromRGB(-300, 128, 300);
       // List<long[]> ls = Kata.RemovNb(1000000000);
-      BigInteger bg = Kata.Perimeter(new BigInteger(5));
+      //BigInteger bg = Kata.Perimeter(new BigInteger(5));
+      // bool ism = Kata.IsMerge("Can we merge it? Yes, we can!", "n ee tYw n!", "Cawe mrgi? es, eca");
+      // long n = Kata.FindNb(35);
+      string snd = Kata.Soundex("Connor");
+
     }
 
   }
