@@ -29,7 +29,7 @@ namespace CodeWars {
       //BigInteger bg = Kata.Perimeter(new BigInteger(5));
       // bool ism = Kata.IsMerge("Can we merge it? Yes, we can!", "n ee tYw n!", "Cawe mrgi? es, eca");
       // long n = Kata.FindNb(35);
-      string snd = Kata.Soundex("Ashcroft"); //A261
+      string snd = Kata.Soundex("Tymczak"); //T522
 
     }
 

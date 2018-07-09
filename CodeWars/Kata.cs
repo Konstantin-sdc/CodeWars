@@ -288,48 +288,49 @@ namespace CodeWars {
     }
 
     static Dictionary<string, char> _worDig = new Dictionary<string, char>() {
-        { "r", '6' },
-        { "bfpv", '1' },
-        { "cgjkqsxz", '2' },
-        { "dt", '3' },
-        { "l", '4' },
-        { "mn", '5' }
-      };
-    static string _rmvChrs0 = "hw";
-    static string _rmvChrs1 = "aeiouhw";
+      { "r", '6' },
+      { "bfpv", '1' },
+      { "cgjkqsxz", '2' },
+      { "dt", '3' },
+      { "l", '4' },
+      { "mn", '5' }
+    };
+    static string _fDel0 = "hw";
+    static string _fDel1 = "aeiouy";
 
     /// <summary>Преобразует слова английского языка по алгоритму SOUNDEX</summary>
     /// <param name="names">Строка из слов, разделённых пробелом</param>
     /// <returns>SOUNDEX-коды группы слов</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
-    public static string Soundex(string names) {
-      string[] namesArr = names.Split(' ');
-      string[] outArr = new string[namesArr.Length];
-      for(int i = 0; i < namesArr.Length; i++) {
-        var word = namesArr[i].ToLower().ToList();
+    public static string Soundex(string names) { // Ashcroft
+      string[] nmArr = names.ToLower().Split(' '); //да
+      string[] outArr = new string[nmArr.Length]; //да
+      for(int i = 0; i < nmArr.Length; i++) {
         // Сохранить первую букву.
-        char firstChar = namesArr[i][0];
-        var noFirst = word.Skip(1);
+        char fsCh = nmArr[i][0]; //да
+        var src = nmArr[i].ToList(); //да
         // Удалить все h и w, кроме первой буквы слова
-        noFirst = noFirst.Where(c => !_rmvChrs0.Contains(c));
+        src = src.Skip(1).Where(c => !_fDel0.Contains(c)).ToList();
+        src.Insert(0, fsCh);
         // Заменить согласные буквы, включая первую, на цифры
-        foreach(var item in _worDig) {          
-          for(int k = 0; k < word.Count; k++) {
-            if(item.Key.Contains(word[k])) word[k] = item.Value;
+        foreach(var item in _worDig) {
+          for(int k = 0; k < src.Count(); k++) {
+            if(item.Key.Contains(src[k])) src[k] = item.Value;
           }
         }
         // Сократить любую последовательность одинаковых цифр до одной
-        List<int> rmvDs = new List<int>();
-        for(int k = 0; k + 1 < word.Count; k++) {
-          if(word[k] == word[k + 1] && char.IsDigit(word[k])) rmvDs.Add(k + 1);
+        List<int> dIndex = new List<int>();
+        for(int k = 0; k + 1 < src.Count; k++) {
+          if(src[k] == src[k + 1] && char.IsDigit(src[k])) dIndex.Add(k + 1);
         }
-        rmvDs.ForEach(c => { word[c] = 'a'; });
+        dIndex.ForEach(c => { src[c] = 'a'; });
         // Удалить все a, e, i, o, u, y, кроме первой буквы слова
-        noFirst = noFirst.Where(c => !_rmvChrs1.Contains(c));
+        src = src.Skip(1).Where(c => !_fDel1.Contains(c)).ToList();
+        src.Insert(0, fsCh);
         // Заменить первый символ буквой, запомненной на шаге 1        
         // Добавить нули, если нужно
         // Обрезать до первых четырёх букв
-        outArr[i] = (firstChar + string.Join("", noFirst) + "000").Substring(0, 4);
+        outArr[i] = (string.Join("", src) + "000").Substring(0, 4);
       }
       // Вернуть в верхнем регистре
       return string.Join(" ", outArr).ToUpper();

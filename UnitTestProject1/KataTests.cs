@@ -21,7 +21,7 @@ namespace CodeWars.Tests {
         { "Rubin", "R150" },
         { "Ashcraft", "A261" },
         { "Ashcroft", "A261" },
-        //{ "Tymczak", "T522" }
+        { "Tymczak", "T522" }
       };
       foreach(var item in sourceResult) {
         string returned = Kata.Soundex(item.Key);
