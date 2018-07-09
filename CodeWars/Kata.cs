@@ -287,11 +287,7 @@ namespace CodeWars {
       return "";
     }
 
-    [KataLevel(LevelTypeEnum.Kyu, 5)]
-    public static string Soundex(string names) {
-      string[] namesArr = names.Split(' ');
-      string[] outArr = new string[namesArr.Length];
-      Dictionary<string, char> worDig = new Dictionary<string, char>() {
+    static Dictionary<string, char> _worDig = new Dictionary<string, char>() {
         { "r", '6' },
         { "bfpv", '1' },
         { "cgjkqsxz", '2' },
@@ -299,17 +295,22 @@ namespace CodeWars {
         { "l", '4' },
         { "mn", '5' }
       };
-      string rmvChrs0 = "hw";
-      string rmvChrs1 = "aeiouhw";
+    static string _rmvChrs0 = "hw";
+    static string _rmvChrs1 = "aeiouhw";
+
+    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    public static string Soundex(string names) {
+      string[] namesArr = names.Split(' ');
+      string[] outArr = new string[namesArr.Length];
       for(int i = 0; i < namesArr.Length; i++) {
         var word = namesArr[i].ToLower().ToList();
         // Сохранить первую букву.
         char firstChar = namesArr[i][0];
         var noFirst = word.Skip(1);
         // Удалить все h и w, кроме первой буквы слова
-        noFirst = noFirst.Where(c => !rmvChrs0.Contains(c));
+        noFirst = noFirst.Where(c => !_rmvChrs0.Contains(c));
         // Заменить согласные буквы, включая первую, на цифры
-        foreach(var item in worDig) {          
+        foreach(var item in _worDig) {          
           for(int k = 0; k < word.Count; k++) {
             if(item.Key.Contains(word[k])) word[k] = item.Value;
           }
@@ -321,7 +322,7 @@ namespace CodeWars {
         }
         rmvDs.ForEach(c => { word[c] = 'a'; });
         // Удалить все a, e, i, o, u, y, кроме первой буквы слова
-        noFirst = noFirst.Where(c => !rmvChrs1.Contains(c));
+        noFirst = noFirst.Where(c => !_rmvChrs1.Contains(c));
         // Заменить первый символ буквой, запомненной на шаге 1        
         // Добавить нули, если нужно
         // Обрезать до первых четырёх букв
