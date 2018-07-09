@@ -298,6 +298,9 @@ namespace CodeWars {
     static string _rmvChrs0 = "hw";
     static string _rmvChrs1 = "aeiouhw";
 
+    /// <summary>Преобразует слова английского языка по алгоритму SOUNDEX</summary>
+    /// <param name="names">Строка из слов, разделённых пробелом</param>
+    /// <returns>SOUNDEX-коды группы слов</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
     public static string Soundex(string names) {
       string[] namesArr = names.Split(' ');
