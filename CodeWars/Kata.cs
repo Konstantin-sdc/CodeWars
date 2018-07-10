@@ -300,7 +300,7 @@ namespace CodeWars {
         { "mn", '5' }
       };
       string rmvChrs0 = "hw";
-      string rmvChrs1 = "aeiouhw";
+      string rmvChrs1 = "aeiouy";
       for(int i = 0; i < namesArr.Length; i++) {
         string word = namesArr[i].ToLower();
         // Сохранить первую букву.
