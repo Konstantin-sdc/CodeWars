@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 
 namespace CodeWars {
@@ -114,9 +115,20 @@ namespace CodeWars {
     /// <param name="names">Строка из слов, разделённых пробелом</param>
     /// <returns>SOUNDEX-коды группы слов</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
-    public static string Soundex(string names) { // Ashcroft
-      string[] nmArr = names.ToLower().Split(' '); //да
-      string[] outArr = new string[nmArr.Length]; //да
+    public static string Soundex(string names) {
+      //Запоминаем первую букву.Удаляем все 'h' и 'w', за исключением первой буквы слова.
+      //Согласные заменяем на цифры от 1 до 6, включая первую
+      //Любая последовательность одинаковых цифр сокращается до одной такой цифры, включая первую.
+      //Удаляем все a, e, i, o, u, y, за исключением первой буквы слова.
+      //Заменяем первый символ буквой, запомненной на шаге 1, 
+      //Сделать всё заглавными.
+      //Присоединить справа 000
+      //Итоговая строка обрезается до первых четырех символов.
+
+      Regex rg = new Regex(@"\<[A-Z]\>");
+      string[] nmArr = names.ToLower().Split(' ');
+      string[] outArr = new string[nmArr.Length];
+
       for(int i = 0; i < nmArr.Length; i++) {
         // Сохранить первую букву.
         char fsCh = nmArr[i][0]; //да
