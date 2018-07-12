@@ -156,8 +156,23 @@ namespace CodeWars {
         // Обрезать до первых четырёх букв
         outArr[i] = (string.Join("", src) + "000").Substring(0, 4);
       }
-      // Вернуть в верхнем регистре
-      return string.Join(" ", outArr).ToUpper();
+      // return string.Join(" ", outArr).ToUpper();
+
+      return string.Join(" ", names.ToUpper().Split(' ').Select(str =>
+      {
+        string hw = Regex.Replace(str, "(?!^)[HW]", "");
+        string bfp = Regex.Replace(hw, "[BFPV]+", "1");
+        string cgj = Regex.Replace(bfp, "[CGJKQSXZ]+", "2");
+        string dt = Regex.Replace(cgj, "[DT]+", "3");
+        string l = Regex.Replace(dt, "L+", "4");
+        string mn = Regex.Replace(l, "[MN]+", "5");
+        string r = Regex.Replace(mn, "R+", "6");
+        string aei = Regex.Replace(r, "(?!^)[AEIOUY]", "");
+        string dig = Regex.Replace(aei, "^\\d", str.Substring(0, 1));
+        string result = Regex.Replace(dig, "$", "00000");
+        return result.Substring(0, 4);
+      }));
+
     }
 
   }
