@@ -100,79 +100,39 @@ namespace CodeWars {
       return "";
     }
 
-    static Dictionary<string, char> _worDig = new Dictionary<string, char>() {
-      { "r", '6' },
-      { "bfpv", '1' },
-      { "cgjkqsxz", '2' },
-      { "dt", '3' },
-      { "l", '4' },
-      { "mn", '5' }
+    static Dictionary<string, string> _soundDict = new Dictionary<string, string>() {
+      { "(?!^)[HW]", "" },
+      { "[BFPV]", "1" },
+      { "[CGJKQSXZ]", "2" },
+      { "[DT]", "3" },
+      { "[L]", "4" },
+      { "[MN]", "5" },
+      { "[R]", "6" },
+      { @"(\d+)\1", "$1"},
+      { @"(?!^)[AEIOUY]", "" },
+      { @"$", "000" }
     };
-    static string _fDel0 = "hw";
-    static string _fDel1 = "aeiouy";
 
     /// <summary>Преобразует слова английского языка по алгоритму SOUNDEX</summary>
     /// <param name="names">Строка из слов, разделённых пробелом</param>
     /// <returns>SOUNDEX-коды группы слов</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
     public static string Soundex(string names) {
-      //Запоминаем первую букву.Удаляем все 'h' и 'w', за исключением первой буквы слова.
-      //Согласные заменяем на цифры от 1 до 6, включая первую
-      //Любая последовательность одинаковых цифр сокращается до одной такой цифры, включая первую.
-      //Удаляем все a, e, i, o, u, y, за исключением первой буквы слова.
-      //Заменяем первый символ буквой, запомненной на шаге 1, 
-      //Сделать всё заглавными.
-      //Присоединить справа 000
-      //Итоговая строка обрезается до первых четырех символов.
-
-      Regex rg = new Regex(@"\<[A-Z]\>");
-      string[] nmArr = names.ToLower().Split(' ');
-      string[] outArr = new string[nmArr.Length];
-
-      for(int i = 0; i < nmArr.Length; i++) {
-        // Сохранить первую букву.
-        char fsCh = nmArr[i][0]; //да
-        var src = nmArr[i].ToList(); //да
-        // Удалить все h и w, кроме первой буквы слова
-        src = src.Skip(1).Where(c => !_fDel0.Contains(c)).ToList();
-        src.Insert(0, fsCh);
-        // Заменить согласные буквы, включая первую, на цифры
-        foreach(var item in _worDig) {
-          for(int k = 0; k < src.Count(); k++) {
-            if(item.Key.Contains(src[k])) src[k] = item.Value;
-          }
-        }
-        // Сократить любую последовательность одинаковых цифр до одной
-        List<int> dIndex = new List<int>();
-        for(int k = 0; k + 1 < src.Count; k++) {
-          if(src[k] == src[k + 1] && char.IsDigit(src[k])) dIndex.Add(k + 1);
-        }
-        dIndex.ForEach(c => { src[c] = 'a'; });
-        // Удалить все a, e, i, o, u, y, кроме первой буквы слова
-        src = src.Skip(1).Where(c => !_fDel1.Contains(c)).ToList();
-        src.Insert(0, fsCh);
-        // Заменить первый символ буквой, запомненной на шаге 1        
-        // Добавить нули, если нужно
-        // Обрезать до первых четырёх букв
-        outArr[i] = (string.Join("", src) + "000").Substring(0, 4);
+      string[] result = names.Split(' ');
+      for(int i = 0; i < result.Length; i++) {
+        result[i] = SoundexSingle(result[i]);
       }
-      // return string.Join(" ", outArr).ToUpper();
+      return string.Join(" ", result);
+    }
 
-      return string.Join(" ", names.ToUpper().Split(' ').Select(str =>
-      {
-        string hw = Regex.Replace(str, "(?!^)[HW]", "");
-        string bfp = Regex.Replace(hw, "[BFPV]+", "1");
-        string cgj = Regex.Replace(bfp, "[CGJKQSXZ]+", "2");
-        string dt = Regex.Replace(cgj, "[DT]+", "3");
-        string l = Regex.Replace(dt, "L+", "4");
-        string mn = Regex.Replace(l, "[MN]+", "5");
-        string r = Regex.Replace(mn, "R+", "6");
-        string aei = Regex.Replace(r, "(?!^)[AEIOUY]", "");
-        string dig = Regex.Replace(aei, "^\\d", str.Substring(0, 1));
-        string result = Regex.Replace(dig, "$", "00000");
-        return result.Substring(0, 4);
-      }));
-
+    static string SoundexSingle(string word) {
+      string result = word.ToUpper();
+      char fC = result[0];
+      foreach(var item in _soundDict) {
+        result = Regex.Replace(result, item.Key, item.Value);
+      }      
+      result = fC + result.Substring(1);
+      return result.Substring(0, 4);
     }
 
   }
