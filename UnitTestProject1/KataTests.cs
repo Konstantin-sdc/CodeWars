@@ -21,11 +21,22 @@ namespace CodeWars.Tests {
         { "Rubin", "R150" },
         { "Ashcraft", "A261" },
         { "Ashcroft", "A261" },
-        //{ "Tymczak", "T522" }
+        { "Tymczak", "T522" },
+        {"Sarah Connor ammonium implementation Robert Rupert Rubin Ashcraft Ashcroft Tymczak",
+          "S600 C560 A555 I514 R163 R163 R150 A261 A261 T522" }
       };
       foreach(var item in sourceResult) {
         string returned = Kata.Soundex(item.Key);
-        Assert.AreEqual(item.Value, returned);
+        try {
+          Assert.AreEqual(item.Value, returned);
+        }
+        catch(UnitTestAssertException) {
+          throw new Exception($@"
+            Input: {item.Key}, 
+            Expected: {item.Value}, 
+            Returned: {returned}"
+          );
+        }
       }
       //Assert.Fail();
     }
