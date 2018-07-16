@@ -9,22 +9,6 @@ namespace CodeWars {
   /// <summary>Класс для тренировок</summary>
   public static partial class Kata {
 
-    /// <summary>
-    /// <para>Возвращает количество кубов, нужное для достижения объёма = m.</para>
-    /// <para>Кубы начинаются с размеров 1х1х1.</para>
-    /// <para>Сторона каждого последующего куба больше стороны предыдущего на 1.</para>
-    /// </summary>
-    /// <param name="m">Нужный объём</param>
-    /// <returns>Количество кубов или -1, если объём не может уместить количество.</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 6)]
-    public static long FindNb(long m) {
-      long s = 1, v = 0, count = 0;
-      for(; v < m; s++, count++) {
-        v += s * s * s;
-      }
-      return (m == v) ? count : -1;
-    }
-
     //private static List<int> _digits(int n) {
     //  #region Withh recursion
     //  if(n < 10) return new List<int> { n };
