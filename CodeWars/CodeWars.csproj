@@ -57,6 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Kata-Kyu-5.cs" />
+    <Compile Include="Kata-Kyu-6.cs" />
+    <Compile Include="Kata-Kyu-7.cs" />
     <Compile Include="UserAttributes.cs" />
     <Compile Include="Kata-RGB.cs" />
     <Compile Include="Kata.cs" />
