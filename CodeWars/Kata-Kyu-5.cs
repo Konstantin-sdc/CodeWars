@@ -135,6 +135,27 @@ namespace CodeWars {
       return result.Substring(0, 4);
     }
 
+    /// <summary>
+    /// Возвращает результат base64 кодирования исходной строки <paramref name="s"/> с использованием UTF-8
+    /// </summary>
+    /// <param name="s">Исходная строка</param>
+    /// <returns>Результат</returns>
+    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    public static string ToBase64(string s) {
+      // Happy coding!
+      return s;
+    }
+
+    /// <summary>
+    /// Возвращает результат base64 декодирования исходной последовательности <paramref name="s"/> с использованием UTF-8
+    /// </summary>
+    /// <param name="s">Исходная последовательность</param>
+    /// <returns>Результат</returns>
+    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    public static string FromBase64(string s) {
+      // Happy coding!
+      return s;
+    }
   }
 
 }
