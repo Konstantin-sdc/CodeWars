@@ -7,8 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CodeWars.Tests {
+
   [TestClass()]
   public class KataTests {
+
     [TestMethod()]
     public void SoundexTest() {
       Dictionary<string, string> sourceResult = new Dictionary<string, string>() {
@@ -38,7 +40,17 @@ namespace CodeWars.Tests {
           );
         }
       }
-      //Assert.Fail();
     }
+
+    [TestMethod()]
+    public void ToBase64Test() {
+      throw new NotImplementedException();
+    }
+
+    [TestMethod()]
+    public void FromBase64Test() {
+
+    }
+
   }
 }
