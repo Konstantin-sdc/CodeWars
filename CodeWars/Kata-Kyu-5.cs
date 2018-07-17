@@ -135,6 +135,8 @@ namespace CodeWars {
       return result.Substring(0, 4);
     }
 
+
+
     /// <summary>
     /// Возвращает результат base64 кодирования исходной строки <paramref name="s"/> с использованием UTF-8
     /// </summary>

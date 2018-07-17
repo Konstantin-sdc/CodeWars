@@ -52,5 +52,13 @@ namespace CodeWars.Tests {
 
     }
 
+    [TestMethod()]
+    public void GetBytesTest() {
+      string s = "ABCD";
+      byte[] sBytes = Encoding.Default.GetBytes(s);
+      char[] chars = s.ToCharArray();
+      byte[] cBytes = Encoding.Default.GetBytes(chars);
+    }
+
   }
 }
