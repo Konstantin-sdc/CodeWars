@@ -135,6 +135,7 @@ namespace CodeWars {
       return result.Substring(0, 4);
     }
 
+    /// <summary>Кодовая строка</summary>
     static string _codeString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
     /// <summary>
@@ -144,7 +145,11 @@ namespace CodeWars {
     /// <returns>Результат</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
     public static string ToBase64(string s) {
-      // Happy coding!
+      // Преобразовать строку в массив байт
+      // Преобразовать массив байт в массив бит
+      // Сгруппировать биты в группы по 6
+      // Каждую группу бит перевести в число десятичного формата
+      // Заменить такое число на знак, расположенный по тому-же интексу в кодовой строке
       return s;
     }
 
@@ -155,7 +160,6 @@ namespace CodeWars {
     /// <returns>Результат</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
     public static string FromBase64(string s) {
-      // Happy coding!
       return s;
     }
 
