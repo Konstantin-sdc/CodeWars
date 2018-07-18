@@ -135,7 +135,7 @@ namespace CodeWars {
       return result.Substring(0, 4);
     }
 
-
+    static string _codeString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
     /// <summary>
     /// Возвращает результат base64 кодирования исходной строки <paramref name="s"/> с использованием UTF-8
@@ -158,6 +158,7 @@ namespace CodeWars {
       // Happy coding!
       return s;
     }
+
   }
 
 }
