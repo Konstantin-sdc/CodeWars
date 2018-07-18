@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
@@ -130,7 +131,7 @@ namespace CodeWars {
       char fC = result[0];
       foreach(var item in _soundDict) {
         result = Regex.Replace(result, item.Key, item.Value);
-      }      
+      }
       result = fC + result.Substring(1);
       return result.Substring(0, 4);
     }
@@ -146,11 +147,19 @@ namespace CodeWars {
     [KataLevel(LevelTypeEnum.Kyu, 5)]
     public static string ToBase64(string s) {
       // Преобразовать строку в массив байт
+      var byteArr = System.Text.Encoding.Default.GetBytes(s);
       // Преобразовать массив байт в массив бит
+      var bitList = byteArr.Select(b => System.Convert.ToString(b, 2));
+      string bitString = string.Join("", bitList);
       // Сгруппировать биты в группы по 6
+      int adsCount = bitString.Length % 6;
+      bitString += new string('=', adsCount);
+      string[] bitGroups = bitString.Split(null, bitString.Length / 6);
       // Каждую группу бит перевести в число десятичного формата
+      var integers = bitGroups.Select(b => Convert.ToInt32(b, 2));
       // Заменить такое число на знак, расположенный по тому-же интексу в кодовой строке
-      return s;
+      var chars = integers.Select(b => _codeString[b]);
+      return string.Join("", chars);
     }
 
     /// <summary>
