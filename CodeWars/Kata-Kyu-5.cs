@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Text;
 using System.Text.RegularExpressions;
 
 
@@ -146,20 +147,25 @@ namespace CodeWars {
     /// <returns>Результат</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
     public static string ToBase64(string s) {
-      // Преобразовать строку в массив байт
-      var byteArr = System.Text.Encoding.Default.GetBytes(s);
+      // Преобразовать строку в массив байтов
       // Преобразовать массив байт в массив бит
-      var bitList = byteArr.Select(b => System.Convert.ToString(b, 2));
+      var bitList = s.Select(b => Convert.ToString(b, 2).PadLeft(8, '0'));
       string bitString = string.Join("", bitList);
       // Сгруппировать биты в группы по 6
-      int adsCount = bitString.Length % 6;
-      bitString += new string('=', adsCount);
-      string[] bitGroups = bitString.Split(null, bitString.Length / 6);
+      var bitGroups = new List<string>();
+      for(int i = 0; i < bitString.Length; i += 6) {
+        string subGroup = bitString.Substring(i);
+        string bitGroup = string.Join("", subGroup.Where((c, index) => index <= 5));
+        bitGroups.Add(bitGroup);
+      }
       // Каждую группу бит перевести в число десятичного формата
-      var integers = bitGroups.Select(b => Convert.ToInt32(b, 2));
+      var indexes = bitGroups.Select(b => Convert.ToInt32(b, 2));
       // Заменить такое число на знак, расположенный по тому-же интексу в кодовой строке
-      var chars = integers.Select(b => _codeString[b]);
-      return string.Join("", chars);
+      var chars = indexes.Select(b => _codeString[b]);
+      // Добавить недостающие знаки "=" в конец строки
+      int rmdr = bitString.Length % 3;
+      int adsCount = (rmdr == 0) ? 0 : (3 - rmdr);
+      return string.Join("", chars) + new string('=', adsCount);
     }
 
     /// <summary>
@@ -169,7 +175,24 @@ namespace CodeWars {
     /// <returns>Результат</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
     public static string FromBase64(string s) {
-      return s;
+      // Убрать знаки "=" из строки
+      s = s.Trim(new char[] { '=' });
+      // Заменить знаки на их индексы в кодовой строке
+      var indexes = s.Select(c => _codeString.IndexOf(c));
+      // Каждый индекс заменить на группу бит (м.б. с дополнением до 6)
+      var bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(6, '0'));
+      // Перегруппировать биты по 8
+      string bitString = string.Join("", bitList);
+      var bitGroups = new List<string>();
+      for(int i = 0; i < bitString.Length; i += 8) {
+        string subGroup = bitString.Substring(i);
+        string bitGroup = string.Join("", subGroup.Where((c, index) => index <= 7));
+        bitGroups.Add(bitGroup);
+      }
+      // Перевести биты в символы
+      var bytes = bitGroups.Select(b => Convert.ToByte(b, 2)).ToArray();
+      var expBytes = Convert.FromBase64String(s);
+      return Encoding.UTF8.GetString(bytes);
     }
 
   }

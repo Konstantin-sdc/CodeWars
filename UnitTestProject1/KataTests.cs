@@ -44,12 +44,21 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void ToBase64Test() {
-      throw new NotImplementedException();
+      string testSring = "M";
+      string returned = Kata.ToBase64(testSring); // dGhpcyBpcyBhIHN0cmluZyEh
+      byte[] testBytes = Encoding.UTF8.GetBytes(testSring);
+      string expected = Convert.ToBase64String(testBytes);
+      bool q = returned.Equals(expected);
+      
+      //throw new NotImplementedException();
     }
 
     [TestMethod()]
     public void FromBase64Test() {
-
+      string input = "dGhpcyBpcyBhIHN0cmluZyEh";
+      string returned = Kata.FromBase64(input);
+      byte[] bytes = Convert.FromBase64String(input);
+      string expected = Encoding.UTF8.GetString(bytes);
     }
 
   }
