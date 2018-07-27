@@ -55,12 +55,42 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void FromBase64Test() {
-      string input = "dGhpcyBpcyBhIHN0cmluZyEh";
-      string returned = Kata.FromBase64(input);
-      byte[] bytes = Convert.FromBase64String(input);
-      string expected = Encoding.UTF8.GetString(bytes);
+      // Знаков должно быть минимум 4
+      // Знаков равно в конце должно быть не больше двух
+
+      //string input = "dGhpcyBpcyBhIHN0cmluZyEh";
+      //string returned = Kata.FromBase64(input);
+
+      // Недопустимая длина строки или массива знаков Base-64
+      // byte[] bytes9 = Convert.FromBase64String("123");
+      // byte[] bytes5 = Convert.FromBase64String("1234=");
+      // byte[] bytes12 = Convert.FromBase64String("12345");
+      // byte[] bytes13 = Convert.FromBase64String("12345=");
+      // byte[] bytes14 = Convert.FromBase64String("12345==");
+      // byte[] bytes0 = Convert.FromBase64String("123456");
+      // byte[] bytes1 = Convert.FromBase64String("123456=");
+      byte[] bytes2 = Convert.FromBase64String("123456==");
+      // Входные данные не являются действительной строкой Base-64, поскольку содержат символ в кодировке, 
+      // отличной от Base 64, больше двух символов заполнения или недопустимый символ среди символов заполнения. 
+      // byte[] bytes7 = Convert.FromBase64String("1234===");
+      // byte[] bytes15 = Convert.FromBase64String("12345===");
+
+      byte[] bytes4 = Convert.FromBase64String("1234");
+      byte[] bytes10 = Convert.FromBase64String("123=");
+      byte[] bytes11 = Convert.FromBase64String("123==");
+      // byte[] bytes15 = Convert.FromBase64String("12");
+      // byte[] bytes16 = Convert.FromBase64String("12=");
+      byte[] bytes17 = Convert.FromBase64String("12==");
     }
 
+    [TestMethod()]
+    public void CharByteTest() {
+      string s = "CyberMadnes";
+      byte[] b = Encoding.UTF8.GetBytes(s);
+      var c = b.Select(e => (char)e);
+      string s2 = string.Join("", c);
+      bool r = s2.Equals(s); // true
+    }
   }
 
 }

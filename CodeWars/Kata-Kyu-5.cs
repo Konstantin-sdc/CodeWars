@@ -149,21 +149,14 @@ namespace CodeWars {
     public static string ToBase64(string s) {
       // Преобразовать строку в массив байтов
       // Преобразовать массив байт в массив бит
-      var bitList = s.Select(b => Convert.ToString(b, 2).PadLeft(8, '0'));
-      string bitString = string.Join("", bitList);
       // Сгруппировать биты в группы по 6
-      var bitGroups = new List<string>();
-      for(int i = 0; i < bitString.Length; i += 6) {
-        string subGroup = bitString.Substring(i);
-        string bitGroup = string.Join("", subGroup.Where((c, index) => index <= 5));
-        bitGroups.Add(bitGroup);
-      }
+      List<string> bitGroups = BitGroups(s, 8, 6);
       // Каждую группу бит перевести в число десятичного формата
-      var indexes = bitGroups.Select(b => Convert.ToInt32(b, 2));
       // Заменить такое число на знак, расположенный по тому-же интексу в кодовой строке
-      var chars = indexes.Select(b => _codeString[b]);
       // Добавить недостающие знаки "=" в конец строки
-      int rmdr = bitString.Length % 3;
+      var indexes = bitGroups.Select(b => Convert.ToInt32(b, 2));
+      var chars = indexes.Select(b => _codeString[b]);
+      int rmdr = string.Join("", bitGroups).Length % 3;
       int adsCount = (rmdr == 0) ? 0 : (3 - rmdr);
       return string.Join("", chars) + new string('=', adsCount);
     }
@@ -175,24 +168,29 @@ namespace CodeWars {
     /// <returns>Результат</returns>
     [KataLevel(LevelTypeEnum.Kyu, 5)]
     public static string FromBase64(string s) {
-      // Убрать знаки "=" из строки
-      s = s.Trim(new char[] { '=' });
+      // Убрать знаки "=" из строки и прочие, кого нет в кодовой строке
+      s = string.Join("", s.Where(c => _codeString.Contains(c)));
       // Заменить знаки на их индексы в кодовой строке
-      var indexes = s.Select(c => _codeString.IndexOf(c));
       // Каждый индекс заменить на группу бит (м.б. с дополнением до 6)
-      var bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(6, '0'));
       // Перегруппировать биты по 8
-      string bitString = string.Join("", bitList);
-      var bitGroups = new List<string>();
-      for(int i = 0; i < bitString.Length; i += 8) {
-        string subGroup = bitString.Substring(i);
-        string bitGroup = string.Join("", subGroup.Where((c, index) => index <= 7));
-        bitGroups.Add(bitGroup);
-      }
+      List<string> bitGroups = BitGroups(s, 6, 8);
       // Перевести биты в символы
       var bytes = bitGroups.Select(b => Convert.ToByte(b, 2)).ToArray();
-      var expBytes = Convert.FromBase64String(s);
       return Encoding.UTF8.GetString(bytes);
+    }
+
+    static List<string> BitGroups(string s, int oldSize, int newSize) {
+      var indexes = s.Select(c => _codeString.IndexOf(c));
+      var bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(oldSize, '0'));
+      string bitString = string.Join("", bitList);
+      var bitGroups = new List<string>();
+      for(int i = 0; i < bitString.Length; i += newSize) {
+        string subS = bitString.Substring(i);
+        int limit = newSize - 1;
+        string bitG = string.Join("", subS.Where((c, index) => index <= limit));
+        bitGroups.Add(bitG);
+      }
+      return bitGroups;
     }
 
   }
