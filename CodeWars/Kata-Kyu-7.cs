@@ -10,7 +10,7 @@ namespace CodeWars {
     /// <summary>7 Возвращает самое большое и самое малое числа из строки чисел</summary>
     /// <param name="numbers">Строка чисел, разделённых пробелами</param>
     /// <returns>Строка из наибольшего и наименьшего чисел</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 7)]
+    [KataType(LevelTypeEnum.Kyu, 7)]
     public static string HighAndLow(string numbers) {
       var intArr = numbers.Split(' ').Select(int.Parse);
       return intArr.Max() + " " + intArr.Min();
@@ -19,7 +19,7 @@ namespace CodeWars {
     /// <summary>Маскирует символом # все символы входящей строки, кроме последних четырёх</summary>
     /// <param name="cc">Строка,которую следует замаскировать</param>
     /// <returns>Замаскированная строка</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 7)]
+    [KataType(LevelTypeEnum.Kyu, 7)]
     public static string Maskify(string cc) {
       int startIndex = (cc.Length > 4) ? cc.Length - 4 : 0;
       return new string('#', startIndex) + cc.Substring(startIndex);
@@ -28,7 +28,7 @@ namespace CodeWars {
     /// <summary>Указывает является ли проверяемая строка изограммой</summary>
     /// <param name="s">Проверяемая строка</param>
     /// <returns><see cref="true"/> если является</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 7)]
+    [KataType(LevelTypeEnum.Kyu, 7)]
     public static bool IsIsogram(string s) {
       return s.Length == s.ToLower().Distinct().Count();
     }
@@ -36,7 +36,7 @@ namespace CodeWars {
     /// <summary>Возвращает число, состоящие из квадратов каждой цифры исходного числа</summary>
     /// <param name="n">Исходное число</param>
     /// <returns>Число из квадратов</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 7)]
+    [KataType(LevelTypeEnum.Kyu, 7)]
     public static int SquareDigits(int n) {
       var digits = n.ToString().Select(s => Char.GetNumericValue(s));
       digits = digits.Select(s => s * s);
@@ -49,7 +49,7 @@ namespace CodeWars {
     /// <param name="aug">Периодическое абсолютное изменение</param>
     /// <param name="p">Целевое количество</param>
     /// <returns>Количество периодов</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 7)]
+    [KataType(LevelTypeEnum.Kyu, 7)]
     public static int NbYear(int p0, double percent, int aug, int p) {
       int pCount = 0;
       for(int pCur = p0; pCur < p; pCount++) {
@@ -61,13 +61,13 @@ namespace CodeWars {
     /// <summary>Возвращает строки, длина которых = 4</summary>
     /// <param name="n">Массив строк для проверки</param>
     /// <returns>Коллекция строк</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 7)]
+    [KataType(LevelTypeEnum.Kyu, 7)]
     public static IEnumerable<string> FriendOrFoe(string[] n) => n.Where(s => s.Length == 4);
 
     /// <summary>Возвращает сумму нечётных чисел числового треугольника</summary>
     /// <param name="n">Номер блока, считая от 1</param>
     /// <returns>Сумма нечётных чисел</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 7)]
+    [KataType(LevelTypeEnum.Kyu, 7)]
     public static long RowSumOddNumbers(long n) {
       long firstBlockCount = 1;
       long firstVaue = 1;

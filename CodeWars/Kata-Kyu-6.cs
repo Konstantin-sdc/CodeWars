@@ -10,7 +10,7 @@ namespace CodeWars {
     /// пока они не станут одной цифрой.</summary>
     /// <param name="n">Проверяемое число</param>
     /// <returns>Необходимое число умножений</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 6)]
+    [KataType(LevelTypeEnum.Kyu, 6)]
     public static int Persistence(long n) {
       if(n < 10) return 0;
       var digits = n.ToString().Select(e => Char.GetNumericValue(e));
@@ -28,7 +28,7 @@ namespace CodeWars {
     /// <param name="strarr">Входящий массив</param>
     /// <param name="k">Нужное число элементов</param>
     /// <returns>Строка</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 6)]
+    [KataType(LevelTypeEnum.Kyu, 6)]
     public static String LongestConsec(string[] strarr, int k) {
       if(k > strarr.Length) return String.Empty;
       // Скользящая группировка
@@ -47,7 +47,7 @@ namespace CodeWars {
     /// <param name="a">Начало входящего диапазона</param>
     /// <param name="b">Конец входящего диапазона</param>
     /// <returns>Массив чисел, удовлетворяющих условию</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 6)]
+    [KataType(LevelTypeEnum.Kyu, 6)]
     public static long[] SumDigPow(long a, long b) {
       // Места считаются от 1
       // Если (цифра числа в степени позиция цифры) >= числа, то пропустить проверку этого числа.
@@ -73,7 +73,7 @@ namespace CodeWars {
     /// <summary>Возвращает строку из слов исходной строки, отсортированных согласно числам в этих словах</summary>
     /// <param name="words">Исходная строка</param>
     /// <returns>Итоговая строка</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 6)]
+    [KataType(LevelTypeEnum.Kyu, 6)]
     public static string Order(string words) {
       string[] wordArray = words.Split(' ');
       var digits = words.Where(c => Char.IsDigit(c)).Select(c => Char.GetNumericValue(c));
@@ -85,7 +85,7 @@ namespace CodeWars {
     /// <summary>Возвращает сумму всех чисел в натуральном ряду, которые делятся на 3 или на 5</summary>
     /// <param name="value">Верхний предел ряда</param>
     /// <returns>Сумма</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 6)]
+    [KataType(LevelTypeEnum.Kyu, 6)]
     public static int Solution(int value) {
       try { return Enumerable.Range(0, value).Where(d => (d % 3 == 0 || d % 5 == 0)).Sum(); }
       catch { return int.MaxValue; }
@@ -98,7 +98,7 @@ namespace CodeWars {
     /// </summary>
     /// <param name="m">Нужный объём</param>
     /// <returns>Количество кубов или -1, если объём не может уместить количество.</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 6)]
+    [KataType(LevelTypeEnum.Kyu, 6)]
     public static long FindNb(long m) {
       long s = 1, v = 0, count = 0;
       for(; v < m; s++, count++) {

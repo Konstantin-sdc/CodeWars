@@ -13,7 +13,7 @@ namespace CodeWars {
     /// <summary>Возвращает два числа из натурального ряда, произведение которых равно сумме всех чисел этого ряда, исключая эти два числа</summary>
     /// <param name="n">Верхний предел ряда. Всегда > 0</param>
     /// <returns>Массив чисел</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    [KataType(LevelTypeEnum.Kyu, 5)]
     public static List<long[]> RemovNb(long n) {
       List<long[]> result = new List<long[]>();
       // Вычислить сумму натурального ряда от 1 до n
@@ -39,7 +39,7 @@ namespace CodeWars {
     /// <summary>Возвращает сумму периметров квадратов в ряду Фибоначи</summary>
     /// <param name="n"></param>
     /// <returns></returns>
-    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    [KataType(LevelTypeEnum.Kyu, 5)]
     public static BigInteger Perimeter(BigInteger n) {
       BigInteger first = 0, second = 1, fibSum = first + second;
       for(var i = 2; i < n; i++) {
@@ -59,7 +59,7 @@ namespace CodeWars {
     /// <param name="part1">Первая строка</param>
     /// <param name="part2">Вторая строка</param>
     /// <returns>true, если объединение возможно</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    [KataType(LevelTypeEnum.Kyu, 5)]
     public static bool IsMerge(string s, string part1, string part2) {
       return MayExtract(s, part1, part2);
       //NOTE Символы в составляющих строках могут повторятся, совпадать с исмволами другой строки, быть разного регистра.
@@ -86,7 +86,7 @@ namespace CodeWars {
     /// <param name="width"></param>
     /// <param name="height"></param>
     /// <returns></returns>
-    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    [KataType(LevelTypeEnum.Kyu, 5)]
     public static string Interpret(string code, int iterations, int width, int height) {
       // Правила
       // n - Переместить указатель данных на север(вверх)
@@ -118,7 +118,7 @@ namespace CodeWars {
     /// <summary>Преобразует слова английского языка по алгоритму SOUNDEX</summary>
     /// <param name="names">Строка из слов, разделённых пробелом</param>
     /// <returns>SOUNDEX-коды группы слов</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    [KataType(LevelTypeEnum.Kyu, 5)]
     public static string Soundex(string names) {
       string[] result = names.Split(' ');
       for(int i = 0; i < result.Length; i++) {
@@ -145,7 +145,7 @@ namespace CodeWars {
     /// </summary>
     /// <param name="s">Исходная строка</param>
     /// <returns>Результат</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    [KataType(LevelTypeEnum.Kyu, 5)]
     public static string ToBase64(string s) {
       // Преобразовать строку в массив байтов
       // Преобразовать массив байт в массив бит
@@ -166,7 +166,7 @@ namespace CodeWars {
     /// </summary>
     /// <param name="s">Исходная последовательность</param>
     /// <returns>Результат</returns>
-    [KataLevel(LevelTypeEnum.Kyu, 5)]
+    [KataType(LevelTypeEnum.Kyu, 5)]
     public static string FromBase64(string s) {
       // Убрать знаки "=" из строки и прочие, кого нет в кодовой строке
       s = string.Join("", s.Where(c => _codeString.Contains(c)));
@@ -191,6 +191,11 @@ namespace CodeWars {
         bitGroups.Add(bitG);
       }
       return bitGroups;
+    }
+
+    [KataType(LevelTypeEnum.Kyu, 5)]    
+    public static string Table(string[] results) {
+      return "";
     }
 
   }
