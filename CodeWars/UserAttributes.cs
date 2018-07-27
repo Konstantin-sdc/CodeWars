@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace CodeWars {
 
-  // [System.AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
+  [System.AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
   internal sealed class KataTypeAttribute : Attribute {
     // See the attribute guidelines at 
     //  http://go.microsoft.com/fwlink/?LinkId=85236
