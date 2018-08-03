@@ -11,9 +11,30 @@ namespace CodeWars.Tests {
   [TestClass()]
   public class KataTests {
 
+    /// <summary>Делегат для вызова методов</summary>
+    /// <typeparam name="ReturnT">Возвращаемый тип</typeparam>
+    /// <typeparam name="ArgT">Тип аргумента</typeparam>
+    /// <param name="s">Имя аргумента</param>
+    /// <returns>Экземпляр делегата</returns>
+    delegate ReturnT MethodForTest<ReturnT, ArgT>(ArgT s);
+
+    void TestWithDictonary<rtnT, argT>(IDictionary<argT, rtnT> input, MethodForTest<rtnT, argT> dlt) {
+      foreach(var item in input) {
+        rtnT returned = dlt.Invoke(item.Key);
+        try { Assert.AreEqual(item.Value, returned); }
+        catch(UnitTestAssertException) {
+          throw new Exception($@"
+            Input: {item.Key}, 
+            Expected: {item.Value.ToString()}, 
+            Returned: {returned}"
+          );
+        }
+      }
+    }
+
     [TestMethod()]
     public void SoundexTest() {
-      Dictionary<string, string> sourceResult = new Dictionary<string, string>() {
+      Dictionary<string, string> inputResult = new Dictionary<string, string>() {
         {"Sarah", "S600" },
         {"Connor", "C560" },
         { "ammonium", "A555" },
@@ -27,19 +48,8 @@ namespace CodeWars.Tests {
         {"Sarah Connor ammonium implementation Robert Rupert Rubin Ashcraft Ashcroft Tymczak",
           "S600 C560 A555 I514 R163 R163 R150 A261 A261 T522" }
       };
-      foreach(var item in sourceResult) {
-        string returned = Kata.Soundex(item.Key);
-        try {
-          Assert.AreEqual(item.Value, returned);
-        }
-        catch(UnitTestAssertException) {
-          throw new Exception($@"
-            Input: {item.Key}, 
-            Expected: {item.Value}, 
-            Returned: {returned}"
-          );
-        }
-      }
+      MethodForTest<string, string> soundex = Kata.Soundex;
+      TestWithDictonary(inputResult, soundex);
     }
 
     [TestMethod()]
@@ -49,7 +59,6 @@ namespace CodeWars.Tests {
       byte[] testBytes = Encoding.UTF8.GetBytes(testSring);
       string expected = Convert.ToBase64String(testBytes);
       bool q = returned.Equals(expected);
-      
       //throw new NotImplementedException();
     }
 
@@ -90,6 +99,11 @@ namespace CodeWars.Tests {
       var c = b.Select(e => (char)e);
       string s2 = string.Join("", c);
       bool r = s2.Equals(s); // true
+    }
+
+    [TestMethod()]
+    public void BundesLigaTableTest() {
+
     }
   }
 

@@ -193,40 +193,127 @@ namespace CodeWars {
       return bitGroups;
     }
 
-    [KataType(LevelTypeEnum.Kyu, 5, "57c178e16662d0d932000120")]    
-    public static string Table(string[] results) {
+    [KataType(LevelTypeEnum.Kyu, 5, "57c178e16662d0d932000120")]
+    public static string BundesLigaTable(string[] results) {
       // Дан массив строк
-      // Каждый элемент: x: y [Команда 1] - [Команда 2]
+      // Каждый элемент: x:y [Команда 1] - [Команда 2]
       // Например: {6:0 Бавария Мюнхен - Вердер Бремен, -:- Айнтрахт Франкфурт - Шальке 04}
       // Команда, забившая больше голов — выигрывает
       // Вернуть строку, состоящую из данных массива.
       // Строка должна быть отформатирована в виде таблицы
       // Каждая строка таблицы: 
-        // Номер строки таблицы, без ведущих нулей. Два места.
-        // Точка.
-        // Пробел
-        // Название команды. 30 мест. С ведомыми пробелами до 30 мест.
-        // Количество сыгранных матчей. Одно место.
-        // Два пробела.
-        // Количество выигранных матчей. 1 место.
-        // Два пробела
-        // Количество ничьих. 1 место
-        // Два пробела
-        // Количество проигрышей. 1 место.
-        // Два пробела
-        // Отношение забитых и полученных мячей, формат — 6:3
-        // Два пробела 
-        // Количество очков. 3 за выигрыш. 1 за ничью. 
+      // Номер строки таблицы, без ведущих нулей. Два места.
+      // Точка.
+      // Пробел
+      // Название команды. 30 мест. С ведомыми пробелами до 30 мест.
+      // Количество сыгранных матчей. Одно место.
+      // Два пробела.
+      // Количество выигранных матчей. 1 место.
+      // Два пробела
+      // Количество ничьих. 1 место
+      // Два пробела
+      // Количество проигрышей. 1 место.
+      // Два пробела
+      // Отношение забитых и полученных мячей, формат — 6:3
+      // Два пробела 
+      // Количество очков. 3 за выигрыш. 1 за ничью. 
       // Сортировка таблицы
-        // Очки по убыванию
-        // Большая разность в голах
-        // Большее число забитых голов
-        // Имя команды без учёта регистра
+      // Очки по убыванию
+      // Большая разность в голах
+      // Большее число забитых голов
+      // Имя команды без учёта регистра
 
+      List<Kommando> kList = new List<Kommando>();
+      foreach(var item in results) {
+        string score = item.Split(new char[] { ' ' }).First();
+        int[] goals = score.Split(':').Select(s => int.Parse(s)).ToArray();
+        string[] kommands = item.Remove(0, score.Length + 1)
+          .Split(new string[] { " - " }, StringSplitOptions.RemoveEmptyEntries);
+        Kommando k0 = new Kommando(kommands[0], goals[0], goals[1]);
+        Kommando k1 = new Kommando(kommands[1], goals[1], goals[0]);
+        k0.AddToList(kList);
+        k1.AddToList(kList);
+      }
+      // Сортировка по достижениям
+      kList = kList
+        .OrderByDescending(k => k.PointsCount)
+        .ThenByDescending(k => k.GoalsOut - k.GoalsIn)
+        .ThenByDescending(k => k.GoalsOut)
+        .ThenByDescending(k => k.Name.ToLower())
+        .ToList();
+      // Добавление строк в лист результатов
+      List<string> komResults = new List<string>();
+      foreach(var k in kList) {
+        string komStr = string.Join("  ",
+          k.Name.PadRight(30) + k.MatchCount.ToString(),
+          k.WinCount.ToString(),
+          k.TieCount.ToString(),
+          k.LosCount.ToString(),
+          k.GoalsOut.ToString() + ":" + k.GoalsIn.ToString(),
+          k.PointsCount
+          );
+        komResults.Add(komStr);
+      }
+      for(int i = 0; i < komResults.Count; i++) {
+        string number = (i + 1).ToString().PadLeft(1);
+        komResults[i] = string.Join(". ", number, komResults[i]);
+      }
+      return string.Join(Environment.NewLine, komResults).Replace(".  ", ". ");
+    }
 
-      return "";
+    class Kommando {
+      /// <summary>Название команды</summary>
+      public string Name;
+      /// <summary>Матчей сыграно</summary>
+      public int MatchCount;
+      /// <summary>Голов забито</summary>
+      public int GoalsOut;
+      /// <summary>Голов получено</summary>
+      public int GoalsIn;
+      /// <summary>Матчей выиграно</summary>
+      public int WinCount;
+      /// <summary>Матчей вничью</summary>
+      public int TieCount;
+      /// <summary>Матчей проиграно</summary>
+      public int LosCount;
+      /// <summary>Очков заработано</summary>
+      public int PointsCount => WinCount * 3 + TieCount;
+
+      /// <summary>Возвращает новыйэкземпляр класса <see cref="Kommando"/></summary>
+      /// <param name="comName">Название команды</param>
+      /// <param name="gOut">Голов забито</param>
+      /// <param name="gIn">Голов получено</param>
+      public Kommando(string comName, int gOut, int gIn) {
+        Name = comName;
+        MatchCount = 1;
+        GoalsOut = gOut;
+        GoalsIn = gIn;
+        if(gOut > gIn) WinCount = 1;
+        if(gOut < gIn) LosCount = 1;
+        if(gOut == gIn) TieCount = 1;
+      }
+
+      /// <summary>
+      /// Если команда не найдена в спискае, — добавляет её в список. 
+      /// Если найдена — складывает результаты этой команды.
+      /// </summary>
+      /// <param name="lst">Список команд</param>
+      public void AddToList(List<Kommando> lst) {
+        var fc0 = lst.Find(e => e.Name == Name);
+        if(fc0 == null) lst.Add(this);
+        else {
+          fc0.GoalsIn += GoalsIn;
+          fc0.GoalsOut += GoalsOut;
+          fc0.LosCount += LosCount;
+          fc0.MatchCount += MatchCount;
+          fc0.TieCount += TieCount;
+          fc0.WinCount += WinCount;
+        }
+      }
+
     }
 
   }
 
 }
+

@@ -9,7 +9,7 @@ namespace CodeWars {
     //  http://go.microsoft.com/fwlink/?LinkId=85236
 
     // This is a positional argument
-    public KataTypeAttribute(LevelTypeEnum levelType, int levelValue, string kataId) {
+    public KataTypeAttribute(LevelTypeEnum levelType, int levelValue, string kataId = "") {
       LevelType = levelType;
       LevelValue = levelValue;
       string link = @"https://www.codewars.com/kata/"+ kataId + @"/train/csharp";
