@@ -12,7 +12,7 @@ namespace CodeWars {
     /// <returns>Строка из наибольшего и наименьшего чисел</returns>
     [KataType(LevelTypeEnum.Kyu, 7)]
     public static string HighAndLow(string numbers) {
-      var intArr = numbers.Split(' ').Select(int.Parse);
+      IEnumerable<int> intArr = numbers.Split(' ').Select(int.Parse);
       return intArr.Max() + " " + intArr.Min();
     }
 
@@ -38,7 +38,7 @@ namespace CodeWars {
     /// <returns>Число из квадратов</returns>
     [KataType(LevelTypeEnum.Kyu, 7)]
     public static int SquareDigits(int n) {
-      var digits = n.ToString().Select(s => Char.GetNumericValue(s));
+      IEnumerable<double> digits = n.ToString().Select(s => Char.GetNumericValue(s));
       digits = digits.Select(s => s * s);
       return int.Parse(String.Join(null, digits));
     }

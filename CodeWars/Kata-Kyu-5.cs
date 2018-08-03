@@ -42,7 +42,7 @@ namespace CodeWars {
     [KataType(LevelTypeEnum.Kyu, 5)]
     public static BigInteger Perimeter(BigInteger n) {
       BigInteger first = 0, second = 1, fibSum = first + second;
-      for(var i = 2; i < n; i++) {
+      for(int i = 2; i < n; i++) {
         BigInteger current = first + second;
         fibSum += current;
         first = second;
@@ -130,7 +130,7 @@ namespace CodeWars {
     static string SoundexSingle(string word) {
       string result = word.ToUpper();
       char fC = result[0];
-      foreach(var item in _soundDict) {
+      foreach(KeyValuePair<string, string> item in _soundDict) {
         result = Regex.Replace(result, item.Key, item.Value);
       }
       result = fC + result.Substring(1);
@@ -154,8 +154,8 @@ namespace CodeWars {
       // Каждую группу бит перевести в число десятичного формата
       // Заменить такое число на знак, расположенный по тому-же интексу в кодовой строке
       // Добавить недостающие знаки "=" в конец строки
-      var indexes = bitGroups.Select(b => Convert.ToInt32(b, 2));
-      var chars = indexes.Select(b => _codeString[b]);
+      IEnumerable<int> indexes = bitGroups.Select(b => Convert.ToInt32(b, 2));
+      IEnumerable<char> chars = indexes.Select(b => _codeString[b]);
       int rmdr = string.Join("", bitGroups).Length % 3;
       int adsCount = (rmdr == 0) ? 0 : (3 - rmdr);
       return string.Join("", chars) + new string('=', adsCount);
@@ -175,15 +175,15 @@ namespace CodeWars {
       // Перегруппировать биты по 8
       List<string> bitGroups = BitGroups(s, 6, 8);
       // Перевести биты в символы
-      var bytes = bitGroups.Select(b => Convert.ToByte(b, 2)).ToArray();
+      byte[] bytes = bitGroups.Select(b => Convert.ToByte(b, 2)).ToArray();
       return Encoding.UTF8.GetString(bytes);
     }
 
     static List<string> BitGroups(string s, int oldSize, int newSize) {
-      var indexes = s.Select(c => _codeString.IndexOf(c));
-      var bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(oldSize, '0'));
+      IEnumerable<int> indexes = s.Select(c => _codeString.IndexOf(c));
+      IEnumerable<string> bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(oldSize, '0'));
       string bitString = string.Join("", bitList);
-      var bitGroups = new List<string>();
+      List<string> bitGroups = new List<string>();
       for(int i = 0; i < bitString.Length; i += newSize) {
         string subS = bitString.Substring(i);
         int limit = newSize - 1;
@@ -224,7 +224,7 @@ namespace CodeWars {
       // Имя команды без учёта регистра
 
       List<Kommando> kList = new List<Kommando>();
-      foreach(var item in results) {
+      foreach(string item in results) {
         string score = item.Split(new char[] { ' ' }).First();
         int[] goals = score.Split(':').Select(s => int.Parse(s)).ToArray();
         string[] kommands = item.Remove(0, score.Length + 1)
@@ -243,7 +243,7 @@ namespace CodeWars {
         .ToList();
       // Добавление строк в лист результатов
       List<string> komResults = new List<string>();
-      foreach(var k in kList) {
+      foreach(Kommando k in kList) {
         string komStr = string.Join("  ",
           k.Name.PadRight(30) + k.MatchCount.ToString(),
           k.WinCount.ToString(),
@@ -299,7 +299,7 @@ namespace CodeWars {
       /// </summary>
       /// <param name="lst">Список команд</param>
       public void AddToList(List<Kommando> lst) {
-        var fc0 = lst.Find(e => e.Name == Name);
+        Kommando fc0 = lst.Find(e => e.Name == Name);
         if(fc0 == null) lst.Add(this);
         else {
           fc0.GoalsIn += GoalsIn;

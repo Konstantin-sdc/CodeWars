@@ -13,7 +13,7 @@ namespace CodeWars {
     [KataType(LevelTypeEnum.Kyu, 6)]
     public static int Persistence(long n) {
       if(n < 10) return 0;
-      var digits = n.ToString().Select(e => Char.GetNumericValue(e));
+      IEnumerable<double> digits = n.ToString().Select(e => Char.GetNumericValue(e));
       long baseNumber = 1;
       foreach(long digit in digits) {
         baseNumber *= digit;
@@ -55,7 +55,7 @@ namespace CodeWars {
       List<long> result = new List<long>();
       for(long number = a; number <= b; number++) {
         // Коллекция цифр в числе
-        var digitsCollection = number.ToString().Select(s => (long)Char.GetNumericValue(s));
+        IEnumerable<long> digitsCollection = number.ToString().Select(s => (long)Char.GetNumericValue(s));
         // Пройтись по цифрам числа, возвести в степень и сложить
         long testNumber = 0;
         for(int position = 0; position < digitsCollection.Count(); position++) {
@@ -76,7 +76,7 @@ namespace CodeWars {
     [KataType(LevelTypeEnum.Kyu, 6)]
     public static string Order(string words) {
       string[] wordArray = words.Split(' ');
-      var digits = words.Where(c => Char.IsDigit(c)).Select(c => Char.GetNumericValue(c));
+      IEnumerable<double> digits = words.Where(c => Char.IsDigit(c)).Select(c => Char.GetNumericValue(c));
       Array.Sort(digits.ToArray(), wordArray);
       return String.Join(" ", wordArray);
       throw new NotImplementedException();
