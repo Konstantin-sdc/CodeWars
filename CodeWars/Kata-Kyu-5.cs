@@ -198,6 +198,7 @@ namespace CodeWars {
       // Дан массив строк
       // Каждый элемент: x:y [Команда 1] - [Команда 2]
       // Например: {6:0 Бавария Мюнхен - Вердер Бремен, -:- Айнтрахт Франкфурт - Шальке 04}
+      // -:- означает, что матча небыло, нокоманда регистрируется всё равно
       // Команда, забившая больше голов — выигрывает
       // Вернуть строку, состоящую из данных массива.
       // Строка должна быть отформатирована в виде таблицы
@@ -226,7 +227,7 @@ namespace CodeWars {
       List<Kommando> kList = new List<Kommando>();
       foreach(string item in results) {
         string score = item.Split(new char[] { ' ' }).First();
-        int[] goals = score.Split(':').Select(s => int.Parse(s)).ToArray();
+        string[] goals = score.Split(':');
         string[] kommands = item.Remove(0, score.Length + 1)
           .Split(new string[] { " - " }, StringSplitOptions.RemoveEmptyEntries);
         Kommando k0 = new Kommando(kommands[0], goals[0], goals[1]);
@@ -283,14 +284,16 @@ namespace CodeWars {
       /// <param name="comName">Название команды</param>
       /// <param name="gOut">Голов забито</param>
       /// <param name="gIn">Голов получено</param>
-      public Kommando(string comName, int gOut, int gIn) {
+      public Kommando(string comName, string gOut, string gIn) {
         Name = comName;
+        bool isGoals = 
+          int.TryParse(gOut, out GoalsOut) && 
+          int.TryParse(gIn, out GoalsIn);
+        if(!isGoals) return;
         MatchCount = 1;
-        GoalsOut = gOut;
-        GoalsIn = gIn;
-        if(gOut > gIn) WinCount = 1;
-        if(gOut < gIn) LosCount = 1;
-        if(gOut == gIn) TieCount = 1;
+        if(GoalsOut > GoalsIn) WinCount = 1;
+        if(GoalsOut < GoalsIn) LosCount = 1;
+        else TieCount = 1;
       }
 
       /// <summary>
