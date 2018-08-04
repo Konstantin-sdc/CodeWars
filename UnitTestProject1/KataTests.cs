@@ -11,12 +11,12 @@ namespace CodeWars.Tests {
   [TestClass()]
   public class KataTests {
 
-    /// <summary>Делегат для вызова методов с аргументами одного типа</summary>
+    /// <summary>Делегат для вызова методов с одним аргументом</summary>
     /// <typeparam name="ReturnT">Возвращаемый тип</typeparam>
     /// <typeparam name="ArgT">Тип аргумента</typeparam>
     /// <param name="s">Имя аргумента</param>
     /// <returns>Экземпляр делегата</returns>
-    delegate ReturnT MethodForTest<ReturnT, ArgT>(params ArgT[] s);
+    delegate ReturnT MethodForTest<ReturnT, ArgT>(ArgT s);
 
     [TestMethod()]
     void TestWithDictonary<rtnT, argT>(IDictionary<argT, rtnT> input, MethodForTest<rtnT, argT> dlt) {
