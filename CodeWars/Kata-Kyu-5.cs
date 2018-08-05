@@ -222,6 +222,7 @@ namespace CodeWars {
       // Очки по убыванию
       // Большая разность в голах
       // Большее число забитых голов
+      // Если это одинаково — команды делят одно место.
       // Имя команды без учёта регистра
 
       List<Kommando> kList = new List<Kommando>();
@@ -237,32 +238,37 @@ namespace CodeWars {
       }
       // Сортировка по достижениям
       kList = kList
-        .OrderByDescending(k => k.PointsCount)
+        .OrderByDescending(k => k.Points)
         .ThenByDescending(k => k.GoalsOut - k.GoalsIn)
         .ThenByDescending(k => k.GoalsOut)
-        .ThenByDescending(k => k.Name.ToLower())
+        .ThenBy(k => k.Name.ToLower())
         .ToList();
       // Добавление строк в лист результатов
       List<string> komResults = new List<string>();
-      foreach(Kommando k in kList) {
+      for(int i = 0, number = 1; i < kList.Count; i++) {
+        Kommando k = kList[i];
+        Kommando kN = (i + 1 < kList.Count) ? kList[i + 1] : k;
         string komStr = string.Join("  ",
+          number.ToString().PadLeft(2) + ".",
           k.Name.PadRight(30) + k.MatchCount.ToString(),
-          k.WinCount.ToString(),
-          k.TieCount.ToString(),
-          k.LosCount.ToString(),
+          k.Wins.ToString(),
+          k.Ties.ToString(),
+          k.Loses.ToString(),
           k.GoalsOut.ToString() + ":" + k.GoalsIn.ToString(),
-          k.PointsCount
+          k.Points
           );
         komResults.Add(komStr);
-      }
-      for(int i = 0; i < komResults.Count; i++) {
-        string number = (i + 1).ToString().PadLeft(1);
-        komResults[i] = string.Join(". ", number, komResults[i]);
+        // Очки по убыванию
+        // Большая разность в голах
+        // Большее число забитых голов
+        if(!k.SameResult(kN)) number++;
       }
       return string.Join(Environment.NewLine, komResults).Replace(".  ", ". ");
     }
 
+    /// <summary>Команда</summary>
     class Kommando {
+
       /// <summary>Название команды</summary>
       public string Name;
       /// <summary>Матчей сыграно</summary>
@@ -272,13 +278,13 @@ namespace CodeWars {
       /// <summary>Голов получено</summary>
       public int GoalsIn;
       /// <summary>Матчей выиграно</summary>
-      public int WinCount;
+      public int Wins;
       /// <summary>Матчей вничью</summary>
-      public int TieCount;
+      public int Ties;
       /// <summary>Матчей проиграно</summary>
-      public int LosCount;
+      public int Loses;
       /// <summary>Очков заработано</summary>
-      public int PointsCount => WinCount * 3 + TieCount;
+      public int Points => Wins * 3 + Ties;
 
       /// <summary>Возвращает новыйэкземпляр класса <see cref="Kommando"/></summary>
       /// <param name="comName">Название команды</param>
@@ -286,14 +292,14 @@ namespace CodeWars {
       /// <param name="gIn">Голов получено</param>
       public Kommando(string comName, string gOut, string gIn) {
         Name = comName;
-        bool isGoals = 
-          int.TryParse(gOut, out GoalsOut) && 
+        bool isGoals =
+          int.TryParse(gOut, out GoalsOut) &&
           int.TryParse(gIn, out GoalsIn);
         if(!isGoals) return;
         MatchCount = 1;
-        if(GoalsOut > GoalsIn) WinCount = 1;
-        if(GoalsOut < GoalsIn) LosCount = 1;
-        else TieCount = 1;
+        if(GoalsOut > GoalsIn) Wins = 1;
+        if(GoalsOut < GoalsIn) Loses = 1;
+        else Ties = 1;
       }
 
       /// <summary>
@@ -307,13 +313,23 @@ namespace CodeWars {
         else {
           fc0.GoalsIn += GoalsIn;
           fc0.GoalsOut += GoalsOut;
-          fc0.LosCount += LosCount;
+          fc0.Loses += Loses;
           fc0.MatchCount += MatchCount;
-          fc0.TieCount += TieCount;
-          fc0.WinCount += WinCount;
+          fc0.Ties += Ties;
+          fc0.Wins += Wins;
         }
       }
 
+      /// <summary>Возвращает результат проверки совпадения зачёта с другой командой</summary>
+      /// <param name="k">Проверяемая команда</param>
+      /// <returns>true, если резульаты совпадают</returns>
+      public bool SameResult(Kommando k) {
+        return (
+          Points == k.Points &&
+          GoalsOut-GoalsIn==k.GoalsOut-k.GoalsIn &&
+          GoalsOut == k.GoalsOut
+          );
+      }
     }
 
   }

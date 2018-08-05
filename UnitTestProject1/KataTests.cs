@@ -1,15 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CodeWars;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace CodeWars.Tests {
 
   [TestClass()]
   public class KataTests {
+    public TestContext TestContext { get; set; }
 
     /// <summary>Делегат для вызова методов с одним аргументом</summary>
     /// <typeparam name="ReturnT">Возвращаемый тип</typeparam>
@@ -24,11 +24,22 @@ namespace CodeWars.Tests {
         rtnT returned = dlt.Invoke(item.Key);
         try { Assert.AreEqual(item.Value, returned); }
         catch(UnitTestAssertException) {
-          throw new Exception($@"
-            Input: {item.Key}, 
-            Expected: {item.Value.ToString()}, 
-            Returned: {returned}"
-          );
+          string message = 
+$@"
+Input: 
+{item.Key}, 
+
+Expected: 
+{item.Value.ToString()}, 
+
+Returned: 
+{returned}
+";
+          //TestContext.WriteLine(message);
+          //Trace.WriteLine(message);
+          ConsoleTraceListener traceListener = new ConsoleTraceListener();
+          traceListener.WriteLine(message);
+          throw new Exception(message);
         }
       }
     }
