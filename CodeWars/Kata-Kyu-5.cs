@@ -247,7 +247,8 @@ namespace CodeWars {
       List<string> komResults = new List<string>();
       for(int i = 0, number = 1; i < kList.Count; i++) {
         Kommando k = kList[i];
-        Kommando kN = (i + 1 < kList.Count) ? kList[i + 1] : k;
+        Kommando kPr = (i - 1 >= 0) ? kList[i - 1] : k;
+        if(!k.SameResult(kPr)) number = i + 1;
         string komStr = string.Join("  ",
           number.ToString().PadLeft(2) + ".",
           k.Name.PadRight(30) + k.MatchCount.ToString(),
@@ -258,14 +259,10 @@ namespace CodeWars {
           k.Points
           );
         komResults.Add(komStr);
-        // Очки по убыванию
-        // Большая разность в голах
-        // Большее число забитых голов
-        if(!k.SameResult(kN)) number++;
       }
-      return string.Join(Environment.NewLine, komResults).Replace(".  ", ". ");
+      return string.Join("\n", komResults).Replace(".  ", ". ");
     }
-
+    
     /// <summary>Команда</summary>
     class Kommando {
 
@@ -299,7 +296,7 @@ namespace CodeWars {
         MatchCount = 1;
         if(GoalsOut > GoalsIn) Wins = 1;
         if(GoalsOut < GoalsIn) Loses = 1;
-        else Ties = 1;
+        if(GoalsOut == GoalsIn) Ties = 1;
       }
 
       /// <summary>
@@ -326,10 +323,22 @@ namespace CodeWars {
       public bool SameResult(Kommando k) {
         return (
           Points == k.Points &&
-          GoalsOut-GoalsIn==k.GoalsOut-k.GoalsIn &&
+          GoalsOut - GoalsIn == k.GoalsOut - k.GoalsIn &&
           GoalsOut == k.GoalsOut
           );
       }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="m">Меньшее число диапазона</param>
+    /// <param name="n">Большее число диапазона</param>
+    /// <returns></returns>
+    [KataType(LevelTypeEnum.Kyu, 5, "integers-recreation-one")]
+    public static string ListSquared(long m, long n) {
+      // your code
+      return "";
     }
 
   }

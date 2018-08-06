@@ -24,19 +24,22 @@ namespace CodeWars.Tests {
         rtnT returned = dlt.Invoke(item.Key);
         try { Assert.AreEqual(item.Value, returned); }
         catch(UnitTestAssertException) {
+          string inp = item.Key.ToString();
+          argT k = item.Key;
+          if(k is System.Collections.IEnumerable) {
+            inp = string.Join(Environment.NewLine, k);
+          }
           string message = 
 $@"
 Input: 
-{item.Key}, 
+{inp} 
 
 Expected: 
-{item.Value.ToString()}, 
+{item.Value.ToString()} 
 
 Returned: 
 {returned}
 ";
-          //TestContext.WriteLine(message);
-          //Trace.WriteLine(message);
           ConsoleTraceListener traceListener = new ConsoleTraceListener();
           traceListener.WriteLine(message);
           throw new Exception(message);
