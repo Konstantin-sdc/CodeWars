@@ -29,7 +29,7 @@ namespace CodeWars.Tests {
           if(k is System.Collections.IEnumerable) {
             inp = string.Join(Environment.NewLine, k);
           }
-          string message = 
+          string message =
 $@"
 Input: 
 {inp} 
@@ -223,6 +223,17 @@ Returned:
       TestWithDictonary(d, dt);
     }
 
+    [TestMethod()]
+    public void ListSquaredTest() {
+      Tuple<long, long> t0 = new Tuple<long, long>(1, 250);
+      Tuple<long, long> t1 = new Tuple<long, long>(42, 250);
+      Tuple<long, long> t2 = new Tuple<long, long>(250, 500);
+      Dictionary<Tuple<long, long>, string> d = new Dictionary<Tuple<long, long>, string>() {
+        { t0, "[[1, 1], [42, 2500], [246, 84100]]"},
+        { t1, "[[42, 2500], [246, 84100]]"},
+        { t2, "[[287, 84100]]"},
+      };
+    }
   }
 
 }
