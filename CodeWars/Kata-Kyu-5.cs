@@ -194,37 +194,7 @@ namespace CodeWars {
     }
 
     [KataType(LevelTypeEnum.Kyu, 5, "57c178e16662d0d932000120")]
-    public static string BundesLigaTable(string[] results) {
-      // Дан массив строк
-      // Каждый элемент: x:y [Команда 1] - [Команда 2]
-      // Например: {6:0 Бавария Мюнхен - Вердер Бремен, -:- Айнтрахт Франкфурт - Шальке 04}
-      // -:- означает, что матча небыло, нокоманда регистрируется всё равно
-      // Команда, забившая больше голов — выигрывает
-      // Вернуть строку, состоящую из данных массива.
-      // Строка должна быть отформатирована в виде таблицы
-      // Каждая строка таблицы: 
-      // Номер строки таблицы, без ведущих нулей. Два места.
-      // Точка.
-      // Пробел
-      // Название команды. 30 мест. С ведомыми пробелами до 30 мест.
-      // Количество сыгранных матчей. Одно место.
-      // Два пробела.
-      // Количество выигранных матчей. 1 место.
-      // Два пробела
-      // Количество ничьих. 1 место
-      // Два пробела
-      // Количество проигрышей. 1 место.
-      // Два пробела
-      // Отношение забитых и полученных мячей, формат — 6:3
-      // Два пробела 
-      // Количество очков. 3 за выигрыш. 1 за ничью. 
-      // Сортировка таблицы
-      // Очки по убыванию
-      // Большая разность в голах
-      // Большее число забитых голов
-      // Если это одинаково — команды делят одно место.
-      // Имя команды без учёта регистра
-
+    public static string BundesLigaTable(params string[] results) {
       List<Kommando> kList = new List<Kommando>();
       foreach(string item in results) {
         string score = item.Split(new char[] { ' ' }).First();
@@ -236,14 +206,12 @@ namespace CodeWars {
         k0.AddToList(kList);
         k1.AddToList(kList);
       }
-      // Сортировка по достижениям
       kList = kList
         .OrderByDescending(k => k.Points)
         .ThenByDescending(k => k.GoalsOut - k.GoalsIn)
         .ThenByDescending(k => k.GoalsOut)
         .ThenBy(k => k.Name.ToLower())
         .ToList();
-      // Добавление строк в лист результатов
       List<string> komResults = new List<string>();
       for(int i = 0, number = 1; i < kList.Count; i++) {
         Kommando k = kList[i];
@@ -336,7 +304,9 @@ namespace CodeWars {
     /// <param name="n">Большее число диапазона</param>
     /// <returns></returns>
     [KataType(LevelTypeEnum.Kyu, 5, "integers-recreation-one")]
-    public static string ListSquared(long m, long n) {
+    public static string ListSquared(long[] a) {
+      long m = a[0];
+      long n = a[1];
       // your code
       return "";
     }

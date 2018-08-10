@@ -99,12 +99,12 @@ namespace CodeWars {
     /// <param name="m">Нужный объём</param>
     /// <returns>Количество кубов или -1, если объём не может уместить количество.</returns>
     [KataType(LevelTypeEnum.Kyu, 6)]
-    public static long FindNb(long m) {
+    public static long FindNb(params long[] m) {
       long s = 1, v = 0, count = 0;
-      for(; v < m; s++, count++) {
+      for(; v < m[0]; s++, count++) {
         v += s * s * s;
       }
-      return (m == v) ? count : -1;
+      return (m[0] == v) ? count : -1;
     }
 
   }

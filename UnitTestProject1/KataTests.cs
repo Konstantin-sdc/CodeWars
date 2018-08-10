@@ -11,39 +11,41 @@ namespace CodeWars.Tests {
   public class KataTests {
     public TestContext TestContext { get; set; }
 
-    /// <summary>Делегат для вызова методов с одним аргументом</summary>
-    /// <typeparam name="ReturnT">Возвращаемый тип</typeparam>
-    /// <typeparam name="ArgT">Тип аргумента</typeparam>
+    /// <summary>Делегат для вызова методов с аргументами одного типа</summary>
+    /// <typeparam name="Tr">Возвращаемый тип</typeparam>
+    /// <typeparam name="Ta">Тип аргумента</typeparam>
     /// <param name="s">Имя аргумента</param>
     /// <returns>Экземпляр делегата</returns>
-    delegate ReturnT MethodForTest<ReturnT, ArgT>(ArgT s);
+    delegate Tr OneTypeDlg<Tr, Ta>(params Ta[] s);
 
-    [TestMethod()]
-    void TestWithDictonary<rtnT, argT>(IDictionary<argT, rtnT> input, MethodForTest<rtnT, argT> dlt) {
-      foreach(KeyValuePair<argT, rtnT> item in input) {
-        rtnT returned = dlt.Invoke(item.Key);
-        try { Assert.AreEqual(item.Value, returned); }
-        catch(UnitTestAssertException) {
-          string inp = item.Key.ToString();
-          argT k = item.Key;
-          if(k is System.Collections.IEnumerable) {
-            inp = string.Join(Environment.NewLine, k);
-          }
-          string message =
+    void TestOneTypeArgs<Tr, Ta>(IDictionary<Ta[], Tr> dic, OneTypeDlg<Tr, Ta> dlg) {
+      foreach(var item in dic) {
+        Tr returned = dlg.Invoke(item.Key);
+        AssertCheck(item.Key, item.Value, returned);        
+      }
+    }
+
+    void AssertCheck<Tin, Tout>(Tin input, Tout exp, Tout returned) {
+      try { Assert.AreEqual(exp, returned); }
+      catch(UnitTestAssertException) {
+        string inp = input.ToString();
+        if(input is System.Collections.IEnumerable) {
+          inp = string.Join(Environment.NewLine, k);
+        }
+        string message =
 $@"
 Input: 
 {inp} 
 
 Expected: 
-{item.Value.ToString()} 
+{exp.ToString()} 
 
 Returned: 
 {returned}
 ";
-          ConsoleTraceListener traceListener = new ConsoleTraceListener();
-          traceListener.WriteLine(message);
-          throw new Exception(message);
-        }
+        ConsoleTraceListener traceListener = new ConsoleTraceListener();
+        traceListener.WriteLine(message);
+        throw new Exception(message);
       }
     }
 
@@ -63,8 +65,8 @@ Returned:
         {"Sarah Connor ammonium implementation Robert Rupert Rubin Ashcraft Ashcroft Tymczak",
           "S600 C560 A555 I514 R163 R163 R150 A261 A261 T522" }
       };
-      MethodForTest<string, string> soundex = Kata.Soundex;
-      TestWithDictonary(inputResult, soundex);
+      OneTypeDlg<string, string> soundex = Kata.Soundex;
+      TestOneTypeArgs(inputResult, soundex);
     }
 
     [TestMethod()]
@@ -219,8 +221,8 @@ Returned:
         {in1, out1 },
         {in2, out2 },
       };
-      MethodForTest<string, string[]> dt = Kata.BundesLigaTable;
-      TestWithDictonary(d, dt);
+      OneTypeDlg<string, string> dt = Kata.BundesLigaTable;
+      TestOneTypeArgs(d, dt);
     }
 
     [TestMethod()]
@@ -233,6 +235,7 @@ Returned:
         { t1, "[[42, 2500], [246, 84100]]"},
         { t2, "[[287, 84100]]"},
       };
+      OneTypeDlg<string, long> dlg = Kata.ListSquared;
     }
   }
 
