@@ -305,10 +305,30 @@ namespace CodeWars {
     /// <returns></returns>
     [KataType(LevelTypeEnum.Kyu, 5, "integers-recreation-one")]
     public static string ListSquared(long[] a) {
+      // Делители для 42 это: 1, 2, 3, 6, 7, 14, 21, 42
+      // Делители в квадратах: 1, 4, 9, 36, 49, 196, 441, 1764
+      // Сумма этих квадратов = 2500
+      // 2500 = 50*50 = 50 в квадрате
+      // Даны 2 числа (1 <= m <= n)
+      // Найти все числа между ними, у которых сумма квадратов делителей сама является квадратом
       long m = a[0];
       long n = a[1];
       // your code
       return "";
+    }
+
+    public static List<long> GetDividers(long division) {
+      List<long> dividers = new List<long>();
+      List<long> partials = new List<long>();
+
+      long divider = 2;
+
+      if(division % divider == 0) {
+        long partial = division / divider;
+        dividers.AddRange(GetDividers(division));
+        dividers.AddRange(GetDividers(partial));
+      }
+      return dividers;
     }
 
   }

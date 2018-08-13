@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CodeWars;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,19 @@ namespace CodeWars.Tests {
     /// <param name="s">Имя аргумента</param>
     /// <returns>Экземпляр делегата</returns>
     delegate Tr OneTypeDlg<Tr, Ta>(params Ta[] s);
+    delegate Tr OneArgDlg<Tr, Ta>(Ta a);
 
     void TestOneTypeArgs<Tr, Ta>(IDictionary<Ta[], Tr> dic, OneTypeDlg<Tr, Ta> dlg) {
       foreach(var item in dic) {
         Tr returned = dlg.Invoke(item.Key);
-        AssertCheck(item.Key, item.Value, returned);        
+        AssertCheck(item.Key, item.Value, returned);
+      }
+    }
+
+    void TestOneTypeArgs<Tr, Ta>(IDictionary<Ta, Tr> dic, OneArgDlg<Tr, Ta> dlg) {
+      foreach(var item in dic) {
+        Tr returned = dlg.Invoke(item.Key);
+        AssertCheck(item.Key, item.Value, returned);
       }
     }
 
@@ -65,7 +74,7 @@ Returned:
         {"Sarah Connor ammonium implementation Robert Rupert Rubin Ashcraft Ashcroft Tymczak",
           "S600 C560 A555 I514 R163 R163 R150 A261 A261 T522" }
       };
-      OneTypeDlg<string, string> soundex = Kata.Soundex;
+      OneArgDlg<string, string> soundex = Kata.Soundex;
       TestOneTypeArgs(inputResult, soundex);
     }
 
@@ -236,6 +245,20 @@ Returned:
         { t2, "[[287, 84100]]"},
       };
       OneTypeDlg<string, long> dlg = Kata.ListSquared;
+    }
+
+    [TestMethod()]
+    public void GetDividersTest() {
+      Dictionary<long, List<long>> dic = new Dictionary<long, List<long>>() {
+        {2, new List<long>(){1,2} },
+        {3, new List<long>(){1,3} },
+        {4, new List<long>(){1,2,4} },
+        {5, new List<long>(){1,5} },
+        {10, new List<long>(){1,2,5,10} },
+        {15, new List<long>(){1,3,5,15} },
+      };
+      OneArgDlg<List<long>, long> dlg = Kata.GetDividers;
+      TestOneTypeArgs<List<long>, long>(dic, dlg);
     }
   }
 
