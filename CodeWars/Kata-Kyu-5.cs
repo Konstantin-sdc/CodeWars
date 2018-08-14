@@ -230,7 +230,7 @@ namespace CodeWars {
       }
       return string.Join("\n", komResults).Replace(".  ", ". ");
     }
-    
+
     /// <summary>Команда</summary>
     class Kommando {
 
@@ -317,18 +317,39 @@ namespace CodeWars {
       return "";
     }
 
-    public static List<long> GetDividers(long division) {
-      List<long> dividers = new List<long>();
-      List<long> partials = new List<long>();
-
-      long divider = 2;
-
-      if(division % divider == 0) {
-        long partial = division / divider;
-        dividers.AddRange(GetDividers(division));
-        dividers.AddRange(GetDividers(partial));
+    public static List<long> GetDividers(long dvsn) {
+      List<long> dvdrs = SimpeDividers(dvsn).ToList();
+      #region Вне рекурсии!
+      List<long> ads = new List<long>();
+      for(int i = 0; i < dvdrs.Count; i++) {
+        long r = dvdrs[i];
+        for(int k = i + 1; k < dvdrs.Count; k++) {
+          r *= dvdrs[k];
+          ads.Add(r);
+        }
       }
-      return dividers;
+      dvdrs.AddRange(ads);
+      dvdrs.Add(1);
+      return dvdrs.Distinct().OrderBy(e => e).ToList();
+      #endregion
+    }
+
+    static IEnumerable<long> SimpeDividers(long dvsn) {
+      List<long> dvdrs = new List<long>();
+      long dvdr = 3, step = 2;
+      if(dvsn % 2 == 0) {
+        dvdr = 2;
+        step = 1;
+      }
+      for(; dvdr <= dvsn; dvdr += step) {
+        if(dvsn % dvdr == 0) {
+          dvdrs.Add(dvdr);
+          dvdrs.AddRange(SimpeDividers(dvsn / dvdr));
+          break;
+        }
+        if(dvdr > dvsn / 2) return new List<long>() { dvsn };
+      }
+      return dvdrs; ;
     }
 
   }

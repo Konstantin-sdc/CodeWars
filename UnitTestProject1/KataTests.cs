@@ -1,62 +1,13 @@
-﻿using CodeWars;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Diagnostics;
 
 namespace CodeWars.Tests {
 
   [TestClass()]
-  public class KataTests {
-    public TestContext TestContext { get; set; }
-
-    /// <summary>Делегат для вызова методов с аргументами одного типа</summary>
-    /// <typeparam name="Tr">Возвращаемый тип</typeparam>
-    /// <typeparam name="Ta">Тип аргумента</typeparam>
-    /// <param name="s">Имя аргумента</param>
-    /// <returns>Экземпляр делегата</returns>
-    delegate Tr OneTypeDlg<Tr, Ta>(params Ta[] s);
-    delegate Tr OneArgDlg<Tr, Ta>(Ta a);
-
-    void TestOneTypeArgs<Tr, Ta>(IDictionary<Ta[], Tr> dic, OneTypeDlg<Tr, Ta> dlg) {
-      foreach(var item in dic) {
-        Tr returned = dlg.Invoke(item.Key);
-        AssertCheck(item.Key, item.Value, returned);
-      }
-    }
-
-    void TestOneTypeArgs<Tr, Ta>(IDictionary<Ta, Tr> dic, OneArgDlg<Tr, Ta> dlg) {
-      foreach(var item in dic) {
-        Tr returned = dlg.Invoke(item.Key);
-        AssertCheck(item.Key, item.Value, returned);
-      }
-    }
-
-    void AssertCheck<Tin, Tout>(Tin input, Tout exp, Tout returned) {
-      try { Assert.AreEqual(exp, returned); }
-      catch(UnitTestAssertException) {
-        string inp = input.ToString();
-        if(input is System.Collections.IEnumerable) {
-          inp = string.Join(Environment.NewLine, k);
-        }
-        string message =
-$@"
-Input: 
-{inp} 
-
-Expected: 
-{exp.ToString()} 
-
-Returned: 
-{returned}
-";
-        ConsoleTraceListener traceListener = new ConsoleTraceListener();
-        traceListener.WriteLine(message);
-        throw new Exception(message);
-      }
-    }
+  public partial class KataTests {
 
     [TestMethod()]
     public void SoundexTest() {
@@ -249,16 +200,18 @@ Returned:
 
     [TestMethod()]
     public void GetDividersTest() {
-      Dictionary<long, List<long>> dic = new Dictionary<long, List<long>>() {
-        {2, new List<long>(){1,2} },
-        {3, new List<long>(){1,3} },
-        {4, new List<long>(){1,2,4} },
-        {5, new List<long>(){1,5} },
-        {10, new List<long>(){1,2,5,10} },
-        {15, new List<long>(){1,3,5,15} },
+      Dictionary<long, IEnumerable<long>> dic = new Dictionary<long, IEnumerable<long>>() {
+        //{2, new List<long>(){1,2} },
+        //{3, new List<long>(){1,3} },
+        //{4, new List<long>(){1,2,4} },
+        //{5, new List<long>(){1,5} },
+        //{10, new List<long>(){1,2,5,10} },
+        //{15, new List<long>(){1,3,5,15} },
+        {225, new List<long>(){ 1, 3, 5, 9, 15, 25, 45, 75, 225 } },
+        //{441, new List<long>(){ 1, 3, 7, 9, 21, 49, 63, 147, 441 } },
       };
-      OneArgDlg<List<long>, long> dlg = Kata.GetDividers;
-      TestOneTypeArgs<List<long>, long>(dic, dlg);
+      OneArgDlg<IEnumerable<long>, long> dlg = Kata.GetDividers;
+      TestOneTypeArgs(dic, dlg);
     }
   }
 
