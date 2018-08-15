@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_code_wars_1_1_kata_type_attribute" kind="class" prot="package">
+    <compoundname>CodeWars::KataTypeAttribute</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Attribute</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_code_wars_1_1_kata_type_attribute_1a498a4eca9f7f4d33b4cea002a2c68eb6" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int CodeWars.KataTypeAttribute.LevelValue</definition>
+        <argsstring></argsstring>
+        <name>LevelValue</name>
+        <initializer>https://www.codewars.com/kata/&quot;/train/csharp&quot;</initializer>
+        <briefdescription>
+<para>Значение уровня ката</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" line="19" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_code_wars_1_1_kata_type_attribute_1a44366a95f385f1b8a37d5d828c784594" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="namespace_code_wars_1a85f9e366a526b202b60c63f3630c7c5f" kindref="member">LevelTypeEnum</ref></type>
+        <definition>LevelTypeEnum CodeWars.KataTypeAttribute.LevelType</definition>
+        <argsstring></argsstring>
+        <name>LevelType</name>
+        <briefdescription>
+<para>Тип уровня ката</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" line="21" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_type_attribute_1ad53211a9c6fc7b8c30ad1a2321cfdbb1" prot="public" static="no" mutable="no">
+        <type>Uri</type>
+        <definition>Uri CodeWars.KataTypeAttribute.KataLink</definition>
+        <argsstring></argsstring>
+        <name>KataLink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" line="22" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_code_wars_1_1_kata_type_attribute_1a617b9810dbc6be44dbf53c2c91123c1c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>CodeWars.KataTypeAttribute.KataTypeAttribute</definition>
+        <argsstring>(LevelTypeEnum levelType, int levelValue, string kataId=&quot;&quot;)</argsstring>
+        <name>KataTypeAttribute</name>
+        <param>
+          <type><ref refid="namespace_code_wars_1a85f9e366a526b202b60c63f3630c7c5f" kindref="member">LevelTypeEnum</ref></type>
+          <declname>levelType</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>levelValue</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>kataId</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" line="12" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" bodystart="12" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>Attribute</label>
+      </node>
+      <node id="4">
+        <label>CodeWars.KataTypeAttribute</label>
+        <link refid="class_code_wars_1_1_kata_type_attribute"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>Attribute</label>
+      </node>
+      <node id="6">
+        <label>CodeWars.KataTypeAttribute</label>
+        <link refid="class_code_wars_1_1_kata_type_attribute"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" line="7" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" bodystart="7" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_code_wars_1_1_kata_type_attribute_1ad53211a9c6fc7b8c30ad1a2321cfdbb1" prot="public" virt="non-virtual"><scope>CodeWars::KataTypeAttribute</scope><name>KataLink</name></member>
+      <member refid="class_code_wars_1_1_kata_type_attribute_1a617b9810dbc6be44dbf53c2c91123c1c" prot="public" virt="non-virtual"><scope>CodeWars::KataTypeAttribute</scope><name>KataTypeAttribute</name></member>
+      <member refid="class_code_wars_1_1_kata_type_attribute_1a44366a95f385f1b8a37d5d828c784594" prot="public" virt="non-virtual"><scope>CodeWars::KataTypeAttribute</scope><name>LevelType</name></member>
+      <member refid="class_code_wars_1_1_kata_type_attribute_1a498a4eca9f7f4d33b4cea002a2c68eb6" prot="public" virt="non-virtual"><scope>CodeWars::KataTypeAttribute</scope><name>LevelValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

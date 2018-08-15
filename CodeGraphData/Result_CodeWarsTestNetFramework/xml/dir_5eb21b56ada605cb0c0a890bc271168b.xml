@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_5eb21b56ada605cb0c0a890bc271168b" kind="dir">
+    <compoundname>D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/Properties</compoundname>
+    <innerfile refid="_assembly_info_8cs">AssemblyInfo.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/Properties/"/>
+  </compounddef>
+</doxygen>

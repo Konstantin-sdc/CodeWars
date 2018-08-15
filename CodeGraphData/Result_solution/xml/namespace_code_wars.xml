@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespace_code_wars" kind="namespace">
+    <compoundname>CodeWars</compoundname>
+    <innerclass refid="class_code_wars_1_1_kata" prot="public">CodeWars::Kata</innerclass>
+    <innerclass refid="class_code_wars_1_1_program" prot="public">CodeWars::Program</innerclass>
+    <innerclass refid="class_code_wars_1_1_kata_type_attribute" prot="package">CodeWars::KataTypeAttribute</innerclass>
+    <innerclass refid="class_code_wars_1_1_xbonacci" prot="public">CodeWars::Xbonacci</innerclass>
+    <innernamespace refid="namespace_code_wars_1_1_tests">CodeWars::Tests</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespace_code_wars_1a85f9e366a526b202b60c63f3630c7c5f" prot="package" static="no">
+        <name>LevelTypeEnum</name>
+        <enumvalue id="namespace_code_wars_1a85f9e366a526b202b60c63f3630c7c5fa879d86f9846561454545ffd123284e33" prot="public">
+          <name>Kyu</name>
+          <briefdescription>
+<para>Кю</para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_code_wars_1a85f9e366a526b202b60c63f3630c7c5fa97c8e6d0d14f4e242c3c37af68cc376c" prot="public">
+          <name>Dan</name>
+          <briefdescription>
+<para>Дан</para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Типы уровней ката</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" line="26" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/UserAttributes.cs" bodystart="26" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="9" column="1"/>
+  </compounddef>
+</doxygen>

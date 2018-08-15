@@ -8,8 +8,6 @@ namespace CodeWars.Tests {
 
   public partial class KataTests {
 
-    delegate void AssertDlg<T>(T a, T b) where T : ICollection;
-
     /// <summary>Тест методов с одним аргументом и единичным возвращаемым значением</summary>
     /// <typeparam name="Tout">Возвращаемый тип</typeparam>
     /// <typeparam name="Tin">Тип аргумента</typeparam>
@@ -17,27 +15,24 @@ namespace CodeWars.Tests {
     /// <param name="dlg">Делегат тестируемого метода</param>
     void TestOneTypeArgs<Tout, Tin>(IDictionary<Tin, Tout> dic, Func<Tin, Tout> dlg) {
       ParseDictonary(dic, dlg);
-      foreach(var item in dic) {
-        Tout returned = dlg.Invoke(item.Key);
-        AssertCheck(item.Key, item.Value, returned);
-      }
     }
 
     /// <summary>Тест методов с одним аргументом и возвращаемой коллекцией</summary>
-    /// <typeparam name="Tout">Возвращаемый тип</typeparam>
     /// <typeparam name="Tin">Тип аргумента</typeparam>
     /// <param name="dic">Словарь</param>
     /// <param name="dlg">Делегат тестируемого метода</param>
-    //void TestOneTypeArgs<Tout, Tin>(IDictionary<Tin, ICollection> dic, OneArgDlg<ICollection, Tin> dlg) {
-    //  foreach(var item in dic) {
-    //    ICollection returned = dlg.Invoke(item.Key);
-    //    AssertCheck(item.Key, item.Value, returned);
-    //  }
-    //}
+    void TestOneTypeArgs<Tin>(IDictionary<Tin, ICollection> dic, Func<Tin, ICollection> dlg) {
+      ParseDictonary(dic, dlg);
+    }
 
-    void ParseDictonary<TKey, TValue>(IDictionary<TKey, TValue> dictionary, Func<TKey, TValue> func) {
+    /// <summary>Проход метода делегата по словарю с проверкой соответствия фактических и ожидаемых результатов</summary>
+    /// <typeparam name="TKey">Тип аргументов метода делегата</typeparam>
+    /// <typeparam name="TValue">Тип возвращаемых занчений</typeparam>
+    /// <param name="dictionary">Словарь</param>
+    /// <param name="dlg">Делегат</param>
+    void ParseDictonary<TKey, TValue>(IDictionary<TKey, TValue> dictionary, Func<TKey, TValue> dlg) {
       foreach(var item in dictionary) {
-        TValue returned = func.Invoke(item.Key);
+        TValue returned = dlg.Invoke(item.Key);
         AssertCheck(item.Key, item.Value, returned);
       }
     }

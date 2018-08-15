@@ -53,6 +53,7 @@
     <Compile Include="TestAutomatisation.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="KataTests-ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

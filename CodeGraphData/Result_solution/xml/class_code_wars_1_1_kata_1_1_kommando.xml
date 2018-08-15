@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_code_wars_1_1_kata_1_1_kommando" kind="class" prot="private">
+    <compoundname>CodeWars::Kata::Kommando</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1_1_kommando_1a2647a17af0827e7e13dd2f645129c334" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string CodeWars.Kata.Kommando.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>Название команды</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="238" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="238" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" compoundref="_kata-_kyu-5_8cs" startline="275" endline="286">CodeWars.Kata.Kommando.AddToList</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" compoundref="_kata-_kyu-5_8cs" startline="258" endline="268">CodeWars.Kata.Kommando.Kommando</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1_1_kommando_1a07fe1bd3ae87d02b20c8134aaca2cd4f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CodeWars.Kata.Kommando.MatchCount</definition>
+        <argsstring></argsstring>
+        <name>MatchCount</name>
+        <briefdescription>
+<para>Матчей сыграно</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="240" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="240" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" compoundref="_kata-_kyu-5_8cs" startline="275" endline="286">CodeWars.Kata.Kommando.AddToList</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1a174b037f05f47cfd20a580cd14d5faba" compoundref="_kata-_kyu-5_8cs" startline="197" endline="232">CodeWars.Kata.BundesLigaTable</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" compoundref="_kata-_kyu-5_8cs" startline="258" endline="268">CodeWars.Kata.Kommando.Kommando</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1_1_kommando_1aae4311273f5b77cd8c666f4dfbc014f0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CodeWars.Kata.Kommando.GoalsOut</definition>
+        <argsstring></argsstring>
+        <name>GoalsOut</name>
+        <briefdescription>
+<para>Голов забито</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="242" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="242" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" compoundref="_kata-_kyu-5_8cs" startline="275" endline="286">CodeWars.Kata.Kommando.AddToList</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1a174b037f05f47cfd20a580cd14d5faba" compoundref="_kata-_kyu-5_8cs" startline="197" endline="232">CodeWars.Kata.BundesLigaTable</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" compoundref="_kata-_kyu-5_8cs" startline="258" endline="268">CodeWars.Kata.Kommando.Kommando</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1ae93c095c82779f206930418d7280ee46" compoundref="_kata-_kyu-5_8cs" startline="291" endline="297">CodeWars.Kata.Kommando.SameResult</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1_1_kommando_1a334301aa3ee0cff59ca2134425c6f855" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CodeWars.Kata.Kommando.GoalsIn</definition>
+        <argsstring></argsstring>
+        <name>GoalsIn</name>
+        <briefdescription>
+<para>Голов получено</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="244" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="244" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" compoundref="_kata-_kyu-5_8cs" startline="275" endline="286">CodeWars.Kata.Kommando.AddToList</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" compoundref="_kata-_kyu-5_8cs" startline="258" endline="268">CodeWars.Kata.Kommando.Kommando</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1ae93c095c82779f206930418d7280ee46" compoundref="_kata-_kyu-5_8cs" startline="291" endline="297">CodeWars.Kata.Kommando.SameResult</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1_1_kommando_1a4f78afe3c44d9557299541c92ff47409" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CodeWars.Kata.Kommando.Wins</definition>
+        <argsstring></argsstring>
+        <name>Wins</name>
+        <briefdescription>
+<para>Матчей выиграно</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="246" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="246" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" compoundref="_kata-_kyu-5_8cs" startline="275" endline="286">CodeWars.Kata.Kommando.AddToList</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" compoundref="_kata-_kyu-5_8cs" startline="258" endline="268">CodeWars.Kata.Kommando.Kommando</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1_1_kommando_1a27d0f3113791d90bf8a37db40cb47d0b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CodeWars.Kata.Kommando.Ties</definition>
+        <argsstring></argsstring>
+        <name>Ties</name>
+        <briefdescription>
+<para>Матчей вничью</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="248" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="248" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" compoundref="_kata-_kyu-5_8cs" startline="275" endline="286">CodeWars.Kata.Kommando.AddToList</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1a174b037f05f47cfd20a580cd14d5faba" compoundref="_kata-_kyu-5_8cs" startline="197" endline="232">CodeWars.Kata.BundesLigaTable</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" compoundref="_kata-_kyu-5_8cs" startline="258" endline="268">CodeWars.Kata.Kommando.Kommando</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1_1_kommando_1aea8962da04e0964890e2cc42d8b21ddd" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CodeWars.Kata.Kommando.Loses</definition>
+        <argsstring></argsstring>
+        <name>Loses</name>
+        <briefdescription>
+<para>Матчей проиграно</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="250" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="250" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" compoundref="_kata-_kyu-5_8cs" startline="275" endline="286">CodeWars.Kata.Kommando.AddToList</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" compoundref="_kata-_kyu-5_8cs" startline="258" endline="268">CodeWars.Kata.Kommando.Kommando</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1_1_kommando_1a6c7001a79f635fb2a527176bfe36351e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CodeWars.Kata.Kommando.Points</definition>
+        <argsstring></argsstring>
+        <name>Points</name>
+        <initializer>=&gt; <ref refid="class_code_wars_1_1_kata_1_1_kommando_1a4f78afe3c44d9557299541c92ff47409" kindref="member">Wins</ref> * 3 + <ref refid="class_code_wars_1_1_kata_1_1_kommando_1a27d0f3113791d90bf8a37db40cb47d0b" kindref="member">Ties</ref></initializer>
+        <briefdescription>
+<para>Очков заработано</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="252" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="252" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1a174b037f05f47cfd20a580cd14d5faba" compoundref="_kata-_kyu-5_8cs" startline="197" endline="232">CodeWars.Kata.BundesLigaTable</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1_1_kommando_1ae93c095c82779f206930418d7280ee46" compoundref="_kata-_kyu-5_8cs" startline="291" endline="297">CodeWars.Kata.Kommando.SameResult</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>CodeWars.Kata.Kommando.Kommando</definition>
+        <argsstring>(string comName, string gOut, string gIn)</argsstring>
+        <name>Kommando</name>
+        <param>
+          <type>string</type>
+          <declname>comName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>gOut</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>gIn</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает новыйэкземпляр класса <ref refid="class_code_wars_1_1_kata_1_1_kommando" kindref="compound">Kommando</ref></para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>comName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Название команды</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Голов забито</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gIn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Голов получено</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="258" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="258" bodyend="268"/>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a334301aa3ee0cff59ca2134425c6f855" compoundref="_kata-_kyu-5_8cs" startline="244">CodeWars.Kata.Kommando.GoalsIn</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1aae4311273f5b77cd8c666f4dfbc014f0" compoundref="_kata-_kyu-5_8cs" startline="242">CodeWars.Kata.Kommando.GoalsOut</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1aea8962da04e0964890e2cc42d8b21ddd" compoundref="_kata-_kyu-5_8cs" startline="250">CodeWars.Kata.Kommando.Loses</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a07fe1bd3ae87d02b20c8134aaca2cd4f" compoundref="_kata-_kyu-5_8cs" startline="240">CodeWars.Kata.Kommando.MatchCount</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a2647a17af0827e7e13dd2f645129c334" compoundref="_kata-_kyu-5_8cs" startline="238">CodeWars.Kata.Kommando.Name</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a27d0f3113791d90bf8a37db40cb47d0b" compoundref="_kata-_kyu-5_8cs" startline="248">CodeWars.Kata.Kommando.Ties</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a4f78afe3c44d9557299541c92ff47409" compoundref="_kata-_kyu-5_8cs" startline="246">CodeWars.Kata.Kommando.Wins</references>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Kata.Kommando.AddToList</definition>
+        <argsstring>(List&lt; Kommando &gt; lst)</argsstring>
+        <name>AddToList</name>
+        <param>
+          <type>List&lt; <ref refid="class_code_wars_1_1_kata_1_1_kommando" kindref="compound">Kommando</ref> &gt;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+<para>Если команда не найдена в спискае, — добавляет её в список. Если найдена — складывает результаты этой команды. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Список команд</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="275" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="275" bodyend="286"/>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a334301aa3ee0cff59ca2134425c6f855" compoundref="_kata-_kyu-5_8cs" startline="244">CodeWars.Kata.Kommando.GoalsIn</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1aae4311273f5b77cd8c666f4dfbc014f0" compoundref="_kata-_kyu-5_8cs" startline="242">CodeWars.Kata.Kommando.GoalsOut</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1aea8962da04e0964890e2cc42d8b21ddd" compoundref="_kata-_kyu-5_8cs" startline="250">CodeWars.Kata.Kommando.Loses</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a07fe1bd3ae87d02b20c8134aaca2cd4f" compoundref="_kata-_kyu-5_8cs" startline="240">CodeWars.Kata.Kommando.MatchCount</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a2647a17af0827e7e13dd2f645129c334" compoundref="_kata-_kyu-5_8cs" startline="238">CodeWars.Kata.Kommando.Name</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a27d0f3113791d90bf8a37db40cb47d0b" compoundref="_kata-_kyu-5_8cs" startline="248">CodeWars.Kata.Kommando.Ties</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a4f78afe3c44d9557299541c92ff47409" compoundref="_kata-_kyu-5_8cs" startline="246">CodeWars.Kata.Kommando.Wins</references>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1_1_kommando_1ae93c095c82779f206930418d7280ee46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CodeWars.Kata.Kommando.SameResult</definition>
+        <argsstring>(Kommando k)</argsstring>
+        <name>SameResult</name>
+        <param>
+          <type><ref refid="class_code_wars_1_1_kata_1_1_kommando" kindref="compound">Kommando</ref></type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает результат проверки совпадения зачёта с другой командой</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Проверяемая команда</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true, если резульаты совпадают</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="291" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="291" bodyend="297"/>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a334301aa3ee0cff59ca2134425c6f855" compoundref="_kata-_kyu-5_8cs" startline="244">CodeWars.Kata.Kommando.GoalsIn</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1aae4311273f5b77cd8c666f4dfbc014f0" compoundref="_kata-_kyu-5_8cs" startline="242">CodeWars.Kata.Kommando.GoalsOut</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a6c7001a79f635fb2a527176bfe36351e" compoundref="_kata-_kyu-5_8cs" startline="252">CodeWars.Kata.Kommando.Points</references>
+        <referencedby refid="class_code_wars_1_1_kata_1a174b037f05f47cfd20a580cd14d5faba" compoundref="_kata-_kyu-5_8cs" startline="197" endline="232">CodeWars.Kata.BundesLigaTable</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Команда</para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="235" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="235" bodyend="298"/>
+    <listofallmembers>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>AddToList</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1a334301aa3ee0cff59ca2134425c6f855" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>GoalsIn</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1aae4311273f5b77cd8c666f4dfbc014f0" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>GoalsOut</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>Kommando</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1aea8962da04e0964890e2cc42d8b21ddd" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>Loses</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1a07fe1bd3ae87d02b20c8134aaca2cd4f" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>MatchCount</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1a2647a17af0827e7e13dd2f645129c334" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>Name</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1a6c7001a79f635fb2a527176bfe36351e" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>Points</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1ae93c095c82779f206930418d7280ee46" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>SameResult</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1a27d0f3113791d90bf8a37db40cb47d0b" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>Ties</name></member>
+      <member refid="class_code_wars_1_1_kata_1_1_kommando_1a4f78afe3c44d9557299541c92ff47409" prot="public" virt="non-virtual"><scope>CodeWars::Kata::Kommando</scope><name>Wins</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

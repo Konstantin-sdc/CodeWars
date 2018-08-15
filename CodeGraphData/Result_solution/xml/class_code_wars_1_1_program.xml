@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_code_wars_1_1_program" kind="class" prot="public">
+    <compoundname>CodeWars::Program</compoundname>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_code_wars_1_1_program_1a21d0d419798861df1457de84a565bb6c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CodeWars.Program.Main</definition>
+        <argsstring>()</argsstring>
+        <name>Main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Program.cs" line="6" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Program.cs" bodystart="6" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Program.cs" line="4" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Program.cs" bodystart="4" bodyend="14"/>
+    <listofallmembers>
+      <member refid="class_code_wars_1_1_program_1a21d0d419798861df1457de84a565bb6c" prot="private" virt="non-virtual"><scope>CodeWars::Program</scope><name>Main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,459 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_code_wars_1_1_tests_1_1_kata_tests" kind="class" prot="public">
+    <compoundname>CodeWars::Tests::KataTests</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1ae16617e9bb458ee88ed40a53e7a2737a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.SoundexTest</definition>
+        <argsstring>()</argsstring>
+        <name>SoundexTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" line="13" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" bodystart="13" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a47a493e64f18094bdf605988c26712fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.ToBase64Test</definition>
+        <argsstring>()</argsstring>
+        <name>ToBase64Test</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" line="33" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" bodystart="33" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a173921f0f652454cc6a0313562691b76" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.FromBase64Test</definition>
+        <argsstring>()</argsstring>
+        <name>FromBase64Test</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" line="43" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" bodystart="43" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a57b8de3c4d6bc9f74855ef508c3a40c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.CharByteTest</definition>
+        <argsstring>()</argsstring>
+        <name>CharByteTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" line="73" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" bodystart="73" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a4bc89763156e70972f604fd1a5849709" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.BundesLigaTableTest</definition>
+        <argsstring>()</argsstring>
+        <name>BundesLigaTableTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" line="82" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" bodystart="82" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1ad829f258a6daa84feea2053962fbed13" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.ListSquaredTest</definition>
+        <argsstring>()</argsstring>
+        <name>ListSquaredTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" line="189" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" bodystart="189" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a42f75fd8f2236cd472e9311765e104c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.GetDividersTest</definition>
+        <argsstring>()</argsstring>
+        <name>GetDividersTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" line="202" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" bodystart="202" bodyend="215"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a4f06ef1ae51f97d9b3ea0edcda2be416" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>delegate void</type>
+        <definition>delegate void CodeWars.Tests.KataTests.AssertDlg&lt; T &gt;</definition>
+        <argsstring>(T a, T b)</argsstring>
+        <name>AssertDlg&lt; T &gt;</name>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" line="11" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a0514840849682c696cf83ccd9deed7f2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.TestOneTypeArgs&lt; Tout, Tin &gt;</definition>
+        <argsstring>(IDictionary&lt; Tin, Tout &gt; dic, Func&lt; Tin, Tout &gt; dlg)</argsstring>
+        <name>TestOneTypeArgs&lt; Tout, Tin &gt;</name>
+        <param>
+          <type>IDictionary&lt; Tin, Tout &gt;</type>
+          <declname>dic</declname>
+        </param>
+        <param>
+          <type>Func&lt; Tin, Tout &gt;</type>
+          <declname>dlg</declname>
+        </param>
+        <briefdescription>
+<para>Тест методов с одним аргументом и единичным возвращаемым значением</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Tout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Возвращаемый тип</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Tin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Тип аргумента</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Словарь</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dlg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Делегат тестируемого метода</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" line="18" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" bodystart="18" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1af291ddbd6045d5e0eabbba36651fff01" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.ParseDictonary&lt; TKey, TValue &gt;</definition>
+        <argsstring>(IDictionary&lt; TKey, TValue &gt; dictionary, Func&lt; TKey, TValue &gt; func)</argsstring>
+        <name>ParseDictonary&lt; TKey, TValue &gt;</name>
+        <param>
+          <type>IDictionary&lt; TKey, TValue &gt;</type>
+          <declname>dictionary</declname>
+        </param>
+        <param>
+          <type>Func&lt; TKey, TValue &gt;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>Тест методов с одним аргументом и возвращаемой коллекцией</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Tout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Возвращаемый тип</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Tin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Тип аргумента</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Словарь</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dlg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Делегат тестируемого метода</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" line="38" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" bodystart="38" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a9c2c214761d53c71e0cdbcfa53c8236f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.AssertCheck&lt; Tout, Tin &gt;</definition>
+        <argsstring>(Tin input, Tout expected, Tout returned)</argsstring>
+        <name>AssertCheck&lt; Tout, Tin &gt;</name>
+        <param>
+          <type>Tin</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>Tout</type>
+          <declname>expected</declname>
+        </param>
+        <param>
+          <type>Tout</type>
+          <declname>returned</declname>
+        </param>
+        <briefdescription>
+<para>Тестирование соответствия для одиночных элементов</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Tout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Возвращаемый тип</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Tin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Тип аргумента</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ВХодящие данные</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expected</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ожидаемый результат</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>returned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Фактический результат</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" line="51" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" bodystart="51" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1ab2d4692efe210999b3cc4c8fa14baef3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.AssertCall&lt; T &gt;</definition>
+        <argsstring>(T expected, T actual)</argsstring>
+        <name>AssertCall&lt; T &gt;</name>
+        <param>
+          <type>T</type>
+          <declname>expected</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>actual</declname>
+        </param>
+        <briefdescription>
+<para>Вызывает CollectionAssert.AreEqual или Assert.AreEqual в зависсимости от того, являются ли аргументы коллекциями </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Тип аргумента</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>expected</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ожидаемое значение</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>actual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Фактическое значение</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" line="65" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" bodystart="65" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1af96bf5ff929eb142ed828a07c032a445" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CodeWars.Tests.KataTests.AssertCatch</definition>
+        <argsstring>(string message)</argsstring>
+        <name>AssertCatch</name>
+        <param>
+          <type>string</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Обработка catch для AssertCheck</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Сообщение</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" line="74" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" bodystart="74" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a71d774c01dd13a481e40342fdf72a264" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string CodeWars.Tests.KataTests.ErrorMessage&lt; Tout, Tin &gt;</definition>
+        <argsstring>(Tin input, Tout expected, Tout returned)</argsstring>
+        <name>ErrorMessage&lt; Tout, Tin &gt;</name>
+        <param>
+          <type>Tin</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>Tout</type>
+          <declname>expected</declname>
+        </param>
+        <param>
+          <type>Tout</type>
+          <declname>returned</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает сообщение об ошибке, собранное на основе входящих данных, ожидаемого возврата и фактического возврата</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Входящие данные</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expected</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ожидаемые данные</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>returned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Возвращённые данные</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Отформатированное сообщение</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" line="85" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" bodystart="85" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_tests_1_1_kata_tests_1a5f974936537a54d693e54473bd0b6bc8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string CodeWars.Tests.KataTests.GetString&lt; T &gt;</definition>
+        <argsstring>(T a)</argsstring>
+        <name>GetString&lt; T &gt;</name>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает строку на основе переменной, с учётом является ли переменная коллекцией</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Тип переменно</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Переменная</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" line="103" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/TestAutomatisation.cs" bodystart="103" bodyend="105"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" line="10" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/KataTests.cs" bodystart="10" bodyend="216"/>
+    <listofallmembers>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1ab2d4692efe210999b3cc4c8fa14baef3" prot="private" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>AssertCall&lt; T &gt;</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1af96bf5ff929eb142ed828a07c032a445" prot="private" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>AssertCatch</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a9c2c214761d53c71e0cdbcfa53c8236f" prot="private" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>AssertCheck&lt; Tout, Tin &gt;</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a4f06ef1ae51f97d9b3ea0edcda2be416" prot="private" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>AssertDlg&lt; T &gt;</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a4bc89763156e70972f604fd1a5849709" prot="public" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>BundesLigaTableTest</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a57b8de3c4d6bc9f74855ef508c3a40c2" prot="public" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>CharByteTest</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a71d774c01dd13a481e40342fdf72a264" prot="private" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>ErrorMessage&lt; Tout, Tin &gt;</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a173921f0f652454cc6a0313562691b76" prot="public" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>FromBase64Test</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a42f75fd8f2236cd472e9311765e104c2" prot="public" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>GetDividersTest</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a5f974936537a54d693e54473bd0b6bc8" prot="private" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>GetString&lt; T &gt;</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1ad829f258a6daa84feea2053962fbed13" prot="public" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>ListSquaredTest</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1af291ddbd6045d5e0eabbba36651fff01" prot="private" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>ParseDictonary&lt; TKey, TValue &gt;</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1ae16617e9bb458ee88ed40a53e7a2737a" prot="public" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>SoundexTest</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a0514840849682c696cf83ccd9deed7f2" prot="private" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>TestOneTypeArgs&lt; Tout, Tin &gt;</name></member>
+      <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a47a493e64f18094bdf605988c26712fb" prot="public" virt="non-virtual"><scope>CodeWars::Tests::KataTests</scope><name>ToBase64Test</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

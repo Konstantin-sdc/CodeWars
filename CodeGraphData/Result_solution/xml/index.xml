@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.6">
+  <compound refid="class_code_wars_1_1_kata" kind="class"><name>CodeWars::Kata</name>
+    <member refid="class_code_wars_1_1_kata_1a7c45960fe9e59851dda2bee1d8568d76" kind="variable"><name>_soundDict</name></member>
+    <member refid="class_code_wars_1_1_kata_1a80f2f815cd924bacfb39bbbf51fa9ee5" kind="variable"><name>_codeString</name></member>
+    <member refid="class_code_wars_1_1_kata_1ac1bab842685cd2e16a07c20334c2a112" kind="function"><name>RemovNb</name></member>
+    <member refid="class_code_wars_1_1_kata_1a35084f1a8c1090f10725e59651d90aba" kind="function"><name>Perimeter</name></member>
+    <member refid="class_code_wars_1_1_kata_1a21ed9dba090962ba3fc0c06855286065" kind="function"><name>IsMerge</name></member>
+    <member refid="class_code_wars_1_1_kata_1ad84681cbb8f9d724a5f7c1654ec520ca" kind="function"><name>Interpret</name></member>
+    <member refid="class_code_wars_1_1_kata_1abf4b88fdf7bb808560a4c802184a224d" kind="function"><name>Soundex</name></member>
+    <member refid="class_code_wars_1_1_kata_1ab53bd3f08ad32bc67ef38eff6d92f0bd" kind="function"><name>ToBase64</name></member>
+    <member refid="class_code_wars_1_1_kata_1a8428c5e28c4d52bb09f733f9446b31b8" kind="function"><name>FromBase64</name></member>
+    <member refid="class_code_wars_1_1_kata_1a174b037f05f47cfd20a580cd14d5faba" kind="function"><name>BundesLigaTable</name></member>
+    <member refid="class_code_wars_1_1_kata_1a16bad44fcac943f3a7e2193654c2cc54" kind="function"><name>ListSquared</name></member>
+    <member refid="class_code_wars_1_1_kata_1a2791f702385538f446b32ec9106b1c86" kind="function"><name>GetDividers</name></member>
+    <member refid="class_code_wars_1_1_kata_1a9074129eb01f2c7f053976de3bea0c9a" kind="function"><name>Persistence</name></member>
+    <member refid="class_code_wars_1_1_kata_1aeea3d4e3dda71493dbe22f211af899fb" kind="function"><name>LongestConsec</name></member>
+    <member refid="class_code_wars_1_1_kata_1ad64b356235fd07ddb77acc58b368aea5" kind="function"><name>SumDigPow</name></member>
+    <member refid="class_code_wars_1_1_kata_1af334ee9868db620ad6d70e41467bbf09" kind="function"><name>Order</name></member>
+    <member refid="class_code_wars_1_1_kata_1abb9ad29890c55b5a1f581ae0e0158bfe" kind="function"><name>Solution</name></member>
+    <member refid="class_code_wars_1_1_kata_1a99efa80ea55d72300ee51cc999e3c553" kind="function"><name>FindNb</name></member>
+    <member refid="class_code_wars_1_1_kata_1a6cb002b91e74afb02a6a851da614dfe8" kind="function"><name>HighAndLow</name></member>
+    <member refid="class_code_wars_1_1_kata_1a3e1cf94da25529fd48736ba1fb61caef" kind="function"><name>Maskify</name></member>
+    <member refid="class_code_wars_1_1_kata_1a85ece638938710e3d65307f5d30dcd2b" kind="function"><name>IsIsogram</name></member>
+    <member refid="class_code_wars_1_1_kata_1a8284049f0c1fde33ce5bb83184d08409" kind="function"><name>SquareDigits</name></member>
+    <member refid="class_code_wars_1_1_kata_1a17d5b2e273e5c1a987531a1a88d6928f" kind="function"><name>NbYear</name></member>
+    <member refid="class_code_wars_1_1_kata_1ad93ce4675863ec25e03049ffcedf06ed" kind="function"><name>FriendOrFoe</name></member>
+    <member refid="class_code_wars_1_1_kata_1a4b5b0da985d6c4e022dba9be44a18d87" kind="function"><name>RowSumOddNumbers</name></member>
+    <member refid="class_code_wars_1_1_kata_1aeb91339701a62267c12029652dab83f9" kind="function"><name>MinMax</name></member>
+    <member refid="class_code_wars_1_1_kata_1a9e2f53d33405dde1986bf479e8f0a852" kind="function"><name>MayExtract</name></member>
+    <member refid="class_code_wars_1_1_kata_1aebb8d856dbae645725f1a073362eb1ca" kind="function"><name>SoundexSingle</name></member>
+    <member refid="class_code_wars_1_1_kata_1ab2a656deec14d5a65f303d6fd6e689bb" kind="function"><name>BitGroups</name></member>
+    <member refid="class_code_wars_1_1_kata_1a33515af18a3b032b70a810ed2e9c4c5f" kind="function"><name>SimpeDividers</name></member>
+  </compound>
+  <compound refid="class_code_wars_1_1_tests_1_1_kata_tests" kind="class"><name>CodeWars::Tests::KataTests</name>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1ae16617e9bb458ee88ed40a53e7a2737a" kind="function"><name>SoundexTest</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a47a493e64f18094bdf605988c26712fb" kind="function"><name>ToBase64Test</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a173921f0f652454cc6a0313562691b76" kind="function"><name>FromBase64Test</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a57b8de3c4d6bc9f74855ef508c3a40c2" kind="function"><name>CharByteTest</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a4bc89763156e70972f604fd1a5849709" kind="function"><name>BundesLigaTableTest</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1ad829f258a6daa84feea2053962fbed13" kind="function"><name>ListSquaredTest</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a42f75fd8f2236cd472e9311765e104c2" kind="function"><name>GetDividersTest</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a0514840849682c696cf83ccd9deed7f2" kind="function"><name>TestOneTypeArgs&lt; Tout, Tin &gt;</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1af291ddbd6045d5e0eabbba36651fff01" kind="function"><name>ParseDictonary&lt; TKey, TValue &gt;</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a9c2c214761d53c71e0cdbcfa53c8236f" kind="function"><name>AssertCheck&lt; Tout, Tin &gt;</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1ab2d4692efe210999b3cc4c8fa14baef3" kind="function"><name>AssertCall&lt; T &gt;</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1af96bf5ff929eb142ed828a07c032a445" kind="function"><name>AssertCatch</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a71d774c01dd13a481e40342fdf72a264" kind="function"><name>ErrorMessage&lt; Tout, Tin &gt;</name></member>
+    <member refid="class_code_wars_1_1_tests_1_1_kata_tests_1a5f974936537a54d693e54473bd0b6bc8" kind="function"><name>GetString&lt; T &gt;</name></member>
+  </compound>
+  <compound refid="class_code_wars_1_1_kata_type_attribute" kind="class"><name>CodeWars::KataTypeAttribute</name>
+    <member refid="class_code_wars_1_1_kata_type_attribute_1a498a4eca9f7f4d33b4cea002a2c68eb6" kind="property"><name>LevelValue</name></member>
+    <member refid="class_code_wars_1_1_kata_type_attribute_1a44366a95f385f1b8a37d5d828c784594" kind="property"><name>LevelType</name></member>
+    <member refid="class_code_wars_1_1_kata_type_attribute_1ad53211a9c6fc7b8c30ad1a2321cfdbb1" kind="variable"><name>KataLink</name></member>
+    <member refid="class_code_wars_1_1_kata_type_attribute_1a617b9810dbc6be44dbf53c2c91123c1c" kind="function"><name>KataTypeAttribute</name></member>
+  </compound>
+  <compound refid="class_code_wars_1_1_kata_1_1_kommando" kind="class"><name>CodeWars::Kata::Kommando</name>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1a2647a17af0827e7e13dd2f645129c334" kind="variable"><name>Name</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1a07fe1bd3ae87d02b20c8134aaca2cd4f" kind="variable"><name>MatchCount</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1aae4311273f5b77cd8c666f4dfbc014f0" kind="variable"><name>GoalsOut</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1a334301aa3ee0cff59ca2134425c6f855" kind="variable"><name>GoalsIn</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1a4f78afe3c44d9557299541c92ff47409" kind="variable"><name>Wins</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1a27d0f3113791d90bf8a37db40cb47d0b" kind="variable"><name>Ties</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1aea8962da04e0964890e2cc42d8b21ddd" kind="variable"><name>Loses</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1a6c7001a79f635fb2a527176bfe36351e" kind="variable"><name>Points</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1a3101fad3889c412cd1b9e83eef93b510" kind="function"><name>Kommando</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1a2e021a93317889b2ed268cf03562ab0a" kind="function"><name>AddToList</name></member>
+    <member refid="class_code_wars_1_1_kata_1_1_kommando_1ae93c095c82779f206930418d7280ee46" kind="function"><name>SameResult</name></member>
+  </compound>
+  <compound refid="class_code_wars_1_1_kata_1_1_kyu5" kind="class"><name>CodeWars::Kata::Kyu5</name>
+    <member refid="class_code_wars_1_1_kata_1_1_kyu5_1a875d6726e913bd45e1f5a7b1fa5c8349" kind="function"><name>HEXfromRGB</name></member>
+  </compound>
+  <compound refid="class_code_wars_1_1_program" kind="class"><name>CodeWars::Program</name>
+    <member refid="class_code_wars_1_1_program_1a21d0d419798861df1457de84a565bb6c" kind="function"><name>Main</name></member>
+  </compound>
+  <compound refid="class_code_wars_1_1_xbonacci" kind="class"><name>CodeWars::Xbonacci</name>
+    <member refid="class_code_wars_1_1_xbonacci_1a2ac13b30cf765669d4360472735fb561" kind="function"><name>Tribonacci</name></member>
+  </compound>
+  <compound refid="namespace_code_wars" kind="namespace"><name>CodeWars</name>
+    <member refid="namespace_code_wars_1a85f9e366a526b202b60c63f3630c7c5f" kind="enum"><name>LevelTypeEnum</name></member>
+    <member refid="namespace_code_wars_1a85f9e366a526b202b60c63f3630c7c5fa879d86f9846561454545ffd123284e33" kind="enumvalue"><name>Kyu</name></member>
+    <member refid="namespace_code_wars_1a85f9e366a526b202b60c63f3630c7c5fa97c8e6d0d14f4e242c3c37af68cc376c" kind="enumvalue"><name>Dan</name></member>
+  </compound>
+  <compound refid="namespace_code_wars_1_1_tests" kind="namespace"><name>CodeWars::Tests</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_visual_studio_1_1_test_tools_1_1_unit_testing" kind="namespace"><name>Microsoft::VisualStudio::TestTools::UnitTesting</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections" kind="namespace"><name>System::Collections</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_diagnostics" kind="namespace"><name>System::Diagnostics</name>
+  </compound>
+  <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
+  </compound>
+  <compound refid="namespace_system_1_1_numerics" kind="namespace"><name>System::Numerics</name>
+  </compound>
+  <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_compiler_services" kind="namespace"><name>System::Runtime::CompilerServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_interop_services" kind="namespace"><name>System::Runtime::InteropServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text_1_1_regular_expressions" kind="namespace"><name>System::Text::RegularExpressions</name>
+  </compound>
+  <compound refid="_kata-_kyu-5_8cs" kind="file"><name>Kata-Kyu-5.cs</name>
+  </compound>
+  <compound refid="_kata-_kyu-6_8cs" kind="file"><name>Kata-Kyu-6.cs</name>
+  </compound>
+  <compound refid="_kata-_kyu-7_8cs" kind="file"><name>Kata-Kyu-7.cs</name>
+  </compound>
+  <compound refid="_kata-_r_g_b_8cs" kind="file"><name>Kata-RGB.cs</name>
+  </compound>
+  <compound refid="_kata_8cs" kind="file"><name>Kata.cs</name>
+  </compound>
+  <compound refid="_program_8cs" kind="file"><name>Program.cs</name>
+  </compound>
+  <compound refid="_code_wars_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="_unit_test_project1_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="_user_attributes_8cs" kind="file"><name>UserAttributes.cs</name>
+  </compound>
+  <compound refid="_xbonacci_8cs" kind="file"><name>Xbonacci.cs</name>
+  </compound>
+  <compound refid="_kata_tests_8cs" kind="file"><name>KataTests.cs</name>
+  </compound>
+  <compound refid="_test_automatisation_8cs" kind="file"><name>TestAutomatisation.cs</name>
+  </compound>
+  <compound refid="dir_a1c34af2288847fee966529a17a006d7" kind="dir"><name>D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars</name>
+  </compound>
+  <compound refid="dir_40912e862f6d20000f2598777951fb17" kind="dir"><name>D:/Development/Visual Studio 2017/Projects/CodeWars</name>
+  </compound>
+  <compound refid="dir_275089585c7fc1b5fd5d7d42c69cb1da" kind="dir"><name>D:</name>
+  </compound>
+  <compound refid="dir_48a247e0b1068657ff1c99d9aa07e813" kind="dir"><name>D:/Development</name>
+  </compound>
+  <compound refid="dir_36e8dd76c47de4788a78a81ebdc999bd" kind="dir"><name>D:/Development/Visual Studio 2017/Projects</name>
+  </compound>
+  <compound refid="dir_5eb21b56ada605cb0c0a890bc271168b" kind="dir"><name>D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1/Properties</name>
+  </compound>
+  <compound refid="dir_ae9d69bb3b17f88e8f571bcf6b61dde1" kind="dir"><name>D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Properties</name>
+  </compound>
+  <compound refid="dir_323dee0577a9e6304d9dfafdbce8b16d" kind="dir"><name>D:/Development/Visual Studio 2017/Projects/CodeWars/UnitTestProject1</name>
+  </compound>
+  <compound refid="dir_5a94be2af23098104db2023bd002efe5" kind="dir"><name>D:/Development/Visual Studio 2017</name>
+  </compound>
+</doxygenindex>

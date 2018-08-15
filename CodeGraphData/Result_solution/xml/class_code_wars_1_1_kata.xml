@@ -1,0 +1,907 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_code_wars_1_1_kata" kind="class" prot="public">
+    <compoundname>CodeWars::Kata</compoundname>
+    <innerclass refid="class_code_wars_1_1_kata_1_1_kommando" prot="private">CodeWars::Kata::Kommando</innerclass>
+    <innerclass refid="class_code_wars_1_1_kata_1_1_kyu5" prot="public">CodeWars::Kata::Kyu5</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1a7c45960fe9e59851dda2bee1d8568d76" prot="private" static="yes" mutable="no">
+        <type>Dictionary&lt; string, string &gt;</type>
+        <definition>Dictionary&lt;string, string&gt; CodeWars.Kata._soundDict</definition>
+        <argsstring></argsstring>
+        <name>_soundDict</name>
+        <initializer>= new Dictionary&lt;string, string&gt;() {
+      { &quot;(?!^)[HW]&quot;, &quot;&quot; },
+      { &quot;[BFPV]&quot;, &quot;1&quot; },
+      { &quot;[CGJKQSXZ]&quot;, &quot;2&quot; },
+      { &quot;[DT]&quot;, &quot;3&quot; },
+      { &quot;[L]&quot;, &quot;4&quot; },
+      { &quot;[MN]&quot;, &quot;5&quot; },
+      { &quot;[R]&quot;, &quot;6&quot; },
+      { @&quot;(\d+)\1&quot;, &quot;$1&quot;},
+      { @&quot;(?!^)[AEIOUY]&quot;, &quot;&quot; },
+      { @&quot;$&quot;, &quot;000&quot; }
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="105" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="105" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1aebb8d856dbae645725f1a073362eb1ca" compoundref="_kata-_kyu-5_8cs" startline="130" endline="138">CodeWars.Kata.SoundexSingle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_code_wars_1_1_kata_1a80f2f815cd924bacfb39bbbf51fa9ee5" prot="private" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string CodeWars.Kata._codeString</definition>
+        <argsstring></argsstring>
+        <name>_codeString</name>
+        <initializer>= &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</initializer>
+        <briefdescription>
+<para>Кодовая строка</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="141" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="141" bodyend="-1"/>
+        <referencedby refid="class_code_wars_1_1_kata_1ab53bd3f08ad32bc67ef38eff6d92f0bd" compoundref="_kata-_kyu-5_8cs" startline="149" endline="162">CodeWars.Kata.ToBase64</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1ac1bab842685cd2e16a07c20334c2a112" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; long[]&gt;</type>
+        <definition>static List&lt;long[]&gt; CodeWars.Kata.RemovNb</definition>
+        <argsstring>(long n)</argsstring>
+        <name>RemovNb</name>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает два числа из натурального ряда, произведение которых равно сумме всех чисел этого ряда, исключая эти два числа</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Верхний предел ряда. Всегда &gt; 0</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Массив чисел</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="17" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="17" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a35084f1a8c1090f10725e59651d90aba" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>BigInteger</type>
+        <definition>static BigInteger CodeWars.Kata.Perimeter</definition>
+        <argsstring>(BigInteger n)</argsstring>
+        <name>Perimeter</name>
+        <param>
+          <type>BigInteger</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает сумму периметров квадратов в ряду Фибоначи</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="43" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="43" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a21ed9dba090962ba3fc0c06855286065" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool CodeWars.Kata.IsMerge</definition>
+        <argsstring>(string s, string part1, string part2)</argsstring>
+        <name>IsMerge</name>
+        <param>
+          <type>string</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>part1</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>part2</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает возможность объединения и перемешиваения двух строку в третию, без изменения порядка символов в исходных строках. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Итоговая строка</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>part1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Первая строка</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>part2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Вторая строка</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true, если объединение возможно</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="63" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="63" bodyend="66"/>
+        <references refid="class_code_wars_1_1_kata_1a9e2f53d33405dde1986bf479e8f0a852" compoundref="_kata-_kyu-5_8cs" startline="68" endline="81">CodeWars.Kata.MayExtract</references>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1ad84681cbb8f9d724a5f7c1654ec520ca" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.Interpret</definition>
+        <argsstring>(string code, int iterations, int width, int height)</argsstring>
+        <name>Interpret</name>
+        <param>
+          <type>string</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iterations</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Интерпретатор</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Код Paintfuck, который должен быть выполнен, передается как строка. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iterations</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="90" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="90" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1abf4b88fdf7bb808560a4c802184a224d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.Soundex</definition>
+        <argsstring>(string names)</argsstring>
+        <name>Soundex</name>
+        <param>
+          <type>string</type>
+          <declname>names</declname>
+        </param>
+        <briefdescription>
+<para>Преобразует слова английского языка по алгоритму SOUNDEX</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Строка из слов, разделённых пробелом</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>SOUNDEX-коды группы слов</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="122" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="122" bodyend="128"/>
+        <references refid="class_code_wars_1_1_kata_1aebb8d856dbae645725f1a073362eb1ca" compoundref="_kata-_kyu-5_8cs" startline="130" endline="138">CodeWars.Kata.SoundexSingle</references>
+        <referencedby refid="class_code_wars_1_1_tests_1_1_kata_tests_1ae16617e9bb458ee88ed40a53e7a2737a" compoundref="_kata_tests_8cs" startline="13" endline="30">CodeWars.Tests.KataTests.SoundexTest</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1ab53bd3f08ad32bc67ef38eff6d92f0bd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.ToBase64</definition>
+        <argsstring>(string s)</argsstring>
+        <name>ToBase64</name>
+        <param>
+          <type>string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает результат base64 кодирования исходной строки <emphasis>s</emphasis>  с использованием UTF-8 </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Исходная строка</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Результат</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="149" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="149" bodyend="162"/>
+        <references refid="class_code_wars_1_1_kata_1a80f2f815cd924bacfb39bbbf51fa9ee5" compoundref="_kata-_kyu-5_8cs" startline="141">CodeWars.Kata._codeString</references>
+        <references refid="class_code_wars_1_1_kata_1ab2a656deec14d5a65f303d6fd6e689bb" compoundref="_kata-_kyu-5_8cs" startline="182" endline="194">CodeWars.Kata.BitGroups</references>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a8428c5e28c4d52bb09f733f9446b31b8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.FromBase64</definition>
+        <argsstring>(string s)</argsstring>
+        <name>FromBase64</name>
+        <param>
+          <type>string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает результат base64 декодирования исходной последовательности <emphasis>s</emphasis>  с использованием UTF-8 </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Исходная последовательность</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Результат</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="170" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="170" bodyend="180"/>
+        <references refid="class_code_wars_1_1_kata_1ab2a656deec14d5a65f303d6fd6e689bb" compoundref="_kata-_kyu-5_8cs" startline="182" endline="194">CodeWars.Kata.BitGroups</references>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a174b037f05f47cfd20a580cd14d5faba" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.BundesLigaTable</definition>
+        <argsstring>(params string[] results)</argsstring>
+        <name>BundesLigaTable</name>
+        <param>
+          <type>params string[]</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="197" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="197" bodyend="232"/>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1aae4311273f5b77cd8c666f4dfbc014f0" compoundref="_kata-_kyu-5_8cs" startline="242">CodeWars.Kata.Kommando.GoalsOut</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a07fe1bd3ae87d02b20c8134aaca2cd4f" compoundref="_kata-_kyu-5_8cs" startline="240">CodeWars.Kata.Kommando.MatchCount</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a6c7001a79f635fb2a527176bfe36351e" compoundref="_kata-_kyu-5_8cs" startline="252">CodeWars.Kata.Kommando.Points</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1ae93c095c82779f206930418d7280ee46" compoundref="_kata-_kyu-5_8cs" startline="291" endline="297">CodeWars.Kata.Kommando.SameResult</references>
+        <references refid="class_code_wars_1_1_kata_1_1_kommando_1a27d0f3113791d90bf8a37db40cb47d0b" compoundref="_kata-_kyu-5_8cs" startline="248">CodeWars.Kata.Kommando.Ties</references>
+        <referencedby refid="class_code_wars_1_1_tests_1_1_kata_tests_1a4bc89763156e70972f604fd1a5849709" compoundref="_kata_tests_8cs" startline="82" endline="186">CodeWars.Tests.KataTests.BundesLigaTableTest</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a16bad44fcac943f3a7e2193654c2cc54" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.ListSquared</definition>
+        <argsstring>(long[] a)</argsstring>
+        <name>ListSquared</name>
+        <param>
+          <type>long[]</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Меньшее число диапазона</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Большее число диапазона</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="307" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="307" bodyend="318"/>
+        <referencedby refid="class_code_wars_1_1_tests_1_1_kata_tests_1ad829f258a6daa84feea2053962fbed13" compoundref="_kata_tests_8cs" startline="189" endline="199">CodeWars.Tests.KataTests.ListSquaredTest</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a2791f702385538f446b32ec9106b1c86" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; long &gt;</type>
+        <definition>static List&lt;long&gt; CodeWars.Kata.GetDividers</definition>
+        <argsstring>(long dvsn)</argsstring>
+        <name>GetDividers</name>
+        <param>
+          <type>long</type>
+          <declname>dvsn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="320" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="320" bodyend="335"/>
+        <references refid="class_code_wars_1_1_kata_1a33515af18a3b032b70a810ed2e9c4c5f" compoundref="_kata-_kyu-5_8cs" startline="337" endline="353">CodeWars.Kata.SimpeDividers</references>
+        <referencedby refid="class_code_wars_1_1_tests_1_1_kata_tests_1a42f75fd8f2236cd472e9311765e104c2" compoundref="_kata_tests_8cs" startline="202" endline="215">CodeWars.Tests.KataTests.GetDividersTest</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a9074129eb01f2c7f053976de3bea0c9a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int CodeWars.Kata.Persistence</definition>
+        <argsstring>(long n)</argsstring>
+        <name>Persistence</name>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает количество операций умножения, которые нужно провести над цифрами данного числа до тех пор, пока они не станут одной цифрой.</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Проверяемое число</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Необходимое число умножений</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" line="14" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" bodystart="14" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1aeea3d4e3dda71493dbe22f211af899fb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String CodeWars.Kata.LongestConsec</definition>
+        <argsstring>(string[] strarr, int k)</argsstring>
+        <name>LongestConsec</name>
+        <param>
+          <type>string[]</type>
+          <declname>strarr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+<para>Вернуть первую наидлиннейшую строку, состоящую из k элементов массива</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strarr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Входящий массив</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Нужное число элементов</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Строка</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" line="32" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" bodystart="32" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1ad64b356235fd07ddb77acc58b368aea5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long[]</type>
+        <definition>static long [] CodeWars.Kata.SumDigPow</definition>
+        <argsstring>(long a, long b)</argsstring>
+        <name>SumDigPow</name>
+        <param>
+          <type>long</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает массив чисел из входящего диапазона с такими свойствами, что эти числа равны сумме составляющих их цифр, в степенях, равных местам цифр в числе. (например: 135 = 1^1 + 3^2 + 5^3) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Начало входящего диапазона</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Конец входящего диапазона</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Массив чисел, удовлетворяющих условию</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" line="51" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" bodystart="51" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1af334ee9868db620ad6d70e41467bbf09" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.Order</definition>
+        <argsstring>(string words)</argsstring>
+        <name>Order</name>
+        <param>
+          <type>string</type>
+          <declname>words</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает строку из слов исходной строки, отсортированных согласно числам в этих словах</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>words</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Исходная строка</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Итоговая строка</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" line="77" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" bodystart="77" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1abb9ad29890c55b5a1f581ae0e0158bfe" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int CodeWars.Kata.Solution</definition>
+        <argsstring>(int value)</argsstring>
+        <name>Solution</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает сумму всех чисел в натуральном ряду, которые делятся на 3 или на 5</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Верхний предел ряда</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Сумма</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" line="89" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a99efa80ea55d72300ee51cc999e3c553" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>static long CodeWars.Kata.FindNb</definition>
+        <argsstring>(params long[] m)</argsstring>
+        <name>FindNb</name>
+        <param>
+          <type>params long[]</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Возвращает количество кубов, нужное для достижения объёма = m.</para><para>Кубы начинаются с размеров 1х1х1.</para><para>Сторона каждого последующего куба больше стороны предыдущего на 1.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Нужный объём</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Количество кубов или -1, если объём не может уместить количество.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" line="102" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-6.cs" bodystart="102" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a6cb002b91e74afb02a6a851da614dfe8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.HighAndLow</definition>
+        <argsstring>(string numbers)</argsstring>
+        <name>HighAndLow</name>
+        <param>
+          <type>string</type>
+          <declname>numbers</declname>
+        </param>
+        <briefdescription>
+<para>7 Возвращает самое большое и самое малое числа из строки чисел</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>numbers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Строка чисел, разделённых пробелами</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Строка из наибольшего и наименьшего чисел</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" line="14" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a3e1cf94da25529fd48736ba1fb61caef" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.Maskify</definition>
+        <argsstring>(string cc)</argsstring>
+        <name>Maskify</name>
+        <param>
+          <type>string</type>
+          <declname>cc</declname>
+        </param>
+        <briefdescription>
+<para>Маскирует символом # все символы входящей строки, кроме последних четырёх</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Строка,которую следует замаскировать</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Замаскированная строка</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" line="23" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a85ece638938710e3d65307f5d30dcd2b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool CodeWars.Kata.IsIsogram</definition>
+        <argsstring>(string s)</argsstring>
+        <name>IsIsogram</name>
+        <param>
+          <type>string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Указывает является ли проверяемая строка изограммой</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Проверяемая строка</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true если является</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" line="32" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a8284049f0c1fde33ce5bb83184d08409" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int CodeWars.Kata.SquareDigits</definition>
+        <argsstring>(int n)</argsstring>
+        <name>SquareDigits</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает число, состоящие из квадратов каждой цифры исходного числа</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Исходное число</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Число из квадратов</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" line="40" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a17d5b2e273e5c1a987531a1a88d6928f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int CodeWars.Kata.NbYear</definition>
+        <argsstring>(int p0, double percent, int aug, int p)</argsstring>
+        <name>NbYear</name>
+        <param>
+          <type>int</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>percent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>aug</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает количество периодов, за которое начальное количество достигнет целевого</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Начальное количество</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>percent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Периодическое изменение в процентах</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aug</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Периодическое абсолютное изменение</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Целевое количество</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Количество периодов</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" line="53" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" bodystart="53" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1ad93ce4675863ec25e03049ffcedf06ed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IEnumerable&lt; string &gt;</type>
+        <definition>static IEnumerable&lt;string&gt; CodeWars.Kata.FriendOrFoe</definition>
+        <argsstring>(string[] n)</argsstring>
+        <name>FriendOrFoe</name>
+        <param>
+          <type>string[]</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает строки, длина которых = 4</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Массив строк для проверки</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Коллекция строк</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a4b5b0da985d6c4e022dba9be44a18d87" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>static long CodeWars.Kata.RowSumOddNumbers</definition>
+        <argsstring>(long n)</argsstring>
+        <name>RowSumOddNumbers</name>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает сумму нечётных чисел числового треугольника</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Номер блока, считая от 1</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Сумма нечётных чисел</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" line="71" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-7.cs" bodystart="71" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1aeb91339701a62267c12029652dab83f9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int[]</type>
+        <definition>static int [] CodeWars.Kata.MinMax</definition>
+        <argsstring>(int[] lst)</argsstring>
+        <name>MinMax</name>
+        <param>
+          <type>int[]</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata.cs" line="8" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a9e2f53d33405dde1986bf479e8f0a852" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool CodeWars.Kata.MayExtract</definition>
+        <argsstring>(string s, params string[] parts)</argsstring>
+        <name>MayExtract</name>
+        <param>
+          <type>string</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>params string[]</type>
+          <declname>parts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="68" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="68" bodyend="81"/>
+        <referencedby refid="class_code_wars_1_1_kata_1a21ed9dba090962ba3fc0c06855286065" compoundref="_kata-_kyu-5_8cs" startline="63" endline="66">CodeWars.Kata.IsMerge</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1aebb8d856dbae645725f1a073362eb1ca" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string CodeWars.Kata.SoundexSingle</definition>
+        <argsstring>(string word)</argsstring>
+        <name>SoundexSingle</name>
+        <param>
+          <type>string</type>
+          <declname>word</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="130" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="130" bodyend="138"/>
+        <references refid="class_code_wars_1_1_kata_1a7c45960fe9e59851dda2bee1d8568d76" compoundref="_kata-_kyu-5_8cs" startline="105">CodeWars.Kata._soundDict</references>
+        <referencedby refid="class_code_wars_1_1_kata_1abf4b88fdf7bb808560a4c802184a224d" compoundref="_kata-_kyu-5_8cs" startline="122" endline="128">CodeWars.Kata.Soundex</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1ab2a656deec14d5a65f303d6fd6e689bb" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; string &gt;</type>
+        <definition>static List&lt;string&gt; CodeWars.Kata.BitGroups</definition>
+        <argsstring>(string s, int oldSize, int newSize)</argsstring>
+        <name>BitGroups</name>
+        <param>
+          <type>string</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>oldSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>newSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="182" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="182" bodyend="194"/>
+        <referencedby refid="class_code_wars_1_1_kata_1a8428c5e28c4d52bb09f733f9446b31b8" compoundref="_kata-_kyu-5_8cs" startline="170" endline="180">CodeWars.Kata.FromBase64</referencedby>
+        <referencedby refid="class_code_wars_1_1_kata_1ab53bd3f08ad32bc67ef38eff6d92f0bd" compoundref="_kata-_kyu-5_8cs" startline="149" endline="162">CodeWars.Kata.ToBase64</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_code_wars_1_1_kata_1a33515af18a3b032b70a810ed2e9c4c5f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerable&lt; long &gt;</type>
+        <definition>static IEnumerable&lt;long&gt; CodeWars.Kata.SimpeDividers</definition>
+        <argsstring>(long dvsn)</argsstring>
+        <name>SimpeDividers</name>
+        <param>
+          <type>long</type>
+          <declname>dvsn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="337" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="337" bodyend="353"/>
+        <referencedby refid="class_code_wars_1_1_kata_1a2791f702385538f446b32ec9106b1c86" compoundref="_kata-_kyu-5_8cs" startline="320" endline="335">CodeWars.Kata.GetDividers</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Класс для тренировок</para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" line="11" column="1" bodyfile="D:/Development/Visual Studio 2017/Projects/CodeWars/CodeWars/Kata-Kyu-5.cs" bodystart="11" bodyend="355"/>
+    <listofallmembers>
+      <member refid="class_code_wars_1_1_kata_1a80f2f815cd924bacfb39bbbf51fa9ee5" prot="private" virt="non-virtual"><scope>CodeWars::Kata</scope><name>_codeString</name></member>
+      <member refid="class_code_wars_1_1_kata_1a7c45960fe9e59851dda2bee1d8568d76" prot="private" virt="non-virtual"><scope>CodeWars::Kata</scope><name>_soundDict</name></member>
+      <member refid="class_code_wars_1_1_kata_1ab2a656deec14d5a65f303d6fd6e689bb" prot="private" virt="non-virtual"><scope>CodeWars::Kata</scope><name>BitGroups</name></member>
+      <member refid="class_code_wars_1_1_kata_1a174b037f05f47cfd20a580cd14d5faba" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>BundesLigaTable</name></member>
+      <member refid="class_code_wars_1_1_kata_1a99efa80ea55d72300ee51cc999e3c553" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>FindNb</name></member>
+      <member refid="class_code_wars_1_1_kata_1ad93ce4675863ec25e03049ffcedf06ed" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>FriendOrFoe</name></member>
+      <member refid="class_code_wars_1_1_kata_1a8428c5e28c4d52bb09f733f9446b31b8" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>FromBase64</name></member>
+      <member refid="class_code_wars_1_1_kata_1a2791f702385538f446b32ec9106b1c86" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>GetDividers</name></member>
+      <member refid="class_code_wars_1_1_kata_1a6cb002b91e74afb02a6a851da614dfe8" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>HighAndLow</name></member>
+      <member refid="class_code_wars_1_1_kata_1ad84681cbb8f9d724a5f7c1654ec520ca" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>Interpret</name></member>
+      <member refid="class_code_wars_1_1_kata_1a85ece638938710e3d65307f5d30dcd2b" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>IsIsogram</name></member>
+      <member refid="class_code_wars_1_1_kata_1a21ed9dba090962ba3fc0c06855286065" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>IsMerge</name></member>
+      <member refid="class_code_wars_1_1_kata_1a16bad44fcac943f3a7e2193654c2cc54" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>ListSquared</name></member>
+      <member refid="class_code_wars_1_1_kata_1aeea3d4e3dda71493dbe22f211af899fb" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>LongestConsec</name></member>
+      <member refid="class_code_wars_1_1_kata_1a3e1cf94da25529fd48736ba1fb61caef" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>Maskify</name></member>
+      <member refid="class_code_wars_1_1_kata_1a9e2f53d33405dde1986bf479e8f0a852" prot="private" virt="non-virtual"><scope>CodeWars::Kata</scope><name>MayExtract</name></member>
+      <member refid="class_code_wars_1_1_kata_1aeb91339701a62267c12029652dab83f9" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>MinMax</name></member>
+      <member refid="class_code_wars_1_1_kata_1a17d5b2e273e5c1a987531a1a88d6928f" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>NbYear</name></member>
+      <member refid="class_code_wars_1_1_kata_1af334ee9868db620ad6d70e41467bbf09" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>Order</name></member>
+      <member refid="class_code_wars_1_1_kata_1a35084f1a8c1090f10725e59651d90aba" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>Perimeter</name></member>
+      <member refid="class_code_wars_1_1_kata_1a9074129eb01f2c7f053976de3bea0c9a" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>Persistence</name></member>
+      <member refid="class_code_wars_1_1_kata_1ac1bab842685cd2e16a07c20334c2a112" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>RemovNb</name></member>
+      <member refid="class_code_wars_1_1_kata_1a4b5b0da985d6c4e022dba9be44a18d87" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>RowSumOddNumbers</name></member>
+      <member refid="class_code_wars_1_1_kata_1a33515af18a3b032b70a810ed2e9c4c5f" prot="private" virt="non-virtual"><scope>CodeWars::Kata</scope><name>SimpeDividers</name></member>
+      <member refid="class_code_wars_1_1_kata_1abb9ad29890c55b5a1f581ae0e0158bfe" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>Solution</name></member>
+      <member refid="class_code_wars_1_1_kata_1abf4b88fdf7bb808560a4c802184a224d" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>Soundex</name></member>
+      <member refid="class_code_wars_1_1_kata_1aebb8d856dbae645725f1a073362eb1ca" prot="private" virt="non-virtual"><scope>CodeWars::Kata</scope><name>SoundexSingle</name></member>
+      <member refid="class_code_wars_1_1_kata_1a8284049f0c1fde33ce5bb83184d08409" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>SquareDigits</name></member>
+      <member refid="class_code_wars_1_1_kata_1ad64b356235fd07ddb77acc58b368aea5" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>SumDigPow</name></member>
+      <member refid="class_code_wars_1_1_kata_1ab53bd3f08ad32bc67ef38eff6d92f0bd" prot="public" virt="non-virtual"><scope>CodeWars::Kata</scope><name>ToBase64</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
