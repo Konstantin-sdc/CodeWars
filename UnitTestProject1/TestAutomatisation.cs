@@ -22,17 +22,17 @@ namespace CodeWars.Tests {
     /// <param name="dic">Словарь</param>
     /// <param name="dlg">Делегат тестируемого метода</param>
     void TestOneTypeArgs<Tin>(IDictionary<Tin, ICollection> dic, Func<Tin, ICollection> dlg) {
-      ParseDictonary(dic, dlg);
+      ParseDictonary(dic, dlg);      
     }
 
     /// <summary>Проход метода делегата по словарю с проверкой соответствия фактических и ожидаемых результатов</summary>
-    /// <typeparam name="TKey">Тип аргументов метода делегата</typeparam>
-    /// <typeparam name="TValue">Тип возвращаемых занчений</typeparam>
+    /// <typeparam name="Tin">Тип аргументов метода делегата</typeparam>
+    /// <typeparam name="Tout">Тип возвращаемых занчений</typeparam>
     /// <param name="dictionary">Словарь</param>
     /// <param name="dlg">Делегат</param>
-    void ParseDictonary<TKey, TValue>(IDictionary<TKey, TValue> dictionary, Func<TKey, TValue> dlg) {
+    void ParseDictonary<Tin, Tout>(IDictionary<Tin, Tout> dictionary, Func<Tin, Tout> dlg) {
       foreach(var item in dictionary) {
-        TValue returned = dlg.Invoke(item.Key);
+        Tout returned = dlg.Invoke(item.Key);
         AssertCheck(item.Key, item.Value, returned);
       }
     }

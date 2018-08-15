@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CodeWars;
 
 namespace CodeWars.Tests {
 
@@ -200,7 +201,7 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void GetDividersTest() {
-      Dictionary<long, IEnumerable<long>> dic = new Dictionary<long, IEnumerable<long>>() {
+      Dictionary<long, List<long>> dic = new Dictionary<long, IEnumerable<long>>() {
         //{2, new List<long>(){1,2} },
         //{3, new List<long>(){1,3} },
         //{4, new List<long>(){1,2,4} },
@@ -210,9 +211,10 @@ namespace CodeWars.Tests {
         {225, new List<long>(){ 1, 3, 5, 9, 15, 25, 45, 75, 225 } },
         //{441, new List<long>(){ 1, 3, 7, 9, 21, 49, 63, 147, 441 } },
       };
-      OneArgDlg<IEnumerable<long>, long> dlg = Kata.GetDividers;
-      TestOneTypeArgs(dic, dlg);
+      //Func<long, IEnumerable<long>> dlg = new Func<long, IEnumerable<long>>
+      
     }
+
   }
 
 }

@@ -319,7 +319,6 @@ namespace CodeWars {
 
     public static List<long> GetDividers(long dvsn) {
       List<long> dvdrs = SimpeDividers(dvsn).ToList();
-      #region Вне рекурсии!
       List<long> ads = new List<long>();
       for(int i = 0; i < dvdrs.Count; i++) {
         long r = dvdrs[i];
@@ -331,7 +330,6 @@ namespace CodeWars {
       dvdrs.AddRange(ads);
       dvdrs.Add(1);
       return dvdrs.Distinct().OrderBy(e => e).ToList();
-      #endregion
     }
 
     static IEnumerable<long> SimpeDividers(long dvsn) {
