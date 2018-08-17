@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CodeWars;
+using System.Reflection;
 
 namespace CodeWars.Tests {
 
@@ -26,8 +26,8 @@ namespace CodeWars.Tests {
         {"Sarah Connor ammonium implementation Robert Rupert Rubin Ashcraft Ashcroft Tymczak",
           "S600 C560 A555 I514 R163 R163 R150 A261 A261 T522" }
       };
-      OneArgDlg<string, string> soundex = Kata.Soundex;
-      TestOneTypeArgs(inputResult, soundex);
+      Func<string, string> soundex = Kata.Soundex;      
+      TestBox.OneTypeArgs(inputResult, soundex);
     }
 
     [TestMethod()]
@@ -182,8 +182,8 @@ namespace CodeWars.Tests {
         {in1, out1 },
         {in2, out2 },
       };
-      OneTypeDlg<string, string> dt = Kata.BundesLigaTable;
-      TestOneTypeArgs(d, dt);
+      Func<string[], string> dt = Kata.BundesLigaTable;
+      TestBox.OneTypeArgs(d, dt);
     }
 
     [TestMethod()]
@@ -196,12 +196,12 @@ namespace CodeWars.Tests {
         { t1, "[[42, 2500], [246, 84100]]"},
         { t2, "[[287, 84100]]"},
       };
-      OneTypeDlg<string, long> dlg = Kata.ListSquared;
+      Func<long, long, string> dlg = Kata.ListSquared;
     }
 
     [TestMethod()]
     public void GetDividersTest() {
-      Dictionary<long, List<long>> dic = new Dictionary<long, IEnumerable<long>>() {
+      Dictionary<long, IEnumerable<long>> dic = new Dictionary<long, IEnumerable<long>>() {
         //{2, new List<long>(){1,2} },
         //{3, new List<long>(){1,3} },
         //{4, new List<long>(){1,2,4} },
@@ -211,8 +211,8 @@ namespace CodeWars.Tests {
         {225, new List<long>(){ 1, 3, 5, 9, 15, 25, 45, 75, 225 } },
         //{441, new List<long>(){ 1, 3, 7, 9, 21, 49, 63, 147, 441 } },
       };
-      //Func<long, IEnumerable<long>> dlg = new Func<long, IEnumerable<long>>
-      
+      Func<long, IEnumerable<long>> dlg = Kata.GetDividers;
+      TestBox.OneTypeArgs(dic, dlg);
     }
 
   }

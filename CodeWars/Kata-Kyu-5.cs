@@ -194,7 +194,7 @@ namespace CodeWars {
     }
 
     [KataType(LevelTypeEnum.Kyu, 5, "57c178e16662d0d932000120")]
-    public static string BundesLigaTable(params string[] results) {
+    public static string BundesLigaTable(string[] results) {
       List<Kommando> kList = new List<Kommando>();
       foreach(string item in results) {
         string score = item.Split(new char[] { ' ' }).First();
@@ -304,15 +304,13 @@ namespace CodeWars {
     /// <param name="n">Большее число диапазона</param>
     /// <returns></returns>
     [KataType(LevelTypeEnum.Kyu, 5, "integers-recreation-one")]
-    public static string ListSquared(long[] a) {
+    public static string ListSquared(long n, long m) {
       // Делители для 42 это: 1, 2, 3, 6, 7, 14, 21, 42
       // Делители в квадратах: 1, 4, 9, 36, 49, 196, 441, 1764
       // Сумма этих квадратов = 2500
       // 2500 = 50*50 = 50 в квадрате
       // Даны 2 числа (1 <= m <= n)
       // Найти все числа между ними, у которых сумма квадратов делителей сама является квадратом
-      long m = a[0];
-      long n = a[1];
       // your code
       return "";
     }
