@@ -14,7 +14,10 @@ namespace CodeWars.Tests {
     /// <param name="dic">Словарь</param>
     /// <param name="dlg">Делегат тестируемого метода</param>
     public static void OneTypeArgs<Tout, Tin>(IDictionary<Tin, Tout> dic, Func<Tin, Tout> dlg) {
-      ParseDictonary(dic, dlg);
+      foreach(var item in dic) {
+        Tout returned = dlg.Invoke(item.Key);
+        AssertCheck(item.Key, item.Value, returned);
+      }
     }
 
     /// <summary>Тест методов с одним аргументом и возвращаемой коллекцией</summary>
@@ -23,28 +26,7 @@ namespace CodeWars.Tests {
     /// <param name="dic">Словарь</param>
     /// <param name="dlg">Делегат тестируемого метода</param>
     public static void OneTypeArgs<Tout, Tin>(IDictionary<Tin, IEnumerable<Tout>> dic, Func<Tin, IEnumerable<Tout>> dlg) {
-      ParseDictonary(dic, dlg);
-    }
-
-    /// <summary>Проход метода делегата по словарю с проверкой соответствия фактических и ожидаемых результатов</summary>
-    /// <typeparam name="Tin">Тип аргументов метода делегата</typeparam>
-    /// <typeparam name="Tout">Тип возвращаемых значений</typeparam>
-    /// <param name="dictionary">Словарь</param>
-    /// <param name="dlg">Делегат</param>
-    static void ParseDictonary<Tin, Tout>(IDictionary<Tin, Tout> dictionary, Func<Tin, Tout> dlg) {
-      foreach(var item in dictionary) {
-        Tout returned = dlg.Invoke(item.Key);
-        AssertCheck(item.Key, item.Value, returned);
-      }
-    }
-
-    /// <summary>Проход метода делегата по словарю с проверкой соответствия фактических и ожидаемых результатов</summary>
-    /// <typeparam name="Tin">Тип аргументов метода делегата</typeparam>
-    /// <typeparam name="Tout">Тип содержимого возвращаемой коллекции</typeparam>
-    /// <param name="dictionary">Словарь</param>
-    /// <param name="dlg">Делегат</param>
-    static void ParseDictonary<Tin, Tout>(IDictionary<Tin, IEnumerable<Tout>> dictionary, Func<Tin, IEnumerable<Tout>> dlg) {
-      foreach(var item in dictionary) {
+      foreach(var item in dic) {
         IEnumerable<Tout> returned = dlg.Invoke(item.Key);
         AssertCheck(item.Key, item.Value, returned);
       }
@@ -57,9 +39,11 @@ namespace CodeWars.Tests {
     /// <param name="expected">Ожидаемый результат</param>
     /// <param name="returned">Фактический результат</param>
     static void AssertCheck<Tout, Tin>(Tin input, Tout expected, Tout returned) {
-      string message = ErrorMessage(input, expected, returned);
       try { Assert.AreEqual(expected, returned); }
-      catch(AssertFailedException) { AssertCatch(message); }
+      catch(AssertFailedException) {
+        string message = ErrorMessage(input, expected, returned);
+        AssertCatch(message);
+      }
     }
 
     /// <summary>Тестирование соответствия для коллекций</summary>
@@ -69,9 +53,11 @@ namespace CodeWars.Tests {
     /// <param name="expected">Ожидаемый результат</param>
     /// <param name="returned">Фактический результат</param>
     static void AssertCheck<Tout, Tin>(Tin input, IEnumerable<Tout> expected, IEnumerable<Tout> returned) {
-      string message = ErrorMessage(input, expected, returned);
       try { CollectionAssert.AreEqual((List<Tout>)expected, (List<Tout>)returned); }
-      catch(AssertFailedException) { AssertCatch(message); }
+      catch(AssertFailedException) {
+        string message = ErrorMessage(input, expected, returned);
+        AssertCatch(message);
+      }
     }
 
     /// <summary>Обработка catch для AssertCheck</summary>
@@ -83,7 +69,7 @@ namespace CodeWars.Tests {
     }
 
     static readonly string _messageTemlate = 
-$@"
+@"
 Input: 
 {0} 
 
