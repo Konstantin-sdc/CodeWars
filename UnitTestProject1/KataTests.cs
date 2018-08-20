@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CodeWars;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Reflection;
 namespace CodeWars.Tests {
 
   [TestClass()]
-  public partial class KataTests {
+  public class KataTests {
 
     [TestMethod()]
     public void SoundexTest() {
@@ -26,7 +27,7 @@ namespace CodeWars.Tests {
         {"Sarah Connor ammonium implementation Robert Rupert Rubin Ashcraft Ashcroft Tymczak",
           "S600 C560 A555 I514 R163 R163 R150 A261 A261 T522" }
       };
-      Func<string, string> soundex = Kata.Soundex;      
+      Func<string, string> soundex = Kata.Soundex;
       TestBox.OneTypeArgs(inputResult, soundex);
     }
 
@@ -188,15 +189,7 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void ListSquaredTest() {
-      Tuple<long, long> t0 = new Tuple<long, long>(1, 250);
-      Tuple<long, long> t1 = new Tuple<long, long>(42, 250);
-      Tuple<long, long> t2 = new Tuple<long, long>(250, 500);
-      Dictionary<Tuple<long, long>, string> d = new Dictionary<Tuple<long, long>, string>() {
-        { t0, "[[1, 1], [42, 2500], [246, 84100]]"},
-        { t1, "[[42, 2500], [246, 84100]]"},
-        { t2, "[[287, 84100]]"},
-      };
-      Func<long, long, string> dlg = Kata.ListSquared;
+      string a = Kata.ListSquared(728, 728);
     }
 
     [TestMethod()]
@@ -212,9 +205,15 @@ namespace CodeWars.Tests {
         //{441, new List<long>(){ 1, 3, 7, 9, 21, 49, 63, 147, 441 } },
       };
       Func<long, IEnumerable<long>> dlg = Kata.GetDividers;
+      List<long> q = Kata.GetDividers(728);
       TestBox.OneTypeArgs(dic, dlg);
     }
 
+    [TestMethod()]
+    public void MultiplexTest() {
+      IEnumerable<long> sq = new List<long>() { 1, 2, 3, 4, 5 };
+      var r = Kata.Multiplex(2, sq, 15);
+    }
   }
 
 }

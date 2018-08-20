@@ -30,7 +30,10 @@ namespace CodeWars {
       for(long i = firstMin; i <= firstMax; i++) {
         long a = sum - i;
         long b = i + 1;
-        if(a % b > 0) continue;
+        if(a % b > 0) {
+          continue;
+        }
+
         result.Add(new long[2] { i, a / b });
       }
       return result;
@@ -69,12 +72,17 @@ namespace CodeWars {
       string ordS = string.Join("", s.OrderBy(k => k));
       string p = string.Join("", parts);
       string ordP = string.Join("", p.OrderBy(k => k));
-      if(!ordS.Equals(ordP)) return false;
+      if(!ordS.Equals(ordP)) {
+        return false;
+      }
+
       foreach(string part in parts) {
         int start = 0;
         foreach(char item in part) {
           start = s.IndexOf(item, start);
-          if(start == -1) return false;
+          if(start == -1) {
+            return false;
+          }
         }
       }
       return true;
@@ -102,7 +110,7 @@ namespace CodeWars {
       return "";
     }
 
-    static Dictionary<string, string> _soundDict = new Dictionary<string, string>() {
+    private static Dictionary<string, string> _soundDict = new Dictionary<string, string>() {
       { "(?!^)[HW]", "" },
       { "[BFPV]", "1" },
       { "[CGJKQSXZ]", "2" },
@@ -127,7 +135,7 @@ namespace CodeWars {
       return string.Join(" ", result);
     }
 
-    static string SoundexSingle(string word) {
+    private static string SoundexSingle(string word) {
       string result = word.ToUpper();
       char fC = result[0];
       foreach(KeyValuePair<string, string> item in _soundDict) {
@@ -138,7 +146,7 @@ namespace CodeWars {
     }
 
     /// <summary>Кодовая строка</summary>
-    static string _codeString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    private static string _codeString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
     /// <summary>
     /// Возвращает результат base64 кодирования исходной строки <paramref name="s"/> с использованием UTF-8
@@ -179,7 +187,7 @@ namespace CodeWars {
       return Encoding.UTF8.GetString(bytes);
     }
 
-    static List<string> BitGroups(string s, int oldSize, int newSize) {
+    private static List<string> BitGroups(string s, int oldSize, int newSize) {
       IEnumerable<int> indexes = s.Select(c => _codeString.IndexOf(c));
       IEnumerable<string> bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(oldSize, '0'));
       string bitString = string.Join("", bitList);
@@ -216,7 +224,10 @@ namespace CodeWars {
       for(int i = 0, number = 1; i < kList.Count; i++) {
         Kommando k = kList[i];
         Kommando kPr = (i - 1 >= 0) ? kList[i - 1] : k;
-        if(!k.SameResult(kPr)) number = i + 1;
+        if(!k.SameResult(kPr)) {
+          number = i + 1;
+        }
+
         string komStr = string.Join("  ",
           number.ToString().PadLeft(2) + ".",
           k.Name.PadRight(30) + k.MatchCount.ToString(),
@@ -232,7 +243,7 @@ namespace CodeWars {
     }
 
     /// <summary>Команда</summary>
-    class Kommando {
+    private class Kommando {
 
       /// <summary>Название команды</summary>
       public string Name;
@@ -260,11 +271,22 @@ namespace CodeWars {
         bool isGoals =
           int.TryParse(gOut, out GoalsOut) &&
           int.TryParse(gIn, out GoalsIn);
-        if(!isGoals) return;
+        if(!isGoals) {
+          return;
+        }
+
         MatchCount = 1;
-        if(GoalsOut > GoalsIn) Wins = 1;
-        if(GoalsOut < GoalsIn) Loses = 1;
-        if(GoalsOut == GoalsIn) Ties = 1;
+        if(GoalsOut > GoalsIn) {
+          Wins = 1;
+        }
+
+        if(GoalsOut < GoalsIn) {
+          Loses = 1;
+        }
+
+        if(GoalsOut == GoalsIn) {
+          Ties = 1;
+        }
       }
 
       /// <summary>
@@ -274,7 +296,9 @@ namespace CodeWars {
       /// <param name="lst">Список команд</param>
       public void AddToList(List<Kommando> lst) {
         Kommando fc0 = lst.Find(e => e.Name == Name);
-        if(fc0 == null) lst.Add(this);
+        if(fc0 == null) {
+          lst.Add(this);
+        }
         else {
           fc0.GoalsIn += GoalsIn;
           fc0.GoalsOut += GoalsOut;
@@ -297,30 +321,45 @@ namespace CodeWars {
       }
     }
 
+    [KataType(LevelTypeEnum.Kyu, 5, "integers-recreation-one")]
+    public static string ListSquared(long m, long n) {
+      List<long[]> squarList = SquaredList(m, n);
+      IEnumerable<string> sl = squarList.Select(s => "[" + string.Join(", ", s) + "]");
+      return "[" + string.Join(", ", sl) + "]";
+    }
+
     /// <summary>
-    /// 
+    /// Возвращает пары число — сумма квадратов из чисел между введёнными, у которых сумма квадратов делителей сама является квадратом
     /// </summary>
     /// <param name="m">Меньшее число диапазона</param>
     /// <param name="n">Большее число диапазона</param>
     /// <returns></returns>
-    [KataType(LevelTypeEnum.Kyu, 5, "integers-recreation-one")]
-    public static string ListSquared(long n, long m) {
-      // Делители для 42 это: 1, 2, 3, 6, 7, 14, 21, 42
-      // Делители в квадратах: 1, 4, 9, 36, 49, 196, 441, 1764
-      // Сумма этих квадратов = 2500
-      // 2500 = 50*50 = 50 в квадрате
-      // Даны 2 числа (1 <= m <= n)
-      // Найти все числа между ними, у которых сумма квадратов делителей сама является квадратом
-      // your code
-      return "";
+    private static List<long[]> SquaredList(long m, long n) {
+      List<long[]> numbers = new List<long[]>();
+      for(long i = m; i <= n; i++) {
+        List<long> dividers = GetDividers(i);
+        IEnumerable<long> divSquared = dividers.Select(d => d * d);
+        long sumSquared = divSquared.Sum();
+        bool isSq = IsIntegerSquared(sumSquared);
+        if(isSq) {
+          long[] c = { i, sumSquared };
+          numbers.Add(c);
+        }
+      }
+      return numbers;
     }
 
-    public static List<long> GetDividers(long dvsn) {
-      List<long> dvdrs = SimpeDividers(dvsn).ToList();
+    // ERROR Добавляются НЕ ВСЕ составные делители. Например для 42 не добавляется 14. 
+    /// <summary>Возвращает список всех целочисленных делителей</summary>
+    /// <param name="d">Ч</param>
+    /// <returns>Список делителей</returns>
+    public static List<long> GetDividers(long d) {
+      List<long> dvdrs = SimpeDividers(d).ToList();
       List<long> ads = new List<long>();
       for(int i = 0; i < dvdrs.Count; i++) {
         long r = dvdrs[i];
         for(int k = i + 1; k < dvdrs.Count; k++) {
+          ads.Add(dvdrs[i] * dvdrs[k]);
           r *= dvdrs[k];
           ads.Add(r);
         }
@@ -330,22 +369,63 @@ namespace CodeWars {
       return dvdrs.Distinct().OrderBy(e => e).ToList();
     }
 
-    static IEnumerable<long> SimpeDividers(long dvsn) {
+    /// <summary>
+    /// <para>Умножает число на последовательность,</para>
+    /// <para>затем на последовательность результатов.</para>
+    /// <para>И так далее, до превышения лимита</para>
+    /// </summary>
+    /// <param name="a">Число</param>
+    /// <param name="sequence">Входящая коллекция</param>
+    /// <param name="limit">Лимит</param>
+    /// <returns>Коллекция результатов, не превышающих лимит</returns>
+    public static IEnumerable<long> Multiplex(long a, IEnumerable<long> sequence, long limit) {
+      IEnumerable<long> sq = sequence.Distinct().OrderBy(e => e);
+      if(a * sq.ElementAt(0) > limit) return sq;
+      List<long> mult = new List<long>(sequence.Count());
+      for(int i = 0; i < sequence.Count(); i++) {
+        long r = a * sq.ElementAt(i);
+        if(r > limit) break;
+        mult.Add(r);
+      }
+      return mult.Concat(Multiplex(a, mult, limit)).Distinct();
+    }    
+
+    /// <summary>Возвращает целочисленные простые делители числа</summary>
+    /// <param name="d">Целое число</param>
+    /// <returns>Коллекция простых делителей</returns>
+    private static List<long> SimpeDividers(long d) {
       List<long> dvdrs = new List<long>();
       long dvdr = 3, step = 2;
-      if(dvsn % 2 == 0) {
+      if(d % 2 == 0) {
         dvdr = 2;
         step = 1;
       }
-      for(; dvdr <= dvsn; dvdr += step) {
-        if(dvsn % dvdr == 0) {
+      for(; dvdr <= d; dvdr += step) {
+        if(d % dvdr == 0) {
           dvdrs.Add(dvdr);
-          dvdrs.AddRange(SimpeDividers(dvsn / dvdr));
+          dvdrs.AddRange(SimpeDividers(d / dvdr));
           break;
         }
-        if(dvdr > dvsn / 2) return new List<long>() { dvsn };
+        if(dvdr > d / 2) {
+          return new List<long>() { d };
+        }
       }
-      return dvdrs; ;
+      return dvdrs;
+    }
+
+    /// <summary>Является ли число квадратом целого числа</summary>
+    /// <param name="m"></param>
+    /// <returns></returns>
+    private static bool IsIntegerSquared(long m) {
+      if(m < 0) {
+        return false;
+      }
+      long[] mod100 = { 00, 01, 04, 09, 16, 21, 24, 25, 29, 36, 41, 44, 49, 56, 61, 64, 69, 76, 81, 84, 89, 96 };
+      if(!mod100.Contains(m % 100)) {
+        return false;
+      }
+      double d = Math.Sqrt(m);
+      return d - (long)d == 0;
     }
 
   }
