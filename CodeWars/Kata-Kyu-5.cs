@@ -349,24 +349,36 @@ namespace CodeWars {
       return numbers;
     }
 
-    // ERROR Добавляются НЕ ВСЕ составные делители. Например для 42 не добавляется 14. 
     /// <summary>Возвращает список всех целочисленных делителей</summary>
     /// <param name="d">Ч</param>
     /// <returns>Список делителей</returns>
     public static List<long> GetDividers(long d) {
-      List<long> dvdrs = SimpeDividers(d).ToList();
-      List<long> ads = new List<long>();
-      for(int i = 0; i < dvdrs.Count; i++) {
-        long r = dvdrs[i];
-        for(int k = i + 1; k < dvdrs.Count; k++) {
-          ads.Add(dvdrs[i] * dvdrs[k]);
-          r *= dvdrs[k];
-          ads.Add(r);
+      List<long> simple = SimpeDividers(d);
+      List<long> dvdrs = SimpeDividers(d);
+      for(int i = 2; i < simple.Count(); i++) {
+        IEnumerable<long[]> positionCombos = LimitFactorial(simple.Count() - 1, i);
+        // Сопоставить цифры в combos с позициями в simple
+        foreach(long[] positionCombo in positionCombos) {
+          long[] digitsCombo = new long[positionCombo.Length];
+          for(int k = 0; k < positionCombo.Length; k++) {
+            long position = positionCombo[k];
+            digitsCombo[k] = simple[(int)position];
+          }
+          long composition = GetComposition(digitsCombo);
+          dvdrs.Add(composition);
         }
       }
-      dvdrs.AddRange(ads);
       dvdrs.Add(1);
+      dvdrs.Add(d);
       return dvdrs.Distinct().OrderBy(e => e).ToList();
+    }
+
+    public static long GetComposition(IEnumerable<long> seq) {
+      long result = seq.ToArray()[0];
+      for(long i = 1; i < seq.Count(); i++) {
+        result *= seq.ToArray()[i];
+      }
+      return result;
     }
 
     /// <summary>
@@ -379,18 +391,58 @@ namespace CodeWars {
     /// <param name="limit">Лимит</param>
     /// <returns>Коллекция результатов, не превышающих лимит</returns>
     public static IEnumerable<long> Multiplex(long a, IEnumerable<long> sequence, long limit) {
-      IEnumerable<long> sq = sequence.Distinct().OrderBy(e => e);
-      if(a * sq.ElementAt(0) > limit) return sq;
+      IEnumerable<long> sq = sequence.OrderBy(e => e);
+      if(a == 0 || a == 1) {
+        return sq;
+      }
+      if(a * sq.ElementAt(0) > limit) {
+        return sq;
+      }
       List<long> mult = new List<long>(sequence.Count());
       for(int i = 0; i < sequence.Count(); i++) {
-        long r = a * sq.ElementAt(i);
-        if(r > limit) break;
+        long b = sq.ElementAt(i);
+        long r = a * b;
+        if(r > limit) {
+          break;
+        }
         mult.Add(r);
       }
-      return mult.Concat(Multiplex(a, mult, limit)).Distinct();
-    }    
+      return mult.Concat(Multiplex(a, mult, limit));
+    }
 
-    /// <summary>Возвращает целочисленные простые делители числа</summary>
+    /// <summary>Возвращает сочетание из <paramref name="source"/> по <paramref name="count"/></summary>
+    /// <param name="source">Число</param>
+    /// <param name="count">Размер комбинации</param>
+    /// <param name="start">Начало отчёта</param>
+    /// <returns>Список массивов</returns>
+    public static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
+      string message = "{nameof(count)} должно быть > 1, a {nameof(source)} > nameof(count)";
+      if(source < count) {
+        throw new ArgumentOutOfRangeException(nameof(count), count, message);
+      }
+      if(count < 1) {
+        throw new ArgumentOutOfRangeException(nameof(count), count, message);
+      }
+      List<long[]> result = new List<long[]>();
+      if(count == 1) {
+        for(long i = start; i <= source; i++) {
+          result.Add(new long[] { i });
+        }
+        return result;
+      }
+      IEnumerable<long[]> prev = LimitFactorial(source, count - 1);
+      foreach(long[] comboOld in prev) {
+        for(long newItem = comboOld.Last() + 1; newItem <= source; newItem++) {
+          long[] combo = new long[count];
+          Array.Copy(comboOld, combo, comboOld.Length);
+          combo[count - 1] = newItem;
+          result.Add(combo);
+        }
+      }
+      return result;
+    }
+
+    /// <summary>Раскладывает целое число на простые делители</summary>
     /// <param name="d">Целое число</param>
     /// <returns>Коллекция простых делителей</returns>
     private static List<long> SimpeDividers(long d) {

@@ -195,17 +195,13 @@ namespace CodeWars.Tests {
     [TestMethod()]
     public void GetDividersTest() {
       Dictionary<long, IEnumerable<long>> dic = new Dictionary<long, IEnumerable<long>>() {
-        //{2, new List<long>(){1,2} },
-        //{3, new List<long>(){1,3} },
-        //{4, new List<long>(){1,2,4} },
-        //{5, new List<long>(){1,5} },
-        //{10, new List<long>(){1,2,5,10} },
-        //{15, new List<long>(){1,3,5,15} },
-        {225, new List<long>(){ 1, 3, 5, 9, 15, 25, 45, 75, 225 } },
-        //{441, new List<long>(){ 1, 3, 7, 9, 21, 49, 63, 147, 441 } },
+        //{225, new List<long>(){ 1, 3, 5, 9, 15, 25, 45, 75, 225 } },
+        {728, new List<long>() { 1, 2, 4, 7, 8, 13, 14, 26, 28, 52, 56, 91, 104, 182, 364, 728 } },
+        //{1572, new List<long>() { 1, 2, 3, 4, 6, 12, 131, 262, 393, 524, 786, 1572 } },
       };
       Func<long, IEnumerable<long>> dlg = Kata.GetDividers;
-      List<long> q = Kata.GetDividers(728);
+      Dictionary<long, List<long>> dividers = new Dictionary<long, List<long>>() {
+      };
       TestBox.OneTypeArgs(dic, dlg);
     }
 
@@ -213,6 +209,11 @@ namespace CodeWars.Tests {
     public void MultiplexTest() {
       IEnumerable<long> sq = new List<long>() { 1, 2, 3, 4, 5 };
       var r = Kata.Multiplex(2, sq, 15);
+    }
+
+    [TestMethod()]
+    public void LimitFactorialTest() {
+      var q = Kata.LimitFactorial(5, 10);
     }
   }
 
