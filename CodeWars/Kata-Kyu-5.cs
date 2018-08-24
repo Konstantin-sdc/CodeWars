@@ -480,6 +480,19 @@ namespace CodeWars {
       return d - (long)d == 0;
     }
 
+    /// <summary>
+    /// <para>Принимает целое число.</para>
+    /// <para>К каждой группе его цифр припиывает число количества этих цифр.</para>
+    /// <para>Уменьшает группы до одной цифры.</para>
+    /// <para>Возвращает полученную комбинацию в виде целого числа.</para>
+    /// </summary>
+    /// <param name="number">Исходное число</param>
+    /// <returns>Комбинация</returns>
+    [KataType(LevelTypeEnum.Kyu, 5, "conways-look-and-say-generalized")]
+    public static ulong LookSay(ulong number) {
+      throw new NotImplementedException();
+    }
+
   }
 
 }

@@ -215,6 +215,11 @@ namespace CodeWars.Tests {
     public void LimitFactorialTest() {
       var q = Kata.LimitFactorial(5, 10);
     }
+
+    [TestMethod()]
+    public void LookSayTest() {
+      throw new NotImplementedException();
+    }
   }
 
 }
