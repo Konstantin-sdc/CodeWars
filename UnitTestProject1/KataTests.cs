@@ -1,10 +1,8 @@
-﻿using CodeWars;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Reflection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CodeWars.Tests {
 
@@ -208,17 +206,28 @@ namespace CodeWars.Tests {
     [TestMethod()]
     public void MultiplexTest() {
       IEnumerable<long> sq = new List<long>() { 1, 2, 3, 4, 5 };
-      var r = Kata.Multiplex(2, sq, 15);
+      IEnumerable<long> r = Kata.Multiplex(2, sq, 15);
     }
 
     [TestMethod()]
     public void LimitFactorialTest() {
-      var q = Kata.LimitFactorial(5, 10);
+      IEnumerable<long[]> q = Kata.LimitFactorial(5, 10);
     }
 
     [TestMethod()]
     public void LookSayTest() {
-      throw new NotImplementedException();
+      Dictionary<ulong, ulong> dic = new Dictionary<ulong, ulong>() {
+        { 0, 10 },
+        { 11, 21 },
+        { 21, 1212 },
+        { 1211, 111221 },
+        { 2014, 12101114 },
+        { 9000, 1930 },
+        { 22322, 221322 },
+        { 222222222222, 122 },
+      };
+      Func<ulong, ulong> dlg = Kata.LookSay;
+      TestBox.OneTypeArgs(dic, dlg);
     }
   }
 
