@@ -501,10 +501,9 @@ namespace CodeWars {
       if(seq.First() == null) {
         return result;
       }
-
       LinkedList<T> lkLs = new LinkedList<T>(seq);
       for(LinkedListNode<T> i = lkLs.First; i != null; i = i.Next) {
-        if(i.Previous == null || i.Value.Equals(i.Previous.Value)) {
+        if(i.Previous == null || !i.Value.Equals(i.Previous.Value)) {
           result.Add(new List<T>());
         }
         result.Last().Add(i.Value);

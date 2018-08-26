@@ -206,7 +206,6 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void LookSayTest() {
-      ulong q = Kata.LookSay(112211);
       Dictionary<ulong, ulong> dic = new Dictionary<ulong, ulong>() {
         { 0, 10 },
         { 11, 21 },
