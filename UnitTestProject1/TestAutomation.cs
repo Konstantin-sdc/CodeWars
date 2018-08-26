@@ -68,6 +68,7 @@ namespace CodeWars.Tests {
       throw new AssertFailedException(message);
     }
 
+    static readonly string _sep = " | ";
     static readonly string _messageTemlate = 
 @"
 Input: 
@@ -80,14 +81,9 @@ Returned:
 {2}
 ";
 
-    /// <summary>Возвращает сообщение об ошибке, собранное на основе входящих данных, ожидаемого возврата и фактического возврата</summary>
-    /// <param name="input">Входящие данные</param>
-    /// <param name="expected">Ожидаемые данные</param>
-    /// <param name="returned">Возвращённые данные</param>
-    /// <returns>Отформатированное сообщение</returns>
     static string ErrorMessage<Tout, Tin>(Tin input, Tout expected, Tout returned) {
       string exp = expected.ToString();
-      string ret = ret = returned.ToString();
+      string ret = returned.ToString();
       return string.Format(_messageTemlate, input.ToString(), exp, ret);
     }
 
@@ -97,8 +93,8 @@ Returned:
     /// <param name="returned">Возвращённые данные</param>
     /// <returns>Отформатированное сообщение</returns>
     static string ErrorMessage<Tout, Tin>(Tin input, IEnumerable<Tout> expected, IEnumerable<Tout> returned) {
-      string exp = string.Join(Environment.NewLine, expected);
-      string ret = string.Join(Environment.NewLine, returned);
+      string exp = string.Join(_sep, expected);
+      string ret = string.Join(_sep, returned);
       return string.Format(_messageTemlate, input.ToString(), exp, ret);
     }
 

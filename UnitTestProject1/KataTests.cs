@@ -30,16 +30,6 @@ namespace CodeWars.Tests {
     }
 
     [TestMethod()]
-    public void ToBase64Test() {
-      string testSring = "M";
-      string returned = Kata.ToBase64(testSring); // dGhpcyBpcyBhIHN0cmluZyEh
-      byte[] testBytes = Encoding.UTF8.GetBytes(testSring);
-      string expected = Convert.ToBase64String(testBytes);
-      bool q = returned.Equals(expected);
-      //throw new NotImplementedException();
-    }
-
-    [TestMethod()]
     public void FromBase64Test() {
       // Знаков должно быть минимум 4
       // Знаков равно в конце должно быть не больше двух
@@ -216,10 +206,11 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void LookSayTest() {
+      ulong q = Kata.LookSay(112211);
       Dictionary<ulong, ulong> dic = new Dictionary<ulong, ulong>() {
         { 0, 10 },
         { 11, 21 },
-        { 21, 1212 },
+        { 21, 1211 },
         { 1211, 111221 },
         { 2014, 12101114 },
         { 9000, 1930 },

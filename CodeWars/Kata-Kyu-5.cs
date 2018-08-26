@@ -490,7 +490,26 @@ namespace CodeWars {
     /// <returns>Комбинация</returns>
     [KataType(LevelTypeEnum.Kyu, 5, "conways-look-and-say-generalized")]
     public static ulong LookSay(ulong number) {
-      throw new NotImplementedException();
+      string s = number.ToString();
+      List<List<char>> gs = GroupSeparate(s);
+      IEnumerable<string> result = gs.Select(e => e.Count + e.First().ToString());
+      return Convert.ToUInt64(string.Join("", result));
+    }
+
+    private static List<List<T>> GroupSeparate<T>(IEnumerable<T> seq) {
+      List<List<T>> result = new List<List<T>>();
+      if(seq.First() == null) {
+        return result;
+      }
+
+      LinkedList<T> lkLs = new LinkedList<T>(seq);
+      for(LinkedListNode<T> i = lkLs.First; i != null; i = i.Next) {
+        if(i.Previous == null || i.Value.Equals(i.Previous.Value)) {
+          result.Add(new List<T>());
+        }
+        result.Last().Add(i.Value);
+      }
+      return result;
     }
 
   }
