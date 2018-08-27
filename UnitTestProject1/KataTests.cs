@@ -222,8 +222,8 @@ namespace CodeWars.Tests {
     }
 
     [TestMethod()]
-    public void LqGTest() {
-      var q = Kata.LqG("1211"); // 121
+    public void ExtractTest() {
+
       throw new NotImplementedException();
     }
   }
