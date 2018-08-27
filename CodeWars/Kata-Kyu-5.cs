@@ -496,19 +496,29 @@ namespace CodeWars {
       return Convert.ToUInt64(string.Join("", result));
     }
 
+    /// <summary>Проводит раздельную группировку элементов в коллоекции</summary>
+    /// <typeparam name="T">ип элементов в коллекции</typeparam>
+    /// <param name="seq">Коллекция</param>
+    /// <returns>Коллекция групп</returns>
     private static List<List<T>> GroupSeparate<T>(IEnumerable<T> seq) {
       List<List<T>> result = new List<List<T>>();
       if(seq.First() == null) {
         return result;
       }
-      LinkedList<T> lkLs = new LinkedList<T>(seq);
-      for(LinkedListNode<T> i = lkLs.First; i != null; i = i.Next) {
-        if(i.Previous == null || !i.Value.Equals(i.Previous.Value)) {
+      for(int i = 0; i < seq.Count(); i++) {
+        T item = seq.ElementAt(i);
+        if(i == 0 || !seq.ElementAt(i - 1).Equals(item)) {
           result.Add(new List<T>());
         }
-        result.Last().Add(i.Value);
+        result.Last().Add(item);
       }
       return result;
+    }
+
+    public static string[] LqG(string s1) {
+      return Enumerable.Range(1, s1.Length - 1)
+        .GroupBy(i => s1[i - 1].ToString() + s1[i])
+        .Select(i => i.Key).ToArray();
     }
 
   }

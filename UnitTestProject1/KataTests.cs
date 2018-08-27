@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeWars;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -218,6 +219,12 @@ namespace CodeWars.Tests {
       };
       Func<ulong, ulong> dlg = Kata.LookSay;
       TestBox.OneTypeArgs(dic, dlg);
+    }
+
+    [TestMethod()]
+    public void LqGTest() {
+      var q = Kata.LqG("1211"); // 121
+      throw new NotImplementedException();
     }
   }
 
