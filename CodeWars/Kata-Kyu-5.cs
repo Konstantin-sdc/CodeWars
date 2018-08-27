@@ -515,12 +515,6 @@ namespace CodeWars {
       return result;
     }
 
-    public static string[] LqG(string s1) {
-      return Enumerable.Range(1, s1.Length - 1)
-        .GroupBy(i => s1[i - 1].ToString() + s1[i])
-        .Select(i => i.Key).ToArray();
-    }
-
   }
 
 }
