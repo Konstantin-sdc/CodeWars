@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace CodeWars {
+﻿namespace CodeWars {
 
   public static partial class Kata {
 
@@ -22,7 +17,21 @@ namespace CodeWars {
         // + символ — увеличить ячейку на 1
         // . символ — вывести ASCII значение ячейки
         // Например +++.++.++++. — Значение 3 - вывести, значение 5 - вывести, значение 9 — вывести.
-
+        byte cell = 0;
+        string result = "";
+        foreach(char item in code) {
+          if(item == '+') {
+            try {
+              ++cell;
+            }
+            catch(System.OverflowException) {
+              cell = 0;
+            }
+          }
+          if(item == '.') {
+            result += (char)cell;
+          }
+        }
         return "";
       }
 
