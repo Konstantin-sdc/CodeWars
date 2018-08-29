@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EsolangTests.cs" />
     <Compile Include="KataTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestAutomation.cs" />
