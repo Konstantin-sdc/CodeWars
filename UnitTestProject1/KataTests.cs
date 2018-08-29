@@ -230,8 +230,8 @@ namespace CodeWars.Tests {
       };
       Func<int[], string> dlg = Kata.Extract;
       TestBox.OneTypeArgs(dic, dlg);
-      throw new NotImplementedException();
     }
+
   }
 
 }
