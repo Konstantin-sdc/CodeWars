@@ -32,8 +32,10 @@
             result += (char)cell;
           }
         }
-        return "";
+        return result;
       }
+
+
 
     }
 
