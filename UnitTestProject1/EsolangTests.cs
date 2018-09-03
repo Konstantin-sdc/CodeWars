@@ -17,6 +17,11 @@ namespace CodeWars.Tests {
       string result = Kata.Esolang.MyFirstInterpreter(input);
     }
 
+    [TestMethod()]
+    public void InterpreterTest() {
+
+    }
+
   }
 
 }

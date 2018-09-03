@@ -35,7 +35,22 @@
         return result;
       }
 
-
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="code">Входящий код. 8-битная строка из 0 и 1. Иные символы игнорируются</param>
+      /// <param name="tape">Начальное состояние хранилища данных. Правила обработки данных. Все непредусмотренные символы игнорируются.</param>
+      /// <returns>Строка</returns>
+      [KataType(LevelTypeEnum.Kyu, 5, "esolang-interpreters-number-2-custom-smallfuck-interpreter")]
+      public static string Interpreter(string code, string tape) {
+        // Rules
+        // > - Move pointer to the right (by 1 cell)
+        // < -Move pointer to the left(by 1 cell)
+        // *-Flip the bit at the current cell
+        // [-Jump past matching] if value at current cell is 0
+        // ] -Jump back to matching[(if value at current cell is nonzero)
+        return "";
+      }
 
     }
 
