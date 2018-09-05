@@ -19,7 +19,17 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void InterpreterTest() {
-
+      Dictionary<string[], string> dic = new Dictionary<string[], string>() {
+        { new string[]{ "*", "00101100" }, "10101100" },
+        { new string[]{ ">*>*", "00101100" }, "01001100" },
+        { new string[]{ "*>*>*>*>*>*>*>*", "00101100" }, "11010011" },
+        { new string[]{ "*>*>>*>>>*>*", "00101100" }, "11111111" },
+        { new string[]{ ">>>>>*<*<<*", "00101100" }, "00000000" },
+      };
+      Func<string, string, string> dlg = Kata.Esolang.Interpreter;
+      foreach(var item in dic) {
+        Assert.AreEqual(item.Value, Kata.Esolang.Interpreter(item.Key[0], item.Key[1]));
+      }
     }
 
   }
