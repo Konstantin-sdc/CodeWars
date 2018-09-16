@@ -19,6 +19,7 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void InterpreterTest() {
+      string qwe = Kata.Esolang.Interpreter("[ [[[ [][] ]]] [] [[]] ]", "00101100");
       Dictionary<string[], string> dic = new Dictionary<string[], string>() {
         { new string[]{ "*", "00101100" }, "10101100" },
         { new string[]{ ">*>*", "00101100" }, "01001100" },
