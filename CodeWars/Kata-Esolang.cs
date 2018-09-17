@@ -57,49 +57,38 @@ namespace CodeWars {
             data.Add(item);
           }
         }
-        int dataId = 0;
-        int codePoint = 0;
+        int dataPoint = 0;
         for(int i = 0; i < code.Length; i++) {
-          if(dataId < 0 || dataId >= data.Count) {
+          if(dataPoint < 0 || dataPoint >= data.Count) {
             break;
           }
           char command = code[i];
-          if(command == '>') {
-            ++dataId;
-          }
-          if(command == '<') {
-            --dataId;
-          }
-          if(command == '*') {
-            data[dataId] = (data[dataId] == '0') ? '1' : '0';
+          if(command == '>') ++dataPoint;
+          if(command == '<') --dataPoint;
+          if(command == '*') data[dataPoint] = (data[dataPoint] == '0') ? '1' : '0';
+          if(command == '[') {
+            CodeForward(ref i, data[dataPoint], paireds);
+            continue;
           }
           if(command == '[') {
-            CodeForward(ref codePoint, data[dataId], paireds);
-          }
-          if(command == '[') {
-            CodeBack(ref codePoint, data[dataId], paireds);
+            CodeBack(ref i, data[dataPoint], paireds);
+            continue;
           }
         }
         return string.Join("", data);
       }
 
       private static void CodeForward(ref int codePount, char currentData, Dictionary<int, int> paireds) {
-        if(currentData == '1') {
-          ++codePount;
-        }
-        else {
-          codePount = paireds[codePount] + 1;
-        }
+        //if(currentData == '1') ++codePount;
+        if(currentData == '0') codePount = paireds[codePount];
         return;
       }
 
       private static void CodeBack(ref int codePount, char currentData, Dictionary<int, int> paireds) {
-        if(currentData == '0') {
-          ++codePount;
-        }
-        else {
+        //if(currentData == '0') ++codePount;
+        if(currentData == '1') {
           int point = codePount;
-          codePount = paireds.Where(e => e.Value == point).First().Key + 1;
+          codePount = paireds.Where(e => e.Value == point).First().Key;
         }
         return;
       }
@@ -111,9 +100,7 @@ namespace CodeWars {
       /// <param name="close">Элемент второй в паре</param>
       /// <returns>Словарь</returns>
       private static Dictionary<int, int> GetPairedPosition<T>(IEnumerable<T> code, T open, T close) {
-        if(code.Count() < 2 || !code.Contains(open)) {
-          return null;
-        }
+        if(code.Count() < 2 || !code.Contains(open)) return null;
         Dictionary<int, int> result = new Dictionary<int, int>();
         List<int> oPositions = new List<int>();
         int opCount = 0;
@@ -127,10 +114,12 @@ namespace CodeWars {
           for(int i = position; i < code.Count(); i++) {
             if(code.ElementAt(i).Equals(open)) {
               opCount++;
+              continue;
             }
             if(code.ElementAt(i).Equals(close)) {
               closCount++;
             }
+            else continue;
             if(opCount != 0 && opCount == closCount) {
               result.Add(position, i);
               opCount = 0;
