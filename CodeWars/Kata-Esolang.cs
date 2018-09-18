@@ -131,6 +131,39 @@ namespace CodeWars {
         return result;
       }
 
+      /// <summary>Интерпретатор для Paintfuck</summary>
+      /// <param name="code">Управляющий код. Неуправляющие символы игнорируются.</param>
+      /// <param name="iterations">Неотрицательное целое число итераций, нужных для возврата конечного состояния таблицы данных.</param>
+      /// <param name="width">Количество столбцов в таблице данных</param>
+      /// <param name="height">Количество строк в таблице данных</param>
+      /// <returns>Преобразованная таблица</returns>
+      [KataType(LevelTypeEnum.Kyu, 4, "esolang-interpreters-number-3-custom-paintf-star-star-k-interpreter")]
+      public static string Interpret(string code, int iterations, int width, int height) {
+        //n - Move data pointer north(up)
+        //e - Move data pointer east(right)
+        //s - Move data pointer south(down)
+        //w - Move data pointer west(left)
+        //* -Flip the bit at the current cell(same as in Smallfuck)
+        //[ - Jump past matching ] if bit under current pointer is 0 (same as in Smallfuck)
+        //] - Jump back to the matching [ (if bit under current pointer is nonzero) (same as in Smallfuck)
+
+        // Команды чувствительны к регистру
+        // UNDONE ЧТО ЗА НЕЯСНАЯ ХРЕНЬ?! Интерпретатор должен инициализировать все ячейки таблицы со значением 0, независимот размера таблицы.
+        // В начале указатель данных всегда в левом верхнем углу таблицы
+        // Количество итераций это количество обработанных символов таблицы?
+        // Переход между [] или обратно — одна итерация, независимо от числа команд между ними. Другой переход — другая итерация.
+        // Интерпретатор возвращает конечное состояние таблицы при любом из указанныхусловий: 
+        // 1. Все команды прочинаны слева направо.
+        // 2. Интерпретатор выполнил нужное количество итераций.
+        // Интерпретатор возвращает конечное состояние таблицы данных вида 0101\r\n0101\r\n0101.
+
+        // Если управляющих символов нет — вернуть исходное состояние таблицы данных
+        // Если iterations == 0 — вернуть исходное состояние таблицы данных
+
+        // Implement your interpreter here
+        return "";
+      }
+
     }
 
   }
