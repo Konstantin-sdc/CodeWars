@@ -1,9 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CodeWars.Tests {
 
@@ -12,14 +9,14 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void MyFirstInterpreterTest() {
-      string input = 
+      string input =
         "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++.+++++++..+++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++.+++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.";
       string result = Kata.Esolang.MyFirstInterpreter(input);
     }
 
     [TestMethod()]
     public void InterpreterTest() {
-      
+
       string qwe = Kata.Esolang.Interpreter("[q]", "11111");
       Dictionary<string[], string> dic = new Dictionary<string[], string>() {
         { new string[]{ "*", "00101100" }, "10101100" },
@@ -29,11 +26,16 @@ namespace CodeWars.Tests {
         { new string[]{ ">>>>>*<*<<*", "00101100" }, "00000000" },
       };
       Func<string, string, string> dlg = Kata.Esolang.Interpreter;
-      foreach(var item in dic) {
+      foreach(KeyValuePair<string[], string> item in dic) {
         Assert.AreEqual(item.Value, Kata.Esolang.Interpreter(item.Key[0], item.Key[1]));
       }
     }
 
+    [TestMethod()]
+    public void PaintFuckInterpreterTest() {
+      Dictionary<Tuple<string, int, int, int>, string> dic = new Dictionary<Tuple<string, int, int, int>, string>() {
+      };
+    }
   }
 
 }

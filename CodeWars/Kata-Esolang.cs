@@ -138,7 +138,7 @@ namespace CodeWars {
       /// <param name="height">Количество строк в таблице данных</param>
       /// <returns>Преобразованная таблица</returns>
       [KataType(LevelTypeEnum.Kyu, 4, "esolang-interpreters-number-3-custom-paintf-star-star-k-interpreter")]
-      public static string Interpret(string code, int iterations, int width, int height) {
+      public static string PaintFuckInterpreter(string code, int iterations, int width, int height) {
         //n - Move data pointer north(up)
         //e - Move data pointer east(right)
         //s - Move data pointer south(down)
