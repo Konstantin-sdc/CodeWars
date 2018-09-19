@@ -38,6 +38,7 @@ namespace CodeWars {
       // Если обнаружена кольцевая зависимость — вернуть InvalidOperationException
       // Если ключ не имеет зависимостей, к нему прилагается значение с пустым массивом
       // Your code here.
+      return null;
     }
 
   }

@@ -11,7 +11,7 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void SoundexTest() {
-      Dictionary<string, string> inputResult = new Dictionary<string, string>() {
+      var inputResult = new Dictionary<string, string>() {
         {"Sarah", "S600" },
         {"Connor", "C560" },
         { "ammonium", "A555" },
@@ -166,7 +166,7 @@ namespace CodeWars.Tests {
       "16. SV Darmstadt                  1  0  0  1  0:2  0\n" +
       "18. Werder Bremen                 1  0  0  1  0:6  0";
       #endregion
-      Dictionary<string[], string> d = new Dictionary<string[], string>() {
+      var d = new Dictionary<string[], string>() {
         {in0, out0 },
         {in1, out1 },
         {in2, out2 },
@@ -182,13 +182,13 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void GetDividersTest() {
-      Dictionary<long, IEnumerable<long>> dic = new Dictionary<long, IEnumerable<long>>() {
+      var dic = new Dictionary<long, IEnumerable<long>>() {
         //{225, new List<long>(){ 1, 3, 5, 9, 15, 25, 45, 75, 225 } },
         {728, new List<long>() { 1, 2, 4, 7, 8, 13, 14, 26, 28, 52, 56, 91, 104, 182, 364, 728 } },
         //{1572, new List<long>() { 1, 2, 3, 4, 6, 12, 131, 262, 393, 524, 786, 1572 } },
       };
       Func<long, IEnumerable<long>> dlg = Kata.GetDividers;
-      Dictionary<long, List<long>> dividers = new Dictionary<long, List<long>>() {
+      var dividers = new Dictionary<long, List<long>>() {
       };
       TestBox.OneTypeArgs(dic, dlg);
     }
@@ -206,7 +206,7 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void LookSayTest() {
-      Dictionary<ulong, ulong> dic = new Dictionary<ulong, ulong>() {
+      var dic = new Dictionary<ulong, ulong>() {
         { 0, 10 },
         { 11, 21 },
         { 21, 1211 },
@@ -222,7 +222,7 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void ExtractTest() {
-      Dictionary<int[], string> dic = new Dictionary<int[], string>() {
+      var dic = new Dictionary<int[], string>() {
         { new int[] { -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20 }, "-6,-3-1,3-5,7-11,14,15,17-20" },
         { new int[] { 1, 2 }, "1,2" },
         { new int[] { 1, 2, 3 }, "1-3" },
@@ -232,6 +232,39 @@ namespace CodeWars.Tests {
       TestBox.OneTypeArgs(dic, dlg);
     }
 
+    [TestMethod()]
+    public void ExpandDependenciesTest() {
+      var actual0 = new Dictionary<string, string[]> {
+        ["A"] = new string[] { "B", "D" },
+        ["B"] = new string[] { "C" },
+        ["C"] = new string[] { "D" },
+        ["D"] = new string[] { }
+      };
+      var expect0 = new Dictionary<string, string[]> {
+        ["A"] = new string[] { "B", "C", "D" },
+        ["B"] = new string[] { "C", "D" },
+        ["C"] = new string[] { "D" },
+        ["D"] = new string[] { }
+      };
+      var actual1 = new Dictionary<string, string[]>();
+      var expect1 = new Dictionary<string, string[]>();
+      var actual2 = new Dictionary<string, string[]> {
+        ["A"] = new string[] { "B" },
+        ["B"] = new string[] { "C" },
+        ["C"] = new string[] { "D" },
+        ["D"] = new string[] { "A" }
+      };
+      var expect2 = new Dictionary<string, string[]>() {
+        {"Exception", new string[]{ "InvalidOperationException" } }
+      };
+      var dic = new Dictionary<Dictionary<string, string[]>, Dictionary<string, string[]>>() {
+        { actual0, expect0 },
+        { actual1, expect1 },
+        { actual2, expect2 },
+      };
+      Func<Dictionary<string, string[]>, Dictionary<string, string[]>> dlg = Kata.ExpandDependencies;
+      TestBox.OneTypeArgs(dic, dlg);
+    }
   }
 
 }
