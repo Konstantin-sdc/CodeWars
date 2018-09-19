@@ -30,6 +30,16 @@ namespace CodeWars {
       return string.Join(",", result);
     }
 
+    /// <summary>Возвращает полные цепи зависимостей для каждого ключа</summary>
+    /// <param name="dependencies">Словарь прямых зависимостей</param>
+    /// <returns>Словарь полных зависимостей</returns>
+    [KataType(LevelTypeEnum.Kyu, 4, "56293ae77e20756fc500002e")]
+    public static Dictionary<string, string[]> ExpandDependencies(Dictionary<string, string[]> dependencies) {
+      // Если обнаружена кольцевая зависимость — вернуть InvalidOperationException
+      // Если ключ не имеет зависимостей, к нему прилагается значение с пустым массивом
+      // Your code here.
+    }
+
   }
 
 }
