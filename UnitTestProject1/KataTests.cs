@@ -234,7 +234,7 @@ namespace CodeWars.Tests {
 
     [TestMethod()]
     public void ExpandDependenciesTest() {
-      var actual0 = new Dictionary<string, string[]> {
+      var input0 = new Dictionary<string, string[]> {
         ["A"] = new string[] { "B", "D" },
         ["B"] = new string[] { "C" },
         ["C"] = new string[] { "D" },
@@ -246,9 +246,9 @@ namespace CodeWars.Tests {
         ["C"] = new string[] { "D" },
         ["D"] = new string[] { }
       };
-      var actual1 = new Dictionary<string, string[]>();
+      var input1 = new Dictionary<string, string[]>();
       var expect1 = new Dictionary<string, string[]>();
-      var actual2 = new Dictionary<string, string[]> {
+      var input2 = new Dictionary<string, string[]> {
         ["A"] = new string[] { "B" },
         ["B"] = new string[] { "C" },
         ["C"] = new string[] { "D" },
@@ -257,13 +257,40 @@ namespace CodeWars.Tests {
       var expect2 = new Dictionary<string, string[]>() {
         {"Exception", new string[]{ "InvalidOperationException" } }
       };
-      var dic = new Dictionary<Dictionary<string, string[]>, Dictionary<string, string[]>>() {
-        { actual0, expect0 },
-        { actual1, expect1 },
-        { actual2, expect2 },
+
+      var returned0 = Kata.ExpandDependencies(input0);
+      DictComparsion(expect0, returned0);
+      var returned1 = Kata.ExpandDependencies(input1);
+      DictComparsion(expect1, returned1);
+      var returned2 = Kata.ExpandDependencies(input2);
+      DictComparsion(expect2, returned2);
+    }
+
+    void DictComparsion(Dictionary<string, string[]> expected, Dictionary<string, string[]> returned) {
+      foreach(var item in expected) {
+        string k = item.Key;
+        try {
+          CollectionAssert.AreEquivalent(expected[k], returned[k]);
+        }
+        catch(KeyNotFoundException) {
+          Console.WriteLine("Ключ не найден");
+        }
+      }
+    }
+
+    [TestMethod()]
+    public void GetDepTest() {
+      var dic = new Dictionary<string, string[]>() {
+        {"a", new string[] { "b", "c"} },
+        {"b", new string[] { "c", "d"} },
+        {"c", new string[] { "d", "e"} },
+        {"d", new string[] { "e", "f" } },
+        {"e", new string[] { "f", "g" } },
+        {"f", new string[] {  } },
+        //{"g", new string[2] },
       };
-      Func<Dictionary<string, string[]>, Dictionary<string, string[]>> dlg = Kata.ExpandDependencies;
-      TestBox.OneTypeArgs(dic, dlg);
+      IEnumerable<string> q = Kata.GetDep(dic, "g");
+      //var w = Kata.ExpandDependencies(dic);
     }
   }
 
