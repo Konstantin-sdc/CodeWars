@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Kata-Esolang.cs" />
+    <Compile Include="Kata-Kyu-3.cs" />
     <Compile Include="Kata-Kyu-4.cs" />
     <Compile Include="Kata-Kyu-5.cs" />
     <Compile Include="Kata-Kyu-6.cs" />
