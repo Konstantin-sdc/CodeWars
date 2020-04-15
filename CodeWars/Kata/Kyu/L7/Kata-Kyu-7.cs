@@ -1,45 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace CodeWars {
+namespace CodeWars.Kata.Kyu.L7 {
 
-    public static partial class KataClass {
-
-        /// <summary>7 Возвращает самое большое и самое малое числа из строки чисел</summary>
-        /// <param name="numbers">Строка чисел, разделённых пробелами</param>
-        /// <returns>Строка из наибольшего и наименьшего чисел</returns>
-        [KataType(LevelTypeEnum.Kyu, 7)]
-        public static string HighAndLow(string numbers) {
-            IEnumerable<int> intArr = numbers.Split(' ').Select(int.Parse);
-            return intArr.Max() + " " + intArr.Min();
-        }
-
-        /// <summary>Маскирует символом # все символы входящей строки, кроме последних четырёх</summary>
-        /// <param name="cc">Строка,которую следует замаскировать</param>
-        /// <returns>Замаскированная строка</returns>
-        [KataType(LevelTypeEnum.Kyu, 7)]
-        public static string Maskify(string cc) {
-            int startIndex = (cc.Length > 4) ? cc.Length - 4 : 0;
-            return new string('#', startIndex) + cc.Substring(startIndex);
-        }
-
-        /// <summary>Указывает является ли проверяемая строка изограммой</summary>
-        /// <param name="s">Проверяемая строка</param>
-        /// <returns><see cref="true"/> если является</returns>
-        [KataType(LevelTypeEnum.Kyu, 7)]
-        public static bool IsIsogram(string s) {
-            return s.Length == s.ToLower().Distinct().Count();
-        }
+    public static partial class Kata {
 
         /// <summary>Возвращает число, состоящие из квадратов каждой цифры исходного числа</summary>
         /// <param name="n">Исходное число</param>
         /// <returns>Число из квадратов</returns>
         [KataType(LevelTypeEnum.Kyu, 7)]
         public static int SquareDigits(int n) {
-            IEnumerable<double> digits = n.ToString().Select(s => Char.GetNumericValue(s));
+            IEnumerable<double> digits = n.ToString().Select(s => char.GetNumericValue(s));
             digits = digits.Select(s => s * s);
-            return int.Parse(String.Join(null, digits));
+            return int.Parse(string.Join(null, digits));
         }
 
         /// <summary>Возвращает количество периодов, за которое начальное количество достигнет целевого</summary>
@@ -50,8 +23,8 @@ namespace CodeWars {
         /// <returns>Количество периодов</returns>
         [KataType(LevelTypeEnum.Kyu, 7)]
         public static int NbYear(int p0, double percent, int aug, int p) {
-            int pCount = 0;
-            for(int pCur = p0; pCur < p; pCount++) {
+            var pCount = 0;
+            for (var pCur = p0; pCur < p; pCount++) {
                 pCur = (int)(pCur * (1 + 0.01 * percent) + aug);
             }
             return pCount;
@@ -73,11 +46,11 @@ namespace CodeWars {
             long countStep = 1;
             long valueStep = 2;
             // Count elements in block n
-            long nBlockCount = firstBlockCount + countStep * (n - 1);
+            var nBlockCount = firstBlockCount + countStep * (n - 1);
             // Count elements in all blocks, include n
-            long allCount = (firstBlockCount + nBlockCount) * n / 2;
+            var allCount = (firstBlockCount + nBlockCount) * n / 2;
             // Last element value in block n
-            long lastValue = firstVaue + valueStep * (allCount - 1);
+            var lastValue = firstVaue + valueStep * (allCount - 1);
             return lastValue + (lastValue + n / 2 * -valueStep) * (n - 1);
         }
 

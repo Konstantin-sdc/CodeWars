@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
-using System.Text.RegularExpressions;
 
 
 namespace CodeWars {
@@ -79,7 +77,7 @@ namespace CodeWars {
             IEnumerable<string> bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(oldSize, '0'));
             string bitString = string.Join("", bitList);
             List<string> bitGroups = new List<string>();
-            for(int i = 0; i < bitString.Length; i += newSize) {
+            for (int i = 0; i < bitString.Length; i += newSize) {
                 string subS = bitString.Substring(i);
                 int limit = newSize - 1;
                 string bitG = string.Join("", subS.Where((c, index) => index <= limit));
@@ -99,17 +97,17 @@ namespace CodeWars {
         /// <returns>Коллекция результатов, не превышающих лимит</returns>
         public static IEnumerable<long> Multiplex(long a, IEnumerable<long> sequence, long limit) {
             IEnumerable<long> sq = sequence.OrderBy(e => e);
-            if(a == 0 || a == 1) {
+            if (a == 0 || a == 1) {
                 return sq;
             }
-            if(a * sq.ElementAt(0) > limit) {
+            if (a * sq.ElementAt(0) > limit) {
                 return sq;
             }
             List<long> mult = new List<long>(sequence.Count());
-            for(int i = 0; i < sequence.Count(); i++) {
+            for (int i = 0; i < sequence.Count(); i++) {
                 long b = sq.ElementAt(i);
                 long r = a * b;
-                if(r > limit) {
+                if (r > limit) {
                     break;
                 }
                 mult.Add(r);
