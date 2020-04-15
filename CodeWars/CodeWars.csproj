@@ -62,6 +62,7 @@
     <Compile Include="Kata\Kyu\L4\RangeExtraction.cs" />
     <Compile Include="Kata\Kyu\L5\Bundesliga.cs" />
     <Compile Include="Kata\Kyu\L5\Bundesliga.Kommando.cs" />
+    <Compile Include="Kata\Kyu\L5\Dinglemouse.cs" />
     <Compile Include="Kata\Kyu\L5\Kata.cs" />
     <Compile Include="Kata\Kyu\L5\SumSquaredDivisors.cs" />
     <Compile Include="Kata\Kyu\L6\Esolang.cs" />
