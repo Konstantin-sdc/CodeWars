@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CodeWars {
 
-    public static partial class Kata {
+    public static partial class KataClass {
 
         /// <summary>7 Возвращает самое большое и самое малое числа из строки чисел</summary>
         /// <param name="numbers">Строка чисел, разделённых пробелами</param>

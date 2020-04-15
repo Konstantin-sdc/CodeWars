@@ -2,7 +2,7 @@
 
 namespace CodeWars {
 
-    public static partial class Kata {
+    public static partial class KataClass {
 
         /// <summary>Задания на 6 кю</summary>
         public static class Kyu5 {

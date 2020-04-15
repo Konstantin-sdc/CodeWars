@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace CodeWars {
 
-    public static partial class Kata {
+    public static partial class KataClass {
 
         /// <summary>Возвращает два числа из натурального ряда, произведение которых равно сумме всех чисел этого ряда, исключая эти два числа</summary>
         /// <param name="n">Верхний предел ряда. Всегда > 0</param>

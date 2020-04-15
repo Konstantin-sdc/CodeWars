@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CodeWars {
 
-    public static partial class Kata {
+    public static partial class KataClass {
 
         /// <summary>Возвращает количество операций умножения, которые нужно провести над цифрами данного числа до тех пор, 
         /// пока они не станут одной цифрой.</summary>
