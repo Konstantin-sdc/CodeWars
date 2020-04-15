@@ -75,6 +75,7 @@
     <Compile Include="Kata\Kyu\L5\Kata-Kyu-5.cs" />
     <Compile Include="Kata\Kyu\L6\Kata-Kyu-6.cs" />
     <Compile Include="Kata\Kyu\L6\Kata.MyFirstInterpreter.cs" />
+    <Compile Include="Kata\Kyu\L6\LongestConsecutives.cs" />
     <Compile Include="Kata\Kyu\L6\Persist.cs" />
     <Compile Include="Kata\Kyu\L6\Xbonacci.cs" />
     <Compile Include="Kata\Kyu\L7\Kata-Kyu-7.cs" />
