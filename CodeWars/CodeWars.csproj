@@ -64,6 +64,7 @@
     <Compile Include="Kata\Kyu\L5\Bundesliga.Kommando.cs" />
     <Compile Include="Kata\Kyu\L5\Dinglemouse.cs" />
     <Compile Include="Kata\Kyu\L5\Kata.cs" />
+    <Compile Include="Kata\Kyu\L5\RemovedNumbers.cs" />
     <Compile Include="Kata\Kyu\L5\StringMerger.cs" />
     <Compile Include="Kata\Kyu\L5\SumFct.cs" />
     <Compile Include="Kata\Kyu\L5\SumSquaredDivisors.cs" />
