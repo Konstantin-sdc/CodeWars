@@ -73,11 +73,12 @@
     <Compile Include="Kata\Kyu\L3\Kata-Kyu-3.cs" />
     <Compile Include="Kata\Kyu\L4\Kata-Kyu-4.cs" />
     <Compile Include="Kata\Kyu\L5\Kata-Kyu-5.cs" />
-    <Compile Include="Kata\Kyu\L6\Kata-Kyu-6.cs" />
+    <Compile Include="Kata\Kyu\L6\Kata.Solution.cs" />
+    <Compile Include="Kata\Kyu\L6\Kata.Order.cs" />
     <Compile Include="Kata\Kyu\L6\Kata.MyFirstInterpreter.cs" />
     <Compile Include="Kata\Kyu\L6\LongestConsecutives.cs" />
     <Compile Include="Kata\Kyu\L6\Persist.cs" />
-    <Compile Include="Kata\Kyu\L6\Xbonacci.cs" />
+    <Compile Include="Kata\Kyu\L6\SumDigPower.cs" />
     <Compile Include="Kata\Kyu\L7\Arge.cs" />
     <Compile Include="Kata\Kyu\L7\Kata.RowSumOddNumbers.cs" />
     <Compile Include="Kata\Kyu\L7\Kata.FriendOrFoe.cs" />
@@ -89,7 +90,7 @@
     <Compile Include="Kata\Kata.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Xbonacci.cs" />
+    <Compile Include="Kata\Kyu\L6\Xbonacci.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
