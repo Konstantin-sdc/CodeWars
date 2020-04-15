@@ -78,7 +78,9 @@
     <Compile Include="Kata\Kyu\L6\LongestConsecutives.cs" />
     <Compile Include="Kata\Kyu\L6\Persist.cs" />
     <Compile Include="Kata\Kyu\L6\Xbonacci.cs" />
-    <Compile Include="Kata\Kyu\L7\Kata-Kyu-7.cs" />
+    <Compile Include="Kata\Kyu\L7\Arge.cs" />
+    <Compile Include="Kata\Kyu\L7\Kata.RowSumOddNumbers.cs" />
+    <Compile Include="Kata\Kyu\L7\Kata.FriendOrFoe.cs" />
     <Compile Include="Kata\Kyu\L7\Kata.IsIsogram.cs" />
     <Compile Include="Kata\Kyu\L7\Kata.Maskify.cs" />
     <Compile Include="Kata\Kyu\L7\Kata.SquareDigits.cs" />

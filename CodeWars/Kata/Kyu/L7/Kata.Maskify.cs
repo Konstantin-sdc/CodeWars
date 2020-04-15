@@ -1,6 +1,6 @@
 ﻿namespace CodeWars.Kata.Kyu.L7 {
 
-    public partial class Kata {
+    public static partial class Kata {
 
         /// <summary>Маскирует символом # все символы входящей строки, кроме последних четырёх</summary>
         /// <param name="cc">Строка,которую следует замаскировать</param>
