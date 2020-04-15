@@ -65,6 +65,7 @@
     <Compile Include="Kata\Kyu\L5\Dinglemouse.cs" />
     <Compile Include="Kata\Kyu\L5\Kata.cs" />
     <Compile Include="Kata\Kyu\L5\StringMerger.cs" />
+    <Compile Include="Kata\Kyu\L5\SumFct.cs" />
     <Compile Include="Kata\Kyu\L5\SumSquaredDivisors.cs" />
     <Compile Include="Kata\Kyu\L6\ASum.cs" />
     <Compile Include="Kata\Kyu\L6\Esolang.cs" />
