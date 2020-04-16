@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L6 {
-    static class SumDigPower {
-        /// <summary>Возвращает массив чисел из входящего диапазона с такими свойствами, что эти числа равны сумме составляющих их цифр, 
+    internal static class SumDigPower {
+        /// <summary>Возвращает массив чисел из входящего диапазона с такими свойствами, что эти числа равны сумме составляющих их цифр,
         /// в степенях, равных местам цифр в числе. (например: 135 = 1^1 + 3^2 + 5^3)
         /// </summary>
         /// <param name="a">Начало входящего диапазона</param>

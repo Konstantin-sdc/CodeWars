@@ -16,8 +16,8 @@ namespace CodeWars.Kata.Kyu.L5 {
         public static ulong LookSay(ulong number) {
             var s = number.ToString();
             List<List<char>> gs = GroupSeparate(s);
-            IEnumerable<string> result = gs.Select(e => e.Count + e.First().ToString());
-            return Convert.ToUInt64(string.Join("", result));
+            IEnumerable<string> result = gs.Select(e => e.Count + e[0].ToString());
+            return Convert.ToUInt64(string.Concat(result));
         }
 
         /// <summary>Проводит раздельную группировку элементов в коллоекции</summary>

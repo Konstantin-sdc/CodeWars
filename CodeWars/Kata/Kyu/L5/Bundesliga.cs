@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
-    public partial class Bundesliga {
+    public static partial class Bundesliga {
         [KataType(LevelTypes.Kyu, 5, "57c178e16662d0d932000120")]
         public static string BundesLigaTable(string[] results) {
             var kList = new List<Kommando>();

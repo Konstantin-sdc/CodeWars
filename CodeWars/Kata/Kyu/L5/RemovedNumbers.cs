@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace CodeWars.Kata.Kyu.L5 {
-    static class RemovedNumbers {
+    internal static class RemovedNumbers {
         /// <summary>
         /// Возвращает два числа из натурального ряда, произведение которых равно сумме всех чисел этого ряда, исключая эти два числа.
         /// </summary>
@@ -16,9 +16,9 @@ namespace CodeWars.Kata.Kyu.L5 {
                 sum = (n + 1) * n / 2;
             }
             // Минимальный первый элемент
-            var firstMin = (sum - 2 * n + 1) / n;
+            var firstMin = (sum - (2 * n) + 1) / n;
             // Максимальный первый элемент
-            var firstMax = (sum - 2 * firstMin - 1) / firstMin;
+            var firstMax = (sum - (2 * firstMin) - 1) / firstMin;
             // Второй элемент
             for (var i = firstMin; i <= firstMax; i++) {
                 var a = sum - i;

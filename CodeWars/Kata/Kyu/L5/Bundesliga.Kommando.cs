@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace CodeWars.Kata.Kyu.L5 {
-    static partial class Bundesliga {
+    public static partial class Bundesliga {
         /// <summary>Команда</summary>
         private class Kommando {
             /// <summary>Название команды</summary>
@@ -19,7 +19,7 @@ namespace CodeWars.Kata.Kyu.L5 {
             /// <summary>Матчей проиграно</summary>
             public int Loses;
             /// <summary>Очков заработано</summary>
-            public int Points => Wins * 3 + Ties;
+            public int Points => (Wins * 3) + Ties;
 
             /// <summary>Возвращает новыйэкземпляр класса <see cref="Kommando"/></summary>
             /// <param name="comName">Название команды</param>
@@ -49,7 +49,7 @@ namespace CodeWars.Kata.Kyu.L5 {
             }
 
             /// <summary>
-            /// Если команда не найдена в спискае, — добавляет её в список. 
+            /// Если команда не найдена в спискае, — добавляет её в список.
             /// Если найдена — складывает результаты этой команды.
             /// </summary>
             /// <param name="lst">Список команд</param>
@@ -72,11 +72,11 @@ namespace CodeWars.Kata.Kyu.L5 {
             /// <param name="k">Проверяемая команда</param>
             /// <returns>true, если резульаты совпадают</returns>
             public bool SameResult(Kommando k) {
-                return (
+                return
                   Points == k.Points &&
                   GoalsOut - GoalsIn == k.GoalsOut - k.GoalsIn &&
                   GoalsOut == k.GoalsOut
-                  );
+                  ;
             }
         }
     }

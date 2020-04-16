@@ -10,13 +10,13 @@ namespace CodeWars {
         public KataTypeAttribute(LevelTypes levelType, int levelValue, string kataId = "") {
             LevelType = levelType;
             LevelValue = levelValue;
-            var link = @"https://www.codewars.com/kata/" + kataId + @"/train/csharp";
+            var link = "https://www.codewars.com/kata/" + kataId + "/train/csharp";
             KataLink = new Uri(link);
         }
         /// <summary>Значение уровня ката</summary>
-        public int LevelValue { get; private set; }
+        public int LevelValue { get; }
         /// <summary>Тип уровня ката</summary>
-        public LevelTypes LevelType { get; private set; }
+        public LevelTypes LevelType { get; }
         public Uri KataLink;
     }
     /// <summary>Типы уровней ката</summary>
@@ -26,5 +26,4 @@ namespace CodeWars {
         /// <summary>Дан</summary>
         Dan
     };
-
 }

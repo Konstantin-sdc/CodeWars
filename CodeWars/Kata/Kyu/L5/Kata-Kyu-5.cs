@@ -12,7 +12,7 @@ namespace CodeWars {
         /// <param name="height"></param>
         /// <returns></returns>
         [KataType(LevelTypes.Kyu, 5)]
-        public static string Interpret(string code, int iterations, int width, int height) {
+        public static string Interpret() {
             // Правила
             // n - Переместить указатель данных на север(вверх)
             // e - Переместить указатель данных на восток(справа)
@@ -28,7 +28,7 @@ namespace CodeWars {
         }
 
         /// <summary>Кодовая строка</summary>
-        private static string _codeString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        private const string _codeString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
         /// <summary>
         /// Возвращает результат base64 кодирования исходной строки <paramref name="s"/> с использованием UTF-8
@@ -46,7 +46,7 @@ namespace CodeWars {
             // Добавить недостающие знаки "=" в конец строки
             IEnumerable<int> indexes = bitGroups.Select(b => Convert.ToInt32(b, 2));
             IEnumerable<char> chars = indexes.Select(b => _codeString[b]);
-            var rmdr = string.Join("", bitGroups).Length % 3;
+            var rmdr = string.Concat(bitGroups).Length % 3;
             var adsCount = (rmdr == 0) ? 0 : (3 - rmdr);
             return string.Join("", chars) + new string('=', adsCount);
         }
@@ -72,12 +72,12 @@ namespace CodeWars {
         private static List<string> BitGroups(string s, int oldSize, int newSize) {
             IEnumerable<int> indexes = s.Select(c => _codeString.IndexOf(c));
             IEnumerable<string> bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(oldSize, '0'));
-            var bitString = string.Join("", bitList);
+            var bitString = string.Concat(bitList);
             var bitGroups = new List<string>();
             for (var i = 0; i < bitString.Length; i += newSize) {
                 var subS = bitString.Substring(i);
                 var limit = newSize - 1;
-                var bitG = string.Join("", subS.Where((c, index) => index <= limit));
+                var bitG = string.Join("", subS.Where(index => index <= limit));
                 bitGroups.Add(bitG);
             }
             return bitGroups;

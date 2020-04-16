@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 
 namespace CodeWars {
-    public partial class KataClass {
+    public static partial class KataClass {
         /// <summary>Интерактивное создание класса</summary>
         /// <param name="className">Имя класса</param>
         /// <param name="properties">Свойства класса (имя, тип).</param>

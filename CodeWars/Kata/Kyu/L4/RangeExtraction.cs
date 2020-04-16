@@ -20,7 +20,7 @@ namespace CodeWars.Kata.Kyu.L4 {
                     result.Add(string.Join(",", item));
                 }
                 else {
-                    var f = item.First();
+                    var f = item[0];
                     var l = item.Last();
                     result.Add(string.Join("-", f, l));
                 }

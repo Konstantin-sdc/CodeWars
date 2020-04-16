@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
-    static class StringMerger {
+    internal static class StringMerger {
         /// <summary>
-        /// Возвращает возможность объединения и перемешиваения двух строку в третию, 
+        /// Возвращает возможность объединения и перемешиваения двух строку в третию,
         /// без изменения порядка символов в исходных строках.
         /// </summary>
         /// <param name="s">Итоговая строка</param>
@@ -18,7 +18,7 @@ namespace CodeWars.Kata.Kyu.L5 {
 
         private static bool MayExtract(string s, params string[] parts) {
             var ordS = string.Join("", s.OrderBy(k => k));
-            var p = string.Join("", parts);
+            var p = string.Concat(parts);
             var ordP = string.Join("", p.OrderBy(k => k));
             if (!ordS.Equals(ordP)) {
                 return false;

@@ -4,16 +4,16 @@ using System.Text.RegularExpressions;
 namespace CodeWars.Kata.Kyu.L5 {
     public static class Dinglemouse {
         private static readonly Dictionary<string, string> _soundDict = new Dictionary<string, string>() {
-            { "(?!^)[HW]", "" },
-            { "[BFPV]", "1" },
-            { "[CGJKQSXZ]", "2" },
-            { "[DT]", "3" },
-            { "[L]", "4" },
-            { "[MN]", "5" },
-            { "[R]", "6" },
-            { @"(\d+)\1", "$1"},
-            { @"(?!^)[AEIOUY]", "" },
-            { @"$", "000" }
+            ["(?!^)[HW]"] = "",
+            ["[BFPV]"] = "1",
+            ["[CGJKQSXZ]"] = "2",
+            ["[DT]"] = "3",
+            ["[L]"] = "4",
+            ["[MN]"] = "5",
+            ["[R]"] = "6",
+            [@"(\d+)\1"] = "$1",
+            ["(?!^)[AEIOUY]"] = "",
+            ["$"] = "000"
         };
 
         /// <summary>Преобразует слова английского языка по алгоритму SOUNDEX</summary>

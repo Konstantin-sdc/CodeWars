@@ -62,15 +62,15 @@ namespace CodeWars {
         private static Dictionary<int, int> GetPairedPosition<T>(IEnumerable<T> code, T open, T close) {
             if (code.Count() < 2 || !code.Contains(open)) return null;
             var result = new Dictionary<int, int>();
-            var oPositions = new List<int>();
+            var opPositions = new List<int>();
             var opCount = 0;
             var closCount = 0;
             for (var i = 0; i < code.Count(); i++) {
                 if (code.ElementAt(i).Equals(open)) {
-                    oPositions.Add(i);
+                    opPositions.Add(i);
                 }
             }
-            foreach (var position in oPositions) {
+            foreach (var position in opPositions) {
                 for (var i = position; i < code.Count(); i++) {
                     if (code.ElementAt(i).Equals(open)) {
                         opCount++;
@@ -79,7 +79,10 @@ namespace CodeWars {
                     if (code.ElementAt(i).Equals(close)) {
                         closCount++;
                     }
-                    else continue;
+                    else {
+                        continue;
+                    }
+
                     if (opCount != 0 && opCount == closCount) {
                         result.Add(position, i);
                         opCount = 0;

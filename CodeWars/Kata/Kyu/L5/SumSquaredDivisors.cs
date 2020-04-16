@@ -100,7 +100,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="start">Начало отчёта</param>
         /// <returns>Список массивов</returns>
         public static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
-            var message = "{nameof(count)} должно быть > 1, a {nameof(source)} > nameof(count)";
+            const string message = "{nameof(count)} должно быть > 1, a {nameof(source)} > nameof(count)";
             if (source < count) {
                 throw new ArgumentOutOfRangeException(nameof(count), count, message);
             }

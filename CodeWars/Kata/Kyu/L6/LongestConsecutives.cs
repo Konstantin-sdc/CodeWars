@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L6 {
-    static class LongestConsecutives {
+    internal static class LongestConsecutives {
         /// <summary>Вернуть первую наидлиннейшую строку, состоящую из k элементов массива</summary>
         /// <param name="strarr">Входящий массив</param>
         /// <param name="k">Нужное число элементов</param>
@@ -15,7 +15,7 @@ namespace CodeWars.Kata.Kyu.L6 {
             var result = String.Empty;
             for (var i = 0; i < strarr.Length; i++) {
                 IEnumerable<string> subGroup = strarr.Skip(i).Take(k);
-                var subString = String.Join(String.Empty, subGroup);
+                var subString = String.Concat(subGroup);
                 if (subString.Length > result.Length) result = subString;
             }
             return result;
