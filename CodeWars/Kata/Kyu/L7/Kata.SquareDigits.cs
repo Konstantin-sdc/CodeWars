@@ -2,9 +2,7 @@
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L7 {
-
     public static partial class Kata {
-
         /// <summary>Возвращает число, состоящие из квадратов каждой цифры исходного числа</summary>
         /// <param name="n">Исходное число</param>
         /// <returns>Число из квадратов</returns>
@@ -14,7 +12,5 @@ namespace CodeWars.Kata.Kyu.L7 {
             digits = digits.Select(s => s * s);
             return int.Parse(string.Join(null, digits));
         }
-
     }
-
 }

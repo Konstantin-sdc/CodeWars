@@ -1,9 +1,7 @@
 ﻿using System.Numerics;
 
 namespace CodeWars.Kata.Kyu.L5 {
-
     static class SumFct {
-
         /// <summary>Возвращает сумму периметров квадратов в ряду Фибоначи</summary>
         /// <param name="n"></param>
         /// <returns></returns>
@@ -18,7 +16,5 @@ namespace CodeWars.Kata.Kyu.L5 {
             }
             return fibSum * 4;
         }
-
     }
-
 }

@@ -2,10 +2,8 @@
 
 namespace CodeWars.Kata.Kyu.L5 {
     static partial class Bundesliga {
-
         /// <summary>Команда</summary>
         private class Kommando {
-
             /// <summary>Название команды</summary>
             public string Name;
             /// <summary>Матчей сыграно</summary>
@@ -81,7 +79,5 @@ namespace CodeWars.Kata.Kyu.L5 {
                   );
             }
         }
-
     }
-
 }

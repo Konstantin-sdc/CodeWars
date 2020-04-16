@@ -1,7 +1,5 @@
 ﻿namespace CodeWars.Kata.Kyu.L7 {
-
     public static partial class Kata {
-
         /// <summary>Возвращает сумму нечётных чисел числового треугольника</summary>
         /// <param name="n">Номер блока, считая от 1</param>
         /// <returns>Сумма нечётных чисел</returns>
@@ -19,7 +17,5 @@
             var lastValue = firstVaue + valueStep * (allCount - 1);
             return lastValue + (lastValue + n / 2 * -valueStep) * (n - 1);
         }
-
     }
-
 }

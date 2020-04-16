@@ -1,7 +1,6 @@
 ﻿using System;
 
 namespace CodeWars {
-
     [System.AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
     internal sealed class KataTypeAttribute : Attribute {
         // See the attribute guidelines at 
@@ -19,7 +18,6 @@ namespace CodeWars {
         /// <summary>Тип уровня ката</summary>
         public LevelTypes LevelType { get; private set; }
         public Uri KataLink;
-
     }
     /// <summary>Типы уровней ката</summary>
     internal enum LevelTypes {
@@ -28,6 +26,5 @@ namespace CodeWars {
         /// <summary>Дан</summary>
         Dan
     };
-
 
 }

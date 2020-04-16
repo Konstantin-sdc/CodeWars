@@ -1,7 +1,5 @@
 ﻿namespace CodeWars.Kata.Kyu.L6 {
-
     public static class ASum {
-
         /// <summary>
         /// <para>Возвращает количество кубов, нужное для достижения объёма = m.</para>
         /// <para>Кубы начинаются с размеров 1х1х1.</para>
@@ -17,7 +15,5 @@
             }
             return (m[0] == v) ? count : -1;
         }
-
     }
-
 }

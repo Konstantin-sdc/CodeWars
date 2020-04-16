@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
-
     public static partial class Kata {
-
         /// <summary>
         /// <para>Принимает целое число.</para>
         /// <para>К каждой группе его цифр припиывает число количества этих цифр.</para>
@@ -40,7 +38,5 @@ namespace CodeWars.Kata.Kyu.L5 {
             }
             return result;
         }
-
     }
-
 }

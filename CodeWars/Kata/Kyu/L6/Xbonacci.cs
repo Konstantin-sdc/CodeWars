@@ -1,7 +1,5 @@
 ﻿namespace CodeWars.Kata.Kyu.L6 {
-
     public class Xbonacci {
-
         /// <summary>Возвращает Трибоначи для первых <paramref name="n"/> элементов числовой последовательности</summary>
         /// <param name="signature">3 числа, определяющие сигнатуру последовательности</param>
         /// <param name="n">Количество чисел, для которых следует вернуть последовательность Трибоначи</param>
@@ -20,7 +18,5 @@
             }
             return result;
         }
-
     }
-
 }

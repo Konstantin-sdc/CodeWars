@@ -1,7 +1,5 @@
 ﻿namespace CodeWars.Kata.Kyu.L6 {
-
     public static partial class Kata {
-
         /// <summary>Принимаетс строку кода эзотерического языка и возвращает результат интерпретации.</summary>
         /// <param name="code">Эзотерическая строка.</param>
         /// <returns>Результат.</returns>
@@ -34,7 +32,5 @@
             }
             return result;
         }
-
     }
-
 }

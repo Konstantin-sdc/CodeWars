@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
-
     public static class SumSquaredDivisors {
-
         [KataType(LevelTypes.Kyu, 5, "integers-recreation-one")]
         public static string ListSquared(long m, long n) {
             List<long[]> squarList = SquaredList(m, n);
@@ -135,7 +133,5 @@ namespace CodeWars.Kata.Kyu.L5 {
             }
             return result;
         }
-
     }
-
 }

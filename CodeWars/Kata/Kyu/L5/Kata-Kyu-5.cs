@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
 namespace CodeWars {
-
     public static partial class KataClass {
-
         /// <summary>Интерпретатор</summary>
         /// <param name="code">Код Paintfuck, который должен быть выполнен, передается как строка. </param>
         /// <param name="iterations"></param>
@@ -114,8 +111,6 @@ namespace CodeWars {
             }
             return mult.Concat(Multiplex(a, mult, limit));
         }
-
     }
-
 }
 

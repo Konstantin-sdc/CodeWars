@@ -1,9 +1,7 @@
 ﻿using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
-
     static class StringMerger {
-
         /// <summary>
         /// Возвращает возможность объединения и перемешиваения двух строку в третию, 
         /// без изменения порядка символов в исходных строках.
@@ -37,7 +35,5 @@ namespace CodeWars.Kata.Kyu.L5 {
             }
             return true;
         }
-
     }
-
 }

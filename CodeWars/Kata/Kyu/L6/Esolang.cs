@@ -2,9 +2,7 @@
 using System.Linq;
 
 namespace CodeWars {
-
     public static partial class KataClass {
-
         /// <summary>Интерпретатор для smallfuck</summary>
         /// <param name="code">Входящий код. Правила обработки данных. Все непредусмотренные символы игнорируются.</param>
         /// <param name="source">Начальное состояние хранилища данных. битовая строка из 0 и 1. Иные символы игнорируются.</param>
@@ -125,7 +123,5 @@ namespace CodeWars {
             // Implement your interpreter here
             return "";
         }
-
     }
-
 }

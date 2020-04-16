@@ -2,9 +2,7 @@
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L4 {
-
     public static class RangeExtraction {
-
         /// <summary>Принимает массив целых чисел. Возвращает строку с диапазонами.</summary>
         /// <returns>Строка</returns>
         [KataType(LevelTypes.Kyu, 4, "range-extraction")]
@@ -29,7 +27,5 @@ namespace CodeWars.Kata.Kyu.L4 {
             }
             return string.Join(",", result);
         }
-
     }
-
 }

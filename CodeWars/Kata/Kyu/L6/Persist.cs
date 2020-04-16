@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L6 {
-
     static class Persist {
-
         /// <summary>Возвращает количество операций умножения, которые нужно провести над цифрами данного числа до тех пор, 
         /// пока они не станут одной цифрой.</summary>
         /// <param name="n">Проверяемое число</param>
@@ -23,7 +21,5 @@ namespace CodeWars.Kata.Kyu.L6 {
             multCount++;
             return multCount;
         }
-
     }
-
 }

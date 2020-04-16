@@ -2,9 +2,7 @@
 using System.Text;
 
 namespace CodeWars.Kata.Kyu.L5 {
-
     public static partial class Kata {
-
         /// <summary>Возвращает 16-ричное представление цвета на основе RGB цветов</summary>
         /// <param name="r">Red</param>
         /// <param name="g">Green</param>
@@ -17,7 +15,5 @@ namespace CodeWars.Kata.Kyu.L5 {
             }
             return result;
         }
-
     }
-
 }

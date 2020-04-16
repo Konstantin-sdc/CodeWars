@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace CodeWars.Kata.Kyu.L5 {
-
     static class RemovedNumbers {
-
         /// <summary>
         /// Возвращает два числа из натурального ряда, произведение которых равно сумме всех чисел этого ряда, исключая эти два числа.
         /// </summary>
@@ -33,7 +31,5 @@ namespace CodeWars.Kata.Kyu.L5 {
             }
             return result;
         }
-
     }
-
 }

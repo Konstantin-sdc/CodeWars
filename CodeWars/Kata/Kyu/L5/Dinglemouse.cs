@@ -2,9 +2,7 @@
 using System.Text.RegularExpressions;
 
 namespace CodeWars.Kata.Kyu.L5 {
-
     public static class Dinglemouse {
-
         private static readonly Dictionary<string, string> _soundDict = new Dictionary<string, string>() {
             { "(?!^)[HW]", "" },
             { "[BFPV]", "1" },
@@ -39,7 +37,5 @@ namespace CodeWars.Kata.Kyu.L5 {
             result = fC + result.Substring(1);
             return result.Substring(0, 4);
         }
-
     }
-
 }

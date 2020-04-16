@@ -1,8 +1,6 @@
 ﻿using System;
 namespace CodeWars.Kata.Kyu.L6 {
-
     class SumFractions {
-
         [KataType(LevelTypes.Kyu, 6, "5517fcb0236c8826940003c9")]
         public static string SumFracts(int[,] args) {
             var zeroLength = args.GetLength(0);
@@ -67,7 +65,5 @@ namespace CodeWars.Kata.Kyu.L6 {
             }
             return number;
         }
-
     }
-
 }

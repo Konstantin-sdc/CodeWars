@@ -1,7 +1,5 @@
 ﻿namespace CodeWars.Kata.Kyu.L7 {
-
     static class Arge {
-
         /// <summary>Возвращает количество периодов, за которое начальное количество достигнет целевого</summary>
         /// <param name="p0">Начальное количество</param>
         /// <param name="percent">Периодическое изменение в процентах</param>
@@ -16,7 +14,5 @@
             }
             return pCount;
         }
-
     }
-
 }

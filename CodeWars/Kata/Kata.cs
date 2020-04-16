@@ -1,12 +1,8 @@
-﻿using System.Linq;
-
-namespace CodeWars {
+﻿namespace CodeWars {
+    using System.Linq;
 
     /// <summary>Класс для тренировок</summary>
     public static partial class KataClass {
-
         public static int[] MinMax(int[] lst) => new int[] { lst.Min(), lst.Max() };
-
     }
-
 }
