@@ -82,6 +82,7 @@
     <Compile Include="Kata\Kyu\L6\Kata.Order.cs" />
     <Compile Include="Kata\Kyu\L6\Kata.MyFirstInterpreter.cs" />
     <Compile Include="Kata\Kyu\L6\LongestConsecutives.cs" />
+    <Compile Include="Kata\Kyu\L6\PaintFuck.cs" />
     <Compile Include="Kata\Kyu\L6\Persist.cs" />
     <Compile Include="Kata\Kyu\L6\SumDigPower.cs" />
     <Compile Include="Kata\Kyu\L6\SumFractions.cs" />
@@ -92,7 +93,7 @@
     <Compile Include="Kata\Kyu\L7\Kata.Maskify.cs" />
     <Compile Include="Kata\Kyu\L7\Kata.SquareDigits.cs" />
     <Compile Include="Kata\UserAttributes.cs" />
-    <Compile Include="Kata\Kyu\L5\RGB.cs" />
+    <Compile Include="Kata\Kyu\L5\Kata.RGB.cs" />
     <Compile Include="Kata\Kata.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

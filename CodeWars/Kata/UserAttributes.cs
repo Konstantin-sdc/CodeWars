@@ -1,11 +1,10 @@
 ﻿using System;
 
 namespace CodeWars {
-    [System.AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
+    [AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
     internal sealed class KataTypeAttribute : Attribute {
         // See the attribute guidelines at 
         //  http://go.microsoft.com/fwlink/?LinkId=85236
-
         // This is a positional argument
         public KataTypeAttribute(LevelTypes levelType, int levelValue, string kataId = "") {
             LevelType = levelType;

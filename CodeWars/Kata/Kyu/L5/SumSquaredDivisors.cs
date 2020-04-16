@@ -33,7 +33,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         }
 
         /// <summary>Возвращает список всех целочисленных делителей</summary>
-        /// <param name="d">Ч</param>
+        /// <param name="d">Число.</param>
         /// <returns>Список делителей</returns>
         public static List<long> GetDividers(long d) {
             List<long> simple = SimpeDividers(d);

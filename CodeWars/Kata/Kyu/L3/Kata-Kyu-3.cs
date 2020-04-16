@@ -14,7 +14,9 @@ namespace CodeWars {
         public static bool DefineClass(string className, Dictionary<string, Type> properties, ref Type actualType) {
             TypeBuilder tb = GetTypeBuilder(className);
             var gType = Assembly.GetExecutingAssembly().GetType(className);
-            if (gType != null) return false;
+            if (gType != null) {
+                return false;
+            }
             foreach (KeyValuePair<string, Type> member in properties) {
                 _ = tb.DefineProperty(member.Key, PropertyAttributes.HasDefault, member.Value, null);
             }
