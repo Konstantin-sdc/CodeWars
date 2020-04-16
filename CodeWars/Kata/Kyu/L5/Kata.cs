@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
 
-    public class Kata {
+    public static partial class Kata {
 
         /// <summary>
         /// <para>Принимает целое число.</para>

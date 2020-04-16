@@ -13,11 +13,11 @@ namespace CodeWars {
             // Если обнаружена кольцевая зависимость — вернуть InvalidOperationException
             // Если ключ не имеет зависимостей, к нему прилагается значение с пустым массивом
             // Если исходник пуст — вернуть пустой словарь
-            if(source.Count == 0) return new Dictionary<string, string[]>();
+            if (source.Count == 0) return new Dictionary<string, string[]>();
             var result = new Dictionary<string, string[]>();
-            foreach(KeyValuePair<string, string[]> srcItem in source) {
+            foreach (KeyValuePair<string, string[]> srcItem in source) {
                 IEnumerable<string> depList = GetDep(source, srcItem.Key);
-                if(depList.Contains(srcItem.Key)) throw new System.InvalidOperationException();
+                if (depList.Contains(srcItem.Key)) throw new System.InvalidOperationException();
                 string[] depA = depList.Distinct().ToArray();
                 result.Add(srcItem.Key, depA);
             }
@@ -30,9 +30,9 @@ namespace CodeWars {
         /// <param name="key">Ключ</param>
         /// <returns>Коллекция связей</returns>
         public static IEnumerable<string> GetDep(Dictionary<string, string[]> dic, string key) {
-            if(!dic.ContainsKey(key) || dic[key].Length == 0) return new List<string>();
+            if (!dic.ContainsKey(key) || dic[key].Length == 0) return new List<string>();
             IEnumerable<string> result = dic[key];
-            foreach(string item in dic[key]) {
+            foreach (string item in dic[key]) {
                 IEnumerable<string> sr = GetDep(dic, item);
                 result = result.Concat(sr);
             }

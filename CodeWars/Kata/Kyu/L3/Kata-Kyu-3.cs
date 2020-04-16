@@ -16,8 +16,8 @@ namespace CodeWars {
             TypeBuilder tb = GetTypeBuilder(className);
             //ConstructorBuilder constructor = tb.DefineDefaultConstructor(MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName);
             var gType = Assembly.GetExecutingAssembly().GetType(className);
-            if(gType != null) return false;
-            foreach(KeyValuePair<string, Type> member in properties) {
+            if (gType != null) return false;
+            foreach (KeyValuePair<string, Type> member in properties) {
                 var fieldBuilder = tb.DefineProperty(member.Key, PropertyAttributes.HasDefault, member.Value, null);
             }
             actualType = tb.CreateType();
