@@ -14,7 +14,7 @@ namespace CodeWars {
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        [KataType(LevelTypeEnum.Kyu, 5)]
+        [KataType(LevelTypes.Kyu, 5)]
         public static string Interpret(string code, int iterations, int width, int height) {
             // Правила
             // n - Переместить указатель данных на север(вверх)
@@ -38,7 +38,7 @@ namespace CodeWars {
         /// </summary>
         /// <param name="s">Исходная строка</param>
         /// <returns>Результат</returns>
-        [KataType(LevelTypeEnum.Kyu, 5)]
+        [KataType(LevelTypes.Kyu, 5)]
         public static string ToBase64(string s) {
             // Преобразовать строку в массив байтов
             // Преобразовать массив байт в массив бит
@@ -59,7 +59,7 @@ namespace CodeWars {
         /// </summary>
         /// <param name="s">Исходная последовательность</param>
         /// <returns>Результат</returns>
-        [KataType(LevelTypeEnum.Kyu, 5)]
+        [KataType(LevelTypes.Kyu, 5)]
         public static string FromBase64(string s) {
             // Убрать знаки "=" из строки и прочие, кого нет в кодовой строке
             s = string.Join("", s.Where(c => _codeString.Contains(c)));

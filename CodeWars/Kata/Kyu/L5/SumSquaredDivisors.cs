@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
 
-    public class SumSquaredDivisors {
+    public static class SumSquaredDivisors {
 
-        [KataType(LevelTypeEnum.Kyu, 5, "integers-recreation-one")]
+        [KataType(LevelTypes.Kyu, 5, "integers-recreation-one")]
         public static string ListSquared(long m, long n) {
             List<long[]> squarList = SquaredList(m, n);
             IEnumerable<string> sl = squarList.Select(s => "[" + string.Join(", ", s) + "]");
@@ -40,8 +40,8 @@ namespace CodeWars.Kata.Kyu.L5 {
         public static List<long> GetDividers(long d) {
             List<long> simple = SimpeDividers(d);
             List<long> dvdrs = SimpeDividers(d);
-            for (int i = 2; i < simple.Count(); i++) {
-                IEnumerable<long[]> positionCombos = LimitFactorial(simple.Count() - 1, i);
+            for (int i = 2; i < simple.Count; i++) {
+                IEnumerable<long[]> positionCombos = LimitFactorial(simple.Count - 1, i);
                 // Сопоставить цифры в combos с позициями в simple
                 foreach (long[] positionCombo in positionCombos) {
                     long[] digitsCombo = new long[positionCombo.Length];

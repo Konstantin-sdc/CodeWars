@@ -2,7 +2,7 @@
 
 namespace CodeWars.Kata.Kyu.L5 {
 
-    class StringMerger {
+    static class StringMerger {
 
         /// <summary>
         /// Возвращает возможность объединения и перемешиваения двух строку в третию, 
@@ -12,7 +12,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="part1">Первая строка</param>
         /// <param name="part2">Вторая строка</param>
         /// <returns>true, если объединение возможно</returns>
-        [KataType(LevelTypeEnum.Kyu, 5)]
+        [KataType(LevelTypes.Kyu, 5)]
         public static bool IsMerge(string s, string part1, string part2) {
             return MayExtract(s, part1, part2);
             //NOTE Символы в составляющих строках могут повторятся, совпадать с исмволами другой строки, быть разного регистра.

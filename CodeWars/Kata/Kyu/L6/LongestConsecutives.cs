@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L6 {
 
-    class LongestConsecutives {
+    static class LongestConsecutives {
 
         /// <summary>Вернуть первую наидлиннейшую строку, состоящую из k элементов массива</summary>
         /// <param name="strarr">Входящий массив</param>
         /// <param name="k">Нужное число элементов</param>
         /// <returns>Строка</returns>
-        [KataType(LevelTypeEnum.Kyu, 6)]
+        [KataType(LevelTypes.Kyu, 6)]
         public static String LongestConsec(string[] strarr, int k) {
             if (k > strarr.Length) return String.Empty;
             // Скользящая группировка

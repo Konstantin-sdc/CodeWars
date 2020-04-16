@@ -14,7 +14,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// </summary>
         /// <param name="number">Исходное число</param>
         /// <returns>Комбинация</returns>
-        [KataType(LevelTypeEnum.Kyu, 5, "conways-look-and-say-generalized")]
+        [KataType(LevelTypes.Kyu, 5, "conways-look-and-say-generalized")]
         public static ulong LookSay(ulong number) {
             string s = number.ToString();
             List<List<char>> gs = GroupSeparate(s);

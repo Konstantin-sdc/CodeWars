@@ -11,17 +11,15 @@ namespace CodeWars {
         /// <param name="properties">Свойства класса (имя, тип)</param>
         /// <param name="actualType"></param>
         /// <returns>false, если класс уже существует в этой сборке</returns>
-        [KataType(LevelTypeEnum.Kyu, 3, "589394ae1a880832e2000092")]
+        [KataType(LevelTypes.Kyu, 3, "589394ae1a880832e2000092")]
         public static bool DefineClass(string className, Dictionary<string, Type> properties, ref Type actualType) {
             TypeBuilder tb = GetTypeBuilder(className);
-            //ConstructorBuilder constructor = tb.DefineDefaultConstructor(MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName);
             var gType = Assembly.GetExecutingAssembly().GetType(className);
             if (gType != null) return false;
             foreach (KeyValuePair<string, Type> member in properties) {
                 var fieldBuilder = tb.DefineProperty(member.Key, PropertyAttributes.HasDefault, member.Value, null);
             }
             actualType = tb.CreateType();
-            //object myObject = Activator.CreateInstance(actualType);
             return true;
         }
 

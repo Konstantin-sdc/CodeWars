@@ -8,7 +8,7 @@ namespace CodeWars {
         /// <summary>Возвращает полные цепи зависимостей для каждого ключа</summary>
         /// <param name="source">Словарь прямых зависимостей</param>
         /// <returns>Словарь полных зависимостей</returns>
-        [KataType(LevelTypeEnum.Kyu, 4, "56293ae77e20756fc500002e")]
+        [KataType(LevelTypes.Kyu, 4, "56293ae77e20756fc500002e")]
         public static Dictionary<string, string[]> ExpandDependencies(Dictionary<string, string[]> source) {
             // Если обнаружена кольцевая зависимость — вернуть InvalidOperationException
             // Если ключ не имеет зависимостей, к нему прилагается значение с пустым массивом

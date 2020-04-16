@@ -6,7 +6,7 @@ namespace CodeWars.Kata.Kyu.L5 {
 
     public partial class Bundesliga {
 
-        [KataType(LevelTypeEnum.Kyu, 5, "57c178e16662d0d932000120")]
+        [KataType(LevelTypes.Kyu, 5, "57c178e16662d0d932000120")]
         public static string BundesLigaTable(string[] results) {
             List<Kommando> kList = new List<Kommando>();
             foreach (string item in results) {

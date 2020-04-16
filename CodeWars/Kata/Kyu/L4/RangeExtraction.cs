@@ -3,11 +3,11 @@ using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L4 {
 
-    public class RangeExtraction {
+    public static class RangeExtraction {
 
         /// <summary>Принимает массив целых чисел. Возвращает строку с диапазонами.</summary>
         /// <returns>Строка</returns>
-        [KataType(LevelTypeEnum.Kyu, 4, "range-extraction")]
+        [KataType(LevelTypes.Kyu, 4, "range-extraction")]
         public static string Extract(int[] args) {
             var gList = new List<List<int>>();
             for (int i = 0; i < args.Length; i++) {

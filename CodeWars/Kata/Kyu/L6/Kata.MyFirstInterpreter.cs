@@ -5,7 +5,7 @@
         /// <summary>Принимаетс строку кода эзотерического языка и возвращает результат интерпретации.</summary>
         /// <param name="code">Эзотерическая строка.</param>
         /// <returns>Результат.</returns>
-        [KataType(LevelTypeEnum.Kyu, 6, "esolang-interpreters-number-1-introduction-to-esolangs-and-my-first-interpreter-ministringfuck")]
+        [KataType(LevelTypes.Kyu, 6, "esolang-interpreters-number-1-introduction-to-esolangs-and-my-first-interpreter-ministringfuck")]
         public static string MyFirstInterpreter(string code) {
             #region Instructions
             // Язык MiniStringFuck https://esolangs.org/wiki/MiniStringFuck

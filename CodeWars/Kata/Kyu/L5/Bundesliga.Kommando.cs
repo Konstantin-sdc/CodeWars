@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace CodeWars.Kata.Kyu.L5 {
-
-    partial class Bundesliga {
+    static partial class Bundesliga {
 
         /// <summary>Команда</summary>
         private class Kommando {

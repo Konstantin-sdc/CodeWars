@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace CodeWars.Kata.Kyu.L5 {
 
-    class Dinglemouse {
+    public static class Dinglemouse {
 
         private static readonly Dictionary<string, string> _soundDict = new Dictionary<string, string>() {
             { "(?!^)[HW]", "" },
@@ -21,7 +21,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <summary>Преобразует слова английского языка по алгоритму SOUNDEX</summary>
         /// <param name="names">Строка из слов, разделённых пробелом</param>
         /// <returns>SOUNDEX-коды группы слов</returns>
-        [KataType(LevelTypeEnum.Kyu, 5)]
+        [KataType(LevelTypes.Kyu, 5)]
         public static string Soundex(string names) {
             string[] result = names.Split(' ');
             for (int i = 0; i < result.Length; i++) {

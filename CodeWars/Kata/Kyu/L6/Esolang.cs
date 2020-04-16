@@ -9,7 +9,7 @@ namespace CodeWars {
         /// <param name="code">Входящий код. Правила обработки данных. Все непредусмотренные символы игнорируются.</param>
         /// <param name="source">Начальное состояние хранилища данных. битовая строка из 0 и 1. Иные символы игнорируются.</param>
         /// <returns>Строка</returns>
-        [KataType(LevelTypeEnum.Kyu, 5, "esolang-interpreters-number-2-custom-smallfuck-interpreter")]
+        [KataType(LevelTypes.Kyu, 5, "esolang-interpreters-number-2-custom-smallfuck-interpreter")]
         public static string Interpreter(string code, string source) {
             // Rules
             // > - Move pointer to the right (by 1 cell)
@@ -39,25 +39,20 @@ namespace CodeWars {
                 }
                 if (command == '[') {
                     CodeBack(ref i, data[dataPoint], paireds);
-                    continue;
                 }
             }
             return string.Join("", data);
         }
 
         private static void CodeForward(ref int codePount, char currentData, Dictionary<int, int> paireds) {
-            //if(currentData == '1') ++codePount;
             if (currentData == '0') codePount = paireds[codePount];
-            return;
         }
 
         private static void CodeBack(ref int codePount, char currentData, Dictionary<int, int> paireds) {
-            //if(currentData == '0') ++codePount;
             if (currentData == '1') {
                 int point = codePount;
-                codePount = paireds.Where(e => e.Value == point).First().Key;
+                codePount = paireds.First(e => e.Value == point).Key;
             }
-            return;
         }
 
         /// <summary>Возвращает позиции парных элементов коллекции</summary>
@@ -104,7 +99,7 @@ namespace CodeWars {
         /// <param name="width">Количество столбцов в таблице данных</param>
         /// <param name="height">Количество строк в таблице данных</param>
         /// <returns>Преобразованная таблица</returns>
-        [KataType(LevelTypeEnum.Kyu, 4, "esolang-interpreters-number-3-custom-paintf-star-star-k-interpreter")]
+        [KataType(LevelTypes.Kyu, 4, "esolang-interpreters-number-3-custom-paintf-star-star-k-interpreter")]
         public static string PaintFuckInterpreter(string code, int iterations, int width, int height) {
             //n - Move data pointer north(up)
             //e - Move data pointer east(right)

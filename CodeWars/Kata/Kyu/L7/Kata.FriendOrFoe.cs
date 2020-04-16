@@ -8,7 +8,7 @@ namespace CodeWars.Kata.Kyu.L7 {
         /// <summary>Возвращает строки, длина которых = 4</summary>
         /// <param name="n">Массив строк для проверки</param>
         /// <returns>Коллекция строк</returns>
-        [KataType(LevelTypeEnum.Kyu, 7)]
+        [KataType(LevelTypes.Kyu, 7)]
         public static IEnumerable<string> FriendOrFoe(string[] n) => n.Where(s => s.Length == 4);
 
     }

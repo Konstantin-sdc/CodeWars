@@ -9,7 +9,7 @@ namespace CodeWars.Kata.Kyu.L6 {
         /// <summary>Возвращает строку из слов исходной строки, отсортированных согласно числам в этих словах</summary>
         /// <param name="words">Исходная строка</param>
         /// <returns>Итоговая строка</returns>
-        [KataType(LevelTypeEnum.Kyu, 6)]
+        [KataType(LevelTypes.Kyu, 6)]
         public static string Order(string words) {
             string[] wordArray = words.Split(' ');
             IEnumerable<double> digits = words.Where(c => Char.IsDigit(c)).Select(c => Char.GetNumericValue(c));

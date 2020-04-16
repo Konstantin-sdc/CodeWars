@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace CodeWars.Kata.Kyu.L5 {
 

@@ -5,7 +5,7 @@
         /// <summary>Возвращает сумму нечётных чисел числового треугольника</summary>
         /// <param name="n">Номер блока, считая от 1</param>
         /// <returns>Сумма нечётных чисел</returns>
-        [KataType(LevelTypeEnum.Kyu, 7)]
+        [KataType(LevelTypes.Kyu, 7)]
         public static long RowSumOddNumbers(long n) {
             long firstBlockCount = 1;
             long firstVaue = 1;
