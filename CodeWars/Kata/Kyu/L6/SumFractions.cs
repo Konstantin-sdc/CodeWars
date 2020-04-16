@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace CodeWars.Kata.Kyu.L6 {
 
     class SumFractions {
 
-        [KataType(LevelTypeEnum.Kyu, 6)]
+        [KataType(LevelTypeEnum.Kyu, 6, "5517fcb0236c8826940003c9")]
         public static string SumFracts(int[,] args) {
             int zeroLength = args.GetLength(0);
             int[,] tArray = new int[zeroLength, 2];
@@ -31,18 +27,45 @@ namespace CodeWars.Kata.Kyu.L6 {
 
         private static int[] GetReducedFraction(int nmr, int dnmr) {
             var defResult = new int[2] { nmr, dnmr };
-            if (nmr == 0 || dnmr == 0) return defResult;
+            if (nmr == 0 || dnmr == 0) {
+                return defResult;
+            }
             var bigNmr = nmr >= dnmr;
             var big = bigNmr ? nmr : dnmr;
             var small = bigNmr ? dnmr : nmr;
-            var remainder = big % small;
-            while (remainder != 1 || remainder != -1) {
-                if (small % remainder == 0) {
-                    return new int[2] { nmr / remainder, dnmr / remainder };
+
+            var divider = small;
+            var remainder = big % divider;
+            while (remainder != 0) {
+                if (Math.Abs(remainder) == 1) {
+                    return defResult;
                 }
+                divider = remainder;
+                remainder = big % divider;
+            }
+
+            remainder = small % divider;
+            while (remainder != 0) {
+                if (Math.Abs(remainder) == 1) {
+                    return defResult;
+                }
+                divider = remainder;
                 remainder = small % remainder;
             }
+
             return defResult;
+        }
+
+        private int GetMaxDivider(int number, int divider) {
+            var remainder = number % divider;
+            while (remainder != 0) {
+                if (Math.Abs(remainder) == 1) {
+                    return number;
+                }
+                divider = remainder;
+                remainder = number % divider;
+            }
+            return number;
         }
 
     }

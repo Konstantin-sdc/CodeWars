@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CodeWars.Kata.Kyu.L5 {
 
-    class SumSquaredDivisors {
+    public class SumSquaredDivisors {
 
         [KataType(LevelTypeEnum.Kyu, 5, "integers-recreation-one")]
         public static string ListSquared(long m, long n) {
