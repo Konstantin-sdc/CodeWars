@@ -14,10 +14,10 @@ namespace CodeWars.Kata.Kyu.L6 {
         public static String LongestConsec(string[] strarr, int k) {
             if (k > strarr.Length) return String.Empty;
             // Скользящая группировка
-            string result = String.Empty;
-            for (int i = 0; i < strarr.Length; i++) {
+            var result = String.Empty;
+            for (var i = 0; i < strarr.Length; i++) {
                 IEnumerable<string> subGroup = strarr.Skip(i).Take(k);
-                string subString = String.Join(String.Empty, subGroup);
+                var subString = String.Join(String.Empty, subGroup);
                 if (subString.Length > result.Length) result = subString;
             }
             return result;

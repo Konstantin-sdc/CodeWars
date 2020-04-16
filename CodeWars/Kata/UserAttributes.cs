@@ -11,7 +11,7 @@ namespace CodeWars {
         public KataTypeAttribute(LevelTypes levelType, int levelValue, string kataId = "") {
             LevelType = levelType;
             LevelValue = levelValue;
-            string link = @"https://www.codewars.com/kata/" + kataId + @"/train/csharp";
+            var link = @"https://www.codewars.com/kata/" + kataId + @"/train/csharp";
             KataLink = new Uri(link);
         }
         /// <summary>Значение уровня ката</summary>

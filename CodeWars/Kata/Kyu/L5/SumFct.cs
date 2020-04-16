@@ -10,7 +10,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         [KataType(LevelTypes.Kyu, 5)]
         public static BigInteger Perimeter(BigInteger n) {
             BigInteger first = 0, second = 1, fibSum = first + second;
-            for (int i = 2; i < n; i++) {
+            for (var i = 2; i < n; i++) {
                 BigInteger current = first + second;
                 fibSum += current;
                 first = second;

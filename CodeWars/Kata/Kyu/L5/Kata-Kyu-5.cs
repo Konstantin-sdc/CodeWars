@@ -49,8 +49,8 @@ namespace CodeWars {
             // Добавить недостающие знаки "=" в конец строки
             IEnumerable<int> indexes = bitGroups.Select(b => Convert.ToInt32(b, 2));
             IEnumerable<char> chars = indexes.Select(b => _codeString[b]);
-            int rmdr = string.Join("", bitGroups).Length % 3;
-            int adsCount = (rmdr == 0) ? 0 : (3 - rmdr);
+            var rmdr = string.Join("", bitGroups).Length % 3;
+            var adsCount = (rmdr == 0) ? 0 : (3 - rmdr);
             return string.Join("", chars) + new string('=', adsCount);
         }
 
@@ -68,19 +68,19 @@ namespace CodeWars {
             // Перегруппировать биты по 8
             List<string> bitGroups = BitGroups(s, 6, 8);
             // Перевести биты в символы
-            byte[] bytes = bitGroups.Select(b => Convert.ToByte(b, 2)).ToArray();
+            var bytes = bitGroups.Select(b => Convert.ToByte(b, 2)).ToArray();
             return Encoding.UTF8.GetString(bytes);
         }
 
         private static List<string> BitGroups(string s, int oldSize, int newSize) {
             IEnumerable<int> indexes = s.Select(c => _codeString.IndexOf(c));
             IEnumerable<string> bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(oldSize, '0'));
-            string bitString = string.Join("", bitList);
-            List<string> bitGroups = new List<string>();
-            for (int i = 0; i < bitString.Length; i += newSize) {
-                string subS = bitString.Substring(i);
-                int limit = newSize - 1;
-                string bitG = string.Join("", subS.Where((c, index) => index <= limit));
+            var bitString = string.Join("", bitList);
+            var bitGroups = new List<string>();
+            for (var i = 0; i < bitString.Length; i += newSize) {
+                var subS = bitString.Substring(i);
+                var limit = newSize - 1;
+                var bitG = string.Join("", subS.Where((c, index) => index <= limit));
                 bitGroups.Add(bitG);
             }
             return bitGroups;
@@ -103,10 +103,10 @@ namespace CodeWars {
             if (a * sq.ElementAt(0) > limit) {
                 return sq;
             }
-            List<long> mult = new List<long>(sequence.Count());
-            for (int i = 0; i < sequence.Count(); i++) {
-                long b = sq.ElementAt(i);
-                long r = a * b;
+            var mult = new List<long>(sequence.Count());
+            for (var i = 0; i < sequence.Count(); i++) {
+                var b = sq.ElementAt(i);
+                var r = a * b;
                 if (r > limit) {
                     break;
                 }

@@ -8,14 +8,14 @@ namespace CodeWars.Kata.Kyu.L5 {
 
         [KataType(LevelTypes.Kyu, 5, "57c178e16662d0d932000120")]
         public static string BundesLigaTable(string[] results) {
-            List<Kommando> kList = new List<Kommando>();
-            foreach (string item in results) {
-                string score = item.Split(new char[] { ' ' }).First();
-                string[] goals = score.Split(':');
-                string[] kommands = item.Remove(0, score.Length + 1)
+            var kList = new List<Kommando>();
+            foreach (var item in results) {
+                var score = item.Split(new char[] { ' ' }).First();
+                var goals = score.Split(':');
+                var kommands = item.Remove(0, score.Length + 1)
                   .Split(new string[] { " - " }, StringSplitOptions.RemoveEmptyEntries);
-                Kommando k0 = new Kommando(kommands[0], goals[0], goals[1]);
-                Kommando k1 = new Kommando(kommands[1], goals[1], goals[0]);
+                var k0 = new Kommando(kommands[0], goals[0], goals[1]);
+                var k1 = new Kommando(kommands[1], goals[1], goals[0]);
                 k0.AddToList(kList);
                 k1.AddToList(kList);
             }
@@ -25,7 +25,7 @@ namespace CodeWars.Kata.Kyu.L5 {
               .ThenByDescending(k => k.GoalsOut)
               .ThenBy(k => k.Name.ToLower())
               .ToList();
-            List<string> komResults = new List<string>();
+            var komResults = new List<string>();
             for (int i = 0, number = 1; i < kList.Count; i++) {
                 Kommando k = kList[i];
                 Kommando kPr = (i - 1 >= 0) ? kList[i - 1] : k;
@@ -33,7 +33,7 @@ namespace CodeWars.Kata.Kyu.L5 {
                     number = i + 1;
                 }
 
-                string komStr = string.Join("  ",
+                var komStr = string.Join("  ",
                   number.ToString().PadLeft(2) + ".",
                   k.Name.PadRight(30) + k.MatchCount.ToString(),
                   k.Wins.ToString(),

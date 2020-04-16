@@ -16,15 +16,15 @@ namespace CodeWars.Kata.Kyu.L6 {
         public static long[] SumDigPow(long a, long b) {
             // Места считаются от 1
             // Если (цифра числа в степени позиция цифры) >= числа, то пропустить проверку этого числа.
-            List<long> result = new List<long>();
-            for (long number = a; number <= b; number++) {
+            var result = new List<long>();
+            for (var number = a; number <= b; number++) {
                 // Коллекция цифр в числе
                 IEnumerable<long> digitsCollection = number.ToString().Select(s => (long)Char.GetNumericValue(s));
                 // Пройтись по цифрам числа, возвести в степень и сложить
                 long testNumber = 0;
-                for (int position = 0; position < digitsCollection.Count(); position++) {
+                for (var position = 0; position < digitsCollection.Count(); position++) {
                     if (testNumber >= number) break;
-                    long digitInPow = (long)Math.Pow(digitsCollection.ElementAt(position), position + 1);
+                    var digitInPow = (long)Math.Pow(digitsCollection.ElementAt(position), position + 1);
                     // Если цифра в степени уже > number, прекратить проверку number
                     if (digitInPow > number) break;
                     testNumber += digitInPow;

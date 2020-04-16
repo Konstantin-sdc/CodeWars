@@ -15,11 +15,11 @@ namespace CodeWars.Kata.Kyu.L6 {
             if (n < 10) return 0;
             IEnumerable<double> digits = n.ToString().Select(e => Char.GetNumericValue(e));
             long baseNumber = 1;
-            foreach (long digit in digits.OfType<long>()) {
+            foreach (var digit in digits.OfType<long>()) {
                 baseNumber *= digit;
                 if (digit == 0) break;
             }
-            int multCount = Persistence(baseNumber);
+            var multCount = Persistence(baseNumber);
             multCount++;
             return multCount;
         }

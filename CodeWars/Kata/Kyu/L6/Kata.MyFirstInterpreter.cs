@@ -18,7 +18,7 @@
             // Например +++.++.++++. — Значение 3 - вывести, значение 5 - вывести, значение 9 — вывести.
             #endregion
             byte cell = 0;
-            string result = "";
+            var result = "";
             foreach (var item in code) {
                 if (item == '+') {
                     try {

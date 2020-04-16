@@ -29,7 +29,7 @@ namespace CodeWars.Kata.Kyu.L5 {
             /// <param name="gIn">Голов получено</param>
             public Kommando(string comName, string gOut, string gIn) {
                 Name = comName;
-                bool isGoals =
+                var isGoals =
                   int.TryParse(gOut, out GoalsOut) &&
                   int.TryParse(gIn, out GoalsIn);
                 if (!isGoals) {

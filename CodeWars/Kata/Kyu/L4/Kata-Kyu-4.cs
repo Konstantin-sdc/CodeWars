@@ -18,7 +18,7 @@ namespace CodeWars {
             foreach (KeyValuePair<string, string[]> srcItem in source) {
                 IEnumerable<string> depList = GetDep(source, srcItem.Key);
                 if (depList.Contains(srcItem.Key)) throw new System.InvalidOperationException();
-                string[] depA = depList.Distinct().ToArray();
+                var depA = depList.Distinct().ToArray();
                 result.Add(srcItem.Key, depA);
             }
             return result;
@@ -32,7 +32,7 @@ namespace CodeWars {
         public static IEnumerable<string> GetDep(Dictionary<string, string[]> dic, string key) {
             if (!dic.ContainsKey(key) || dic[key].Length == 0) return new List<string>();
             IEnumerable<string> result = dic[key];
-            foreach (string item in dic[key]) {
+            foreach (var item in dic[key]) {
                 IEnumerable<string> sr = GetDep(dic, item);
                 result = result.Concat(sr);
             }

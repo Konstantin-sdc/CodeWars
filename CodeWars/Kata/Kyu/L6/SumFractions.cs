@@ -5,19 +5,19 @@ namespace CodeWars.Kata.Kyu.L6 {
 
         [KataType(LevelTypes.Kyu, 6, "5517fcb0236c8826940003c9")]
         public static string SumFracts(int[,] args) {
-            int zeroLength = args.GetLength(0);
-            int[,] tArray = new int[zeroLength, 2];
-            for (int i = 0; i < zeroLength; i++) {
-                int[] reduced = GetReducedFraction(args[i, 0], args[i, 1]);
+            var zeroLength = args.GetLength(0);
+            var tArray = new int[zeroLength, 2];
+            for (var i = 0; i < zeroLength; i++) {
+                var reduced = GetReducedFraction(args[i, 0], args[i, 1]);
                 tArray[i, 0] = reduced[0];
                 tArray[i, 1] = reduced[1];
             }
-            int numerator = 0;
-            int denumerator = 1;
-            for (int i = 0; i < zeroLength; i++) {
+            var numerator = 0;
+            var denumerator = 1;
+            for (var i = 0; i < zeroLength; i++) {
                 denumerator *= tArray[i, 1];
             }
-            for (int i = 0; i < zeroLength; i++) {
+            for (var i = 0; i < zeroLength; i++) {
                 numerator += tArray[i, 0] * denumerator / tArray[i, 1];
             }
             var result = GetReducedFraction(numerator, denumerator);

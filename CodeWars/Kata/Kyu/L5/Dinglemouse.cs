@@ -23,16 +23,16 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <returns>SOUNDEX-коды группы слов</returns>
         [KataType(LevelTypes.Kyu, 5)]
         public static string Soundex(string names) {
-            string[] result = names.Split(' ');
-            for (int i = 0; i < result.Length; i++) {
+            var result = names.Split(' ');
+            for (var i = 0; i < result.Length; i++) {
                 result[i] = SoundexSingle(result[i]);
             }
             return string.Join(" ", result);
         }
 
         private static string SoundexSingle(string word) {
-            string result = word.ToUpper();
-            char fC = result[0];
+            var result = word.ToUpper();
+            var fC = result[0];
             foreach (KeyValuePair<string, string> item in _soundDict) {
                 result = Regex.Replace(result, item.Key, item.Value);
             }

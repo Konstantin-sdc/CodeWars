@@ -16,7 +16,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <returns>Комбинация</returns>
         [KataType(LevelTypes.Kyu, 5, "conways-look-and-say-generalized")]
         public static ulong LookSay(ulong number) {
-            string s = number.ToString();
+            var s = number.ToString();
             List<List<char>> gs = GroupSeparate(s);
             IEnumerable<string> result = gs.Select(e => e.Count + e.First().ToString());
             return Convert.ToUInt64(string.Join("", result));
@@ -27,11 +27,11 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="seq">Коллекция</param>
         /// <returns>Коллекция групп</returns>
         private static List<List<T>> GroupSeparate<T>(IEnumerable<T> seq) {
-            List<List<T>> result = new List<List<T>>();
+            var result = new List<List<T>>();
             if (seq.First() == null) {
                 return result;
             }
-            for (int i = 0; i < seq.Count(); i++) {
+            for (var i = 0; i < seq.Count(); i++) {
                 T item = seq.ElementAt(i);
                 if (i == 0 || !seq.ElementAt(i - 1).Equals(item)) {
                     result.Add(new List<T>());

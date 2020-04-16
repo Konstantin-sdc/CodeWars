@@ -20,12 +20,12 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="n">Большее число диапазона</param>
         /// <returns></returns>
         private static List<long[]> SquaredList(long m, long n) {
-            List<long[]> numbers = new List<long[]>();
-            for (long i = m; i <= n; i++) {
+            var numbers = new List<long[]>();
+            for (var i = m; i <= n; i++) {
                 List<long> dividers = GetDividers(i);
                 IEnumerable<long> divSquared = dividers.Select(d => d * d);
-                long sumSquared = divSquared.Sum();
-                bool isSq = IsIntegerSquared(sumSquared);
+                var sumSquared = divSquared.Sum();
+                var isSq = IsIntegerSquared(sumSquared);
                 if (isSq) {
                     long[] c = { i, sumSquared };
                     numbers.Add(c);
@@ -40,16 +40,16 @@ namespace CodeWars.Kata.Kyu.L5 {
         public static List<long> GetDividers(long d) {
             List<long> simple = SimpeDividers(d);
             List<long> dvdrs = SimpeDividers(d);
-            for (int i = 2; i < simple.Count; i++) {
+            for (var i = 2; i < simple.Count; i++) {
                 IEnumerable<long[]> positionCombos = LimitFactorial(simple.Count - 1, i);
                 // Сопоставить цифры в combos с позициями в simple
-                foreach (long[] positionCombo in positionCombos) {
-                    long[] digitsCombo = new long[positionCombo.Length];
-                    for (int k = 0; k < positionCombo.Length; k++) {
-                        long position = positionCombo[k];
+                foreach (var positionCombo in positionCombos) {
+                    var digitsCombo = new long[positionCombo.Length];
+                    for (var k = 0; k < positionCombo.Length; k++) {
+                        var position = positionCombo[k];
                         digitsCombo[k] = simple[(int)position];
                     }
-                    long composition = GetComposition(digitsCombo);
+                    var composition = GetComposition(digitsCombo);
                     dvdrs.Add(composition);
                 }
             }
@@ -69,7 +69,7 @@ namespace CodeWars.Kata.Kyu.L5 {
             if (!mod100.Contains(m % 100)) {
                 return false;
             }
-            double d = Math.Sqrt(m);
+            var d = Math.Sqrt(m);
             return d - (long)d == 0;
         }
 
@@ -77,7 +77,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="d">Целое число</param>
         /// <returns>Коллекция простых делителей</returns>
         private static List<long> SimpeDividers(long d) {
-            List<long> dvdrs = new List<long>();
+            var dvdrs = new List<long>();
             long dvdr = 3, step = 2;
             if (d % 2 == 0) {
                 dvdr = 2;
@@ -102,14 +102,14 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="start">Начало отчёта</param>
         /// <returns>Список массивов</returns>
         public static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
-            string message = "{nameof(count)} должно быть > 1, a {nameof(source)} > nameof(count)";
+            var message = "{nameof(count)} должно быть > 1, a {nameof(source)} > nameof(count)";
             if (source < count) {
                 throw new ArgumentOutOfRangeException(nameof(count), count, message);
             }
             if (count < 1) {
                 throw new ArgumentOutOfRangeException(nameof(count), count, message);
             }
-            List<long[]> result = new List<long[]>();
+            var result = new List<long[]>();
             if (count == 1) {
                 for (long i = start; i <= source; i++) {
                     result.Add(new long[] { i });
@@ -117,9 +117,9 @@ namespace CodeWars.Kata.Kyu.L5 {
                 return result;
             }
             IEnumerable<long[]> prev = LimitFactorial(source, count - 1);
-            foreach (long[] comboOld in prev) {
-                for (long newItem = comboOld.Last() + 1; newItem <= source; newItem++) {
-                    long[] combo = new long[count];
+            foreach (var comboOld in prev) {
+                for (var newItem = comboOld.Last() + 1; newItem <= source; newItem++) {
+                    var combo = new long[count];
                     Array.Copy(comboOld, combo, comboOld.Length);
                     combo[count - 1] = newItem;
                     result.Add(combo);
@@ -129,7 +129,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         }
 
         public static long GetComposition(IEnumerable<long> seq) {
-            long result = seq.ToArray()[0];
+            var result = seq.ToArray()[0];
             for (long i = 1; i < seq.Count(); i++) {
                 result *= seq.ToArray()[i];
             }

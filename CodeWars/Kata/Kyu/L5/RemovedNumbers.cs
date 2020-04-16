@@ -11,20 +11,20 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <returns>Массив чисел.</returns>
         [KataType(LevelTypes.Kyu, 5)]
         public static List<long[]> RemovNb(long n) {
-            List<long[]> result = new List<long[]>();
+            var result = new List<long[]>();
             // Вычислить сумму натурального ряда от 1 до n
             long sum;
             checked {
                 sum = (n + 1) * n / 2;
             }
             // Минимальный первый элемент
-            long firstMin = (sum - 2 * n + 1) / n;
+            var firstMin = (sum - 2 * n + 1) / n;
             // Максимальный первый элемент
-            long firstMax = (sum - 2 * firstMin - 1) / firstMin;
+            var firstMax = (sum - 2 * firstMin - 1) / firstMin;
             // Второй элемент
-            for (long i = firstMin; i <= firstMax; i++) {
-                long a = sum - i;
-                long b = i + 1;
+            for (var i = firstMin; i <= firstMax; i++) {
+                var a = sum - i;
+                var b = i + 1;
                 if (a % b > 0) {
                     continue;
                 }

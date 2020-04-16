@@ -18,18 +18,18 @@ namespace CodeWars {
             // [-Jump past matching ] if value at current cell is 0
             // ] -Jump back to matching [(if value at current cell is nonzero)
             Dictionary<int, int> paireds = GetPairedPosition(code, '[', ']');
-            List<char> data = new List<char>();
-            foreach (char item in source) {
+            var data = new List<char>();
+            foreach (var item in source) {
                 if (item == '0' || item == '1') {
                     data.Add(item);
                 }
             }
-            int dataPoint = 0;
-            for (int i = 0; i < code.Length; i++) {
+            var dataPoint = 0;
+            for (var i = 0; i < code.Length; i++) {
                 if (dataPoint < 0 || dataPoint >= data.Count) {
                     break;
                 }
-                char command = code[i];
+                var command = code[i];
                 if (command == '>') ++dataPoint;
                 if (command == '<') --dataPoint;
                 if (command == '*') data[dataPoint] = (data[dataPoint] == '0') ? '1' : '0';
@@ -50,7 +50,7 @@ namespace CodeWars {
 
         private static void CodeBack(ref int codePount, char currentData, Dictionary<int, int> paireds) {
             if (currentData == '1') {
-                int point = codePount;
+                var point = codePount;
                 codePount = paireds.First(e => e.Value == point).Key;
             }
         }
@@ -63,17 +63,17 @@ namespace CodeWars {
         /// <returns>Словарь</returns>
         private static Dictionary<int, int> GetPairedPosition<T>(IEnumerable<T> code, T open, T close) {
             if (code.Count() < 2 || !code.Contains(open)) return null;
-            Dictionary<int, int> result = new Dictionary<int, int>();
-            List<int> oPositions = new List<int>();
-            int opCount = 0;
-            int closCount = 0;
-            for (int i = 0; i < code.Count(); i++) {
+            var result = new Dictionary<int, int>();
+            var oPositions = new List<int>();
+            var opCount = 0;
+            var closCount = 0;
+            for (var i = 0; i < code.Count(); i++) {
                 if (code.ElementAt(i).Equals(open)) {
                     oPositions.Add(i);
                 }
             }
-            foreach (int position in oPositions) {
-                for (int i = position; i < code.Count(); i++) {
+            foreach (var position in oPositions) {
+                for (var i = position; i < code.Count(); i++) {
                     if (code.ElementAt(i).Equals(open)) {
                         opCount++;
                         continue;

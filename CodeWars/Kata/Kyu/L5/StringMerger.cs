@@ -19,16 +19,16 @@ namespace CodeWars.Kata.Kyu.L5 {
         }
 
         private static bool MayExtract(string s, params string[] parts) {
-            string ordS = string.Join("", s.OrderBy(k => k));
-            string p = string.Join("", parts);
-            string ordP = string.Join("", p.OrderBy(k => k));
+            var ordS = string.Join("", s.OrderBy(k => k));
+            var p = string.Join("", parts);
+            var ordP = string.Join("", p.OrderBy(k => k));
             if (!ordS.Equals(ordP)) {
                 return false;
             }
 
-            foreach (string part in parts) {
-                int start = 0;
-                foreach (char item in part) {
+            foreach (var part in parts) {
+                var start = 0;
+                foreach (var item in part) {
                     start = s.IndexOf(item, start);
                     if (start == -1) {
                         return false;
