@@ -1,6 +1,6 @@
 ﻿using System;
 namespace CodeWars.Kata.Kyu.L6 {
-    internal class SumFractions {
+    public static class SumFractions {
         [KataType(LevelTypes.Kyu, 6, "5517fcb0236c8826940003c9")]
         public static string SumFracts(int[,] args) {
             var zeroLength = args.GetLength(0);
@@ -23,7 +23,7 @@ namespace CodeWars.Kata.Kyu.L6 {
             return $"[{result[0]}, {result[1]}]";
         }
 
-        private static int[] GetReducedFraction(int nmr, int dnmr) {
+        public static int[] GetReducedFraction(int nmr, int dnmr) {
             var defResult = new int[2] { nmr, dnmr };
             if (nmr == 0 || dnmr == 0) {
                 return defResult;
@@ -54,7 +54,7 @@ namespace CodeWars.Kata.Kyu.L6 {
             return defResult;
         }
 
-        private int GetMaxDivider(int number, int divider) {
+        public static int GetMaxDivider(int number, int divider) {
             var remainder = number % divider;
             while (remainder != 0) {
                 if (Math.Abs(remainder) == 1) {
