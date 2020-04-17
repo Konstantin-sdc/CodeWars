@@ -1,0 +1,10 @@
+{
+  "Version": 1,
+  "PreferredTestFrameworkName": "xUnit",
+  "PreferredMockFrameworkName": "AutoMoq",
+  "FileNameTemplate": "$ClassName$Tests",
+  "CustomMockFieldDeclarationTemplate": "private $CustomMockClass$ mock$InterfaceMockName$;",
+  "CustomMockFieldInitializationTemplate": "this.mock$InterfaceMockName$ = new $CustomMockClass$();",
+  "CustomMockObjectReferenceTemplate": "this.mock$InterfaceMockName$",
+  "Templates": {}
+}

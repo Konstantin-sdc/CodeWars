@@ -1,6 +1,6 @@
 ﻿using System;
 namespace CodeWars.Kata.Kyu.L6 {
-    public static class SumFractions {
+    public class SumFractions {
         [KataType(LevelTypes.Kyu, 6, "5517fcb0236c8826940003c9")]
         public static string SumFracts(int[,] args) {
             var zeroLength = args.GetLength(0);
@@ -23,7 +23,7 @@ namespace CodeWars.Kata.Kyu.L6 {
             return $"[{result[0]}, {result[1]}]";
         }
 
-        public static int[] GetReducedFraction(int nmr, int dnmr) {
+        private static int[] GetReducedFraction(int nmr, int dnmr) {
             var defResult = new int[2] { nmr, dnmr };
             if (nmr == 0 || dnmr == 0) {
                 return defResult;
@@ -54,7 +54,7 @@ namespace CodeWars.Kata.Kyu.L6 {
             return defResult;
         }
 
-        public static int GetMaxDivider(int number, int divider) {
+        private static int GetMaxDivider(int number, int divider) {
             var remainder = number % divider;
             while (remainder != 0) {
                 if (Math.Abs(remainder) == 1) {
@@ -65,5 +65,15 @@ namespace CodeWars.Kata.Kyu.L6 {
             }
             return number;
         }
+#if DEBUG
+        /// <summary>Тестовый вызыватель <see cref="GetReducedFraction(int, int)"/></summary>
+        public int[] GetReducedFractionCaller(int nmr, int dnmr) {
+            return GetReducedFraction(nmr, dnmr);
+        }
+        /// <summary>Тестовый вызыватель <see cref="GetMaxDivider(int, int)"/></summary>
+        public int GetMaxDividerCaller(int number, int divider) {
+            return GetMaxDivider(number, divider);
+        }
+#endif
     }
 }
