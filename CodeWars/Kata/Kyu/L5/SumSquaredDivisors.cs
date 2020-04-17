@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
-    public static class SumSquaredDivisors {
+
+    public class SumSquaredDivisors {
         [KataType(LevelTypes.Kyu, 5, "integers-recreation-one")]
         public static string ListSquared(long m, long n) {
             List<long[]> squarList = SquaredList(m, n);
@@ -99,7 +100,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="count">Размер комбинации</param>
         /// <param name="start">Начало отчёта</param>
         /// <returns>Список массивов</returns>
-        public static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
+        private static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
             const string message = "{nameof(count)} должно быть > 1, a {nameof(source)} > nameof(count)";
             if (source < count) {
                 throw new ArgumentOutOfRangeException(nameof(count), count, message);
@@ -126,12 +127,33 @@ namespace CodeWars.Kata.Kyu.L5 {
             return result;
         }
 
-        public static long GetComposition(IEnumerable<long> seq) {
+        private static long GetComposition(IEnumerable<long> seq) {
             var result = seq.ToArray()[0];
             for (long i = 1; i < seq.Count(); i++) {
                 result *= seq.ToArray()[i];
             }
             return result;
         }
+
+#if DEBUG
+        public static string ListSquaredCaller(long m, long n) {
+            return ListSquared(m, n);
+        }
+        public static List<long[]> SquaredListCaller(long m, long n) {
+            return SquaredList(m, n);
+        }
+        public static bool IsIntegerSquaredCaller(long m) {
+            return IsIntegerSquared(m);
+        }
+        public static List<long> SimpeDividersCaller(long d) {
+            return SimpeDividers(d);
+        }
+        public static IEnumerable<long[]> LimitFactorialCaller(long source, long count, uint start = 0) {
+            return LimitFactorial(source, count, start);
+        }
+        public static long GetCompositionCaller(IEnumerable<long> seq) {
+            return GetComposition(seq);
+        }
+#endif
     }
 }

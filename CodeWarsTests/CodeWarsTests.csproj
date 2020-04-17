@@ -107,6 +107,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Kata\Kyu\L5\" />
     <Folder Include="Kata\Kyu\L6\" />
   </ItemGroup>
   <Choose>
