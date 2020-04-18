@@ -6,5 +6,8 @@
   "CustomMockFieldDeclarationTemplate": "private $CustomMockClass$ mock$InterfaceMockName$;",
   "CustomMockFieldInitializationTemplate": "this.mock$InterfaceMockName$ = new $CustomMockClass$();",
   "CustomMockObjectReferenceTemplate": "this.mock$InterfaceMockName$",
-  "Templates": {}
+  "Templates": {
+    "xUnit_AutoMoq_TestMethodInvocation": "[Fact]\r\npublic $AsyncModifier$ $AsyncReturnType$ $TestMethodName$()\r\n{\r\n\t// Arrange\r\n\tvar mocker = new AutoMoqer();\r\n\tvar $ClassNameShort.CamelCase$ = mocker.Create<$ClassName$>();\r\n\t$ParameterSetupDefaults.NewLineIfPopulated$\t\r\n\t// Act\r\n\t$MethodInvocationPrefix$$ClassNameShort.CamelCase$$MethodInvocation$;\r\n\t\r\n\t// Assert\r\n\tAssert.True(false);\r\n}",
+    "xUnit_AutoMoq_TestMethodEmpty": "[Fact]\r\npublic void TestMethod1()\r\n{\r\n\t// Arrange\r\n\tvar mocker = new AutoMoqer();\r\n\tvar $ClassNameShort.CamelCase$ = mocker.Create<$ClassName$>();\r\n\t\r\n\t// Act\t\r\n\t\r\n\t// Assert\r\n\tAssert.True(false);\r\n}"
+  }
 }
