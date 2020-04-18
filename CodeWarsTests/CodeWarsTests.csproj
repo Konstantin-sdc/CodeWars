@@ -91,6 +91,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Kata\Kyu\L5\SumSquaredDivisorsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -107,7 +108,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Kata\Kyu\L5\" />
     <Folder Include="Kata\Kyu\L6\" />
   </ItemGroup>
   <Choose>

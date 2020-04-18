@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
-
-    public class SumSquaredDivisors {
+    public
+#if !DEBUG
+    static
+#endif
+    class SumSquaredDivisors {
         [KataType(LevelTypes.Kyu, 5, "integers-recreation-one")]
         public static string ListSquared(long m, long n) {
             List<long[]> squarList = SquaredList(m, n);
@@ -134,26 +137,27 @@ namespace CodeWars.Kata.Kyu.L5 {
             }
             return result;
         }
-
+        #region if DEBUG
 #if DEBUG
-        public static string ListSquaredCaller(long m, long n) {
+        public string ListSquared_Call(long m, long n) {
             return ListSquared(m, n);
         }
-        public static List<long[]> SquaredListCaller(long m, long n) {
+        public List<long[]> SquaredList_Call(long m, long n) {
             return SquaredList(m, n);
         }
-        public static bool IsIntegerSquaredCaller(long m) {
+        public bool IsIntegerSquared_Call(long m) {
             return IsIntegerSquared(m);
         }
-        public static List<long> SimpeDividersCaller(long d) {
+        public List<long> SimpeDividers_Call(long d) {
             return SimpeDividers(d);
         }
-        public static IEnumerable<long[]> LimitFactorialCaller(long source, long count, uint start = 0) {
+        public IEnumerable<long[]> LimitFactorial_Call(long source, long count, uint start = 0) {
             return LimitFactorial(source, count, start);
         }
-        public static long GetCompositionCaller(IEnumerable<long> seq) {
+        public long GetComposition_Call(IEnumerable<long> seq) {
             return GetComposition(seq);
         }
 #endif
+        #endregion
     }
 }
