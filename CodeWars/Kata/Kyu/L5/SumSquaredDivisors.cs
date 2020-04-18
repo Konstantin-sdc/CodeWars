@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
+    /// <summary>
+    /// Все целые числа между заданными, у которых сумма квадратов делителей сама является квадратом.
+    /// </summary>
     public
 #if !DEBUG
     static
 #endif
     class SumSquaredDivisors {
         #region ClassMembers
+        /// <summary>Возвращает список квадратов делителей в форме строки.</summary>
+        /// <param name="m">Первое число.</param>
+        /// <param name="n">Второе число.</param>
+        /// <returns>Строка списка квадратов.</returns>
         [KataType(LevelTypes.Kyu, 5, "integers-recreation-one")]
         public static string ListSquared(long m, long n) {
             List<long[]> squarList = SquaredList(m, n);
