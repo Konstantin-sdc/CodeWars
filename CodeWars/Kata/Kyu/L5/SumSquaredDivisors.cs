@@ -3,14 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
+
     /// <summary>
     /// Все целые числа между заданными, у которых сумма квадратов делителей сама является квадратом.
     /// </summary>
-    public
 #if !DEBUG
-    static
+    public static class SumSquaredDivisors {
 #endif
-        class SumSquaredDivisors {
+#if DEBUG
+    public static class SumSquaredDivisors {
+        public class SumSquaredDivisorsCaller {
+            public string ListSquared(long m, long n) {
+                return ListSquared(m, n);
+            }
+            public List<long[]> SquaredList(long m, long n) {
+                return SquaredList(m, n);
+            }
+            public bool IsIntegerSquared(long m) {
+                return IsIntegerSquared(m);
+            }
+            public List<long> SimpeDividers(long d) {
+                return SimpeDividers(d);
+            }
+            public IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
+                return LimitFactorial(source, count, start);
+            }
+            public long GetComposition(IEnumerable<long> seq) {
+                return GetComposition(seq);
+            }
+        }
+#endif
         #region ClassMembers
 
         /// <summary>Возвращает список квадратов делителей в форме строки.</summary>
@@ -59,7 +81,7 @@ namespace CodeWars.Kata.Kyu.L5 {
                 return false;
             }
 
-            long[] mod100 = {00, 01, 04, 09, 16, 21, 24, 25, 29, 36, 41, 44, 49, 56, 61, 64, 69, 76, 81, 84, 89, 96};
+            long[] mod100 = { 00, 01, 04, 09, 16, 21, 24, 25, 29, 36, 41, 44, 49, 56, 61, 64, 69, 76, 81, 84, 89, 96 };
             if (!mod100.Contains(m % 100)) {
                 return false;
             }
@@ -83,7 +105,7 @@ namespace CodeWars.Kata.Kyu.L5 {
                 var sumSquared = divSquared.Sum();
                 var isSq = IsIntegerSquared(sumSquared);
                 if (isSq) {
-                    long[] c = {i, sumSquared};
+                    long[] c = { i, sumSquared };
                     numbers.Add(c);
                 }
             }
@@ -110,7 +132,7 @@ namespace CodeWars.Kata.Kyu.L5 {
                 }
 
                 if (dvdr > d / 2) {
-                    return new List<long> {d};
+                    return new List<long> { d };
                 }
             }
 
@@ -135,7 +157,7 @@ namespace CodeWars.Kata.Kyu.L5 {
             var result = new List<long[]>();
             if (count == 1) {
                 for (long i = start; i <= source; i++) {
-                    result.Add(new[] {i});
+                    result.Add(new[] { i });
                 }
 
                 return result;
@@ -165,32 +187,5 @@ namespace CodeWars.Kata.Kyu.L5 {
 
         #endregion
 
-        #region if DEBUG
-#if DEBUG
-        public string ListSquaredCall(long m, long n) {
-            return ListSquared(m, n);
-        }
-
-        public List<long[]> SquaredListCall(long m, long n) {
-            return SquaredList(m, n);
-        }
-
-        public bool IsIntegerSquaredCall(long m) {
-            return IsIntegerSquared(m);
-        }
-
-        public List<long> SimpeDividersCall(long d) {
-            return SimpeDividers(d);
-        }
-
-        public IEnumerable<long[]> LimitFactorialCall(long source, long count, uint start = 0) {
-            return LimitFactorial(source, count, start);
-        }
-
-        public long GetCompositionCall(IEnumerable<long> seq) {
-            return GetComposition(seq);
-        }
-#endif
-        #endregion
     }
 }
