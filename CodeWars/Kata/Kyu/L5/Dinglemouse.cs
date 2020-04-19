@@ -29,7 +29,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         }
 
         private static string SoundexSingle(string word) {
-            var result = word.ToUpper();
+            var result = word.ToUpper(KataClass.Invariant);
             var fC = result[0];
             foreach (KeyValuePair<string, string> item in _soundDict) {
                 result = Regex.Replace(result, item.Key, item.Value);

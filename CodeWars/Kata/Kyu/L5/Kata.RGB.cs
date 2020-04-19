@@ -11,7 +11,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         public static string RGB(int r, int g, int b) {
             var result = "";
             foreach (var i in new int[3] { r, g, b }) {
-                result += Math.Max(0, Math.Min(i, 255)).ToString("X2");
+                result += Math.Max(0, Math.Min(i, 255)).ToString("X2", KataClass.Invariant);
             }
             return result;
         }

@@ -17,7 +17,7 @@ namespace CodeWars.Kata.Kyu.L6 {
             var result = new List<long>();
             for (var number = a; number <= b; number++) {
                 // Коллекция цифр в числе
-                IEnumerable<long> digitsCollection = number.ToString().Select(s => (long)Char.GetNumericValue(s));
+                IEnumerable<long> digitsCollection = number.ToString(KataClass.Invariant).Select(s => (long)Char.GetNumericValue(s));
                 // Пройтись по цифрам числа, возвести в степень и сложить
                 long testNumber = 0;
                 for (var position = 0; position < digitsCollection.Count(); position++) {

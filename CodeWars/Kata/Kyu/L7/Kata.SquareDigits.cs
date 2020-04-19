@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L7 {
@@ -8,9 +9,9 @@ namespace CodeWars.Kata.Kyu.L7 {
         /// <returns>Число из квадратов</returns>
         [KataType(LevelTypes.Kyu, 7)]
         public static int SquareDigits(int n) {
-            IEnumerable<double> digits = n.ToString().Select(s => char.GetNumericValue(s));
+            IEnumerable<double> digits = n.ToString(KataClass.Invariant).Select(s => char.GetNumericValue(s));
             digits = digits.Select(s => s * s);
-            return int.Parse(string.Join(null, digits));
+            return int.Parse(string.Concat(digits), KataClass.Invariant);
         }
     }
 }

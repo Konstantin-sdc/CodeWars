@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
     public static partial class Kata {
+        static CultureInfo _cultureInfo = CultureInfo.InvariantCulture;
         /// <summary>
         /// <para>Принимает целое число.</para>
         /// <para>К каждой группе его цифр припиывает число количества этих цифр.</para>
@@ -14,10 +16,10 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <returns>Комбинация</returns>
         [KataType(LevelTypes.Kyu, 5, "conways-look-and-say-generalized")]
         public static ulong LookSay(ulong number) {
-            var s = number.ToString();
+            var s = number.ToString(KataClass.Invariant);
             List<List<char>> gs = GroupSeparate(s);
-            IEnumerable<string> result = gs.Select(e => e.Count + e[0].ToString());
-            return Convert.ToUInt64(string.Concat(result));
+            IEnumerable<string> result = gs.Select(e => e.Count + e[0].ToString(_cultureInfo));
+            return Convert.ToUInt64(string.Concat(result), _cultureInfo);
         }
 
         /// <summary>Проводит раздельную группировку элементов в коллоекции</summary>

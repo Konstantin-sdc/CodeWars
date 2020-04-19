@@ -7,7 +7,7 @@ namespace CodeWars.Kata.Kyu.L7 {
         /// <returns><see cref="true"/> если является</returns>
         [KataType(LevelTypes.Kyu, 7)]
         public static bool IsIsogram(string s) {
-            return s.Length == s.ToLower().Distinct().Count();
+            return s.Length == s.ToLower(KataClass.Invariant).Distinct().Count();
         }
     }
 }

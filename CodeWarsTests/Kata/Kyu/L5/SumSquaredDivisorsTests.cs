@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using TestedClass = CodeWars.Kata.Kyu.L5.SumSquaredDivisors.SumSquaredDivisorsCaller;
 using Xunit;
+using System.Runtime.InteropServices;
 
 namespace CodeWars.Kata.Kyu.L5.SumSquaredDivisorsTests {
-    public class SumSquaredDivisorsCallerTests {
+    public class SumSquaredDivisorsTests {
         private readonly IDictionary<long[], string> _testValues;
-        private TestedClass _testedObject; 
+        private readonly TestedClass _testedObject; 
 
-        public SumSquaredDivisorsCallerTests() {
+        public SumSquaredDivisorsTests() {
             _testValues = new Dictionary<long[], string>() {
                 {new long[2]{1,250}, "[[1, 1], [42, 2500], [246, 84100]]" },
                 {new long[2]{42,250}, "[[42, 2500], [246, 84100]]" },
@@ -18,10 +19,16 @@ namespace CodeWars.Kata.Kyu.L5.SumSquaredDivisorsTests {
 
         [Fact()]
         public void ListSquaredTest() {
+            string a, b, c;
+            var message = $@"
+Input {a}. 
+Expected == {b}. 
+Actual == {b}
+";
             foreach (var item in _testValues) {
-                _testedObject.ListSquared(item.Key[0], item.Key[1]);
+                string result = _testedObject.ListSquared(item.Key[0], item.Key[1]);
+                Assert.True(result == item.Value, message);
             }
-            Assert.True(false, "This test needs an implementation");
         }
 
         [Fact()]

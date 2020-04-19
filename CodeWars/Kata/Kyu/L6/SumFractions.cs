@@ -19,7 +19,7 @@ namespace CodeWars.Kata.Kyu.L6 {
                 numerator += tArray[i, 0] * denumerator / tArray[i, 1];
             }
             var result = GetReducedFraction(numerator, denumerator);
-            if (result[1] == 1) return result[0].ToString();
+            if (result[1] == 1) return result[0].ToString(KataClass.Invariant);
             return $"[{result[0]}, {result[1]}]";
         }
 

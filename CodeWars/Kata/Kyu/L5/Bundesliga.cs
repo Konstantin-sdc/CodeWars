@@ -21,7 +21,7 @@ namespace CodeWars.Kata.Kyu.L5 {
               .OrderByDescending(k => k.Points)
               .ThenByDescending(k => k.GoalsOut - k.GoalsIn)
               .ThenByDescending(k => k.GoalsOut)
-              .ThenBy(k => k.Name.ToLower())
+              .ThenBy(k => k.Name.ToLower(KataClass.Invariant))
               .ToList();
             var komResults = new List<string>();
             for (int i = 0, number = 1; i < kList.Count; i++) {
@@ -32,12 +32,12 @@ namespace CodeWars.Kata.Kyu.L5 {
                 }
 
                 var komStr = string.Join("  ",
-                  number.ToString().PadLeft(2) + ".",
-                  k.Name.PadRight(30) + k.MatchCount.ToString(),
-                  k.Wins.ToString(),
-                  k.Ties.ToString(),
-                  k.Loses.ToString(),
-                  k.GoalsOut.ToString() + ":" + k.GoalsIn.ToString(),
+                  number.ToString(KataClass.Invariant).PadLeft(2) + ".",
+                  k.Name.PadRight(30) + k.MatchCount.ToString(KataClass.Invariant),
+                  k.Wins.ToString(KataClass.Invariant),
+                  k.Ties.ToString(KataClass.Invariant),
+                  k.Loses.ToString(KataClass.Invariant),
+                  k.GoalsOut.ToString(KataClass.Invariant) + ":" + k.GoalsIn.ToString(KataClass.Invariant),
                   k.Points
                   );
                 komResults.Add(komStr);

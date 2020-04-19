@@ -4,12 +4,6 @@ using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
 
-    public class TestingClass {
-        public string GetTestingStrig() {
-            return "";
-        }
-    }
-
     /// <summary>
     /// Все целые числа между заданными, у которых сумма квадратов делителей сама является квадратом.
     /// </summary>

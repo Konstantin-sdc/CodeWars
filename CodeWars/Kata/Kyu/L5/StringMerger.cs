@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
     internal static class StringMerger {
@@ -20,7 +21,7 @@ namespace CodeWars.Kata.Kyu.L5 {
             var ordS = string.Join("", s.OrderBy(k => k));
             var p = string.Concat(parts);
             var ordP = string.Join("", p.OrderBy(k => k));
-            if (!ordS.Equals(ordP)) {
+            if (!ordS.Equals(ordP, StringComparison.InvariantCulture)) {
                 return false;
             }
 
