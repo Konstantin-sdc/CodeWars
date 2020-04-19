@@ -4,14 +4,18 @@ using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
 
+    public class TestingClass {
+        public string GetTestingStrig() {
+            return "";
+        }
+    }
+
     /// <summary>
     /// Все целые числа между заданными, у которых сумма квадратов делителей сама является квадратом.
     /// </summary>
-#if !DEBUG
     public static class SumSquaredDivisors {
-#endif
 #if DEBUG
-    public static class SumSquaredDivisors {
+        /// <summary>Тестовый вызывальщик.</summary>
         public class SumSquaredDivisorsCaller {
             public string ListSquared(long m, long n) {
                 return ListSquared(m, n);
