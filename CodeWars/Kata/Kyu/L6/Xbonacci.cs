@@ -5,7 +5,14 @@
         /// <param name="n">Количество чисел, для которых следует вернуть последовательность Трибоначи</param>
         /// <returns>Итоговая последовательность Трибоначи</returns>
         public static double[] Tribonacci(double[] signature, int n) {
-            if (n < 1 || signature.Length != 3) return new double[1];
+            if (signature is null) {
+                throw new System.ArgumentNullException(nameof(signature));
+            }
+
+            if (n < 1 || signature.Length != 3) {
+                return new double[1];
+            }
+
             var result = new double[n];
             var sc = n <= signature.Length ? n : signature.Length;
             // Запись сигнатуры

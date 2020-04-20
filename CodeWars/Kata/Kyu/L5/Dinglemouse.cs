@@ -21,6 +21,10 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <returns>SOUNDEX-коды группы слов</returns>
         [KataType(LevelTypes.Kyu, 5)]
         public static string Soundex(string names) {
+            if (string.IsNullOrEmpty(names)) {
+                throw new System.ArgumentException("message", nameof(names));
+            }
+
             var result = names.Split(' ');
             for (var i = 0; i < result.Length; i++) {
                 result[i] = SoundexSingle(result[i]);

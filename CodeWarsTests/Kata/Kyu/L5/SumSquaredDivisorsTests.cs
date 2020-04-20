@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
-using TestedClass = CodeWars.Kata.Kyu.L5.SumSquaredDivisors.SumSquaredDivisorsCaller;
+
 using Xunit;
-using System.Runtime.InteropServices;
+
+using TestedClass = CodeWars.Kata.Kyu.L5.SumSquaredDivisors.SumSquaredDivisorsCaller;
 
 namespace CodeWars.Kata.Kyu.L5.SumSquaredDivisorsTests {
     public class SumSquaredDivisorsTests {
         private readonly IDictionary<long[], string> _testValues;
-        private readonly TestedClass _testedObject; 
+        private readonly TestedClass _testedObject;
 
         public SumSquaredDivisorsTests() {
             _testValues = new Dictionary<long[], string>() {
@@ -19,14 +20,13 @@ namespace CodeWars.Kata.Kyu.L5.SumSquaredDivisorsTests {
 
         [Fact()]
         public void ListSquaredTest() {
-            string a, b, c;
-            var message = $@"
-Input {a}. 
-Expected == {b}. 
-Actual == {b}
-";
             foreach (var item in _testValues) {
-                string result = _testedObject.ListSquared(item.Key[0], item.Key[1]);
+                var result = _testedObject.ListSquared(item.Key[0], item.Key[1]);
+                var message = $@"
+Input {item.Key}. 
+Expected == {item.Value}. 
+Actual == {result}
+";
                 Assert.True(result == item.Value, message);
             }
         }

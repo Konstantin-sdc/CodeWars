@@ -6,6 +6,9 @@ namespace CodeWars.Kata.Kyu.L6 {
         /// <returns>Результат.</returns>
         [KataType(LevelTypes.Kyu, 6, "esolang-interpreters-number-1-introduction-to-esolangs-and-my-first-interpreter-ministringfuck")]
         public static string MyFirstInterpreter(string code) {
+            if (string.IsNullOrEmpty(code)) {
+                throw new System.ArgumentException("message", nameof(code));
+            }
             #region Instructions
             // Язык MiniStringFuck https://esolangs.org/wiki/MiniStringFuck
             // Инструкции "+" и ".". Остальные сиволы интерпретатор игнорирует.

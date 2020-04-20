@@ -8,6 +8,10 @@ namespace CodeWars.Kata.Kyu.L7 {
         /// <returns>Строка из наибольшего и наименьшего чисел</returns>
         [KataType(LevelTypes.Kyu, 7)]
         public static string HighAndLow(string numbers) {
+            if (string.IsNullOrEmpty(numbers)) {
+                throw new System.ArgumentException("message", nameof(numbers));
+            }
+
             IEnumerable<int> intArr = numbers.Split(' ').Select(int.Parse);
             return intArr.Max() + " " + intArr.Min();
         }

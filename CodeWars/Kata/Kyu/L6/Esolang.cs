@@ -9,12 +9,20 @@ namespace CodeWars {
         /// <returns>Строка</returns>
         [KataType(LevelTypes.Kyu, 5, "esolang-interpreters-number-2-custom-smallfuck-interpreter")]
         public static string Interpreter(string code, string source) {
-            // Rules
+            if (string.IsNullOrEmpty(code)) {
+                throw new System.ArgumentException("message", nameof(code));
+            }
+
+            if (string.IsNullOrEmpty(source)) {
+                throw new System.ArgumentException("message", nameof(source));
+            }
+            #region Rules
             // > - Move pointer to the right (by 1 cell)
             // < -Move pointer to the left(by 1 cell)
             // *-Flip the bit at the current cell
             // [-Jump past matching ] if value at current cell is 0
             // ] -Jump back to matching [(if value at current cell is nonzero)
+            #endregion
             Dictionary<int, int> paireds = GetPairedPosition(code, '[', ']');
             var data = new List<char>();
             foreach (var item in source) {

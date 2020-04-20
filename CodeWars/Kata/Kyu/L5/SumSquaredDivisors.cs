@@ -12,22 +12,22 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <summary>Тестовый вызывальщик.</summary>
         public class SumSquaredDivisorsCaller {
             public string ListSquared(long m, long n) {
-                return ListSquared(m, n);
+                return SumSquaredDivisors.ListSquared(m, n);
             }
             public List<long[]> SquaredList(long m, long n) {
-                return SquaredList(m, n);
+                return SumSquaredDivisors.SquaredList(m, n);
             }
             public bool IsIntegerSquared(long m) {
-                return IsIntegerSquared(m);
+                return SumSquaredDivisors.IsIntegerSquared(m);
             }
             public List<long> SimpeDividers(long d) {
-                return SimpeDividers(d);
+                return SumSquaredDivisors.SimpeDividers(d);
             }
             public IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
-                return LimitFactorial(source, count, start);
+                return SumSquaredDivisors.LimitFactorial(source, count, start);
             }
             public long GetComposition(IEnumerable<long> seq) {
-                return GetComposition(seq);
+                return SumSquaredDivisors.GetComposition(seq);
             }
         }
 #endif

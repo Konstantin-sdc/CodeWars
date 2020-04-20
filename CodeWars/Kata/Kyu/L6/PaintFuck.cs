@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CodeWars.Kata.Kyu.L6 {
-    internal class PaintFuck {
+    internal static class PaintFuck {
 
     }
 }

@@ -12,6 +12,18 @@ namespace CodeWars {
         /// <returns>false, если класс уже существует в этой сборке</returns>
         [KataType(LevelTypes.Kyu, 3, "589394ae1a880832e2000092")]
         public static bool DefineClass(string className, Dictionary<string, Type> properties, ref Type actualType) {
+            if (string.IsNullOrEmpty(className)) {
+                throw new ArgumentException("message", nameof(className));
+            }
+
+            if (properties is null) {
+                throw new ArgumentNullException(nameof(properties));
+            }
+
+            if (actualType is null) {
+                throw new ArgumentNullException(nameof(actualType));
+            }
+
             TypeBuilder tb = GetTypeBuilder(className);
             var gType = Assembly.GetExecutingAssembly().GetType(className);
             if (gType != null) {

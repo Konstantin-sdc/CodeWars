@@ -9,6 +9,10 @@ namespace CodeWars.Kata.Kyu.L6 {
         /// <returns>Итоговая строка</returns>
         [KataType(LevelTypes.Kyu, 6)]
         public static string Order(string words) {
+            if (string.IsNullOrEmpty(words)) {
+                throw new ArgumentException("message", nameof(words));
+            }
+
             var wordArray = words.Split(' ');
             IEnumerable<double> digits = words.Where(c => Char.IsDigit(c)).Select(c => Char.GetNumericValue(c));
             Array.Sort(digits.ToArray(), wordArray);

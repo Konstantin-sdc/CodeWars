@@ -6,6 +6,10 @@ namespace CodeWars.Kata.Kyu.L5 {
     public static partial class Bundesliga {
         [KataType(LevelTypes.Kyu, 5, "57c178e16662d0d932000120")]
         public static string BundesLigaTable(string[] results) {
+            if (results is null) {
+                throw new ArgumentNullException(nameof(results));
+            }
+
             var kList = new List<Kommando>();
             foreach (var item in results) {
                 var score = item.Split(new char[] { ' ' }).First();
