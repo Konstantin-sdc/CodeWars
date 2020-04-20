@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
-    public static partial class Kata {
+    public static partial class KataClass {
         static CultureInfo _cultureInfo = CultureInfo.InvariantCulture;
         /// <summary>
         /// <para>Принимает целое число.</para>
@@ -16,7 +16,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <returns>Комбинация</returns>
         [KataType(LevelTypes.Kyu, 5, "conways-look-and-say-generalized")]
         public static ulong LookSay(ulong number) {
-            var s = number.ToString(KataClass.Invariant);
+            var s = number.ToString(CodeWars.KataBase.Invariant);
             List<List<char>> gs = GroupSeparate(s);
             IEnumerable<string> result = gs.Select(e => e.Count + e[0].ToString(_cultureInfo));
             return Convert.ToUInt64(string.Concat(result), _cultureInfo);

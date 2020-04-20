@@ -7,6 +7,10 @@ namespace CodeWars.Kata.Kyu.L4 {
         /// <returns>Строка</returns>
         [KataType(LevelTypes.Kyu, 4, "range-extraction")]
         public static string Extract(int[] args) {
+            if (args is null) {
+                throw new System.ArgumentNullException(nameof(args));
+            }
+
             var gList = new List<List<int>>();
             for (var i = 0; i < args.Length; i++) {
                 if (i == 0 || args[i] - args[i - 1] != 1) {

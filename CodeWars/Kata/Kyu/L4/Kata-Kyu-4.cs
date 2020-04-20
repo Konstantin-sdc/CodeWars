@@ -2,7 +2,7 @@
 using System.Linq;
 
 namespace CodeWars {
-    public static partial class KataClass {
+    public static partial class KataBase {
         /// <summary>Возвращает полные цепи зависимостей для каждого ключа</summary>
         /// <param name="source">Словарь прямых зависимостей</param>
         /// <returns>Словарь полных зависимостей</returns>

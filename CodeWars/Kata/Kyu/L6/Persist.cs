@@ -11,7 +11,7 @@ namespace CodeWars.Kata.Kyu.L6 {
         [KataType(LevelTypes.Kyu, 6)]
         public static int Persistence(long n) {
             if (n < 10) return 0;
-            IEnumerable<double> digits = n.ToString(KataClass.Invariant).Select(e => Char.GetNumericValue(e));
+            IEnumerable<double> digits = n.ToString(KataBase.Invariant).Select(e => Char.GetNumericValue(e));
             long baseNumber = 1;
             foreach (var digit in digits.OfType<long>()) {
                 baseNumber *= digit;

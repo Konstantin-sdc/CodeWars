@@ -11,7 +11,7 @@ namespace CodeWars.Kata.Kyu.L7 {
                 throw new System.ArgumentException("message", nameof(s));
             }
 
-            return s.Length == s.ToLower(KataClass.Invariant).Distinct().Count();
+            return s.Length == s.ToLower(KataBase.Invariant).Distinct().Count();
         }
     }
 }

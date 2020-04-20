@@ -17,6 +17,8 @@ namespace CodeWars {
         /// <summary>Тип уровня ката</summary>
         public LevelTypes LevelType { get; }
         public Uri KataLink;
+
+        public string KataId { get; }
     }
     /// <summary>Типы уровней ката</summary>
     internal enum LevelTypes {

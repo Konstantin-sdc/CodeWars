@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace CodeWars {
-    public static partial class KataClass {
+    public static partial class KataBase {
         /// <summary>Интерпретатор</summary>
         /// <param name="code">Код Paintfuck, который должен быть выполнен, передается как строка. </param>
         /// <param name="iterations"></param>

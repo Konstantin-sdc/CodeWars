@@ -9,9 +9,9 @@ namespace CodeWars.Kata.Kyu.L7 {
         /// <returns>Число из квадратов</returns>
         [KataType(LevelTypes.Kyu, 7)]
         public static int SquareDigits(int n) {
-            IEnumerable<double> digits = n.ToString(KataClass.Invariant).Select(s => char.GetNumericValue(s));
+            IEnumerable<double> digits = n.ToString(KataBase.Invariant).Select(s => char.GetNumericValue(s));
             digits = digits.Select(s => s * s);
-            return int.Parse(string.Concat(digits), KataClass.Invariant);
+            return int.Parse(string.Concat(digits), KataBase.Invariant);
         }
     }
 }
