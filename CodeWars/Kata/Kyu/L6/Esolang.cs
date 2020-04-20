@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Res = CodeWars.Properties.Resources;
 
 namespace CodeWars {
     public static partial class KataBase {
@@ -10,11 +11,11 @@ namespace CodeWars {
         [KataType(LevelTypes.Kyu, 5, "esolang-interpreters-number-2-custom-smallfuck-interpreter")]
         public static string Interpreter(string code, string source) {
             if (string.IsNullOrEmpty(code)) {
-                throw new System.ArgumentException("message", nameof(code));
+                throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(code));
             }
 
             if (string.IsNullOrEmpty(source)) {
-                throw new System.ArgumentException("message", nameof(source));
+                throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(source));
             }
             #region Rules
             // > - Move pointer to the right (by 1 cell)
@@ -109,7 +110,13 @@ namespace CodeWars {
         /// <param name="height">Количество строк в таблице данных</param>
         /// <returns>Преобразованная таблица</returns>
         [KataType(LevelTypes.Kyu, 4, "esolang-interpreters-number-3-custom-paintf-star-star-k-interpreter")]
+#pragma warning disable IDE0060, CA1801 // Удалите неиспользуемый параметр
         public static string PaintFuckInterpreter(string code, int iterations, int width, int height) {
+#pragma warning restore IDE0060, CA1801 // Удалите неиспользуемый параметр
+            if (string.IsNullOrEmpty(code)) {
+                throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(code));
+            }
+            #region Rules
             //n - Move data pointer north(up)
             //e - Move data pointer east(right)
             //s - Move data pointer south(down)
@@ -117,7 +124,6 @@ namespace CodeWars {
             //* -Flip the bit at the current cell(same as in Smallfuck)
             //[ - Jump past matching ] if bit under current pointer is 0 (same as in Smallfuck)
             //] - Jump back to the matching [ (if bit under current pointer is nonzero) (same as in Smallfuck)
-
             // Команды чувствительны к регистру
             // UNDONE ЧТО ЗА НЕЯСНАЯ ХРЕНЬ?! Интерпретатор должен инициализировать все ячейки таблицы со значением 0, независимот размера таблицы.
             // В начале указатель данных всегда в левом верхнем углу таблицы
@@ -127,11 +133,10 @@ namespace CodeWars {
             // 1. Все команды прочинаны слева направо.
             // 2. Интерпретатор выполнил нужное количество итераций.
             // Интерпретатор возвращает конечное состояние таблицы данных вида 0101\r\n0101\r\n0101.
-
             // Если управляющих символов нет — вернуть исходное состояние таблицы данных
             // Если iterations == 0 — вернуть исходное состояние таблицы данных
-
             // Implement your interpreter here
+            #endregion
             return "";
         }
     }

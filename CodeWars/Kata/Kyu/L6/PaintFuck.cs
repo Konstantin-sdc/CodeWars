@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CodeWars.Kata.Kyu.L6 {
-    internal static class PaintFuck {
-
-    }
+#pragma warning disable CA1812
+    internal static class PaintFuck { }
+#pragma warning restore CA1812
 }

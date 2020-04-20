@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Res = CodeWars.Properties.Resources;
 
 namespace CodeWars.Kata.Kyu.L5 {
     public static class Dinglemouse {
@@ -22,9 +23,9 @@ namespace CodeWars.Kata.Kyu.L5 {
         [KataType(LevelTypes.Kyu, 5)]
         public static string Soundex(string names) {
             if (string.IsNullOrEmpty(names)) {
-                throw new System.ArgumentException("message", nameof(names));
+                throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(names));
             }
-
+            
             var result = names.Split(' ');
             for (var i = 0; i < result.Length; i++) {
                 result[i] = SoundexSingle(result[i]);

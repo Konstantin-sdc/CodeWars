@@ -10,7 +10,9 @@ namespace CodeWars.Kata.Kyu.L5 {
     public static class SumSquaredDivisors {
 #if DEBUG
         /// <summary>Тестовый вызывальщик.</summary>
-        public class SumSquaredDivisorsCaller {
+#pragma warning disable CA1034 // Вложенные типы не должны быть видимыми
+        public static class SumSquaredDivisorsCaller {
+#pragma warning restore CA1034 // Вложенные типы не должны быть видимыми
             public static string ListSquared(long m, long n) {
                 return SumSquaredDivisors.ListSquared(m, n);
             }
@@ -137,13 +139,15 @@ namespace CodeWars.Kata.Kyu.L5 {
             return dvdrs;
         }
 
+
         /// <summary>Возвращает сочетание из <paramref name="source" /> по <paramref name="count" /></summary>
         /// <param name="source">Число</param>
         /// <param name="count">Размер комбинации</param>
         /// <param name="start">Начало отчёта</param>
         /// <returns>Список массивов</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1303:Не передавать литералы в качестве локализованных параметров", Justification = "<Ожидание>")]
         private static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
-            var message = $"{nameof(count)} должно быть > 1, a {nameof(source)} > {nameof(count)}";
+            var message = $"{nameof(count)} <= 1, или {nameof(source)} < {nameof(count)}";
             if (source < count) {
                 throw new ArgumentOutOfRangeException(nameof(count), count, message);
             }

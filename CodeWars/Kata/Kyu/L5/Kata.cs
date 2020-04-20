@@ -16,7 +16,7 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <returns>Комбинация</returns>
         [KataType(LevelTypes.Kyu, 5, "conways-look-and-say-generalized")]
         public static ulong LookSay(ulong number) {
-            var s = number.ToString(CodeWars.KataBase.Invariant);
+            var s = number.ToString(KataBase.Invariant);
             List<List<char>> gs = GroupSeparate(s);
             IEnumerable<string> result = gs.Select(e => e.Count + e[0].ToString(_cultureInfo));
             return Convert.ToUInt64(string.Concat(result), _cultureInfo);

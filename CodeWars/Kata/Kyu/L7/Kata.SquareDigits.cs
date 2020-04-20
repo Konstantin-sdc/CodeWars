@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L7 {
-    public static partial class Kata {
+    public static partial class KataClass {
         /// <summary>Возвращает число, состоящие из квадратов каждой цифры исходного числа</summary>
         /// <param name="n">Исходное число</param>
         /// <returns>Число из квадратов</returns>

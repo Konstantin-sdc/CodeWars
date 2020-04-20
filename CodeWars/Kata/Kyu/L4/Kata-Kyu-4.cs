@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Res = CodeWars.Properties.Resources;
 
 namespace CodeWars {
     public static partial class KataBase {
@@ -39,7 +40,7 @@ namespace CodeWars {
             }
 
             if (string.IsNullOrEmpty(key)) {
-                throw new System.ArgumentException("message", nameof(key));
+                throw new System.ArgumentException(Res.IsNull, nameof(key));
             }
 
             if (!dic.ContainsKey(key) || dic[key].Length == 0) {

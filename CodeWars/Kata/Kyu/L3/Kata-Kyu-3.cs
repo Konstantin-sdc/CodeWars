@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
+using Res = CodeWars.Properties.Resources;
 
 namespace CodeWars {
     public static partial class KataBase {
@@ -13,7 +14,7 @@ namespace CodeWars {
         [KataType(LevelTypes.Kyu, 3, "589394ae1a880832e2000092")]
         public static bool DefineClass(string className, Dictionary<string, Type> properties, ref Type actualType) {
             if (string.IsNullOrEmpty(className)) {
-                throw new ArgumentException("message", nameof(className));
+                throw new ArgumentException(Res.IsNullOrEmpty, nameof(className));
             }
 
             if (properties is null) {
