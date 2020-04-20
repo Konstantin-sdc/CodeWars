@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CodeWars.Kata.Kyu.L5 {
     public static partial class KataClass {
-        static CultureInfo _cultureInfo = CultureInfo.InvariantCulture;
+        static readonly CultureInfo _cultureInfo = CultureInfo.InvariantCulture;
         /// <summary>
         /// <para>Принимает целое число.</para>
         /// <para>К каждой группе его цифр припиывает число количества этих цифр.</para>

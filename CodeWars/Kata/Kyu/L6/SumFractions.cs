@@ -52,7 +52,9 @@ namespace CodeWars.Kata.Kyu.L6 {
                 if (Math.Abs(remainder) == 1) {
                     return defResult;
                 }
+#pragma warning disable IDE0059 // Ненужное присваивание значения
                 divider = remainder;
+#pragma warning restore IDE0059 // Ненужное присваивание значения
                 remainder = small % remainder;
             }
 
