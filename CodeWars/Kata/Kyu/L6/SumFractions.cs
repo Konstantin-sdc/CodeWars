@@ -37,27 +37,14 @@ namespace CodeWars.Kata.Kyu.L6 {
             var big = bigNmr ? nmr : dnmr;
             var small = bigNmr ? dnmr : nmr;
 
-            var divider = small;
-            var remainder = big % divider;
-            while (remainder != 0) {
-                if (Math.Abs(remainder) == 1) {
-                    return defResult;
-                }
-                divider = remainder;
-                remainder = big % divider;
+            var maxBigDivider = GetMaxDivider(big, small);
+            if (small%maxBigDivider==0) {
+                return new int[2] { big / maxBigDivider, small / maxBigDivider };
             }
+            var maxSmallDivider = GetMaxDivider(small, maxBigDivider);
+            if (true) {
 
-            remainder = small % divider;
-            while (remainder != 0) {
-                if (Math.Abs(remainder) == 1) {
-                    return defResult;
-                }
-#pragma warning disable IDE0059 // Ненужное присваивание значения
-                divider = remainder;
-#pragma warning restore IDE0059 // Ненужное присваивание значения
-                remainder = small % remainder;
             }
-
             return defResult;
         }
 
@@ -70,16 +57,20 @@ namespace CodeWars.Kata.Kyu.L6 {
                 divider = remainder;
                 remainder = number % divider;
             }
-            return number;
+            return divider;
         }
 #if DEBUG
-        /// <summary>Тестовый вызыватель <see cref="GetReducedFraction(int, int)"/></summary>
-        public static int[] GetReducedFractionCaller(int nmr, int dnmr) {
-            return GetReducedFraction(nmr, dnmr);
-        }
-        /// <summary>Тестовый вызыватель <see cref="GetMaxDivider(int, int)"/></summary>
-        public static int GetMaxDividerCaller(int number, int divider) {
-            return GetMaxDivider(number, divider);
+#pragma warning disable CA1034 // Вложенные типы не должны быть видимыми
+        public static class SumFractionsCall {
+#pragma warning restore CA1034 // Вложенные типы не должны быть видимыми
+            /// <summary>Тестовый вызыватель <see cref="GetReducedFraction(int, int)"/></summary>
+            public static int[] GetReducedFractionCaller(int nmr, int dnmr) {
+                return GetReducedFraction(nmr, dnmr);
+            }
+            /// <summary>Тестовый вызыватель <see cref="GetMaxDivider(int, int)"/></summary>
+            public static int GetMaxDividerCaller(int number, int divider) {
+                return GetMaxDivider(number, divider);
+            }
         }
 #endif
     }
