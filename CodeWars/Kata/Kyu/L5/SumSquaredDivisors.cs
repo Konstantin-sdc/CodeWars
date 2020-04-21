@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using Res = CodeWars.Properties.Resources;
+
 namespace CodeWars.Kata.Kyu.L5 {
 
     /// <summary>
@@ -10,9 +12,8 @@ namespace CodeWars.Kata.Kyu.L5 {
     public static class SumSquaredDivisors {
 #if DEBUG
         /// <summary>Тестовый вызывальщик.</summary>
-#pragma warning disable CA1034 // Вложенные типы не должны быть видимыми
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1034:Вложенные типы не должны быть видимыми", Justification = "<Ожидание>")]
         public static class SumSquaredDivisorsCaller {
-#pragma warning restore CA1034 // Вложенные типы не должны быть видимыми
             public static string ListSquared(long m, long n) {
                 return SumSquaredDivisors.ListSquared(m, n);
             }
@@ -178,12 +179,18 @@ namespace CodeWars.Kata.Kyu.L5 {
             return result;
         }
 
+        /// <summary>Перемножает элементы коллекции.</summary>
+        /// <param name="seq">Коллекция.</param>
+        /// <returns>Произведение элементов.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="seq"/> is null.</exception>
         private static long GetComposition(IEnumerable<long> seq) {
+            if (seq is null) {
+                throw new ArgumentNullException(nameof(seq), Res.IsNull);
+            }
             var result = seq.ToArray()[0];
             for (long i = 1; i < seq.Count(); i++) {
                 result *= seq.ToArray()[i];
             }
-
             return result;
         }
 

@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Kata.cs" />
     <Compile Include="Kata\Kyu\L4\RangeExtraction.cs" />
     <Compile Include="Kata\Kyu\L5\Bundesliga.cs" />
     <Compile Include="Kata\Kyu\L5\Bundesliga.Kommando.cs" />
@@ -100,7 +101,6 @@
     <Compile Include="Kata\Kyu\L7\Kata.SquareDigits.cs" />
     <Compile Include="Kata\UserAttributes.cs" />
     <Compile Include="Kata\Kyu\L5\Kata.RGB.cs" />
-    <Compile Include="Kata\Kata.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Kata\Kyu\L6\Xbonacci.cs" />

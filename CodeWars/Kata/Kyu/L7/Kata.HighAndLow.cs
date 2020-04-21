@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 using Res = CodeWars.Properties.Resources;
 
 namespace CodeWars.Kata.Kyu.L7 {
