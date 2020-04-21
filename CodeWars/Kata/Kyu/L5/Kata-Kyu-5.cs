@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CodeWars {
-    public static partial class KataBase {
+namespace CodeWars
+{
+    public static partial class KataBase
+    {
         /// <summary>Интерпретатор</summary>
         /// <param name="code">Код Paintfuck, который должен быть выполнен, передается как строка. </param>
         /// <param name="iterations"></param>
@@ -12,7 +14,8 @@ namespace CodeWars {
         /// <param name="height"></param>
         /// <returns></returns>
         [KataType(LevelTypes.Kyu, 5)]
-        public static string Interpret() {
+        public static string Interpret()
+        {
             // Правила
             // n - Переместить указатель данных на север(вверх)
             // e - Переместить указатель данных на восток(справа)
@@ -36,7 +39,8 @@ namespace CodeWars {
         /// <param name="s">Исходная строка</param>
         /// <returns>Результат</returns>
         [KataType(LevelTypes.Kyu, 5)]
-        public static string ToBase64(string s) {
+        public static string ToBase64(string s)
+        {
             // Преобразовать строку в массив байтов
             // Преобразовать массив байт в массив бит
             // Сгруппировать биты в группы по 6
@@ -57,7 +61,8 @@ namespace CodeWars {
         /// <param name="s">Исходная последовательность</param>
         /// <returns>Результат</returns>
         [KataType(LevelTypes.Kyu, 5)]
-        public static string FromBase64(string s) {
+        public static string FromBase64(string s)
+        {
             // Убрать знаки "=" из строки и прочие, кого нет в кодовой строке
             s = string.Join("", s.Where(c => _codeString.Contains(c)));
             // Заменить знаки на их индексы в кодовой строке
@@ -69,12 +74,14 @@ namespace CodeWars {
             return Encoding.UTF8.GetString(bytes);
         }
 
-        private static List<string> BitGroups(string s, int oldSize, int newSize) {
+        private static List<string> BitGroups(string s, int oldSize, int newSize)
+        {
             IEnumerable<int> indexes = s.Select(c => _codeString.IndexOf(c));
             IEnumerable<string> bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(oldSize, '0'));
             var bitString = string.Concat(bitList);
             var bitGroups = new List<string>();
-            for (var i = 0; i < bitString.Length; i += newSize) {
+            for (var i = 0; i < bitString.Length; i += newSize)
+            {
                 var subS = bitString.Substring(i);
                 var limit = newSize - 1;
                 var bitG = string.Join("", subS.Where(index => index <= limit));
@@ -92,19 +99,24 @@ namespace CodeWars {
         /// <param name="sequence">Входящая коллекция</param>
         /// <param name="limit">Лимит</param>
         /// <returns>Коллекция результатов, не превышающих лимит</returns>
-        public static IEnumerable<long> Multiplex(long a, IEnumerable<long> sequence, long limit) {
+        public static IEnumerable<long> Multiplex(long a, IEnumerable<long> sequence, long limit)
+        {
             IEnumerable<long> sq = sequence.OrderBy(e => e);
-            if (a == 0 || a == 1) {
+            if (a == 0 || a == 1)
+            {
                 return sq;
             }
-            if (a * sq.ElementAt(0) > limit) {
+            if (a * sq.ElementAt(0) > limit)
+            {
                 return sq;
             }
             var mult = new List<long>(sequence.Count());
-            for (var i = 0; i < sequence.Count(); i++) {
+            for (var i = 0; i < sequence.Count(); i++)
+            {
                 var b = sq.ElementAt(i);
                 var r = a * b;
-                if (r > limit) {
+                if (r > limit)
+                {
                     break;
                 }
                 mult.Add(r);

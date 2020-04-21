@@ -1,13 +1,17 @@
 ﻿using Res = CodeWars.Properties.Resources;
 
-namespace CodeWars.Kata.Kyu.L6 {
-    public static partial class KataClass {
+namespace CodeWars.Kata.Kyu.L6
+{
+    public static partial class KataClass
+    {
         /// <summary>Принимаетс строку кода эзотерического языка и возвращает результат интерпретации.</summary>
         /// <param name="code">Эзотерическая строка.</param>
         /// <returns>Результат.</returns>
         [KataType(LevelTypes.Kyu, 6, "esolang-interpreters-number-1-introduction-to-esolangs-and-my-first-interpreter-ministringfuck")]
-        public static string MyFirstInterpreter(string code) {
-            if (string.IsNullOrEmpty(code)) {
+        public static string MyFirstInterpreter(string code)
+        {
+            if (string.IsNullOrEmpty(code))
+            {
                 throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(code));
             }
             #region Instructions
@@ -22,16 +26,21 @@ namespace CodeWars.Kata.Kyu.L6 {
             #endregion
             byte cell = 0;
             var result = "";
-            foreach (var item in code) {
-                if (item == '+') {
-                    try {
+            foreach (var item in code)
+            {
+                if (item == '+')
+                {
+                    try
+                    {
                         ++cell;
                     }
-                    catch (System.OverflowException) {
+                    catch (System.OverflowException)
+                    {
                         cell = 0;
                     }
                 }
-                if (item == '.') {
+                if (item == '.')
+                {
                     result += (char)cell;
                 }
             }

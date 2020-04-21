@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CodeWars.Kata.Kyu.L5 {
-    public static partial class Bundesliga {
+namespace CodeWars.Kata.Kyu.L5
+{
+    public static partial class Bundesliga
+    {
         [KataType(LevelTypes.Kyu, 5, "57c178e16662d0d932000120")]
-        public static string BundesLigaTable(string[] results) {
-            if (results is null) {
+        public static string BundesLigaTable(string[] results)
+        {
+            if (results is null)
+            {
                 throw new ArgumentNullException(nameof(results));
             }
 
             var kList = new List<Kommando>();
-            foreach (var item in results) {
+            foreach (var item in results)
+            {
                 var score = item.Split(new char[] { ' ' }).First();
                 var goals = score.Split(':');
                 var kommands = item.Remove(0, score.Length + 1)
@@ -28,10 +33,12 @@ namespace CodeWars.Kata.Kyu.L5 {
               .ThenBy(k => k.Name.ToLower(KataBase.Invariant))
               .ToList();
             var komResults = new List<string>();
-            for (int i = 0, number = 1; i < kList.Count; i++) {
+            for (int i = 0, number = 1; i < kList.Count; i++)
+            {
                 Kommando k = kList[i];
                 Kommando kPr = (i - 1 >= 0) ? kList[i - 1] : k;
-                if (!k.SameResult(kPr)) {
+                if (!k.SameResult(kPr))
+                {
                     number = i + 1;
                 }
 

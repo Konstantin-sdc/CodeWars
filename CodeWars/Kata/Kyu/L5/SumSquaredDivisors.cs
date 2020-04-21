@@ -4,32 +4,41 @@ using System.Linq;
 
 using Res = CodeWars.Properties.Resources;
 
-namespace CodeWars.Kata.Kyu.L5 {
+namespace CodeWars.Kata.Kyu.L5
+{
 
     /// <summary>
     /// Все целые числа между заданными, у которых сумма квадратов делителей сама является квадратом.
     /// </summary>
-    public static class SumSquaredDivisors {
+    public static class SumSquaredDivisors
+    {
 #if DEBUG
         /// <summary>Тестовый вызывальщик.</summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1034:Вложенные типы не должны быть видимыми", Justification = "<Ожидание>")]
-        public static class SumSquaredDivisorsCaller {
-            public static string ListSquared(long m, long n) {
+        public static class SumSquaredDivisorsCaller
+        {
+            public static string ListSquared(long m, long n)
+            {
                 return SumSquaredDivisors.ListSquared(m, n);
             }
-            public static List<long[]> SquaredList(long m, long n) {
+            public static List<long[]> SquaredList(long m, long n)
+            {
                 return SumSquaredDivisors.SquaredList(m, n);
             }
-            public static bool IsIntegerSquared(long m) {
+            public static bool IsIntegerSquared(long m)
+            {
                 return SumSquaredDivisors.IsIntegerSquared(m);
             }
-            public static List<long> SimpeDividers(long d) {
+            public static List<long> SimpeDividers(long d)
+            {
                 return SumSquaredDivisors.SimpeDividers(d);
             }
-            public static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
+            public static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0)
+            {
                 return SumSquaredDivisors.LimitFactorial(source, count, start);
             }
-            public static long GetComposition(IEnumerable<long> seq) {
+            public static long GetComposition(IEnumerable<long> seq)
+            {
                 return SumSquaredDivisors.GetComposition(seq);
             }
         }
@@ -41,7 +50,8 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="n">Второе число.</param>
         /// <returns>Строка списка квадратов.</returns>
         [KataType(LevelTypes.Kyu, 5, "integers-recreation-one")]
-        public static string ListSquared(long m, long n) {
+        public static string ListSquared(long m, long n)
+        {
             List<long[]> squarList = SquaredList(m, n);
             IEnumerable<string> sl = squarList.Select(s => "[" + string.Join(", ", s) + "]");
             return "[" + string.Join(", ", sl) + "]";
@@ -50,16 +60,20 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <summary>Возвращает список всех целочисленных делителей</summary>
         /// <param name="d">Число.</param>
         /// <returns>Список делителей</returns>
-        public static List<long> GetDividers(long d) {
+        public static List<long> GetDividers(long d)
+        {
             List<long> simple = SimpeDividers(d);
             List<long> dvdrs = SimpeDividers(d);
-            for (var i = 2; i < simple.Count; i++) {
+            for (var i = 2; i < simple.Count; i++)
+            {
                 IEnumerable<long[]> positionCombos = LimitFactorial(simple.Count - 1, i);
 
                 // Сопоставить цифры в combos с позициями в simple
-                foreach (long[] positionCombo in positionCombos) {
+                foreach (long[] positionCombo in positionCombos)
+                {
                     var digitsCombo = new long[positionCombo.Length];
-                    for (var k = 0; k < positionCombo.Length; k++) {
+                    for (var k = 0; k < positionCombo.Length; k++)
+                    {
                         var position = positionCombo[k];
                         digitsCombo[k] = simple[(int)position];
                     }
@@ -77,13 +91,16 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <summary>Является ли число квадратом целого числа</summary>
         /// <param name="m"></param>
         /// <returns></returns>
-        public static bool IsIntegerSquared(long m) {
-            if (m < 0) {
+        public static bool IsIntegerSquared(long m)
+        {
+            if (m < 0)
+            {
                 return false;
             }
 
             long[] mod100 = { 00, 01, 04, 09, 16, 21, 24, 25, 29, 36, 41, 44, 49, 56, 61, 64, 69, 76, 81, 84, 89, 96 };
-            if (!mod100.Contains(m % 100)) {
+            if (!mod100.Contains(m % 100))
+            {
                 return false;
             }
 
@@ -98,14 +115,17 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="m">Меньшее число диапазона.</param>
         /// <param name="n">Большее число диапазона.</param>
         /// <returns>Пары число — сумма квадратов.</returns>
-        private static List<long[]> SquaredList(long m, long n) {
+        private static List<long[]> SquaredList(long m, long n)
+        {
             var numbers = new List<long[]>();
-            for (var i = m; i <= n; i++) {
+            for (var i = m; i <= n; i++)
+            {
                 List<long> dividers = GetDividers(i);
                 IEnumerable<long> divSquared = dividers.Select(d => d * d);
                 var sumSquared = divSquared.Sum();
                 var isSq = IsIntegerSquared(sumSquared);
-                if (isSq) {
+                if (isSq)
+                {
                     long[] c = { i, sumSquared };
                     numbers.Add(c);
                 }
@@ -117,22 +137,27 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <summary>Раскладывает целое число на простые делители</summary>
         /// <param name="d">Целое число</param>
         /// <returns>Коллекция простых делителей</returns>
-        private static List<long> SimpeDividers(long d) {
+        private static List<long> SimpeDividers(long d)
+        {
             var dvdrs = new List<long>();
             long dvdr = 3, step = 2;
-            if (d % 2 == 0) {
+            if (d % 2 == 0)
+            {
                 dvdr = 2;
                 step = 1;
             }
 
-            for (; dvdr <= d; dvdr += step) {
-                if (d % dvdr == 0) {
+            for (; dvdr <= d; dvdr += step)
+            {
+                if (d % dvdr == 0)
+                {
                     dvdrs.Add(dvdr);
                     dvdrs.AddRange(SimpeDividers(d / dvdr));
                     break;
                 }
 
-                if (dvdr > d / 2) {
+                if (dvdr > d / 2)
+                {
                     return new List<long> { d };
                 }
             }
@@ -147,19 +172,24 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="start">Начало отчёта</param>
         /// <returns>Список массивов</returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1303:Не передавать литералы в качестве локализованных параметров", Justification = "<Ожидание>")]
-        private static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0) {
+        private static IEnumerable<long[]> LimitFactorial(long source, long count, uint start = 0)
+        {
             var message = $"{nameof(count)} <= 1, или {nameof(source)} < {nameof(count)}";
-            if (source < count) {
+            if (source < count)
+            {
                 throw new ArgumentOutOfRangeException(nameof(count), count, message);
             }
 
-            if (count < 1) {
+            if (count < 1)
+            {
                 throw new ArgumentOutOfRangeException(nameof(count), count, message);
             }
 
             var result = new List<long[]>();
-            if (count == 1) {
-                for (long i = start; i <= source; i++) {
+            if (count == 1)
+            {
+                for (long i = start; i <= source; i++)
+                {
                     result.Add(new[] { i });
                 }
 
@@ -167,8 +197,10 @@ namespace CodeWars.Kata.Kyu.L5 {
             }
 
             IEnumerable<long[]> prev = LimitFactorial(source, count - 1);
-            foreach (long[] comboOld in prev) {
-                for (var newItem = comboOld.Last() + 1; newItem <= source; newItem++) {
+            foreach (long[] comboOld in prev)
+            {
+                for (var newItem = comboOld.Last() + 1; newItem <= source; newItem++)
+                {
                     var combo = new long[count];
                     Array.Copy(comboOld, combo, comboOld.Length);
                     combo[count - 1] = newItem;
@@ -183,12 +215,15 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="seq">Коллекция.</param>
         /// <returns>Произведение элементов.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="seq"/> is null.</exception>
-        private static long GetComposition(IEnumerable<long> seq) {
-            if (seq is null) {
+        private static long GetComposition(IEnumerable<long> seq)
+        {
+            if (seq is null)
+            {
                 throw new ArgumentNullException(nameof(seq), Res.IsNull);
             }
             var result = seq.ToArray()[0];
-            for (long i = 1; i < seq.Count(); i++) {
+            for (long i = 1; i < seq.Count(); i++)
+            {
                 result *= seq.ToArray()[i];
             }
             return result;

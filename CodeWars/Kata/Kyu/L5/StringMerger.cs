@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
 
-namespace CodeWars.Kata.Kyu.L5 {
-    internal static class StringMerger {
+namespace CodeWars.Kata.Kyu.L5
+{
+    internal static class StringMerger
+    {
         /// <summary>
         /// Возвращает возможность объединения и перемешиваения двух строку в третию,
         /// без изменения порядка символов в исходных строках.
@@ -12,24 +14,30 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="part2">Вторая строка</param>
         /// <returns>true, если объединение возможно</returns>
         [KataType(LevelTypes.Kyu, 5)]
-        public static bool IsMerge(string s, string part1, string part2) {
+        public static bool IsMerge(string s, string part1, string part2)
+        {
             return MayExtract(s, part1, part2);
             //NOTE Символы в составляющих строках могут повторятся, совпадать с исмволами другой строки, быть разного регистра.
         }
 
-        private static bool MayExtract(string s, params string[] parts) {
+        private static bool MayExtract(string s, params string[] parts)
+        {
             var ordS = string.Join("", s.OrderBy(k => k));
             var p = string.Concat(parts);
             var ordP = string.Join("", p.OrderBy(k => k));
-            if (!ordS.Equals(ordP, StringComparison.InvariantCulture)) {
+            if (!ordS.Equals(ordP, StringComparison.InvariantCulture))
+            {
                 return false;
             }
 
-            foreach (var part in parts) {
+            foreach (var part in parts)
+            {
                 var start = 0;
-                foreach (var item in part) {
+                foreach (var item in part)
+                {
                     start = s.IndexOf(item, start);
-                    if (start == -1) {
+                    if (start == -1)
+                    {
                         return false;
                     }
                 }

@@ -1,12 +1,15 @@
 ﻿using System;
 
-namespace CodeWars {
+namespace CodeWars
+{
     [AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
-    internal sealed class KataTypeAttribute : Attribute {
+    internal sealed class KataTypeAttribute : Attribute
+    {
         // See the attribute guidelines at 
         //  http://go.microsoft.com/fwlink/?LinkId=85236
         // This is a positional argument
-        public KataTypeAttribute(LevelTypes levelType, int levelValue, string kataId = "") {
+        public KataTypeAttribute(LevelTypes levelType, int levelValue, string kataId = "")
+        {
             LevelType = levelType;
             LevelValue = levelValue;
             var link = "https://www.codewars.com/kata/" + kataId + "/train/csharp";
@@ -21,7 +24,8 @@ namespace CodeWars {
         public string KataId { get; }
     }
     /// <summary>Типы уровней ката</summary>
-    internal enum LevelTypes {
+    internal enum LevelTypes
+    {
         /// <summary>Кю</summary>
         Kyu,
         /// <summary>Дан</summary>

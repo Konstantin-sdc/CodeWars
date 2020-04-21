@@ -3,19 +3,24 @@ using System.Linq;
 
 using Res = CodeWars.Properties.Resources;
 
-namespace CodeWars {
-    public static partial class KataBase {
+namespace CodeWars
+{
+    public static partial class KataBase
+    {
         /// <summary>Интерпретатор для smallfuck</summary>
         /// <param name="code">Входящий код. Правила обработки данных. Все непредусмотренные символы игнорируются.</param>
         /// <param name="source">Начальное состояние хранилища данных. битовая строка из 0 и 1. Иные символы игнорируются.</param>
         /// <returns>Строка</returns>
         [KataType(LevelTypes.Kyu, 5, "esolang-interpreters-number-2-custom-smallfuck-interpreter")]
-        public static string Interpreter(string code, string source) {
-            if (string.IsNullOrEmpty(code)) {
+        public static string Interpreter(string code, string source)
+        {
+            if (string.IsNullOrEmpty(code))
+            {
                 throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(code));
             }
 
-            if (string.IsNullOrEmpty(source)) {
+            if (string.IsNullOrEmpty(source))
+            {
                 throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(source));
             }
             #region Rules
@@ -27,37 +32,46 @@ namespace CodeWars {
             #endregion
             Dictionary<int, int> paireds = GetPairedPosition(code, '[', ']');
             var data = new List<char>();
-            foreach (var item in source) {
-                if (item == '0' || item == '1') {
+            foreach (var item in source)
+            {
+                if (item == '0' || item == '1')
+                {
                     data.Add(item);
                 }
             }
             var dataPoint = 0;
-            for (var i = 0; i < code.Length; i++) {
-                if (dataPoint < 0 || dataPoint >= data.Count) {
+            for (var i = 0; i < code.Length; i++)
+            {
+                if (dataPoint < 0 || dataPoint >= data.Count)
+                {
                     break;
                 }
                 var command = code[i];
                 if (command == '>') ++dataPoint;
                 if (command == '<') --dataPoint;
                 if (command == '*') data[dataPoint] = (data[dataPoint] == '0') ? '1' : '0';
-                if (command == '[') {
+                if (command == '[')
+                {
                     CodeForward(ref i, data[dataPoint], paireds);
                     continue;
                 }
-                if (command == '[') {
+                if (command == '[')
+                {
                     CodeBack(ref i, data[dataPoint], paireds);
                 }
             }
             return string.Join("", data);
         }
 
-        private static void CodeForward(ref int codePount, char currentData, Dictionary<int, int> paireds) {
+        private static void CodeForward(ref int codePount, char currentData, Dictionary<int, int> paireds)
+        {
             if (currentData == '0') codePount = paireds[codePount];
         }
 
-        private static void CodeBack(ref int codePount, char currentData, Dictionary<int, int> paireds) {
-            if (currentData == '1') {
+        private static void CodeBack(ref int codePount, char currentData, Dictionary<int, int> paireds)
+        {
+            if (currentData == '1')
+            {
                 var point = codePount;
                 codePount = paireds.First(e => e.Value == point).Key;
             }
@@ -69,31 +83,40 @@ namespace CodeWars {
         /// <param name="open">Элемент первый в паре</param>
         /// <param name="close">Элемент второй в паре</param>
         /// <returns>Словарь</returns>
-        private static Dictionary<int, int> GetPairedPosition<T>(IEnumerable<T> code, T open, T close) {
+        private static Dictionary<int, int> GetPairedPosition<T>(IEnumerable<T> code, T open, T close)
+        {
             if (code.Count() < 2 || !code.Contains(open)) return null;
             var result = new Dictionary<int, int>();
             var opPositions = new List<int>();
             var opCount = 0;
             var closCount = 0;
-            for (var i = 0; i < code.Count(); i++) {
-                if (code.ElementAt(i).Equals(open)) {
+            for (var i = 0; i < code.Count(); i++)
+            {
+                if (code.ElementAt(i).Equals(open))
+                {
                     opPositions.Add(i);
                 }
             }
-            foreach (var position in opPositions) {
-                for (var i = position; i < code.Count(); i++) {
-                    if (code.ElementAt(i).Equals(open)) {
+            foreach (var position in opPositions)
+            {
+                for (var i = position; i < code.Count(); i++)
+                {
+                    if (code.ElementAt(i).Equals(open))
+                    {
                         opCount++;
                         continue;
                     }
-                    if (code.ElementAt(i).Equals(close)) {
+                    if (code.ElementAt(i).Equals(close))
+                    {
                         closCount++;
                     }
-                    else {
+                    else
+                    {
                         continue;
                     }
 
-                    if (opCount != 0 && opCount == closCount) {
+                    if (opCount != 0 && opCount == closCount)
+                    {
                         result.Add(position, i);
                         opCount = 0;
                         closCount = 0;
@@ -112,9 +135,11 @@ namespace CodeWars {
         /// <returns>Преобразованная таблица</returns>
         [KataType(LevelTypes.Kyu, 4, "esolang-interpreters-number-3-custom-paintf-star-star-k-interpreter")]
 #pragma warning disable IDE0060, CA1801 // Удалите неиспользуемый параметр
-        public static string PaintFuckInterpreter(string code, int iterations, int width, int height) {
+        public static string PaintFuckInterpreter(string code, int iterations, int width, int height)
+        {
 #pragma warning restore IDE0060, CA1801 // Удалите неиспользуемый параметр
-            if (string.IsNullOrEmpty(code)) {
+            if (string.IsNullOrEmpty(code))
+            {
                 throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(code));
             }
             #region Rules

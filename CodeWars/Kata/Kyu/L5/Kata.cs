@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace CodeWars.Kata.Kyu.L5 {
-    public static partial class KataClass {
+namespace CodeWars.Kata.Kyu.L5
+{
+    public static partial class KataClass
+    {
         static readonly CultureInfo _cultureInfo = CultureInfo.InvariantCulture;
         /// <summary>
         /// <para>Принимает целое число.</para>
@@ -15,7 +17,8 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="number">Исходное число</param>
         /// <returns>Комбинация</returns>
         [KataType(LevelTypes.Kyu, 5, "conways-look-and-say-generalized")]
-        public static ulong LookSay(ulong number) {
+        public static ulong LookSay(ulong number)
+        {
             var s = number.ToString(KataBase.Invariant);
             List<List<char>> gs = GroupSeparate(s);
             IEnumerable<string> result = gs.Select(e => e.Count + e[0].ToString(_cultureInfo));
@@ -26,14 +29,18 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <typeparam name="T">ип элементов в коллекции</typeparam>
         /// <param name="seq">Коллекция</param>
         /// <returns>Коллекция групп</returns>
-        private static List<List<T>> GroupSeparate<T>(IEnumerable<T> seq) {
+        private static List<List<T>> GroupSeparate<T>(IEnumerable<T> seq)
+        {
             var result = new List<List<T>>();
-            if (seq.First() == null) {
+            if (seq.First() == null)
+            {
                 return result;
             }
-            for (var i = 0; i < seq.Count(); i++) {
+            for (var i = 0; i < seq.Count(); i++)
+            {
                 T item = seq.ElementAt(i);
-                if (i == 0 || !seq.ElementAt(i - 1).Equals(item)) {
+                if (i == 0 || !seq.ElementAt(i - 1).Equals(item))
+                {
                     result.Add(new List<T>());
                 }
                 result.Last().Add(item);

@@ -4,14 +4,18 @@ using System.Linq;
 
 using Res = CodeWars.Properties.Resources;
 
-namespace CodeWars.Kata.Kyu.L6 {
-    public static partial class KataClass {
+namespace CodeWars.Kata.Kyu.L6
+{
+    public static partial class KataClass
+    {
         /// <summary>Возвращает строку из слов исходной строки, отсортированных согласно числам в этих словах</summary>
         /// <param name="words">Исходная строка</param>
         /// <returns>Итоговая строка</returns>
         [KataType(LevelTypes.Kyu, 6)]
-        public static string Order(string words) {
-            if (string.IsNullOrEmpty(words)) {
+        public static string Order(string words)
+        {
+            if (string.IsNullOrEmpty(words))
+            {
                 throw new ArgumentException(Res.IsNullOrEmpty, nameof(words));
             }
 

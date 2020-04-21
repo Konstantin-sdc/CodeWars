@@ -3,9 +3,12 @@ using System.Text.RegularExpressions;
 
 using Res = CodeWars.Properties.Resources;
 
-namespace CodeWars.Kata.Kyu.L5 {
-    public static class Dinglemouse {
-        private static readonly Dictionary<string, string> _soundDict = new Dictionary<string, string>() {
+namespace CodeWars.Kata.Kyu.L5
+{
+    public static class Dinglemouse
+    {
+        private static readonly Dictionary<string, string> _soundDict = new Dictionary<string, string>()
+        {
             ["(?!^)[HW]"] = "",
             ["[BFPV]"] = "1",
             ["[CGJKQSXZ]"] = "2",
@@ -22,22 +25,27 @@ namespace CodeWars.Kata.Kyu.L5 {
         /// <param name="names">Строка из слов, разделённых пробелом</param>
         /// <returns>SOUNDEX-коды группы слов</returns>
         [KataType(LevelTypes.Kyu, 5)]
-        public static string Soundex(string names) {
-            if (string.IsNullOrEmpty(names)) {
+        public static string Soundex(string names)
+        {
+            if (string.IsNullOrEmpty(names))
+            {
                 throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(names));
             }
 
             var result = names.Split(' ');
-            for (var i = 0; i < result.Length; i++) {
+            for (var i = 0; i < result.Length; i++)
+            {
                 result[i] = SoundexSingle(result[i]);
             }
             return string.Join(" ", result);
         }
 
-        private static string SoundexSingle(string word) {
+        private static string SoundexSingle(string word)
+        {
             var result = word.ToUpper(CodeWars.KataBase.Invariant);
             var fC = result[0];
-            foreach (KeyValuePair<string, string> item in _soundDict) {
+            foreach (KeyValuePair<string, string> item in _soundDict)
+            {
                 result = Regex.Replace(result, item.Key, item.Value);
             }
             result = fC + result.Substring(1);
