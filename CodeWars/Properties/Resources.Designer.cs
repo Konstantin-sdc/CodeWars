@@ -77,5 +77,14 @@ namespace CodeWars.Properties {
                 return ResourceManager.GetString("IsNullOrEmpty", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Переменная имеет недопустимое значение..
+        /// </summary>
+        internal static string VarOutOutOfRange {
+            get {
+                return ResourceManager.GetString("VarOutOutOfRange", resourceCulture);
+            }
+        }
     }
 }

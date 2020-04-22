@@ -1,4 +1,5 @@
 ﻿using System;
+using CodeWars;
 namespace CodeWars.Kata.Kyu.L6
 {
     public static class SumFractions
@@ -14,52 +15,8 @@ namespace CodeWars.Kata.Kyu.L6
             var zeroLength = args.GetLength(0);
             var tArray = new int[zeroLength, 2];
 #pragma warning restore CA1814 // Используйте массивы массивов вместо многомерных массивов
-            for (var i = 0; i < zeroLength; i++)
-            {
-                var reduced = GetReducedFraction(args[i, 0], args[i, 1]);
-                tArray[i, 0] = reduced[0];
-                tArray[i, 1] = reduced[1];
-            }
-            var numerator = 0;
-            var denumerator = 1;
-            for (var i = 0; i < zeroLength; i++)
-            {
-                denumerator *= tArray[i, 1];
-            }
-            for (var i = 0; i < zeroLength; i++)
-            {
-                numerator += tArray[i, 0] * denumerator / tArray[i, 1];
-            }
-            var result = GetReducedFraction(numerator, denumerator);
-            if (result[1] == 1) return result[0].ToString(KataBase.Invariant);
-            return $"[{result[0]}, {result[1]}]";
+            return "";
         }
 
-        private static int[] GetReducedFraction(int nmr, int dnmr)
-        {
-            var defResult = new int[2] { nmr, dnmr };
-            if (nmr == 0 || dnmr == 0)
-            {
-                return defResult;
-            }
-            var bigNmr = nmr >= dnmr;
-            var big = bigNmr ? nmr : dnmr;
-            var small = bigNmr ? dnmr : nmr;
-
-            return defResult;
-        }
-
-#if DEBUG
-#pragma warning disable CA1034 // Вложенные типы не должны быть видимыми
-        public static class SumFractionsCall
-        {
-#pragma warning restore CA1034 // Вложенные типы не должны быть видимыми
-            /// <summary>Тестовый вызыватель <see cref="GetReducedFraction(int, int)"/></summary>
-            public static int[] GetReducedFractionCaller(int nmr, int dnmr)
-            {
-                return GetReducedFraction(nmr, dnmr);
-            }
-        }
-#endif
     }
 }

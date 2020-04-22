@@ -124,4 +124,7 @@
     <value>Строка является пустой или имеет значение null.</value>
     <comment>Комментарий к этому ресурсу ЧТОБЫ БЫЛО!</comment>
   </data>
+  <data name="VarOutOutOfRange" xml:space="preserve">
+    <value>Переменная имеет недопустимое значение.</value>
+  </data>
 </root>
