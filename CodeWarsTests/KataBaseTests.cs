@@ -1,11 +1,11 @@
-﻿using CodeWars;
-using System.Collections.Generic;
-using System.Linq;
-
-using Xunit;
-
-namespace CodeWarsTests
+﻿namespace CodeWarsTests
 {
+    using CodeWars;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Xunit;
+
     public class KataBaseTests
     {
         private IDictionary<int[], int> _MaxComDividers = new Dictionary<int[], int>()

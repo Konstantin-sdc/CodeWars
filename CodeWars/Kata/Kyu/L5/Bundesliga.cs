@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L5
+﻿namespace CodeWars.Kata.Kyu.L5
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public static partial class Bundesliga
     {
         [KataType(LevelTypes.Kyu, 5, "57c178e16662d0d932000120")]

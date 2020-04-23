@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L5
+﻿namespace CodeWars.Kata.Kyu.L5
 {
+    using System;
+    using System.Linq;
+
     internal static class StringMerger
     {
         /// <summary>

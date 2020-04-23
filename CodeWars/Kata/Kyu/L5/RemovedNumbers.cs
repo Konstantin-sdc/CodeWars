@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace CodeWars.Kata.Kyu.L5
+﻿namespace CodeWars.Kata.Kyu.L5
 {
+    using System.Collections.Generic;
+
     internal static class RemovedNumbers
     {
         /// <summary>

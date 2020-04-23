@@ -1,7 +1,7 @@
-﻿using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L6
+﻿namespace CodeWars.Kata.Kyu.L6
 {
+    using System.Linq;
+
     public static partial class KataClass
     {
         /// <summary>Возвращает сумму всех чисел в натуральном ряду, которые делятся на 3 или на 5</summary>

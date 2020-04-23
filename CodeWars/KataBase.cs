@@ -1,25 +1,20 @@
-﻿using CodeWars;
-
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars
+﻿namespace CodeWars
 {
+    using CodeWars;
+
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using Res = CodeWars.Properties.Resources;
+
     /// <summary>Класс для тренировок</summary>
     public static partial class KataBase
     {
         /// <summary>Инвариантная культура.</summary>
         public static readonly CultureInfo Invariant = CultureInfo.InvariantCulture;
-
-        public static int[] MinMax(int[] lst)
-        {
-            return new int[] { lst.Min(), lst.Max() };
-        }
 
         /// <summary>Возвращает список всех целочисленных делителей</summary>
         /// <param name="d">Число.</param>

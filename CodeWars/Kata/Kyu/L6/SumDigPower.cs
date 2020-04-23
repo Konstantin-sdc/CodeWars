@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L6
+﻿namespace CodeWars.Kata.Kyu.L6
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public static class SumDigPower
     {
         /// <summary>Возвращает массив чисел из входящего диапазона с такими свойствами, что эти числа равны сумме составляющих их цифр,

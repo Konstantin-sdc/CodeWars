@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace CodeWars
+﻿namespace CodeWars
 {
+    using System;
+
     [AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
     internal sealed class KataTypeAttribute : Attribute
     {

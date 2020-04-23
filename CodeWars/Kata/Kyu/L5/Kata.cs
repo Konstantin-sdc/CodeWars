@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L5
+﻿namespace CodeWars.Kata.Kyu.L5
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+
     public static partial class KataClass
     {
         static readonly CultureInfo _cultureInfo = CultureInfo.InvariantCulture;

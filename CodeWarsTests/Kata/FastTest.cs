@@ -1,6 +1,7 @@
-﻿using Xunit;
-namespace CodeWarsTests.Kata
+﻿namespace CodeWarsTests.Kata
 {
+    using Xunit;
+
     public class FastTest
     {
         [Fact()]

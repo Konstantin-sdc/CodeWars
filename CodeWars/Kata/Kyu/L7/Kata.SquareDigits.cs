@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L7
+﻿namespace CodeWars.Kata.Kyu.L7
 {
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+
     public static partial class KataClass
     {
         /// <summary>Возвращает число, состоящие из квадратов каждой цифры исходного числа</summary>

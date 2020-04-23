@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Reflection.Emit;
-
-using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars
+﻿namespace CodeWars
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using System.Reflection.Emit;
+
+    using Res = CodeWars.Properties.Resources;
+
     public static partial class KataBase
     {
         /// <summary>Интерактивное создание класса</summary>

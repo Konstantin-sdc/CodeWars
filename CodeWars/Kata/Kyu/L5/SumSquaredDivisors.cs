@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars.Kata.Kyu.L5
+﻿namespace CodeWars.Kata.Kyu.L5
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Res = CodeWars.Properties.Resources;
 
     /// <summary>
     /// Все целые числа между заданными, у которых сумма квадратов делителей сама является квадратом.

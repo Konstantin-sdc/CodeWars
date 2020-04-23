@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L6
+﻿namespace CodeWars.Kata.Kyu.L6
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     internal static class Persist
     {
         /// <summary>Возвращает количество операций умножения, которые нужно провести над цифрами данного числа до тех пор,

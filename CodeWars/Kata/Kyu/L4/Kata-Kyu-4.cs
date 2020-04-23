@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars
+﻿namespace CodeWars
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Res = CodeWars.Properties.Resources;
+
     public static partial class KataBase
     {
         /// <summary>Возвращает полные цепи зависимостей для каждого ключа</summary>
@@ -26,9 +26,9 @@ namespace CodeWars
             }
 
             var result = new Dictionary<string, string[]>();
-            foreach (KeyValuePair<string, string[]> srcItem in source)
+            foreach (var srcItem in source)
             {
-                IEnumerable<string> depList = GetDep(source, srcItem.Key);
+                var depList = GetDep(source, srcItem.Key);
                 if (depList.Contains(srcItem.Key)) throw new System.InvalidOperationException();
                 var depA = depList.Distinct().ToArray();
                 result.Add(srcItem.Key, depA);
@@ -61,7 +61,7 @@ namespace CodeWars
             IEnumerable<string> result = dic[key];
             foreach (var item in dic[key])
             {
-                IEnumerable<string> sr = GetDep(dic, item);
+                var sr = GetDep(dic, item);
                 result = result.Concat(sr);
             }
             return result;

@@ -94,6 +94,7 @@
     <Compile Include="KataBaseTests.cs" />
     <Compile Include="Kata\FastTest.cs" />
     <Compile Include="Kata\Kyu\L5\SumSquaredDivisorsTests.cs" />
+    <Compile Include="Kata\Kyu\L6\SumFractionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -109,9 +110,7 @@
       <Name>CodeWars</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Kata\Kyu\L6\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

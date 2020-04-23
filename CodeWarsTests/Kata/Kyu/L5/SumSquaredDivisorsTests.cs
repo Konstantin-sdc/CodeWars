@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-
-using Xunit;
-
-using TestedClass = CodeWars.Kata.Kyu.L5.SumSquaredDivisors.SumSquaredDivisorsCaller;
-
-namespace CodeWars.Kata.Kyu.L5.SumSquaredDivisorsTests
+﻿namespace CodeWars.Kata.Kyu.L5.SumSquaredDivisorsTests
 {
+    using System.Collections.Generic;
+
+    using Xunit;
+
+    using TestedClass = CodeWars.Kata.Kyu.L5.SumSquaredDivisors.SumSquaredDivisorsCaller;
+
     public class SumSquaredDivisorsTests
     {
         private readonly IDictionary<long[], string> _testValues;

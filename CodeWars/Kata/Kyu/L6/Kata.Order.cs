@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars.Kata.Kyu.L6
+﻿namespace CodeWars.Kata.Kyu.L6
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Res = CodeWars.Properties.Resources;
+
     public static partial class KataClass
     {
         /// <summary>Возвращает строку из слов исходной строки, отсортированных согласно числам в этих словах</summary>

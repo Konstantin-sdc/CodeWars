@@ -1,9 +1,9 @@
-﻿using System.Linq;
-
-using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars.Kata.Kyu.L7
+﻿namespace CodeWars.Kata.Kyu.L7
 {
+    using System.Linq;
+
+    using Res = CodeWars.Properties.Resources;
+
     public static partial class KataClass
     {
         /// <summary>Указывает является ли проверяемая строка изограммой</summary>

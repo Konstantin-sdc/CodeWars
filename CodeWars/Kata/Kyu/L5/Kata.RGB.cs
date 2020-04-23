@@ -1,8 +1,8 @@
-﻿using System;
-using System.Text;
-
-namespace CodeWars.Kata.Kyu.L5
+﻿namespace CodeWars.Kata.Kyu.L5
 {
+    using System;
+    using System.Text;
+
     public static partial class KataClass
     {
         /// <summary>Возвращает 16-ричное представление цвета на основе RGB цветов</summary>

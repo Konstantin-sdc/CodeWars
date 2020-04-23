@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
-
-using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars.Kata.Kyu.L5
+﻿namespace CodeWars.Kata.Kyu.L5
 {
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
+
+    using Res = CodeWars.Properties.Resources;
+
     public static class Dinglemouse
     {
         private static readonly Dictionary<string, string> _soundDict = new Dictionary<string, string>()

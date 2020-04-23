@@ -1,7 +1,7 @@
-﻿using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars.Kata.Kyu.L6
+﻿namespace CodeWars.Kata.Kyu.L6
 {
+    using Res = CodeWars.Properties.Resources;
+
     public static partial class KataClass
     {
         /// <summary>Принимаетс строку кода эзотерического языка и возвращает результат интерпретации.</summary>

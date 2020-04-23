@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars.Kata.Kyu.L7
+﻿namespace CodeWars.Kata.Kyu.L7
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Res = CodeWars.Properties.Resources;
+
     public static partial class KataClass
     {
         /// <summary>7 Возвращает самое большое и самое малое числа из строки чисел</summary>

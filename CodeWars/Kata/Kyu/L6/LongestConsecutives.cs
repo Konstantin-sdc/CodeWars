@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L6
+﻿namespace CodeWars.Kata.Kyu.L6
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     internal static class LongestConsecutives
     {
         /// <summary>Вернуть первую наидлиннейшую строку, состоящую из k элементов массива</summary>

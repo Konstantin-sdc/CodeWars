@@ -1,8 +1,8 @@
-﻿using System;
-using System.Reflection;
-
-namespace CodeWars
+﻿namespace CodeWars
 {
+    using System;
+    using System.Reflection;
+
     public static class Program
     {
         public static void Main()

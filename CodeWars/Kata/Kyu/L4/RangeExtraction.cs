@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L4
+﻿namespace CodeWars.Kata.Kyu.L4
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     public static class RangeExtraction
     {
         /// <summary>Принимает массив целых чисел. Возвращает строку с диапазонами.</summary>
@@ -25,7 +25,7 @@ namespace CodeWars.Kata.Kyu.L4
                 gList.Last().Add(args[i]);
             }
             var result = new List<string>();
-            foreach (List<int> item in gList)
+            foreach (var item in gList)
             {
                 if (item.Count < 3)
                 {

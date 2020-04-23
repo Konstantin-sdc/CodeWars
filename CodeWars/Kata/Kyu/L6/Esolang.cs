@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using Res = CodeWars.Properties.Resources;
-
-namespace CodeWars
+﻿namespace CodeWars
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Res = CodeWars.Properties.Resources;
+
     public static partial class KataBase
     {
         /// <summary>Интерпретатор для smallfuck</summary>
@@ -30,7 +30,7 @@ namespace CodeWars
             // [-Jump past matching ] if value at current cell is 0
             // ] -Jump back to matching [(if value at current cell is nonzero)
             #endregion
-            Dictionary<int, int> paireds = GetPairedPosition(code, '[', ']');
+            var paireds = GetPairedPosition(code, '[', ']');
             var data = new List<char>();
             foreach (var item in source)
             {

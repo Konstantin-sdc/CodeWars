@@ -70,7 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Kata.cs" />
+    <Compile Include="KataBase.cs" />
     <Compile Include="Kata\Kyu\L4\RangeExtraction.cs" />
     <Compile Include="Kata\Kyu\L5\Bundesliga.cs" />
     <Compile Include="Kata\Kyu\L5\Bundesliga.Kommando.cs" />
@@ -89,7 +89,7 @@
     <Compile Include="Kata\Kyu\L6\Kata.Order.cs" />
     <Compile Include="Kata\Kyu\L6\Kata.MyFirstInterpreter.cs" />
     <Compile Include="Kata\Kyu\L6\LongestConsecutives.cs" />
-    <Compile Include="Kata\Kyu\L6\PaintFuck.cs" />
+    <Compile Include="Kata\Kyu\L4\PaintFuck.cs" />
     <Compile Include="Kata\Kyu\L6\Persist.cs" />
     <Compile Include="Kata\Kyu\L6\SumDigPower.cs" />
     <Compile Include="Kata\Kyu\L6\SumFractions.cs" />
@@ -99,6 +99,7 @@
     <Compile Include="Kata\Kyu\L7\Kata.IsIsogram.cs" />
     <Compile Include="Kata\Kyu\L7\Kata.Maskify.cs" />
     <Compile Include="Kata\Kyu\L7\Kata.SquareDigits.cs" />
+    <Compile Include="Kata\Kyu\L7\MinMax.cs" />
     <Compile Include="Kata\UserAttributes.cs" />
     <Compile Include="Kata\Kyu\L5\Kata.RGB.cs" />
     <Compile Include="Program.cs" />

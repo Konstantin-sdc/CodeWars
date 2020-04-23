@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace CodeWars.Kata.Kyu.L7
+﻿namespace CodeWars.Kata.Kyu.L7
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     public static partial class KataClass
     {
         /// <summary>Возвращает строки, длина которых = 4</summary>
