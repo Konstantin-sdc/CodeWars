@@ -79,7 +79,7 @@ namespace CodeWars.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Переменная имеет недопустимое значение..
+        ///   Ищет локализованную строку, похожую на Переменная имеет недопустимое значение.
         /// </summary>
         internal static string VarOutOutOfRange {
             get {

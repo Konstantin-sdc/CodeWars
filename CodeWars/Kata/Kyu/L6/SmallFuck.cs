@@ -1,11 +1,14 @@
-﻿namespace CodeWars
+﻿namespace CodeWars.Kata.Kyu.L5
 {
+    using CodeWars;
+    using CodeWars.Kata.Kyu.L5;
+
     using System.Collections.Generic;
     using System.Linq;
 
-    using Res = CodeWars.Properties.Resources;
+    using Res = Properties.Resources;
 
-    public static partial class KataBase
+    public static class SmallFuck
     {
         /// <summary>Интерпретатор для smallfuck</summary>
         /// <param name="code">Входящий код. Правила обработки данных. Все непредусмотренные символы игнорируются.</param>
@@ -15,14 +18,10 @@
         public static string Interpreter(string code, string source)
         {
             if (string.IsNullOrEmpty(code))
-            {
                 throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(code));
-            }
 
             if (string.IsNullOrEmpty(source))
-            {
                 throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(source));
-            }
             #region Rules
             // > - Move pointer to the right (by 1 cell)
             // < -Move pointer to the left(by 1 cell)
@@ -33,32 +32,24 @@
             var paireds = GetPairedPosition(code, '[', ']');
             var data = new List<char>();
             foreach (var item in source)
-            {
                 if (item == '0' || item == '1')
-                {
                     data.Add(item);
-                }
-            }
             var dataPoint = 0;
             for (var i = 0; i < code.Length; i++)
             {
                 if (dataPoint < 0 || dataPoint >= data.Count)
-                {
                     break;
-                }
                 var command = code[i];
                 if (command == '>') ++dataPoint;
                 if (command == '<') --dataPoint;
-                if (command == '*') data[dataPoint] = (data[dataPoint] == '0') ? '1' : '0';
+                if (command == '*') data[dataPoint] = data[dataPoint] == '0' ? '1' : '0';
                 if (command == '[')
                 {
                     CodeForward(ref i, data[dataPoint], paireds);
                     continue;
                 }
                 if (command == '[')
-                {
                     CodeBack(ref i, data[dataPoint], paireds);
-                }
             }
             return string.Join("", data);
         }
@@ -91,14 +82,9 @@
             var opCount = 0;
             var closCount = 0;
             for (var i = 0; i < code.Count(); i++)
-            {
                 if (code.ElementAt(i).Equals(open))
-                {
                     opPositions.Add(i);
-                }
-            }
             foreach (var position in opPositions)
-            {
                 for (var i = position; i < code.Count(); i++)
                 {
                     if (code.ElementAt(i).Equals(open))
@@ -107,13 +93,9 @@
                         continue;
                     }
                     if (code.ElementAt(i).Equals(close))
-                    {
                         closCount++;
-                    }
                     else
-                    {
                         continue;
-                    }
 
                     if (opCount != 0 && opCount == closCount)
                     {
@@ -123,7 +105,6 @@
                         break;
                     }
                 }
-            }
             return result;
         }
 
@@ -139,9 +120,7 @@
         {
 #pragma warning restore IDE0060, CA1801 // Удалите неиспользуемый параметр
             if (string.IsNullOrEmpty(code))
-            {
                 throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(code));
-            }
             #region Rules
             //n - Move data pointer north(up)
             //e - Move data pointer east(right)

@@ -8,7 +8,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using Res = CodeWars.Properties.Resources;
+    using Res = Properties.Resources;
 
     /// <summary>Класс для тренировок</summary>
     public static partial class KataBase
@@ -74,13 +74,9 @@
         public static long GetComposition(IEnumerable<long> seq)
         {
             if (seq is null)
-            {
                 throw new ArgumentNullException(nameof(seq), Res.IsNull);
-            }
             if (!seq.Any())
-            {
                 return 1;
-            }
             var result = seq.ToArray()[0];
             for (long i = 1; i < seq.Count(); i++)
             {

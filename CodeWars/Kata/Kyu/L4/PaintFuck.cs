@@ -6,19 +6,13 @@
     using System.Text;
     using System.Threading.Tasks;
 
+    using Res = Properties.Resources;
+
     internal static class PaintFuck
     {
         #region Rules
-        //Допустимые команды в Paintfuck включают в себя:
-        //n - Переместить указатель данных на север(вверх)
-        //e - Переместить указатель данных на восток(вправо)
-        //s - Переместить указатель данных на юг(вниз)
-        //w - Переместить указатель данных на запад(влево)
-        //* - Отразить бит в текущей ячейке(так же, как в Smallfuck)
-        //[- Пропускать совпадение,] если бит под текущим указателем равен 0(так же, как в Smallfuck)
-        //]- Перейти к соответствию[(если бит под текущим указателем ненулевой) (так же, как в Smallfuck)
 
-        // Остальные символы игнорируются
+        // Не команды символы игнорируются
 
         // Символы команд регистрозависимы.
         // Интерпретатор должен инициализировать все ячейки в сетке данных значением независимо от ширины и высоты сетки. 
@@ -44,11 +38,13 @@
         //   [0, 0, 1]
         // ]
         // ... тогда ваша возвращаемая строка должна быть "100\r\n010\r\n001".
+        //
+        // Пример:
+        // TestCaseData("*e*e*e*es*es*ws*ws*w*w*w*n*n*n*ssss*s*s*s*", 0, 6, 9, "000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000")
+        // .Returns("000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000")
         #endregion
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Интерпретатор для PaintFuck.</summary>
         /// <param name="code">
         /// <para>Код Paintfuck, который нужно выполнить.</para>
         /// <para>Комментарии (не командные символы), игнорируются.</para>
@@ -64,10 +60,26 @@
         /// </returns>
         public static string Interpret(string code, int iterations, int width, int height)
         {
-            if (true)
-            {
-
-            }
+            #region Exceptions
+            if (string.IsNullOrEmpty(code))
+                throw new ArgumentException(Res.VarOutOutOfRange, nameof(code));
+            if (iterations < 0)
+                throw new ArgumentOutOfRangeException(nameof(iterations), Res.VarOutOutOfRange + " < 0");
+            if (width <= 0)
+                throw new ArgumentOutOfRangeException(nameof(width), Res.VarOutOutOfRange + " <= 0");
+            if (height <= 0)
+                throw new ArgumentOutOfRangeException(nameof(height), Res.VarOutOutOfRange + " <= 0");
+            #endregion
+            #region Data Pointer Moving
+            //Допустимые команды в Paintfuck:
+            //n - Переместить указатель данных на север(вверх)
+            //e - Переместить указатель данных на восток(вправо)
+            //s - Переместить указатель данных на юг(вниз)
+            //w - Переместить указатель данных на запад(влево)
+            //* - Отразить бит в текущей ячейке(так же, как в Smallfuck)
+            //[- Пропускать совпадение, ] если бит под текущим указателем равен 0 (так же, как в Smallfuck)
+            //]- Перейти к соответствию [(если бит под текущим указателем ненулевой) (так же, как в Smallfuck)
+            #endregion
             return "123";
             // Implement your interpreter here
         }
