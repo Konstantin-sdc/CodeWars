@@ -4,33 +4,26 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
 
     public static class Base64Utils
     {
         /// <summary>Кодовая строка.</summary>
-        private const string _codeString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        public const string CodeString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
         /// <summary>
         /// Возвращает результат base64 кодирования исходной строки <paramref name="s"/> с использованием UTF-8
         /// </summary>
         /// <param name="s">Исходная строка</param>
         /// <returns>Результат</returns>
-        [KataType(LevelTypes.Kyu, 5)]
+        [KataType(LevelTypes.Kyu, 5, "5270f22f862516c686000161")]
         public static string ToBase64(string s)
         {
-            // Преобразовать строку в массив байтов
-            // Преобразовать массив байт в массив бит
-            // Сгруппировать биты в группы по 6
-            var bitGroups = BitGroups(s, 8, 6);
-            // Каждую группу бит перевести в число десятичного формата
-            // Заменить такое число на знак, расположенный по тому-же интексу в кодовой строке
-            // Добавить недостающие знаки "=" в конец строки
-            var indexes = bitGroups.Select(b => Convert.ToInt32(b, 2));
-            var chars = indexes.Select(b => _codeString[b]);
-            var rmdr = string.Concat(bitGroups).Length % 3;
-            var adsCount = (rmdr == 0) ? 0 : (3 - rmdr);
-            return string.Join("", chars) + new string('=', adsCount);
+            var byteArray = Encoding.UTF8.GetBytes(s);
+            var bytes = ByteGroups(byteArray.ToList(), 8, 6);
+            var chars = bytes.Select(e => CodeString[e]).ToList();
+            var toFour = (chars.Count % 4 == 0) ? 0 : 4 - (chars.Count % 4);
+            var result = string.Concat(chars);
+            return (toFour == 0) ? result : result + new string('=', toFour);
         }
 
         /// <summary>
@@ -38,34 +31,40 @@
         /// </summary>
         /// <param name="s">Исходная последовательность</param>
         /// <returns>Результат</returns>
-        [KataType(LevelTypes.Kyu, 5)]
+        [KataType(LevelTypes.Kyu, 5, "5270f22f862516c686000161")]
         public static string FromBase64(string s)
         {
-            // Убрать знаки "=" из строки и прочие, кого нет в кодовой строке
-            s = string.Join("", s.Where(c => _codeString.Contains(c)));
-            // Заменить знаки на их индексы в кодовой строке
-            // Каждый индекс заменить на группу бит (м.б. с дополнением до 6)
-            // Перегруппировать биты по 8
-            var bitGroups = BitGroups(s, 6, 8);
-            // Перевести биты в символы
-            var bytes = bitGroups.Select(b => Convert.ToByte(b, 2)).ToArray();
-            return Encoding.UTF8.GetString(bytes);
+            s = string.Concat(s.Where(c => CodeString.Contains(c)));
+            var bytes = s.Select(c => (byte)CodeString.IndexOf(c));
+            bytes = ByteGroups(bytes, 6, 8);
+            return Encoding.UTF8.GetString(bytes.ToArray());
         }
 
-        private static List<string> BitGroups(string s, int oldSize, int newSize)
+        /// <summary>Конверсия байтов через перегруппировку битов.</summary>
+        /// <param name="bytes">Входящая коллекция байтов.</param>
+        /// <param name="oldSize">Начальный размер групп.</param>
+        /// <param name="newSize">Конечный размер групп.</param>
+        /// <returns>Преобразованная коллекция байтов.</returns>
+        private static IEnumerable<byte> ByteGroups(IEnumerable<byte> bytes, int oldSize, int newSize)
         {
-            var indexes = s.Select(c => _codeString.IndexOf(c));
-            var bitList = indexes.Select(c => Convert.ToString(c, 2).PadLeft(oldSize, '0'));
-            var bitString = string.Concat(bitList);
-            var bitGroups = new List<string>();
-            for (var i = 0; i < bitString.Length; i += newSize)
+            var bitItems = bytes.Select(e => Convert.ToString(e, 2));
+            bitItems = bitItems.Select(e => e.PadLeft(oldSize, '0'));
+            var oneString = string.Concat(bitItems);
+            var l = oneString.Length;
+            var rmd = l % newSize;
+            if (oldSize > newSize)
             {
-                var subS = bitString.Substring(i);
-                var limit = newSize - 1;
-                var bitG = string.Join("", subS.Where(index => index <= limit));
-                bitGroups.Add(bitG);
+                var toAdd = (rmd == 0) ? 0 : newSize - rmd;
+                oneString += new string('0', toAdd);
             }
-            return bitGroups;
+            if (oldSize < newSize)
+                oneString = oneString.Substring(0, l - rmd);
+            var sIndex = 0;
+            var bitGroups = oneString.GroupBy(e => oneString.IndexOf(e, sIndex++) / newSize);
+            var newBitStrings = bitGroups.Select(e => string.Concat(e));
+            var result = newBitStrings.Select(e => Convert.ToByte(e, 2));
+            return result;
         }
+
     }
 }
