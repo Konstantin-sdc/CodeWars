@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using Res = CodeWars.Properties.Resources;
+    using Res = Properties.Resources;
 
     public static partial class KataClass
     {

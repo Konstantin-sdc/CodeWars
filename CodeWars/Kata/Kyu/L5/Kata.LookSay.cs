@@ -7,7 +7,7 @@
 
     public static partial class KataClass
     {
-        static readonly CultureInfo _cultureInfo = CultureInfo.InvariantCulture;
+        private static readonly CultureInfo _cultureInfo = CultureInfo.InvariantCulture;
         /// <summary>
         /// <para>Принимает целое число.</para>
         /// <para>К каждой группе его цифр припиывает число количества этих цифр.</para>
@@ -20,8 +20,8 @@
         public static ulong LookSay(ulong number)
         {
             var s = number.ToString(KataBase.Invariant);
-            List<List<char>> gs = GroupSeparate(s);
-            IEnumerable<string> result = gs.Select(e => e.Count + e[0].ToString(_cultureInfo));
+            var gs = GroupSeparate(s);
+            var result = gs.Select(e => e.Count + e[0].ToString(_cultureInfo));
             return Convert.ToUInt64(string.Concat(result), _cultureInfo);
         }
 
@@ -33,16 +33,12 @@
         {
             var result = new List<List<T>>();
             if (seq.First() == null)
-            {
                 return result;
-            }
             for (var i = 0; i < seq.Count(); i++)
             {
-                T item = seq.ElementAt(i);
+                var item = seq.ElementAt(i);
                 if (i == 0 || !seq.ElementAt(i - 1).Equals(item))
-                {
                     result.Add(new List<T>());
-                }
                 result.Last().Add(item);
             }
             return result;
