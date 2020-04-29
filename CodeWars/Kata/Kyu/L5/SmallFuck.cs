@@ -1,8 +1,8 @@
-﻿namespace CodeWars.Kata.Kyu.L5
+﻿namespace CodeWars.Kata.Kyu.Esolangs
 {
     using CodeWars;
     using CodeWars.Kata.Kyu.L5;
-
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -18,40 +18,48 @@
         public static string Interpreter(string code, string source)
         {
             if (string.IsNullOrEmpty(code))
-                throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(code));
-
+                throw new ArgumentException(Res.IsNullOrEmpty, nameof(code));
             if (string.IsNullOrEmpty(source))
-                throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(source));
+                throw new ArgumentException(Res.IsNullOrEmpty, nameof(source));
             #region Rules
             // > - Move pointer to the right (by 1 cell)
             // < -Move pointer to the left(by 1 cell)
-            // *-Flip the bit at the current cell
-            // [-Jump past matching ] if value at current cell is 0
-            // ] -Jump back to matching [(if value at current cell is nonzero)
+            // * - Flip the bit at the current cell
+            // [ - Jump past matching ] if value at current cell is 0
+            // ] - Jump back to matching [(if value at current cell is nonzero)
             #endregion
             var paireds = GetPairedPosition(code, '[', ']');
-            var data = new List<char>();
-            foreach (var item in source)
-                if (item == '0' || item == '1')
-                    data.Add(item);
+            var data = source.Where(e => e == 0 || e == 1).ToList();
             var dataPoint = 0;
             for (var i = 0; i < code.Length; i++)
             {
                 if (dataPoint < 0 || dataPoint >= data.Count)
                     break;
                 var command = code[i];
-                if (command == '>') ++dataPoint;
-                if (command == '<') --dataPoint;
-                if (command == '*') data[dataPoint] = data[dataPoint] == '0' ? '1' : '0';
-                if (command == '[')
+
+                switch (command)
                 {
-                    CodeForward(ref i, data[dataPoint], paireds);
-                    continue;
+                    case '>':
+                        ++dataPoint;
+                        continue;
+                    case '<':
+                        --dataPoint;
+                        continue;
+                    case '*':
+                        data.
+                        data[dataPoint] = data[dataPoint] == '0' ? '1' : '0';
+                        continue;
+                    case '[':
+                        CodeForward(ref i, data[dataPoint], paireds);
+                        continue;
+                    case ']':
+                        CodeBack(ref i, data[dataPoint], paireds);
+                        continue;
+                    default:
+                        continue;
                 }
-                if (command == '[')
-                    CodeBack(ref i, data[dataPoint], paireds);
             }
-            return string.Join("", data);
+            return string.Concat(data);
         }
 
         private static void CodeForward(ref int codePount, char currentData, Dictionary<int, int> paireds)
@@ -82,9 +90,13 @@
             var opCount = 0;
             var closCount = 0;
             for (var i = 0; i < code.Count(); i++)
+            {
                 if (code.ElementAt(i).Equals(open))
                     opPositions.Add(i);
+            }
+
             foreach (var position in opPositions)
+            {
                 for (var i = position; i < code.Count(); i++)
                 {
                     if (code.ElementAt(i).Equals(open))
@@ -105,6 +117,8 @@
                         break;
                     }
                 }
+            }
+
             return result;
         }
 
@@ -115,12 +129,11 @@
         /// <param name="height">Количество строк в таблице данных</param>
         /// <returns>Преобразованная таблица</returns>
         [KataType(LevelTypes.Kyu, 4, "esolang-interpreters-number-3-custom-paintf-star-star-k-interpreter")]
-#pragma warning disable IDE0060, CA1801 // Удалите неиспользуемый параметр
         public static string PaintFuckInterpreter(string code, int iterations, int width, int height)
         {
 #pragma warning restore IDE0060, CA1801 // Удалите неиспользуемый параметр
             if (string.IsNullOrEmpty(code))
-                throw new System.ArgumentException(Res.IsNullOrEmpty, nameof(code));
+                throw new ArgumentException(Res.IsNullOrEmpty, nameof(code));
             #region Rules
             //n - Move data pointer north(up)
             //e - Move data pointer east(right)
