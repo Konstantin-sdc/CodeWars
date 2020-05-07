@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="KataBaseTests.cs" />
     <Compile Include="Kata\FastTest.cs" />
+    <Compile Include="Kata\Kyu\L4\PaintFuckTests.cs" />
     <Compile Include="Kata\Kyu\L5\Base64UtilsTests.cs" />
     <Compile Include="Kata\Kyu\L5\SmallFuckTests.cs" />
     <Compile Include="Kata\Kyu\L5\SumSquaredDivisorsTests.cs" />

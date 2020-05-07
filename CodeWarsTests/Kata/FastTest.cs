@@ -1,10 +1,14 @@
 ﻿namespace CodeWarsTests.Kata
 {
+    using CodeWars.Kata.Kyu.L5;
+
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+
     using Xunit;
-    using CodeWars.Kata.Kyu.L5;
+
     public class FastTest
     {
         [Fact()]
@@ -50,5 +54,39 @@
             var ww = Convert.ToString(qq, 2);
         }
 
+        [Fact()]
+        public void BitArrayTest()
+        {
+            var testBitArray = new BitArray[3];
+            for (int i = 0; i < testBitArray.Length; i++)
+                testBitArray[i] = new BitArray(2, false);
+            testBitArray[1][1] = true;
+        }
+
+        [Fact()]
+        public void BoolArrayTest()
+        {
+            var testBoolArray = new bool[3, 4];
+            testBoolArray[1, 1] = true;
+            testBoolArray[1, 3] = true;
+            var height = testBoolArray.GetLength(0);
+            var width = testBoolArray.GetLength(1);
+            var stringArray = new string[height];
+            for (var i = 0; i < stringArray.Length; i++)
+            {
+                for (var k = 0; k < width; k++)
+                    stringArray[i] += Convert.ToInt32(testBoolArray[i, k]);
+            }
+        }
+
+        [Fact()]
+        public void CharBoolTest()
+        {
+            var b = true;
+            var i = Convert.ToInt32(b);
+            var c = Convert.ToChar(i);
+            var c2 = (char)i;
+            var c3 = i.ToString();            
+        }
     }
 }
