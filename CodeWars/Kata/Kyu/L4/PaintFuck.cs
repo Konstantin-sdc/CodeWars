@@ -45,7 +45,7 @@
         private static readonly char[] _commandSymbols = new char[] { 'n', 'e', 's', 'w', '*', '[', ']' };
 
         /// <summary>Интерпретатор для PaintFuck.</summary>
-        /// <param name="code">
+        /// <param name="cde">
         /// <para>Код Paintfuck, который нужно выполнить.</para>
         /// <para>Комментарии (не командные символы), игнорируются.</para>
         /// </param>
@@ -55,14 +55,12 @@
         /// <param name="width">Положительное целое число = количество столбцов в сетке данных.</param>
         /// <param name="height">Положительное целое число = количество строк в сетке данных.</param>
         /// <returns>
-        /// <para>Начальное состояние сетки данных, если <paramref name="code"/> пуст.</para>
+        /// <para>Начальное состояние сетки данных, если <paramref name="cde"/> пуст.</para>
         /// <para>Начальное состояние сетки данных, если <paramref name="iterations"/> == 0.</para>
         /// </returns>
         public static string Interpret(string code, int iterations, int width, int height)
         {
             #region Exceptions
-            if (string.IsNullOrEmpty(code))
-                throw new ArgumentException(Res.VarOutOutOfRange, nameof(code));
             if (iterations < 0)
                 throw new ArgumentOutOfRangeException(nameof(iterations), Res.VarOutOutOfRange + " < 0");
             if (width <= 0)
@@ -70,9 +68,10 @@
             if (height <= 0)
                 throw new ArgumentOutOfRangeException(nameof(height), Res.VarOutOutOfRange + " <= 0");
             #endregion
-            #region DataGrid initialise
+            #region Code and DataGrid initialise
+            var commands = code.Where(e => _commandSymbols.Contains(e)).ToArray();
             var data = new bool[height, width];
-            if (iterations == 0)
+            if (iterations == 0 || string.IsNullOrEmpty(code))
                 return GetResultGrid(data);
             #endregion
             #region Data Pointer Moving
@@ -85,38 +84,42 @@
             // [ - Пропускать совпадение, ] если бит под текущим указателем равен 0 (так же, как в Smallfuck)
             // ] - Перейти к соответствию [ (если бит под текущим указателем ненулевой) (так же, как в Smallfuck)            
             #endregion
-            var paireds = GetPairedPositions(code, '[', ']');
+            var paireds = GetPairedPositions(commands, '[', ']');
             var strPos = 0;
             var colPos = 0;
-            for (int i = 0, j = 0; i < code.Length || j <= iterations; i++, j++)
+            for (int cp = 0, it = 0; cp < commands.Length && it < iterations; cp++, it++)
             {
-                var command = code[i];
+                var command = commands[cp];
                 switch (command)
                 {
                     case 'n':
-                        ++strPos;
-                        continue;
+                        --strPos;
+                        break;
                     case 'e':
                         ++colPos;
-                        continue;
+                        break;
                     case 's':
-                        --strPos;
-                        continue;
+                        ++strPos;
+                        break;
                     case 'w':
                         --colPos;
-                        continue;
+                        break;
                     case '*':
                         data[strPos, colPos] = !data[strPos, colPos];
                         continue;
                     case '[':
-                        CodeForward(ref i, data[strPos, colPos], paireds);
+                        CodeForward(ref cp, data[strPos, colPos], paireds);
                         continue;
                     case ']':
-                        CodeBack(ref i, data[strPos, colPos], paireds);
+                        CodeBack(ref cp, data[strPos, colPos], paireds);
                         continue;
                     default:
                         continue;
                 }
+                if (strPos == -1 || strPos == height)
+                    strPos = height - Math.Abs(strPos);
+                if (colPos == -1 || colPos == width)
+                    colPos = width - Math.Abs(colPos);
             }
             #endregion
             return GetResultGrid(data);

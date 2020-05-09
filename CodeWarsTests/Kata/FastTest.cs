@@ -14,6 +14,8 @@
         [Fact()]
         public void RemainderTest()
         {
+            int a = 0 % 5;
+            int b = -1 % 5;
             int result = 2 % 5; // 2
             Assert.True(false, "RESULT = " + result.ToString());
         }

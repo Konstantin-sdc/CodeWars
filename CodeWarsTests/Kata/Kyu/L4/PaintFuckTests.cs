@@ -1,5 +1,7 @@
-﻿namespace CodeWars.Kata.Kyu.L4.Tests
+﻿namespace CodeWars.Kata.Kyu.Esolangs.Tests
 {
+    using CodeWars.Kata.Kyu.L4;
+
     using System.Collections.Generic;
 
     using Xunit;
@@ -9,8 +11,8 @@
         private IDictionary<(string code, int iterations, int width, int height), string> _testValues = new Dictionary<(string, int, int, int), string>()
         {
             {
-                ("*e*e*e*es*es*ws*ws*w*w*w*n*n*n*ssss*s*s*s*", 0, 6, 9), 
-                "000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000" 
+                ("*e*e*e*es*es*ws*ws*w*w*w*n*n*n*ssss*s*s*s*", 0, 6, 9),
+                "000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000\r\n000000"
             },
             {
                 ("*e*e*e*es*es*ws*ws*w*w*w*n*n*n*ssss*s*s*s*", 7, 6, 9),
