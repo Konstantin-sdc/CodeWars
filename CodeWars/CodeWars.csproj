@@ -84,7 +84,7 @@
     <Compile Include="Kata\Kyu\L6\ASum.cs" />
     <Compile Include="Kata\Kyu\L5\SmallFuck.cs" />
     <Compile Include="Kata\Kyu\L3\Kata-Kyu-3.cs" />
-    <Compile Include="Kata\Kyu\L4\Kata-Kyu-4.cs" />
+    <Compile Include="Kata\Kyu\L4\Kata.ExpandDependencies.cs" />
     <Compile Include="Kata\Kyu\L5\Kata-Kyu-5.cs" />
     <Compile Include="Kata\Kyu\L6\Kata.Solution.cs" />
     <Compile Include="Kata\Kyu\L6\Kata.Order.cs" />
