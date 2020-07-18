@@ -1,4 +1,4 @@
-﻿namespace CodeWarsTests.Kata
+﻿namespace CodeWarsTests.FasrTest
 {
     using CodeWars.Kata.Kyu.L5;
 
@@ -11,7 +11,7 @@
 
     public class FastTest
     {
-        [Fact()]
+        [Fact]
         public void RemainderTest()
         {
             int a = 0 % 5;
@@ -20,14 +20,14 @@
             Assert.True(false, "RESULT = " + result.ToString());
         }
 
-        [Fact()]
+        [Fact]
         public void EmptyCountTest()
         {
             int[] array = new int[0];
             Assert.True(false, "RESULT = " + array[0]);
         }
 
-        [Fact()]
+        [Fact]
         public void GroupingTest()
         {
             var q = new List<string>()
@@ -39,7 +39,7 @@
             var result = groups.ToList();
         }
 
-        [Fact()]
+        [Fact]
         public void ConvertTest()
         {
             // 0001 01 F если Man
@@ -56,7 +56,7 @@
             var ww = Convert.ToString(qq, 2);
         }
 
-        [Fact()]
+        [Fact]
         public void BitArrayTest()
         {
             var testBitArray = new BitArray[3];
@@ -65,7 +65,7 @@
             testBitArray[1][1] = true;
         }
 
-        [Fact()]
+        [Fact]
         public void BoolArrayTest()
         {
             var testBoolArray = new bool[3, 4];
@@ -81,14 +81,21 @@
             }
         }
 
-        [Fact()]
+        [Fact]
         public void CharBoolTest()
         {
             var b = true;
             var i = Convert.ToInt32(b);
             var c = Convert.ToChar(i);
             var c2 = (char)i;
-            var c3 = i.ToString();            
+            var c3 = i.ToString();
+        }
+
+        [Fact]
+        public void DictionaryTest()
+        {
+            IDictionary<char, IEnumerable<char>> dict = new Dictionary<char, IEnumerable<char>>();
+            dict.Add('q', null);
         }
     }
 }

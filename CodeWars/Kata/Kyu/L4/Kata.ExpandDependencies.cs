@@ -8,67 +8,83 @@
 
     public static partial class Kata
     {
-        #region Rules
-        // Если ключ не имеет зависимостей, к нему прилагается значение с пустым массивом
-        #endregion
         /// <summary>Возвращает полные цепи зависимостей для каждого ключа.</summary>
-        /// <param name="source">
-        /// <para>Словарь прямых зависимостей.</para>
-        /// <para>Ключи — имена файлов.</para>
-        /// <para>Значения — массивы строк, каждая из которых является прямой зависимостю для соответствующего ключа.</para>
-        /// </param>
+        /// <param name="source">Словарь прямых зависимостей.</param>
         /// <returns>
-        /// <para>Dictionari of fulldependencies.</para>
-        /// <para>Empty dictonary if source dictonary is empty.</para>
+        /// <para>Dictionary of fulldependencies.</para>
+        /// <para>Empty dictionary if source dictonary is empty.</para>
         /// </returns>
+        /// <exception cref="InvalidOperationException">Параметр <paramref name="source"/> is <see langword="null"/>.</exception>
         [KataType(LevelTypes.Kyu, 4, "56293ae77e20756fc500002e")]
         public static Dictionary<string, string[]> ExpandDependencies(IDictionary<string, string[]> source)
         {
-            #region Exceptions
             if (source is null)
                 throw new ArgumentNullException(nameof(source));
-            // Если обнаружена кольцевая зависимость — вернуть InvalidOperationException
-            #endregion
-            // Если исходник пуст — вернуть пустой словарь
             if (source.Count == 0)
                 return new Dictionary<string, string[]>();
             var result = new Dictionary<string, string[]>();
-            foreach (var srcItem in source)
+            foreach (var item in source.Keys)
             {
-                var depList = GetDep(source, srcItem.Key, srcItem.Key);
-                if (depList.Contains(srcItem.Key)) 
-                    throw new InvalidOperationException();
-                var depA = depList.Distinct().ToArray();
-                Array.Sort(depA);
-                result.Add(srcItem.Key, depA);
+                var depChain = GetDepChains(source, item).ToList();
+                depChain.RemoveAt(0);
+                result.Add(item, depChain.ToArray());
             }
             return result;
         }
 
-        /// <summary>Глубокие связи ключа</summary>
-        /// <typeparam name="T">Тип данных</typeparam>
-        /// <param name="dic">Словарь</param>
-        /// <param name="key">Ключ</param>
-        /// <returns>Коллекция связей</returns>
-        public static IEnumerable<string> GetDep(IDictionary<string, string[]> dic, string key, string firstKey)
+        /// <summary>Возвращает глубокие связи ключа, вкючая сам ключ.</summary>
+        /// <typeparam name="T">Тип данных.</typeparam>
+        /// <param name="dict">Словарь.</param>
+        /// <param name="key">Ключ.</param>
+        /// <param name="circ">Служебный параметр.</param>
+        /// <returns><see cref="IEnumerable{T}"/> Коллекция связей.</returns>
+        /// <exception cref="InvalidOperationException">Зависимости ключа являются циклическими.</exception>
+        private static IEnumerable<T> GetDepChains<T>(IDictionary<T, T[]> dict, T key, IEnumerable<T> circ = null)
         {
-            #region Exceptions
-            if (dic is null)
-                throw new ArgumentNullException(nameof(dic));
-            if (string.IsNullOrEmpty(key))
-                throw new ArgumentException(Res.IsNull, nameof(key));
-            #endregion
-            if (!dic.ContainsKey(key) || dic[key].Length == 0)
-                return new List<string>();
-            IEnumerable<string> result = dic[key];
-            foreach (var item in dic[key])
+            circ = circ ?? GetCircular(dict);
+            if (circ.Contains(key))
+                throw new InvalidOperationException();
+            var dependensies = new List<T> { key };
+            if (!dict.ContainsKey(key))
+                return dependensies;
+            var values = dict[key];
+            if (values is null || values.Length == 0)
+                return dependensies;
+            foreach (var item in values)
             {
-                if (item == firstKey)
-                    throw new InvalidOperationException();
-                var sr = GetDep(dic, item, firstKey);
-                result = result.Concat(sr);
+                var deps = GetDepChains(dict, item, circ);
+                dependensies.AddRange(deps);
             }
-            return result;
+            return dependensies.Distinct();
         }
+
+        /// <summary>
+        /// Возврщает коллекцию ключей из исходного словаря,
+        /// которые имеют циклические ссылки.
+        /// </summary>
+        /// <typeparam name="T">Тип данных словаря.</typeparam>
+        /// <param name="dict">Словарь для проверки.</param>
+        /// <returns><see cref="IEnumerable{T}"/> Коллекция с результатами.</returns>
+        /// <exception cref="ArgumentNullException">Параметр <paramref name="dict"/> имеет значение <see langword="null"/>.</exception>
+        public static IEnumerable<T> GetCircular<T>(IDictionary<T, T[]> dict)
+        {
+            if (dict is null)
+                throw new ArgumentNullException(nameof(dict));
+            var result = new Dictionary<T, T[]>(dict);
+            for (var i = 0; i < result.Keys.Count; i++)
+            {
+                var testKey = result.Keys.ElementAt(i);
+                var testValue = result[testKey];
+                var newValue = testValue.Where(e => result.ContainsKey(e)).ToArray();
+                result[testKey] = newValue;
+                if (newValue == null || !newValue.Any())
+                {
+                    result.Remove(testKey);
+                    i = -1;
+                }
+            }
+            return result.Keys;
+        }
+
     }
 }
