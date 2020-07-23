@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KataBase.cs" />
+    <Compile Include="Kata\Kyu\L4\Machine.cs" />
     <Compile Include="Kata\Kyu\L4\RangeExtraction.cs" />
     <Compile Include="Kata\Kyu\L4\StripCommentsSolution.cs" />
     <Compile Include="Kata\Kyu\L5\Base64Utils.cs" />
