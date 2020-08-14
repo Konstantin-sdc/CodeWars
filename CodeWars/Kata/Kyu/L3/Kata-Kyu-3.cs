@@ -5,7 +5,7 @@
     using System.Reflection;
     using System.Reflection.Emit;
 
-    using Res = CodeWars.Properties.Resources;
+    using Res = Properties.Resources;
 
     public static partial class KataBase
     {
@@ -38,7 +38,7 @@
             {
                 return false;
             }
-            foreach (KeyValuePair<string, Type> member in properties)
+            foreach (var member in properties)
             {
                 _ = tb.DefineProperty(member.Key, PropertyAttributes.HasDefault, member.Value, null);
             }
@@ -50,7 +50,7 @@
         {
             AssemblyName an = Assembly.GetExecutingAssembly().GetName();
             //Создание динамической сборки для динамического класса
-            AssemblyBuilder assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(an, AssemblyBuilderAccess.Run);
+            var assemblyBuilder = AssemblyBuilder.DefineDynamicAssembly(an, AssemblyBuilderAccess.Run);
             ModuleBuilder moduleBuilder = assemblyBuilder.DefineDynamicModule(typeName);
             return moduleBuilder.DefineType(typeName,
               TypeAttributes.Public |
