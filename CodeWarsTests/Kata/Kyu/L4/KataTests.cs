@@ -77,5 +77,29 @@
             };
             var result = Kata.GetCircular(startItems0);
         }
+
+        [Fact()]
+        public void PuzzleSolverTest()
+        {
+            var puzzle = new ((int, int), (int, int), int)[]
+            {
+                ((-1,5),(-1,-1),3),
+                ((17,-1),(-1,-1),9),
+                ((-1,4),(-1,5),8),
+                ((4,11),(5,17),5),
+                ((11,-1),(17,-1),2),
+                ((-1,-1),(-1,4),7),
+                ((5,17),(-1,-1),1),
+                ((-1,-1),(11,-1),4),
+                ((-1,-1),(4,11),6),
+            };
+            int[,] sol = new int[3, 3]
+            {
+                {7,6,4},
+                {8,5,2},
+                {3,1,9},
+            };
+            Assert.Equal(sol, Kata.PuzzleSolver(puzzle, 3, 3));
+        }
     }
 }

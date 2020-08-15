@@ -5,8 +5,6 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
-    using CortBlock = System.ValueTuple<System.ValueTuple<int, int>, System.ValueTuple<int, int>, int>;
-
     public static partial class Kata
     {
         /// <summary>Возвращает многомерный массив из идентификаторов массива <paramref name="pieces"/>.</summary>
@@ -50,7 +48,6 @@
             // Двумерный массив Id частей согласно их порядку, а также размер пазла(ширину и высоту).
             #endregion
 
-            // your code here
             #region Exceptions
             if (pieces is null)
                 throw new ArgumentNullException(nameof(pieces));
@@ -62,30 +59,22 @@
             }
             #endregion
 
-            //
-            // var firstColumn = new List<CortBlock>(height) { pieces.First(p => p.top.l == -1 && p.btn.l == -1) };
-            var firstColumn = pieces.Where(p => p.top.l == -1 && p.btn.l == -1);
+            var firstColumn = new ((int l, int r) top, (int l, int r) btn, int Id)[height];
+            var result = new int[height, width];
+            var anchor = pieces.First(p => p.top == (-1, -1) && p.btn.l == -1);
 
-            // sort firsColumn
-
-            var lines = firstColumn.Count();
-            var columns = pieces.Length / lines;
-            var result = new int[lines, columns];
-
-            for (var i = 0; i < lines; i++)
+            for (var i = 0; i < height; i++)
             {
-                result[i, 0] = firstColumn.ElementAt(i).Id;
+                firstColumn[i] = anchor;
+                anchor = pieces.First(p => p.top == (anchor.btn.l, anchor.btn.r));
             }
-            for (var i = 0; i < firstColumn.Count(); i++)
+            for (var i = 0; i < height; i++)
             {
-                var current = firstColumn.ElementAt(i);
-                var line = new List<int> { current.Id };
-                foreach (var item in line)
+                anchor = firstColumn[i];
+                for (var k = 0; k < width; k++)
                 {
-                    var last = pieces.First(p => p.top.l == current.top.r && p.btn.l == current.btn.r);
-                    line.Add(last.Id);
-                    // add line to result
-                    if (last.top.l == -1) break;
+                    result[i, k] = anchor.Id;
+                    anchor = pieces.First(p => p.top.l == anchor.top.r && p.btn.l == anchor.btn.r);
                 }
             }
             return result;
