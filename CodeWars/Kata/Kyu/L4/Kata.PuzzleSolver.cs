@@ -47,7 +47,6 @@
             // Решение головоломки
             // Двумерный массив Id частей согласно их порядку, а также размер пазла(ширину и высоту).
             #endregion
-
             #region Exceptions
             if (pieces is null)
                 throw new ArgumentNullException(nameof(pieces));
@@ -58,24 +57,17 @@
                 throw new ArgumentOutOfRangeException(nameof(pieces), msg);
             }
             #endregion
-
-            var firstColumn = new ((int l, int r) top, (int l, int r) btn, int Id)[height];
             var result = new int[height, width];
             var anchor = pieces.First(p => p.top == (-1, -1) && p.btn.l == -1);
-
             for (var i = 0; i < height; i++)
             {
-                firstColumn[i] = anchor;
-                anchor = pieces.First(p => p.top == (anchor.btn.l, anchor.btn.r));
-            }
-            for (var i = 0; i < height; i++)
-            {
-                anchor = firstColumn[i];
+                var anchorW = anchor;
                 for (var k = 0; k < width; k++)
                 {
-                    result[i, k] = anchor.Id;
-                    anchor = pieces.First(p => p.top.l == anchor.top.r && p.btn.l == anchor.btn.r);
+                    result[i, k] = anchorW.Id;
+                    anchorW = pieces.First(p => p.top.l == anchorW.top.r && p.btn.l == anchorW.btn.r);
                 }
+                anchor = pieces.First(p => p.top == (anchor.btn.l, anchor.btn.r));
             }
             return result;
         }
