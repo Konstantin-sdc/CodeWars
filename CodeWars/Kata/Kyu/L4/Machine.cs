@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    internal class Machine
+    public class Machine
     {
         private Cpu _cpu;
 
@@ -57,7 +57,7 @@
         }
     }
 
-    internal class Cpu : ICpu
+    public class Cpu : ICpu
     {
         public int PopStack() => throw new NotImplementedException();
         public void PrintStack() => throw new NotImplementedException();
