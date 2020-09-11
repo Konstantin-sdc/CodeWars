@@ -8,6 +8,8 @@
 
     public class Machine
     {
+        private static readonly char[] _commandSymbols = new char[] { 'a', 'b', 'c', 'd' };
+
         private Cpu _cpu;
 
         public Machine(Cpu cpu = null)
